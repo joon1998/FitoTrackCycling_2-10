@@ -113,7 +113,6 @@ import de.tadris.fitness.util.BluetoothDevicePreferences;
 import de.tadris.fitness.util.NfcAdapterHelper;
 import de.tadris.fitness.util.ToneGeneratorController;
 import de.tadris.fitness.util.VibratorController;
-import de.tadris.fitness.util.event.EventBusMember;
 
 public class RecordWorkoutActivity extends FitoTrackActivity implements SelectIntervalSetDialog.IntervalSetSelectListener,
         InfoViewHolder.InfoViewClickListener, SelectWorkoutInformationDialog.WorkoutInformationSelectListener,
@@ -238,6 +237,11 @@ public class RecordWorkoutActivity extends FitoTrackActivity implements SelectIn
 
         startPopupButton = findViewById(R.id.recordStartPopup);
         recordStartButtonsRoot = findViewById(R.id.recordStartButtonsRoot);
+        timeView = findViewById(R.id.recordTime);
+        timeView.setVisibility(View.INVISIBLE);
+        gpsStatusView = findViewById(R.id.recordGpsStatus);
+        hrStatusView = findViewById(R.id.recordHrStatus);
+
         if (useAutoStart) {
             // instantiate TTSController in app context to be able to completely play the auto start
             // abort announcement even when this activity has been destroyed already
@@ -279,9 +283,6 @@ public class RecordWorkoutActivity extends FitoTrackActivity implements SelectIn
         infoViews[1] = new InfoViewHolder(1, this, findViewById(R.id.recordInfo2Title), findViewById(R.id.recordInfo2Value));
         infoViews[2] = new InfoViewHolder(2, this, findViewById(R.id.recordInfo3Title), findViewById(R.id.recordInfo3Value));
         infoViews[3] = new InfoViewHolder(3, this, findViewById(R.id.recordInfo4Title), findViewById(R.id.recordInfo4Value));
-        timeView = findViewById(R.id.recordTime);
-        gpsStatusView = findViewById(R.id.recordGpsStatus);
-        hrStatusView = findViewById(R.id.recordHrStatus);
 
         if (!EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().register(this);
@@ -455,6 +456,16 @@ public class RecordWorkoutActivity extends FitoTrackActivity implements SelectIn
         infoViews[slot].setText(data.getTitle(), data.getValue());
     }
 
+    private void hideStartButton() {
+        hide(recordStartButtonsRoot);
+        timeView.setVisibility(View.VISIBLE);
+    }
+
+    private void showStartButton() {
+        show(recordStartButtonsRoot);
+        timeView.setVisibility(View.INVISIBLE);
+    }
+
     private void hide(View view) {
         if (useAutoStart && startPopupMenu != null
                 && (view.getId() == recordStartButtonsRoot.getId()
@@ -494,7 +505,7 @@ public class RecordWorkoutActivity extends FitoTrackActivity implements SelectIn
     }
 
     private void updateStartButton(boolean enabled, @StringRes int text, View.OnClickListener listener) {
-        show(recordStartButtonsRoot);
+        showStartButton();
         startButton.setEnabled(enabled);
         startButton.setText(text);
         startButton.setOnClickListener(listener);
@@ -536,7 +547,7 @@ public class RecordWorkoutActivity extends FitoTrackActivity implements SelectIn
         }
 
         // show workout timer
-        hide(recordStartButtonsRoot);
+        hideStartButton();
 
         // and start workout recorder
         instance.recorder.start();
@@ -919,7 +930,7 @@ public class RecordWorkoutActivity extends FitoTrackActivity implements SelectIn
             if (useAutoStart) {
                 startPopupButton.setVisibility(View.GONE);
             }
-            show(recordStartButtonsRoot);
+            showStartButton();
             instance.recorder.pause();
             updateStartButton(true, R.string.actionResume, v -> {
                 if (instance.recorder.isPaused()) {
@@ -928,7 +939,7 @@ public class RecordWorkoutActivity extends FitoTrackActivity implements SelectIn
             });
         } else if (instance.recorder.isPaused()) {
             instance.recorder.resume();
-            hide(recordStartButtonsRoot);
+            hideStartButton();
         }
         invalidateOptionsMenu();
     }
@@ -1243,6 +1254,7 @@ public class RecordWorkoutActivity extends FitoTrackActivity implements SelectIn
                 }
             }
         }
+        super.onNewIntent(intent);
     }
 
     /**

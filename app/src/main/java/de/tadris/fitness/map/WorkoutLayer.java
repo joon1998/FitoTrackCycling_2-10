@@ -58,6 +58,7 @@ public class WorkoutLayer extends Layer {
 
     @Nullable
     private SampleConverter sampleConverter; // get values from samples
+    @Nullable
     private ColoringStrategy coloringStrategy; // get colors from values
 
     private static Paint getDEFAULT_PAINT_STROKE() {
@@ -67,7 +68,7 @@ public class WorkoutLayer extends Layer {
         return paint;
     }
 
-    public WorkoutLayer(List<WorkoutSample> samples, ColoringStrategy fallbackColoringStrategy, ColoringStrategy coloringStrategy) {
+    public WorkoutLayer(List<WorkoutSample> samples, ColoringStrategy fallbackColoringStrategy, @Nullable ColoringStrategy coloringStrategy) {
         this(getDEFAULT_PAINT_STROKE(), samples);
         this.fallbackColoringStrategy = fallbackColoringStrategy;
         this.coloringStrategy = coloringStrategy;
@@ -189,7 +190,7 @@ public class WorkoutLayer extends Layer {
     }
 
     private int getColorFromSample(WorkoutSample sample) {
-        if (sampleConverter != null) {
+        if (coloringStrategy != null && sampleConverter != null) {
             double value = sampleConverter.getValue(sample);
             return coloringStrategy.getColor(value);
         } else {
@@ -197,9 +198,18 @@ public class WorkoutLayer extends Layer {
         }
     }
 
+    public void setColoringStrategy(Workout workout, ColoringStrategy coloringStrategy) {
+        this.coloringStrategy = coloringStrategy;
+        refreshColoringMinMax(workout);
+    }
+
     public void setSampleConverter(Workout workout, @Nullable SampleConverter sampleConverter) {
         this.sampleConverter = sampleConverter;
-        if (sampleConverter != null) {
+        refreshColoringMinMax(workout);
+    }
+
+    private void refreshColoringMinMax(Workout workout) {
+        if (coloringStrategy != null && sampleConverter != null) {
             coloringStrategy.setMin(sampleConverter.getMinValue(workout));
             coloringStrategy.setMax(sampleConverter.getMaxValue(workout));
         }

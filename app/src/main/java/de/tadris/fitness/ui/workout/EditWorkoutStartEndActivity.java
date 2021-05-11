@@ -22,6 +22,7 @@ package de.tadris.fitness.ui.workout;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -35,8 +36,6 @@ import java.util.List;
 import de.tadris.fitness.R;
 import de.tadris.fitness.data.WorkoutData;
 import de.tadris.fitness.data.WorkoutSample;
-import de.tadris.fitness.map.ColoringStrategy;
-import de.tadris.fitness.map.GradientColoringStrategy;
 import de.tadris.fitness.map.SimpleColoringStrategy;
 import de.tadris.fitness.map.WorkoutLayer;
 import de.tadris.fitness.recording.WorkoutCutter;
@@ -52,6 +51,13 @@ public class EditWorkoutStartEndActivity extends ShowWorkoutMapDiagramActivity {
     private FixedPixelCircle newStartLayer;
     private FixedPixelCircle newEndLayer;
     private WorkoutLayer newWorkoutLayer;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        workoutLayer.setColoringStrategy(workout, new SimpleColoringStrategy(getThemePrimaryColor()));
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -62,7 +68,7 @@ public class EditWorkoutStartEndActivity extends ShowWorkoutMapDiagramActivity {
         return true;
     }
 
-    WorkoutSample selectedStartSample= null;
+    WorkoutSample selectedStartSample = null;
     WorkoutSample selectedEndSample= null;
 
 
@@ -128,9 +134,8 @@ public class EditWorkoutStartEndActivity extends ShowWorkoutMapDiagramActivity {
         }
         //Draw new track
         if (selectedStartSample != null || selectedEndSample != null) {
-            int[] c2 = {getThemePrimaryColor(), getThemePrimaryColor()};
-            ColoringStrategy coloringStrategy = new GradientColoringStrategy(c2, false);
-            newWorkoutLayer = new WorkoutLayer(newWorkoutSamples, new SimpleColoringStrategy(getThemePrimaryColor()), coloringStrategy);
+            mapView.getLayerManager().getLayers().remove(workoutLayer);
+            newWorkoutLayer = new WorkoutLayer(newWorkoutSamples, new SimpleColoringStrategy(getThemePrimaryColor()), null);
             mapView.addLayer(newWorkoutLayer);
         }
         //Draw "new" start

@@ -45,7 +45,6 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
 import org.mapsforge.core.graphics.Paint;
 import org.mapsforge.core.model.BoundingBox;
-import org.mapsforge.core.model.LatLong;
 import org.mapsforge.core.model.MapPosition;
 import org.mapsforge.core.util.LatLongUtils;
 import org.mapsforge.map.android.graphics.AndroidGraphicFactory;
@@ -196,6 +195,8 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
         chart.getLegend().setTextColor(getThemeTextColor());
         chart.getDescription().setTextColor(getThemeTextColor());
 
+        chart.setHighlightPerDragEnabled(diagramsInteractive);
+        chart.setHighlightPerTapEnabled(diagramsInteractive);
 
         updateChart(chart, converters, showIntervalSets);
 
@@ -240,6 +241,7 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
             dataSet.setValueTextColor(color);
             dataSet.setDrawCircles(false);
             dataSet.setLineWidth(4);
+            dataSet.setHighlightLineWidth(2.5f);
             dataSet.setMode(LineDataSet.Mode.HORIZONTAL_BEZIER);
             if (converters.size() == 2) {
                 YAxis.AxisDependency axisDependency = converterIndex == 0 ? YAxis.AxisDependency.LEFT : YAxis.AxisDependency.RIGHT;
@@ -281,18 +283,6 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
 
         chart.setData(combinedData);
         chart.invalidate();
-    }
-
-
-    private void onDiagramValueSelected(LatLong latLong) {
-        Paint p = AndroidGraphicFactory.INSTANCE.createPaint();
-        p.setColor(0xff693cff);
-        highlightingCircle = new FixedPixelCircle(latLong, 10, p, null);
-        mapView.addLayer(highlightingCircle);
-
-        if (!mapView.getBoundingBox().contains(latLong)) {
-            mapView.getModel().mapViewPosition.animateTo(latLong);
-        }
     }
 
     private WorkoutSample findSample(Entry entry) {

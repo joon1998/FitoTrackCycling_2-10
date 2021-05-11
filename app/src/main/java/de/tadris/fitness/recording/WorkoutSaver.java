@@ -248,9 +248,6 @@ public class WorkoutSaver {
         workout.ascent = 0f;
         workout.descent = 0f;
 
-        // Eliminate pressure noise
-        roundSampleElevation();
-
         // Now sum up the ascent/descent
         if (samples.size() > 1) {
             WorkoutSample firstSample = samples.get(0);
@@ -260,7 +257,10 @@ public class WorkoutSaver {
             WorkoutSample prevSample = firstSample;
             for (int i = 1; i < samples.size(); i++) {
                 WorkoutSample sample = samples.get(i);
-                // Use Rounded Elevations
+
+                workout.minElevationMSL = Math.min(workout.minElevationMSL, (float) firstSample.elevationMSL);
+                workout.maxElevationMSL = Math.max(workout.maxElevationMSL, (float) firstSample.elevationMSL);
+
                 double diff = sample.elevation - prevSample.elevation;
                 if (Double.isNaN(diff)) {
                     Log.e("WorkoutSaver", "ElevationDiff is NaN fallback to 0");

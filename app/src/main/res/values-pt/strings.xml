@@ -45,7 +45,7 @@
     <string name="inclination">Inclinação</string>
     <string name="nothingSelected">Nada foi selecionado</string>
     <string name="showIntervals">Mostrar intervalos</string>
-    <string name="selectBluetoothDevice">Selecionar dispositivo Bluetooth</string>
+    <string name="selectBluetoothDevice">Selecionar aparelho Bluetooth</string>
     <string name="importedWorkouts">Importados %d exercícios</string>
     <string name="importingFiles">Importar ficheiros</string>
     <string name="importMultipleMessageSelectFolder">Por favor, selecione a pasta que contêm todos os ficheiros GPX que deseja importar.</string>
@@ -82,9 +82,9 @@
     <string name="replace">Substituir</string>
     <string name="replaceOrMergeMessage">Substituir ou fundir a base de dados com um ficheiro de cópia de segurança\?</string>
     <string name="dataSamples">Amostras</string>
-    <string name="workoutStatsHelpText">Esta tela mostra estatísticas históricas dos treinos. Para usá-lo, você primeiro precisa especificar o tipo de exercício, clicando nele. Em seguida, defina a informação que você quer saber sobre e o período de tempo.
+    <string name="workoutStatsHelpText">Este ecrã mostra estatísticas históricas dos treinos. Para usá-lo, primeiro precisa especificar o tipo de exercício, por clicar nele. Em seguida, defina a informação que quer saber sobre e o período.
 \n
-\nPor exemplo, se você selecionar \"semana\" como período de tempo, todos os exercícios de cada semana serão fundidos em um ponto de dados ou calculando a média ou a soma de cada semana.</string>
+\nPor exemplo, se selecionar \"semana\" como período, todos os exercícios de cada semana serão fundidos num ponto de dados ou calculando a média, ou a soma de cada semana.</string>
     <string name="singleWorkout">Exercício Único</string>
     <string name="calendarWeekYear">Calendário Semana / Ano</string>
     <string name="help">Ajuda</string>
@@ -290,7 +290,7 @@
     <string name="notimeout">Sem Tempo-Limite</string>
     <string name="workoutStopped">Exercício parado</string>
     <string name="heartRateNotAvailable">A frequência cardíaca não está disponível.</string>
-    <string name="connectHeartRateDevice">Ligar o dispositivo de Frequência Cardíaca</string>
+    <string name="connectHeartRateDevice">Ligar o aparelho de Frequência Cardíaca</string>
     <string name="bulkActions">Accao</string>
     <string name="importMultipleGpxFilesSummary">Importar mais do que um ficheiro GPX de uma vez</string>
     <string name="recordingStatePaused">Pausa</string>

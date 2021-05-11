@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+  ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
   ~
   ~ This file is part of FitoTrack
   ~
@@ -65,7 +65,7 @@
             android:layout_margin="5dp"
             android:src="@drawable/ic_bluetooth"
             android:textStyle="bold"
-            android:tint="@color/heartRateStateUnavailable" />
+            app:tint="@color/heartRateStateUnavailable" />
 
         <TextView
             android:id="@+id/recordMapAttribution"
@@ -96,12 +96,15 @@
             <TextView
                 android:id="@+id/recordTime"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:fontFamily="sans-serif-black"
                 android:text="0:44:08"
                 android:textAlignment="center"
                 android:textColor="?android:textColorPrimary"
                 android:textSize="40sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="35sp"
+                android:autoSizeMaxTextSize="50sp"
                 android:textStyle="bold" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -116,6 +119,7 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/colorPrimary"
                     android:padding="18dp"
+                    android:layout_margin="5dp"
                     android:text="@string/start"
                     android:textAllCaps="true"
                     android:textColor="@android:color/white"
@@ -131,6 +135,10 @@
                     android:layout_height="0dp"
                     android:backgroundTint="@color/colorPrimary"
                     android:onClick="onStartPopupButtonClicked"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
                     android:text="..."
                     android:textAlignment="center"
                     android:textAllCaps="false"

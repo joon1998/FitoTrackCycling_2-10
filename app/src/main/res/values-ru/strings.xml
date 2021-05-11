@@ -16,9 +16,7 @@
   ~
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-
-<resources>
+  --><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">FitoTrack</string>
     <string name="workout_add">Добавить</string>
     <string name="stop">Остановить</string>
@@ -119,8 +117,8 @@
     <string name="workoutNumber">Количество тренировок</string>
     <string name="sum">Сумм</string>
     <string name="avg">Ср</string>
-    <string name="max">Макс</string>
-    <string name="min">Мин</string>
+    <string name="max">Макс.</string>
+    <string name="min">Мин.</string>
     <string name="year">Год</string>
     <string name="month">Месяц</string>
     <string name="week">Неделя</string>
@@ -190,7 +188,7 @@
     <string name="noComment">Комментариев нет</string>
     <string name="hintRestart">Пожалуйста, перезапустите приложение для применения изменений</string>
     <string name="theme">Тема</string>
-    <string name="OpenStreetMapAttribution">© участники OpenStreetMap</string>
+    <string name="OpenStreetMapAttribution">Участники © OpenStreetMap</string>
     <string name="info">Информация</string>
     <string name="savingFailed">Ошибка сохранения</string>
     <string name="savedSuccessfully">Сохранено</string>
@@ -198,7 +196,7 @@
     <string name="save">Сохранить</string>
     <string name="pref_announcement_mode">Режим оповещения</string>
     <string name="action_edit_comment">Изменить комментарий</string>
-    <string name="ttsNotAvailable">TextToSpeech недоступен</string>
+    <string name="ttsNotAvailable">Синтезатор речи недоступен</string>
     <string name="description">Описание</string>
     <string name="trackVisibilityPref">Видимость трека</string>
     <string name="cut">Обрезать первые/последние 300 метров</string>
@@ -255,7 +253,7 @@
     <string name="timeMinutePlural">Минут</string>
     <string name="timeMinuteSingular">Минута</string>
     <string name="setPreferencesMessage">Вы можете выставить предпочитаемую систему измерений и ваш вес в настройках.</string>
-    <string name="setPreferencesTitle">Установить параметры</string>
+    <string name="setPreferencesTitle">Установка параметров</string>
     <string name="pref_ringtone_silent">Без звука</string>
     <string name="importBackupMessage">ВНИМАНИЕ: Все данные приложения будут очищены. Если вы не хотите потерять их, сначала сделайте резервную копию. Вы уверены, что хотите восстановить эту резервную копию\?</string>
     <string name="chooseBackupFile">Выберите файл резервной копии</string>
@@ -268,54 +266,120 @@
     <string name="importingFiles">Импорт файлов</string>
     <string name="bulkActions">Массовые действия</string>
     <string name="importMultipleGpxFilesSummary">Импортировать более одного GPX-файла из файловой системы одновременно</string>
-    <string name="importMultipleMessageSelectFolder">Пожалуйста, выберите папку, содержащую все GPX-фпйлы, которые вы хотите импортировать.</string>
+    <string name="importMultipleMessageSelectFolder">Пожалуйста, выберите папку, содержащую все GPX-файлы, которые вы хотите импортировать.</string>
     <string name="importMultipleGpxFiles">Импортировать несколько GPX-файлов</string>
     <string name="actionGrant">Предоставить</string>
     <string name="manageIntervalsSummary">Отредактируйте наборы интервалов, которые вы сможете использовать во время тренировки, с помощью голосовой обратной связи.</string>
-    <string name="aboutPrivacyPolicy">политика конфиденциальности</string>
-    <string name="no_workouts_recorded">Никаких тренировок не записано</string>
+    <string name="aboutPrivacyPolicy">Политика конфиденциальности</string>
+    <string name="no_workouts_recorded">Нет записанных тренировок</string>
     <string name="workoutDiscarded">Тренировка отменена</string>
     <string name="inclination">Наклон</string>
     <string name="nothingSelected">Ничего не выбрано</string>
     <string name="showIntervals">Показать интервалы</string>
     <string name="connectHeartRateDevice">Подключите устройство для измерения частоты сердечных сокращений</string>
     <string name="selectBluetoothDevice">Выберите устройство Bluetooth</string>
-    <string name="workoutAvgHeartRate">Средняя Частота Сердечных Сокращений</string>
-    <string name="workoutMaxHeartRate">Максимальная Частота Сердечных Сокращений</string>
-    <string name="workoutHeartRate">частота сердцебиения</string>
+    <string name="workoutAvgHeartRate">Средняя частота сердечных сокращений</string>
+    <string name="workoutMaxHeartRate">Максимальная частота сердечных сокращений</string>
+    <string name="workoutHeartRate">Частота сердцебиения</string>
     <string name="workoutStarted">Тренировка началась</string>
     <string name="workoutStopped">Тренировка прекратилась</string>
-    <string name="workoutResumed">Тренировка возобновилась</string>
+    <string name="workoutResumed">Тренировка возобновлена</string>
     <string name="workoutPaused">Тренировка приостановилась</string>
-    <string name="actionResume">Возобновиться</string>
+    <string name="actionResume">Возобновить</string>
     <string name="actionPause">Пауза</string>
     <string name="autoPauseSummary">Автоматически приостановить и продолжить тренировки</string>
     <string name="autoPauseTitle">Автоматическая пауза</string>
-    <string name="resumeWorkout">Возобновить Тренировки</string>
+    <string name="resumeWorkout">Возобновить тренировку</string>
     <string name="heartRateNotAvailable">Частота сердечных сокращений в настоящее время недоступна.</string>
     <string name="intervals">Интервалы</string>
     <string name="announcementWorkoutActions">Действия тренировки (пауза, возобновление и т. д.)</string>
     <string name="workoutTypeEditMET">MET</string>
     <string name="editWorkoutType">Изменить тип тренировки</string>
-    <string name="workoutTypeEditIcon">Икона</string>
+    <string name="workoutTypeEditIcon">Значок</string>
     <string name="deleteWorkoutTypeConfirmation">Вы действительно хотите удалить этот тип тренировки\?</string>
-    <string name="deleteWorkoutType">Удалить Тип Тренировки</string>
+    <string name="deleteWorkoutType">Удалить тип тренировки</string>
     <string name="actionSave">Сохранить</string>
-    <string name="customWorkoutTypesTitle">Пользовательские Типы Тренировок</string>
+    <string name="customWorkoutTypesTitle">Пользовательские типы тренировок</string>
     <string name="preferenceCategoryVoiceFeedback">Голосовая обратная связь</string>
     <string name="workoutTypeEditMETHint">Мера потребления энергии</string>
     <string name="workoutTypeEditMinDistanceHint">Минимальное расстояние между двумя образцами GPS</string>
     <string name="workoutTypeEditMinDistance">Расстояние выборки</string>
     <string name="workoutTypeEditNameError">Пожалуйста, введите имя</string>
     <string name="workoutTypeEditName">Имя</string>
-    <string name="workoutTypeEditIdErrorUnique">С помощью этого идентификатора уже существует тип тренировки</string>
+    <string name="workoutTypeEditIdErrorUnique">Тип тренировки с таким идентификатором уже существует</string>
     <string name="workoutTypeEditIdErrorEmpty">Пожалуйста, введите идентификатор</string>
-    <string name="workoutTypeEditId">идентификатор</string>
+    <string name="workoutTypeEditId">Идентификатор</string>
     <string name="workoutTypeEditIdErrorCharacters">Допустимые символы: a–z, A–Z, 0–9, _, -</string>
     <string name="hintManageWorkoutTypes">Нажмите на плюс, чтобы добавить пользовательские типы тренировок.</string>
     <string name="resumeWorkoutConfirmation">Вы действительно хотите возобновить эту тренировку\? Это также добавит паузу с момента остановки тренировки.</string>
     <string name="prefShowOnLockScreenSummary">Показывать информацию о тренировке, даже если телефон заблокирован.</string>
     <string name="prefShowOnLockScreenTitle">Видимый на экране блокировки</string>
-    <string name="notimeout">Нет Тайм-Аута</string>
-    <string name="workoutTypeAdd">Добавь</string>
+    <string name="notimeout">Нет тайм-аута</string>
+    <string name="workoutTypeAdd">Добавить</string>
+    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g id="mins" example="12 minutes">%1$s</xliff:g> до старта </string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g id="mins" example="1 minute">%1$s</xliff:g> и <xliff:g id="secs" example="7 seconds">%2$s</xliff:g> до старта </string>
+    <string name="nfcStartTitle">Сканирование для запуска</string>
+    <string name="noAutoStartDelay">Нет</string>
+    <string name="overwriteMapConfirmation">Вы уверены что хотите перезаписать существующий файл карты %s\?</string>
+    <string name="pref_auto_start_mode_unknown">Неизвестный режим (пожалуйста, не выбирайте)</string>
+    <string name="nfcStartSummary">Если эта функция активирована, вы сможете запускать и останавливать тренировки, отсканировав тег NFC.</string>
+    <string name="manageAutoStartModeSummary">Изменить режим автоматического запуска тренировки</string>
+    <string name="popup_auto_start">С задержкой по умолчанию</string>
+    <string name="popup_auto_start_delay">С настраиваемой задержкой</string>
+    <string name="pref_auto_start_delay_title">Обратный отсчет автозапуска</string>
+    <string name="intervalAutoStartDelayTraining">Задержка автоматического запуска тренировок</string>
+    <string name="intervalAutoStartModeTraining">Режимы автоматического запуска тренировок</string>
+    <string name="pref_auto_start_mode_instant">Начинать немедленно</string>
+    <string name="popup_auto_start_immediately">Начинать немедленно</string>
+    <string name="pref_auto_start_mode_on_move">Дожидаться начала движения</string>
+    <string name="pref_auto_start_mode_wait_for_gps">Дожидаться определения точного GPS-положения</string>
+    <string name="customAutoStartDelay">Другое</string>
+    <string name="manageAutoStartDelaySummary">Выберите обратный отсчет времени по умолчанию для автоматического начала тренировки</string>
+    <string name="alreadyDownloading">Файл уже загружен</string>
+    <string name="recordingPermissionNotGrantedMessage">Для того, чтобы во время тренеровок была возможность отслеживать ваше движение, FitoTrack требуется предоставить разрешение на определение местоположения. Также приложение FitoTrack собирает данные о местоположении, записывает действия ваших тренировок в фоновом режиме или когда экран выключен. Данные о местоположении всегда остаются в вашем телефоне без вашего явного согласия на их передачу.</string>
+    <string name="workoutTypeAll">Все</string>
+    <string name="pref_auto_start_mode_title">Режим автозапуска</string>
+    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g id="secs" example="5 seconds">%1$s</xliff:g> до начала </string>
+    <plurals name="minutes">
+        <item quantity="one"><xliff:g id="mins" example="1">%1$d</xliff:g> минута</item>
+        <item quantity="few"><xliff:g id="mins" example="5">%1$d</xliff:g> минуты</item>
+        <item quantity="many"><xliff:g id="mins" example="5">%1$d</xliff:g> минут</item>
+        <item quantity="other"><xliff:g id="mins" example="5">%1$d</xliff:g> минут</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="one"><xliff:g id="secs" example="1">%1$d</xliff:g> секунда</item>
+        <item quantity="few"><xliff:g id="secs" example="12">%1$d</xliff:g> секунды</item>
+        <item quantity="many"><xliff:g id="secs" example="12">%1$d</xliff:g> секунд</item>
+        <item quantity="other"><xliff:g id="secs" example="12">%1$d</xliff:g> секунд</item>
+    </plurals>
+    <string name="scanFailed">Сканирование не удалось</string>
+    <string name="scanning">Сканирование…</string>
+    <string name="announcementCountdown">Действия при автоматическом запуске (обратный отсчет, состояние и т. д.)</string>
+    <string name="action_nfc_settings">Перейти к настройке NFC</string>
+    <string name="dialog_nfc_disabled">Чтобы использовать теги NFC для запуска и остановки тренировок, сначала вам необходимо включить NFC в настройках устройства.</string>
+    <string name="dialog_nfc_disabled_title">В настоящее время NFC отключен</string>
+    <string name="workoutAutoStartAborted">Автоматический запуск прерван</string>
+    <string name="abort">Отмена</string>
+    <string name="popup_auto_start_wait_for_gps">Когда местоположение GPS точное</string>
+    <string name="popup_auto_start_on_move">Когда я начинаю движение</string>
+    <string name="workoutAutoStarted">Автоматический запуск тренировки</string>
+    <string name="autoStartCountdownMsgMove">Как только вы начнете движение, тренировка будет запущена</string>
+    <string name="autoStartCountdownMsgGps">Как только положение GPS будет достаточно точным, ваша тренировка будет запущена</string>
+    <string name="autoStartCountdownMsg">Начало тренировки через</string>
+    <string name="downloading">Скачивание…</string>
+    <string name="chooseMapHint">Пожалуйста, выберите файл карты</string>
+    <string name="downloadCanceled">Скачивание отменено</string>
+    <string name="downloadFailed">Скачать не удалось</string>
+    <string name="downloadSuccess">Скачано</string>
+    <string name="cancelDownloadConfirmation">Вы хотите отменить текущее скачивание\?</string>
+    <string name="actionCancelDownload">Отменить скачивание</string>
+    <string name="downloadMapConfirmation">Вы хотите скачать файл карты %s\?</string>
+    <string name="actionDownloadMap">Скачать карту</string>
+    <string name="downloadMapsSpecifyDirectory">Пожалуйста, сначала укажите каталог для хранения автономных карт</string>
+    <string name="downloadMapsTitle">Скачать карты</string>
+    <string name="pref_map_file">Каталог для автономных карт</string>
+    <string name="actionImportMultiple">Импортировать несколько</string>
+    <string name="actionImport">Импортировать</string>
+    <string name="importWorkoutMultipleQuestion">Вы хотите импортировать один файл GPX или несколько\?</string>
+    <string name="recordingBackgroundPermissionNotGrantedMessage">Чтоб возможно было записывать ваши тренировки, FitoTrack собирает данные о местоположении в фоновом режиме или когда экран выключен. Пожалуйста, представьте разрешения приложению FitoTrack, чтобы доступ к вашему местоположению был всегда, это необходимо для правильной работы приложения.</string>
 </resources>
