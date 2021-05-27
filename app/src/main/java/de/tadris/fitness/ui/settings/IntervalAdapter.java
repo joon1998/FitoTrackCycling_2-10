@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -40,7 +40,7 @@ public class IntervalAdapter extends RecyclerView.Adapter<IntervalAdapter.Interv
         final View root;
         final TextView nameText;
         final TextView lengthText;
-        final View deleteButton;
+        final View deleteButton, editButton;
 
         IntervalViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -48,6 +48,7 @@ public class IntervalAdapter extends RecyclerView.Adapter<IntervalAdapter.Interv
             nameText = itemView.findViewById(R.id.intervalName);
             lengthText = itemView.findViewById(R.id.intervalLength);
             deleteButton = itemView.findViewById(R.id.intervalDelete);
+            editButton = itemView.findViewById(R.id.intervalEdit);
         }
     }
 
@@ -77,7 +78,9 @@ public class IntervalAdapter extends RecyclerView.Adapter<IntervalAdapter.Interv
 
         holder.nameText.setText(interval.name);
         holder.lengthText.setText(minutes + " " + context.getString(R.string.timeMinuteShort));
-        holder.deleteButton.setOnClickListener(v -> listener.onItemDelete(intervals.indexOf(interval), interval));
+        holder.deleteButton.setOnClickListener(v -> listener.onItemDelete(position, interval));
+        holder.editButton.setOnClickListener(v -> listener.showEditDialog(position, interval));
+        holder.root.setOnClickListener(v -> listener.showEditDialog(position, interval));
     }
 
     // Return the size of your dataset (invoked by the layout manager)
@@ -88,6 +91,7 @@ public class IntervalAdapter extends RecyclerView.Adapter<IntervalAdapter.Interv
 
     public interface IntervalAdapterListener {
         void onItemDelete(int pos, Interval interval);
+        void showEditDialog(int pos, Interval interval);
     }
 
 }

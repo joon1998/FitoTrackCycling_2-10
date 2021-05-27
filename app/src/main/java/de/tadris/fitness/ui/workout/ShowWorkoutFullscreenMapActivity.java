@@ -23,7 +23,7 @@ import android.os.Bundle;
 
 import de.tadris.fitness.R;
 
-public class ShowWorkoutMapActivity extends WorkoutActivity {
+public class ShowWorkoutFullscreenMapActivity extends ShowWorkoutColoredMapActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,10 @@ public class ShowWorkoutMapActivity extends WorkoutActivity {
         mapView.setClickable(true);
     }
 
+    @Override
+    protected boolean isDiagramActivity() {
+        return false;
+    }
 
     @Override
     protected void initRoot() {

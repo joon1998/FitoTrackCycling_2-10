@@ -40,10 +40,10 @@
     </string-array>
 
     <string-array name="pref_track_style_values">
-        <item>theme_alpha</item>
         <item>purple_rain</item>
         <item>pink_mist</item>
         <item>rainbow_warrior</item>
+        <item>height_map</item>
         <item>bright_night</item>
         <item>mondriaan</item>
     </string-array>
@@ -66,6 +66,18 @@
         <item>system</item>
         <item>12</item>
         <item>24</item>
+    </string-array>
+
+    <string-array name="pref_first_day_of_week_values">
+        <item>system</item> <!-- default .. use locales -->
+        <item>1</item> <!-- sunday -->
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+
     </string-array>
 
     <string-array name="pref_date_format_values">

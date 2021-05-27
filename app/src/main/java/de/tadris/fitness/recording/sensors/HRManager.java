@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -29,7 +29,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
 import de.tadris.fitness.recording.event.HeartRateChangeEvent;
@@ -56,16 +55,11 @@ public class HRManager extends BleManager {
 
     public void start() {
         if (isConnectionPossible()) {
-            Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
-            for (BluetoothDevice device : pairedDevices) {
-                String deviceHardwareAddress = device.getAddress();
-                if (deviceHardwareAddress.equals(getBluetoothAddress())) {
-                    connect(device)
-                            .useAutoConnect(true)
-                            .retry(3, 100)
-                            .enqueue();
-                }
-            }
+            BluetoothDevice device = bluetoothAdapter.getRemoteDevice(getBluetoothAddress());
+            connect(device)
+                    .useAutoConnect(true)
+                    .retry(3, 100)
+                    .enqueue();
         }
     }
 

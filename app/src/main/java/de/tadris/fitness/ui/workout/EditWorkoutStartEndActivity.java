@@ -86,7 +86,7 @@ public class EditWorkoutStartEndActivity extends ShowWorkoutMapDiagramActivity {
         if (item.getItemId() == R.id.actionMoveStartHere) {
             if (selectedSample != null) {
                 if (selectedEndSample != null && selectedSample.relativeTime > selectedEndSample.relativeTime) {
-                    // do not allow to place behind the end marker
+                    // do not allow to place the start sample behind the end marker
 
                 } else {
                     selectedStartSample = selectedSample;
@@ -97,7 +97,7 @@ public class EditWorkoutStartEndActivity extends ShowWorkoutMapDiagramActivity {
         if (item.getItemId() == R.id.actionMoveEndHere) {
             if (selectedSample != null){
                 if (selectedStartSample != null && selectedSample.relativeTime < selectedStartSample.relativeTime){
-                    // do not allow to place before the start marker
+                    // do not allow to place the and market before the start marker(in time)
                 } else {
                     selectedEndSample = selectedSample;
                 }
@@ -134,9 +134,10 @@ public class EditWorkoutStartEndActivity extends ShowWorkoutMapDiagramActivity {
         }
         //Draw new track
         if (selectedStartSample != null || selectedEndSample != null) {
-            mapView.getLayerManager().getLayers().remove(workoutLayer);
+            workoutLayer.setColoringStrategy(workout, new SimpleColoringStrategy(Color.GRAY));
             newWorkoutLayer = new WorkoutLayer(newWorkoutSamples, new SimpleColoringStrategy(getThemePrimaryColor()), null);
             mapView.addLayer(newWorkoutLayer);
+
         }
         //Draw "new" start
         if (selectedStartSample != null) {

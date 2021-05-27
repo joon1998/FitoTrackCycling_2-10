@@ -67,7 +67,7 @@
         <activity android:name=".ui.settings.FitoTrackSettingsActivity" />
         <activity android:name=".ui.workout.EnterWorkoutActivity" />
         <activity
-            android:name=".ui.workout.ShowWorkoutMapActivity"
+            android:name=".ui.workout.ShowWorkoutFullscreenMapActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.workout.ShowWorkoutMapDiagramActivity" />
         <activity

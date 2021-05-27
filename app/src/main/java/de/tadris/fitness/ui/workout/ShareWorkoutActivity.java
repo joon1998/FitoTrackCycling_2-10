@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -47,7 +47,7 @@ import de.tadris.fitness.BuildConfig;
 import de.tadris.fitness.R;
 import de.tadris.fitness.util.DataManager;
 
-public class ShareWorkoutActivity extends WorkoutActivity {
+public class ShareWorkoutActivity extends ShowWorkoutColoredMapActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +68,11 @@ public class ShareWorkoutActivity extends WorkoutActivity {
 
         mapView.setClickable(true);
 
+    }
+
+    @Override
+    protected boolean isDiagramActivity() {
+        return false;
     }
 
     @Override

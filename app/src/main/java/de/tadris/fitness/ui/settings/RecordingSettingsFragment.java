@@ -25,7 +25,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.NumberPicker;
 import android.widget.Switch;
-import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -74,13 +73,11 @@ public class RecordingSettingsFragment
             });
         }
 
-        findPreference("speech").setVisible(false);
-        findPreference("intervals").setVisible(false);
-
+        disableSpeechConfig();
         checkTTS(this::showSpeechConfig);
 
         findPreference("intervals").setOnPreferenceClickListener(preference -> {
-            checkTTS(this::showIntervalSetManagement);
+            showIntervalSetManagement();
             return true;
         });
 
@@ -113,23 +110,31 @@ public class RecordingSettingsFragment
         EventBus.getDefault().register(new Object() {
             @Subscribe(threadMode = ThreadMode.MAIN)
             public void onTTSReady(TTSReadyEvent e) {
-                if (e.ttsAvailable) {
-                    onTTSAvailable.run();
-                } else {
-                    // TextToSpeech is not available
-                    Toast.makeText(requireContext(), R.string.ttsNotAvailable, Toast.LENGTH_LONG).show();
+                if (getContext() != null) {
+                    if (e.ttsAvailable) {
+                        onTTSAvailable.run();
+                    }
+                    if (TTSController != null) {
+                        TTSController.destroy();
+                    }
+                    EventBus.getDefault().unregister(this);
                 }
-                if (TTSController != null) {
-                    TTSController.destroy();
-                }
-                EventBus.getDefault().unregister(this);
             }
         });
     }
 
     private void showSpeechConfig() {
-        findPreference("speech").setVisible(true);
-        findPreference("intervals").setVisible(true);
+        findPreference("speech").setEnabled(true);
+        findPreference("intervals").setEnabled(true);
+        findPreference("speech").setSummary(R.string.pref_voice_announcements_summary);
+        findPreference("intervals").setSummary(R.string.manageIntervalsSummary);
+    }
+
+    private void disableSpeechConfig() {
+        findPreference("speech").setEnabled(false);
+        findPreference("intervals").setEnabled(false);
+        findPreference("speech").setSummary(R.string.ttsNotAvailable);
+        findPreference("intervals").setSummary(R.string.ttsNotAvailable);
     }
 
     private void showIntervalSetManagement() {

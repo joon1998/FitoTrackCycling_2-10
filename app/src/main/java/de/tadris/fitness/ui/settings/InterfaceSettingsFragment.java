@@ -51,6 +51,7 @@ public class InterfaceSettingsFragment extends FitoTrackSettingFragment {
         bindPreferenceSummaryToValue(findPreference("themeSetting"));
         bindPreferenceSummaryToValue(findPreference("dateFormat"));
         bindPreferenceSummaryToValue(findPreference("timeFormat"));
+        bindPreferenceSummaryToValue(findPreference("firstDayOfWeek"));
         bindPreferenceSummaryToValue(findPreference("energyUnit"));
         findPreference("themeSetting").setOnPreferenceChangeListener((preference, newValue) -> {
             sBindPreferenceSummaryToValueListener.onPreferenceChange(preference, newValue);

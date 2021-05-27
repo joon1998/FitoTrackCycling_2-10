@@ -41,7 +41,7 @@ public enum AggregationSpan {
         @Override
         public void applyToCalendar(Calendar calendar) {
             super.applyToCalendar(calendar);
-            calendar.set(Calendar.DAY_OF_WEEK, 1);
+            calendar.set(Calendar.DAY_OF_WEEK, calendar.getFirstDayOfWeek());
         }
     },
     MONTH(R.string.month, R.string.month, TimeUnit.DAYS.toMillis(30), "MMM") {

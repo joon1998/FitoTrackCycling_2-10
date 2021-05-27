@@ -17,13 +17,29 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.tadris.fitness.map;
+package de.tadris.fitness.data.migration;
 
-import de.tadris.fitness.data.WorkoutSample;
+import android.content.Context;
+import android.util.Log;
 
-public interface MapSampleSelectionListener {
-    /**
-     * @param sample The sample changed or @null if the selection was removed
-     */
-    void onMapSelectionChanged(WorkoutSample sample);
+public abstract class Migration {
+
+    protected final Context context;
+    protected final MigrationListener listener;
+
+    public Migration(Context context, MigrationListener listener) {
+        this.context = context;
+        this.listener = listener;
+    }
+
+    public abstract void migrate();
+
+    public interface MigrationListener {
+
+        void onProgressUpdate(int progress);
+
+    }
+
+    public static final MigrationListener DUMMY_LISTENER = progress -> Log.d("Migration", "Progress: " + progress);
+
 }

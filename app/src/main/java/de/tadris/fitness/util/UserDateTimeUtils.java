@@ -20,8 +20,10 @@
 package de.tadris.fitness.util;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
+import de.tadris.fitness.Instance;
 import de.tadris.fitness.data.UserPreferences;
 
 public class UserDateTimeUtils {
@@ -63,4 +65,12 @@ public class UserDateTimeUtils {
         return simpleDateFormat.format(date);
     }
 
+    /**
+     * Get a calendar instance possibly overriding the default java locales
+     */
+    public Calendar getCalendarInstance(){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setFirstDayOfWeek(preferences.getFirstDayOfWeek());
+        return calendar;
+    }
 }

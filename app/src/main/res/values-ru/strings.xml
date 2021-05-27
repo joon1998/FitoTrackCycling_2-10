@@ -382,4 +382,15 @@
     <string name="actionImport">Импортировать</string>
     <string name="importWorkoutMultipleQuestion">Вы хотите импортировать один файл GPX или несколько\?</string>
     <string name="recordingBackgroundPermissionNotGrantedMessage">Чтоб возможно было записывать ваши тренировки, FitoTrack собирает данные о местоположении в фоновом режиме или когда экран выключен. Пожалуйста, представьте разрешения приложению FitoTrack, чтобы доступ к вашему местоположению был всегда, это необходимо для правильной работы приложения.</string>
+    <string name="invalidNumberFormat">Неверный формат числа.</string>
+    <string name="auto">Автоматически</string>
+    <string name="pref_announcements_pace_control_summary">Предупреждать, когда скорость ниже или выше указанной</string>
+    <string name="noColoring">Не окрашивать</string>
+    <string name="editStartEndHelp">Выберите положение на карте или диаграмме. Затем щелкните одну из стрелок, чтобы выбрать новую начальную или конечную точку. Когда вы закончите, щелкните значок сохранения, чтобы применить изменения.</string>
+    <string name="launchError">Не удалось запустить приложение</string>
+    <string name="actionApply">Принять</string>
+    <string name="preferencesCategoryMap">Карта</string>
+    <string name="trackStyle">Стиль трека</string>
+    <string name="workoutMaxHeight">Макс. высота</string>
+    <string name="workoutMinHeight">Мин. высота</string>
 </resources>

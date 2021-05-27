@@ -141,7 +141,7 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
     protected WorkoutSample selectedSample = null;
 
     @Override
-    public void onSelectionChanged(WorkoutSample sample) {
+    public void onMapSelectionChanged(WorkoutSample sample) {
         //nada onChartSelectionChanged(sample)
     }
 
@@ -263,7 +263,7 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
         if (showIntervalSets && intervals != null && intervals.length > 0) {
             List<BarEntry> barEntries = new ArrayList<>();
 
-            for (long relativeTime : WorkoutCalculator.getIntervalSetTimesFromWorkout(getWorkoutData(), intervals)) {
+            for (long relativeTime : WorkoutCalculator.getIntervalSetTimesFromWorkout(getWorkoutData())) {
                 barEntries.add(new BarEntry((float) (relativeTime) / 1000f / 60f, yMax));
             }
 
@@ -297,7 +297,6 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
     boolean fullScreenItems = false;
     LinearLayout mapRoot;
 
-    static int myCounter =1;
     void addMap(){
         mapView = MapManager.setupMap(this);
         String trackStyle = Instance.getInstance(this).userPreferences.getTrackStyle();
@@ -310,11 +309,6 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
         // value and whether to blend or not. In the future it would be nice to have a nice editor
         // in the settings to tweak the numbers here and possibly create good looking colors.
         switch (trackStyle) {
-            case "theme_alpha":
-                /* use theme color but with alpha */
-                int[] c1 = {(getThemePrimaryColor() & 0xffffff) ^ 0x55000000, getThemePrimaryColor()};
-                coloringStrategy = new GradientColoringStrategy(c1, true);
-                break;
             case "purple_rain":
                 /* a nice set of colors generated from colorbrewer */
                 coloringStrategy = GradientColoringStrategy.fromPattern(GradientColoringStrategy.PATTERN_PURPLE, true);
@@ -326,6 +320,10 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
             case "rainbow_warrior":
                 /* Attempt to use different colors, this would be best suited for a fixed scale e.g. green is target value , red is to fast , yellow it to slow */
                 coloringStrategy = GradientColoringStrategy.fromPattern(GradientColoringStrategy.PATTERN_MAP, true);
+                break;
+            case "height_map":
+                /* based on height map colors from green till almost black*/
+                coloringStrategy = GradientColoringStrategy.fromPattern(GradientColoringStrategy.PATTERN_HEIGHT_MAP, true);
                 break;
             case "bright_night":
                 coloringStrategy = GradientColoringStrategy.fromPattern(GradientColoringStrategy.PATTERN_BRIGHT, false);

@@ -25,13 +25,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import de.tadris.fitness.BuildConfig;
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
+import de.tadris.fitness.data.UserPreferences;
+import de.tadris.fitness.data.migration.Migration;
+import de.tadris.fitness.data.migration.Migration12IntervalSets;
 import de.tadris.fitness.map.MapManager;
 import de.tadris.fitness.recording.WorkoutRecorder;
+import de.tadris.fitness.ui.dialog.ProgressDialogController;
 import de.tadris.fitness.ui.record.RecordWorkoutActivity;
 
-public class LauncherActivity extends Activity {
+public class LauncherActivity extends Activity implements Migration.MigrationListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +49,7 @@ public class LauncherActivity extends Activity {
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         new Handler().postDelayed(this::init, 100);
     }
@@ -50,8 +58,13 @@ public class LauncherActivity extends Activity {
         try {
             Instance.getInstance(this); // Initially load instance class
             Instance.getInstance(this).themes.updateDarkModeSetting();
-            MapManager.initMapProvider(this);
-            start();
+            if (Instance.getInstance(this).userPreferences.getLastVersionCode() < BuildConfig.VERSION_CODE) {
+                runMigrations();
+            } else {
+                Instance.getInstance(this).userPreferences.updateLastVersionCode();
+                MapManager.initMapProvider(this);
+                start();
+            }
         } catch (Exception e) {
             e.printStackTrace();
             new AlertDialog.Builder(this)
@@ -61,6 +74,33 @@ public class LauncherActivity extends Activity {
                     .setOnDismissListener(dialog -> finish())
                     .show();
         }
+    }
+
+    ProgressDialogController progressDialog;
+
+    private void runMigrations() {
+        UserPreferences preferences = Instance.getInstance(this).userPreferences;
+        List<Migration> migrations = new ArrayList<>();
+        if (preferences.getLastVersionCode() < 1200) {
+            migrations.add(new Migration12IntervalSets(this, this));
+        }
+        progressDialog = new ProgressDialogController(this, getString(R.string.runningMigrations));
+        progressDialog.show();
+        new Thread(() -> {
+            for (Migration migration : migrations) {
+                migration.migrate();
+            }
+            preferences.updateLastVersionCode();
+            runOnUiThread(() -> {
+                progressDialog.cancel();
+                init();
+            });
+        }).start();
+    }
+
+    @Override
+    public void onProgressUpdate(int progress) {
+        runOnUiThread(() -> progressDialog.setProgress(progress));
     }
 
     private void start() {

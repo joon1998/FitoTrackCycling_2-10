@@ -27,6 +27,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import de.tadris.fitness.Instance;
 import de.tadris.fitness.data.Workout;
 
 public class AggregatedWorkoutData {
@@ -83,6 +84,13 @@ public class AggregatedWorkoutData {
 
     private long getDataPointDateFromWorkout(Workout workout) {
         Calendar calendar = Calendar.getInstance();
+
+        // attempt to get the Instance an use the app preferences
+        Instance i = Instance.getInstance(null);
+        if (i != null) {
+            calendar = i.userDateTimeUtils.getCalendarInstance();
+        }
+
         calendar.setTimeInMillis(workout.start);
         span.applyToCalendar(calendar);
         return calendar.getTimeInMillis();

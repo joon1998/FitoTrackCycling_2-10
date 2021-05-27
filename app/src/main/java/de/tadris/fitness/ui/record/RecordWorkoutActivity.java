@@ -297,6 +297,7 @@ public class RecordWorkoutActivity extends FitoTrackActivity implements SelectIn
         if (wasAlreadyRunning) {
             if (instance.recorder.getState() != WorkoutRecorder.RecordingState.IDLE) {
                 recordStartButtonsRoot.setVisibility(View.INVISIBLE);
+                timeView.setVisibility(View.VISIBLE);
                 invalidateOptionsMenu();
             }
 

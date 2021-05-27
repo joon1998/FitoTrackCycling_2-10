@@ -50,6 +50,9 @@ public interface IntervalDao {
     void insertInterval(Interval interval);
 
     @Update
+    void updateInterval(Interval interval);
+
+    @Update
     void updateIntervalSet(IntervalSet set);
 
     @Delete

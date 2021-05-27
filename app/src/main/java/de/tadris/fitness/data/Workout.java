@@ -107,9 +107,6 @@ public class Workout{
     @ColumnInfo(name = "interval_set_used_id")
     public long intervalSetUsedId = 0;
 
-    @ColumnInfo(name = "interval_set_include_pauses")
-    public boolean intervalSetIncludesPauses;
-
     @ColumnInfo(name = "avg_heart_rate")
     public int avgHeartRate = -1;
 

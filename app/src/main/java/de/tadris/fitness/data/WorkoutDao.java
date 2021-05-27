@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -81,4 +81,7 @@ public interface WorkoutDao {
 
     @Update
     void updateSamples(WorkoutSample[] samples);
+
+    @Update
+    void updateSample(WorkoutSample sample);
 }

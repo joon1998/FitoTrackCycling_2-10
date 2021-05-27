@@ -36,7 +36,7 @@ import de.tadris.fitness.data.IntervalSet;
 
 public class BackupController {
 
-    static final int VERSION = 2;
+    static final int VERSION = 3;
 
     private final Context context;
     private final File output;

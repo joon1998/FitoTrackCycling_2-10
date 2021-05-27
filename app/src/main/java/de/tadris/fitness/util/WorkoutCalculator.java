@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -24,8 +24,6 @@ import org.mapsforge.core.model.LatLong;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.tadris.fitness.data.Interval;
-import de.tadris.fitness.data.Workout;
 import de.tadris.fitness.data.WorkoutData;
 import de.tadris.fitness.data.WorkoutSample;
 
@@ -80,39 +78,16 @@ public class WorkoutCalculator {
 
     }
 
-    public static List<Long> getIntervalSetTimesFromWorkout(WorkoutData data, Interval[] intervals) {
+    /**
+     * Returns a list of relative times when intervals were triggered
+     */
+    public static List<Long> getIntervalSetTimesFromWorkout(WorkoutData data) {
         List<Long> result = new ArrayList<>();
-        Workout workout = data.getWorkout();
         List<WorkoutSample> samples = data.getSamples();
 
-        int index = 0;
-        long time = 0;
-        if (workout.intervalSetIncludesPauses) {
-            long lastTime = samples.get(0).absoluteTime;
-            for (WorkoutSample sample : samples) {
-                if (index >= intervals.length) {
-                    index = 0;
-                }
-                Interval currentInterval = intervals[index];
-                time += sample.absoluteTime - lastTime;
-                if (time > currentInterval.delayMillis) {
-                    time = 0;
-                    index++;
-                    result.add(sample.relativeTime);
-                }
-                lastTime = sample.absoluteTime;
-            }
-        } else {
-            while (time < workout.duration) {
-                if (index >= intervals.length) {
-                    index = 0;
-                }
-                Interval interval = intervals[index];
-
-                result.add(time);
-
-                time += interval.delayMillis;
-                index++;
+        for (WorkoutSample sample : samples) {
+            if (sample.intervalTriggered > 0) {
+                result.add(sample.relativeTime);
             }
         }
         return result;

@@ -96,6 +96,14 @@
             android:title="@string/preferenceTimeFormat" />
 
         <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="system"
+            android:entries="@array/pref_first_day_of_week"
+            android:entryValues="@array/pref_first_day_of_week_values"
+            android:key="firstDayOfWeek"
+            android:title="@string/preferenceFirstDayOfWeek" />
+        <ListPreference
             android:defaultValue="kcal"
             android:entries="@array/pref_energy_units"
             android:entryValues="@array/pref_energy_unit_values"

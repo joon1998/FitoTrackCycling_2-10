@@ -16,9 +16,7 @@
   ~
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  --><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">FitoTrack</string>
     <string name="backup">Sichern</string>
     <string name="cancel">Abbrechen</string>
@@ -175,7 +173,8 @@
     <string name="start">Starten</string>
     <string name="cannotStart">Starten unmöglich</string>
     <string name="add">Hinzufügen</string>
-    <string name="add_interval">Interval Hinzufügen</string>
+    <string name="add_interval">Interval hinzufügen</string>
+    <string name="edit_interval">Interval bearbeiten</string>
     <string name="manageIntervalSets">Intervallsätze bearbeiten</string>
     <string name="manageIntervalsSummary">Bearbeite die Intervalsätze, die du dann während des Workouts über Sprachansagen nutzen kannst.</string>
     <string name="workoutRecording">Workout-Aufzeichnung</string>
@@ -466,4 +465,5 @@
     <string name="selectColoring">Färbung auswählen</string>
     <string name="auto">Auto</string>
     <string name="noColoring">Keine Färbung</string>
+    <string name="launchError">Starten der App fehlgeschlagen</string>
 </resources>

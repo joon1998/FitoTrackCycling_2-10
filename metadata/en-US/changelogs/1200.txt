@@ -1,0 +1,8 @@
+- Scan for non-paired Bluetooth devices
+- Cut workouts
+- Track coloring
+- Option to calculate speed over time
+- Pacekeeper that informs you running too slow/too fast
+- Edit intervals thanks
+
+please see the project repository on Codeberg for a more detailed list of changes

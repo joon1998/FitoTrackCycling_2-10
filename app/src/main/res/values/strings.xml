@@ -164,6 +164,7 @@
     <string name="cannotStart">Cannot start</string>
     <string name="add">Add</string>
     <string name="add_interval">Add Interval</string>
+    <string name="edit_interval">Edit Interval</string>
     <string name="manageIntervalSets">Manage Interval Sets</string>
     <string name="manageIntervalsSummary">Edit the interval sets you will be able to use during the workout using voice feedback.</string>
     <string name="workoutRecording">Workout Recording</string>
@@ -203,6 +204,7 @@
     <string name="preferenceCurrentSpeedAverageTimeSummary">Replace the current speed calculation by an average calculation.</string>
     <string name="preferenceCurrentSpeedAverageTimeTitle">Current Speed by Average</string>
     <string name="preferenceUseAverageForCurrentSpeed">Use the average speed over a certain time instead of the last single speed record for the current speed calculation.</string>
+    <string name="preferenceFirstDayOfWeek">Start of the week</string>
     <string name="workoutDiscarded">Workout discarded</string>
     <string name="timeSecondsSingular">Second</string>
     <string name="timeSecondsPlural">Seconds</string>
@@ -446,12 +448,12 @@
         <item>Never</item>
     </string-array>
     <string-array name="pref_track_style">
-        <item>Theme color(Alpha)</item>
         <item>Purple Rain</item>
         <item>Pink Mist</item>
         <item>Rainbow Warrior</item>
+        <item>Height Map</item>
         <item>Bright Night</item>
-        <item>Mondriaan (Average speed)</item>
+        <item>Mondriaan</item>
     </string-array>
     <string-array name="pref_theme_setting">
         <item>System</item>
@@ -479,5 +481,15 @@
         <item>24.07.2001</item>
         <item>24/07/2001</item>
         <item>07/24/2001</item>
+    </string-array>
+    <string-array name="pref_first_day_of_week">
+        <item>System Default</item>
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
     </string-array>
 </resources>

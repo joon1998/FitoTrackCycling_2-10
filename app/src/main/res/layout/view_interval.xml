@@ -53,12 +53,22 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/intervalEdit"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_edit"
+            android:layout_marginRight="10dp"
+            app:tint="?android:textColorSecondary" />
+
+        <ImageView
             android:id="@+id/intervalDelete"
             android:layout_width="25dp"
             android:layout_height="match_parent"
             android:background="?android:selectableItemBackgroundBorderless"
             android:src="@drawable/ic_delete"
-            app:tint="@android:color/holo_red_light" />
+            app:tint="@android:color/holo_red_light"
+            android:contentDescription="@string/delete" />
 
     </LinearLayout>
 

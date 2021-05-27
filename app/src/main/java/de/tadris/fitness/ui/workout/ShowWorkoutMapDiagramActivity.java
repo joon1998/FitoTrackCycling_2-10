@@ -20,9 +20,6 @@
 package de.tadris.fitness.ui.workout;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.SubMenu;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -31,21 +28,15 @@ import com.github.mikephil.charting.charts.CombinedChart;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.highlight.Highlight;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
-import de.tadris.fitness.data.UserPreferences;
 import de.tadris.fitness.data.WorkoutSample;
 import de.tadris.fitness.ui.dialog.SampleConverterPickerDialog;
-import de.tadris.fitness.ui.workout.diagram.ConverterManager;
 import de.tadris.fitness.ui.workout.diagram.HeartRateConverter;
 import de.tadris.fitness.ui.workout.diagram.HeightConverter;
 import de.tadris.fitness.ui.workout.diagram.SampleConverter;
 import de.tadris.fitness.ui.workout.diagram.SpeedConverter;
 
-public class ShowWorkoutMapDiagramActivity extends WorkoutActivity {
+public class ShowWorkoutMapDiagramActivity extends ShowWorkoutColoredMapActivity {
 
     public static final String DIAGRAM_TYPE_EXTRA = "de.tadris.fitness.ShowWorkoutMapDiagramActivity.DIAGRAM_TYPE";
 
@@ -53,28 +44,14 @@ public class ShowWorkoutMapDiagramActivity extends WorkoutActivity {
     public static final String DIAGRAM_TYPE_SPEED = "speed";
     public static final String DIAGRAM_TYPE_HEART_RATE = "heartrate";
 
-    private ConverterManager converterManager;
-
     private CombinedChart chart;
     private TextView selection;
     private CheckBox showIntervals;
-
-    private MenuItem autoColoring, noColoring;
-    private Map<MenuItem, SampleConverter> converterMenu = new HashMap<>();
-
-    private static final int COLORING_PROPERTY_AUTO = 0;
-    private static final int COLORING_PROPERTY_NONE = 1;
-    private static final int COLORING_PROPERTY_CUSTOM = 2;
-
-    private SampleConverter coloringConverter;
-    private int coloringPropertyMode = COLORING_PROPERTY_AUTO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initBeforeContent();
-
-        converterManager = new ConverterManager(this, getWorkoutData());
 
         setContentView(R.layout.activity_show_workout_map_diagram);
         initRoot();
@@ -98,18 +75,16 @@ public class ShowWorkoutMapDiagramActivity extends WorkoutActivity {
         showIntervals.setOnCheckedChangeListener((buttonView, isChecked) -> updateChart());
         showIntervals.setVisibility(intervals != null && intervals.length > 0 ? View.VISIBLE : View.GONE);
 
-        String coloringMode = Instance.getInstance(this).userPreferences.getTrackStyleMode();
-        if (coloringMode.equals(UserPreferences.STYLE_USAGE_ALWAYS) || coloringMode.equals(UserPreferences.STYLE_USAGE_DIAGRAM)) {
-            coloringPropertyMode = COLORING_PROPERTY_AUTO;
-        } else {
-            coloringPropertyMode = COLORING_PROPERTY_NONE;
-        }
-
         refreshColoring();
     }
 
     @Override
-    public void onSelectionChanged(WorkoutSample sample) {
+    protected boolean isDiagramActivity() {
+        return true;
+    }
+
+    @Override
+    public void onMapSelectionChanged(WorkoutSample sample) {
 
         if (sample == null) {
             chart.highlightValue(null);
@@ -118,7 +93,7 @@ public class ShowWorkoutMapDiagramActivity extends WorkoutActivity {
             Highlight h = new Highlight((float) dataIndex, 0, -1);
             h.setDataIndex(0);
             chart.highlightValue(h);
-            chart.centerViewTo(dataIndex,0, YAxis.AxisDependency.LEFT);
+            chart.centerViewTo(dataIndex, 0, YAxis.AxisDependency.LEFT);
         }
         onChartSelectionChanged(sample);
     }
@@ -158,55 +133,6 @@ public class ShowWorkoutMapDiagramActivity extends WorkoutActivity {
         }
         selection.setText(converterManager.selectedConverters.size() > 0 ? sb.toString() : getString(R.string.nothingSelected));
         refreshColoring();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.workout_map_menu, menu);
-
-        SubMenu coloringMenu = menu.findItem(R.id.actionSelectColoring).getSubMenu();
-
-        autoColoring = coloringMenu.add(R.string.auto);
-        noColoring = coloringMenu.add(R.string.noColoring);
-        for (int i = 0; i < converterManager.availableConverters.size(); i++) {
-            SampleConverter converter = converterManager.availableConverters.get(i);
-            MenuItem item = coloringMenu.add(R.id.actionSelectColoring, Menu.NONE, i, converter.getName());
-            converterMenu.put(item, converter);
-        }
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item == autoColoring) {
-            coloringPropertyMode = COLORING_PROPERTY_AUTO;
-            refreshColoring();
-            return true;
-        } else if (item == noColoring) {
-            coloringPropertyMode = COLORING_PROPERTY_NONE;
-            refreshColoring();
-            return true;
-        } else if (converterMenu.containsKey(item)) {
-            coloringPropertyMode = COLORING_PROPERTY_CUSTOM;
-            coloringConverter = converterMenu.get(item);
-            refreshColoring();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void refreshColoring() {
-        SampleConverter converter = null;
-        if (coloringPropertyMode == COLORING_PROPERTY_AUTO) {
-            converter = converterManager.selectedConverters.get(0);
-        } else if (coloringPropertyMode == COLORING_PROPERTY_CUSTOM) {
-            converter = coloringConverter;
-        }
-        if (converter != null) {
-            converter.onCreate(getWorkoutData());
-        }
-        workoutLayer.setSampleConverter(workout, converter);
     }
 
     @Override

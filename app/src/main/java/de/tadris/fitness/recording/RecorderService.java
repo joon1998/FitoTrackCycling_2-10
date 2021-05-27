@@ -328,7 +328,7 @@ public class RecorderService extends Service {
         hrManager.stop();
         heartRateListener.publishState(HeartRateConnectionState.DISCONNECTED);
 
-        if (wakeLock.isHeld()) {
+        if (wakeLock != null && wakeLock.isHeld()) {
             wakeLock.release();
         }
 

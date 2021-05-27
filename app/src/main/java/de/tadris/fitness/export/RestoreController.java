@@ -35,6 +35,8 @@ import de.tadris.fitness.data.IntervalSet;
 import de.tadris.fitness.data.Workout;
 import de.tadris.fitness.data.WorkoutSample;
 import de.tadris.fitness.data.WorkoutType;
+import de.tadris.fitness.data.migration.Migration;
+import de.tadris.fitness.data.migration.Migration12IntervalSets;
 
 public class RestoreController {
 
@@ -170,6 +172,12 @@ public class RestoreController {
                 workout.minElevationMSL = minHeight;
                 workout.maxElevationMSL = maxHeight;
                 database.workoutDao().updateWorkout(workout);
+            }
+        }
+        if (dataContainer.getVersion() <= 2) {
+            Migration12IntervalSets migration = new Migration12IntervalSets(context, Migration.DUMMY_LISTENER);
+            for (Workout workout : dataContainer.getWorkouts()) {
+                migration.migrateWorkout(workout);
             }
         }
     }

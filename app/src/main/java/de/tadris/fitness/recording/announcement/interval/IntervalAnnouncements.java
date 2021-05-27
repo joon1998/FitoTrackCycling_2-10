@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -70,7 +70,8 @@ public class IntervalAnnouncements {
         }
         Interval interval= intervals.get(index);
         speak(interval);
-        speakNextAt+= interval.delayMillis;
+        recorder.onIntervalWasTriggered(interval);
+        speakNextAt += interval.delayMillis;
     }
 
     private void speak(Interval interval){

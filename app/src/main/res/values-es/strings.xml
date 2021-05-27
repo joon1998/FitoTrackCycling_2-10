@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
   ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
   ~
@@ -417,4 +416,24 @@
     <string name="recordingBackgroundPermissionNotGrantedMessage">FitoTrack también recopila datos de ubicación en segundo plano para registrar el entrenamiento cuando la pantalla está apagada. Por lo tanto, permita que FitoTrack tenga acceso a su ubicación todo el tiempo.</string>
     <string name="recordingPermissionNotGrantedMessage">FitoTrack necesita permiso de ubicación para rastrear su movimiento durante su entrenamiento. FitoTrack también recopila datos de ubicación mientras la aplicación está en segundo plano o la pantalla está apagada para registrar sus entrenamientos. Los datos de ubicación siempre permanecen en su teléfono sin su claro consentimiento para compartirlos.</string>
     <string name="workoutTypeAll">Todos</string>
+    <string name="invalidNumberFormat">Formato de número inválido.</string>
+    <string name="pref_announcements_pace_control_title">Advertencias de control de ritmo</string>
+    <string name="pref_announcements_pace_control_summary">Advertir cuando se está por debajo o por encima de una velocidad especificada</string>
+    <string name="ttsAboveTargetSpeed">Demasiado rápido</string>
+    <string name="ttsBelowTargetSpeed">Demasiado lento</string>
+    <string name="lowerPaceLimit">Límite inferior de ritmo</string>
+    <string name="upperPaceLimit">Límite superior de ritmo</string>
+    <string name="editStartEndHelp">Seleccione una posición en el mapa o el diagrama. Luego haga clic en una de las flechas para seleccionar un nuevo punto inicial o final. Cuando haya terminado, haga clic en el icono de guardar para aplicar los cambios.</string>
+    <string name="launchError">No se pudo lanzar la aplicación</string>
+    <string name="actionApply">Aplicar</string>
+    <string name="moveEndOfWorkout">Cortar el final</string>
+    <string name="moveStartOfWorkout">Cortar el inicio</string>
+    <string name="editWorkoutStartEnd">Editar el inicio/fin</string>
+    <string name="preferenceUseAverageForCurrentSpeed">Utilizar la velocidad media durante un tiempo determinado en lugar del último registro de velocidad para el cálculo de la velocidad actual.</string>
+    <string name="preferenceCurrentSpeedAverageTimeTitle">Velocidad actual por promedios</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">Reemplazar el cálculo de velocidad actual por un cálculo promedio.</string>
+    <string name="preferenceCurrentSpeedTime">Intervalo de tiempo para el cálculo del promedio</string>
+    <string name="preferencesCategoryMap">Mapa</string>
+    <string name="workoutMaxHeight">Altura máxima</string>
+    <string name="workoutMinHeight">Altura mínima</string>
 </resources>

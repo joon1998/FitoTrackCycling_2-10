@@ -258,8 +258,8 @@ public class WorkoutSaver {
             for (int i = 1; i < samples.size(); i++) {
                 WorkoutSample sample = samples.get(i);
 
-                workout.minElevationMSL = Math.min(workout.minElevationMSL, (float) firstSample.elevationMSL);
-                workout.maxElevationMSL = Math.max(workout.maxElevationMSL, (float) firstSample.elevationMSL);
+                workout.minElevationMSL = Math.min(workout.minElevationMSL, (float) sample.elevationMSL);
+                workout.maxElevationMSL = Math.max(workout.maxElevationMSL, (float) sample.elevationMSL);
 
                 double diff = sample.elevation - prevSample.elevation;
                 if (Double.isNaN(diff)) {

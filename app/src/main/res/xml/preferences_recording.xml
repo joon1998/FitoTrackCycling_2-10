@@ -67,12 +67,10 @@
         <Preference
             android:key="speech"
             app:fragment="de.tadris.fitness.ui.settings.VoiceAnnouncementsSettingsFragment"
-            android:summary="@string/pref_voice_announcements_summary"
             android:title="@string/voiceAnnouncementsTitle" />
 
         <Preference
             android:key="intervals"
-            android:summary="@string/manageIntervalsSummary"
             android:title="@string/intervalTraining" />
 
         <SwitchPreference

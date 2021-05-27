@@ -23,6 +23,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import java.util.Calendar;
+
+import de.tadris.fitness.BuildConfig;
 import de.tadris.fitness.model.AutoStartWorkout;
 
 public class UserPreferences {
@@ -31,6 +34,7 @@ public class UserPreferences {
     private static final String AUTO_START_MODE_VARIABLE = "autoStartMode";
     private static final String AUTO_TIMEOUT_VARIABLE = "autoTimeoutPeriod";
     private static final String USE_AUTO_PAUSE_VARIABLE = "autoPause";
+    private static final String FIRST_DAY_OF_WEEK_VARIABLE = "firstDayOfWeek";
     private static final String ANNOUNCE_SUPPRESS_DURING_CALL_VARIABLE = "announcementSuppressDuringCall";
     private static final String ANNOUNCE_AUTO_START_COUNTDOWN = "announcement_countdown";
     private static final String USE_AVERAGE_FOR_CURRENT_SPEED = "useAverageForCurrentSpeed";
@@ -175,6 +179,19 @@ public class UserPreferences {
 
     public String getTimeFormatSetting() {
         return preferences.getString("timeFormat", "system");
+    }
+
+    public int getFirstDayOfWeek() {
+
+        if ( ! preferences.getString(FIRST_DAY_OF_WEEK_VARIABLE, "system").equals("system")){
+            try {
+                return Integer.parseInt(preferences.getString(FIRST_DAY_OF_WEEK_VARIABLE,"0"));
+            } catch (NumberFormatException nfe){
+
+            }
+
+        }
+        return Calendar.getInstance().getFirstDayOfWeek();
     }
 
     public String getDistanceUnitSystemId() {
@@ -381,9 +398,18 @@ public class UserPreferences {
 
     /**
      * Set upper target speed range limit (in m/s)
+     *
      * @param upperTargetSpeedLimit upper speed limit (in m/s)
      */
     public void setUpperTargetSpeedLimit(float upperTargetSpeedLimit) {
         preferences.edit().putFloat(UPPER_TARGET_SPEED_LIMIT, upperTargetSpeedLimit).apply();
+    }
+
+    public int getLastVersionCode() {
+        return preferences.getInt("lastVersion", 1100); // TODO: change 1100 to BuildConfig.VERSION_CODE after 12.0 release
+    }
+
+    public void updateLastVersionCode() {
+        preferences.edit().putInt("lastVersion", BuildConfig.VERSION_CODE).apply();
     }
 }

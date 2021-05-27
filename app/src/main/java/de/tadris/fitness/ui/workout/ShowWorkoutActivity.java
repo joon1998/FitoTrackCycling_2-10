@@ -161,7 +161,7 @@ public class ShowWorkoutActivity extends WorkoutActivity implements DialogUtils.
     }
 
     private void startFullscreenMapActivity() {
-        final Intent intent = new Intent(this, ShowWorkoutMapActivity.class);
+        final Intent intent = new Intent(this, ShowWorkoutFullscreenMapActivity.class);
         intent.putExtra(ShowWorkoutActivity.WORKOUT_ID_EXTRA, workout.id);
         startActivity(intent);
     }
@@ -238,11 +238,17 @@ public class ShowWorkoutActivity extends WorkoutActivity implements DialogUtils.
             return;
         }
         ProgressDialogController dialogController = new ProgressDialogController(this, getString(R.string.exporting));
-        dialogController.setIndeterminate(true);
         dialogController.show();
+        dialogController.setIndeterminate(true);
         new Thread(() -> {
             try {
-                String file = DataManager.getSharedDirectory(this) + String.format("/workout-%s-%s.gpx", workout.getSafeDateString(), workout.getSafeComment());
+                final String filename;
+                if (!workout.getSafeComment().isEmpty()) {
+                    filename = String.format("workout-%s-%s.gpx", workout.getSafeDateString(), workout.getSafeComment());
+                } else {
+                    filename = String.format("workout-%s.gpx", workout.getSafeDateString());
+                }
+                String file = DataManager.getSharedDirectory(this) + "/" + filename;
                 File parent = new File(file).getParentFile();
                 if (!parent.exists() && !parent.mkdirs()) {
                     throw new IOException("Cannot write to " + file);
@@ -334,7 +340,8 @@ public class ShowWorkoutActivity extends WorkoutActivity implements DialogUtils.
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == EditWorkoutStartEndActivity.INTENT_RESULT_CODE_WORKOUT_MODIFIED){
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == EditWorkoutStartEndActivity.INTENT_RESULT_CODE_WORKOUT_MODIFIED) {
             //Restart the activity as the data has changed..
             final Intent intent = new Intent(this, ShowWorkoutActivity.class);
             intent.putExtra(ShowWorkoutActivity.WORKOUT_ID_EXTRA, workout.id);

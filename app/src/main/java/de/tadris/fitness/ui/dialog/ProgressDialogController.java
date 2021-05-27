@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -20,7 +20,7 @@
 package de.tadris.fitness.ui.dialog;
 
 import android.app.Activity;
-import android.app.Dialog;
+import android.app.AlertDialog;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -28,8 +28,7 @@ import de.tadris.fitness.R;
 
 public class ProgressDialogController {
 
-    private final Activity context;
-    private final Dialog dialog;
+    private final AlertDialog dialog;
     private TextView infoView;
     private ProgressBar progressBar;
 
@@ -39,16 +38,10 @@ public class ProgressDialogController {
     }
 
     private ProgressDialogController(Activity context) {
-        this.context = context;
-        this.dialog= new Dialog(context);
-        initDialog();
-    }
-
-    private void initDialog(){
-        dialog.setContentView(R.layout.dialog_progress);
-        dialog.setCancelable(false);
-        infoView= dialog.findViewById(R.id.dialogProgressInfo);
-        progressBar= dialog.findViewById(R.id.dialogProgressBar);
+        this.dialog = new AlertDialog.Builder(context)
+                .setView(R.layout.dialog_progress)
+                .setCancelable(false)
+                .create();
     }
 
     private void setTitle(String title) {
@@ -68,8 +61,10 @@ public class ProgressDialogController {
         infoView.setText(info);
     }
 
-    public void show(){
+    public void show() {
         dialog.show();
+        infoView = dialog.findViewById(R.id.dialogProgressInfo);
+        progressBar = dialog.findViewById(R.id.dialogProgressBar);
     }
 
     public void cancel(){

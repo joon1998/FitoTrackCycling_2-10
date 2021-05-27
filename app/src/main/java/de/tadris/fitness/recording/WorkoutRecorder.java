@@ -90,7 +90,12 @@ public class WorkoutRecorder {
     private static final int SIGNAL_LOST_THRESHOLD = 10_000; // 10 Seconds In milliseconds
     private Location lastFix = null;
     private GpsState gpsState = GpsState.SIGNAL_LOST;
+
     private List<Interval> intervalList;
+
+    // Temporarily saved the last interval that was triggered.
+    // It will be added to the next recorded sample.
+    private long lastTriggeredInterval = -1;
 
     private float lastPressure = -1;
     private int lastHeartRate = -1;
@@ -108,7 +113,6 @@ public class WorkoutRecorder {
 
         // Default values
         this.workout.comment = "";
-        this.workout.intervalSetIncludesPauses = preferences.intervalsIncludePauses();
 
         this.workout.setWorkoutType(workoutType);
 
@@ -372,6 +376,8 @@ public class WorkoutRecorder {
         sample.absoluteTime = location.getTime();
         sample.pressure = lastPressure;
         sample.heartRate = lastHeartRate;
+        sample.intervalTriggered = lastTriggeredInterval;
+        lastTriggeredInterval = -1;
         synchronized (samples) {
             if (workoutSaver == null) {
                 throw new RuntimeException("Missing WorkoutSaver for Recorder");
@@ -415,6 +421,10 @@ public class WorkoutRecorder {
             // If heart rate sensor currently not available
             lastHeartRate = -1;
         }
+    }
+
+    public void onIntervalWasTriggered(Interval interval) {
+        lastTriggeredInterval = interval.id;
     }
 
     private int maxCalories = 0;

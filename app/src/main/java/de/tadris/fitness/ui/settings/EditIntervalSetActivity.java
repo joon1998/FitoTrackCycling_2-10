@@ -114,19 +114,33 @@ public class EditIntervalSetActivity extends FitoTrackActivity implements Interv
         }
     }
 
+    @Override
+    public void showEditDialog(int pos, Interval interval) {
+        String lengthInMinutes = String.valueOf(interval.delayMillis / TimeUnit.MINUTES.toMillis(1));
+        showIntervalDialog(pos, R.string.edit_interval, R.string.save, interval.name, lengthInMinutes);
+    }
+
     private void showAddDialog() {
+        showIntervalDialog(-1, R.string.add_interval, R.string.add, null, null);
+    }
+
+    private void showIntervalDialog(int pos, int title, int buttonText, String defaultName, String defaultLength) {
+
         AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle(R.string.add_interval)
+                .setTitle(title)
                 .setView(R.layout.dialog_add_interval)
-                .setPositiveButton(R.string.add, null) // Listener added later so that we can control if the dialog is dismissed on click
+                .setPositiveButton(buttonText, null) // Listener added later so that we can control if the dialog is dismissed on click
                 .create();
 
         dialog.setOnShowListener(dialogInterface -> {
-            requestKeyboard(dialog.findViewById(R.id.intervalName));
+            EditText nameEditText = dialog.findViewById(R.id.intervalName);
+            EditText lengthText = dialog.findViewById(R.id.intervalLengthInMinutes);
+            nameEditText.setText(defaultName);
+            lengthText.setText(defaultLength);
+
+            requestKeyboard(nameEditText);
             Button button = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
             button.setOnClickListener(view -> {
-                EditText nameEditText = dialog.findViewById(R.id.intervalName);
-                EditText lengthText = dialog.findViewById(R.id.intervalLengthInMinutes);
                 String name = nameEditText.getText().toString();
                 if (name.length() <= 2) {
                     nameEditText.setError(getString(R.string.enterName));
@@ -147,21 +161,33 @@ public class EditIntervalSetActivity extends FitoTrackActivity implements Interv
                     return;
                 }
 
-                Interval interval = new Interval();
-                interval.id = System.currentTimeMillis();
-                interval.name = name;
-                interval.delayMillis = (long) (TimeUnit.MINUTES.toMillis(1) * lengthInMinutes);
-                interval.setId = intervalSetId;
-                addInterval(interval);
+                if (pos >= 0) {
+                    updateInterval(pos, name, lengthInMinutes);
+                } else {
+                    addInterval(name, lengthInMinutes);
+                }
 
                 dialog.dismiss();
             });
         });
         dialog.show();
-
     }
 
-    private void addInterval(Interval interval) {
+    private void updateInterval(int pos, String name, double lengthInMinutes) {
+        Interval interval = adapter.intervals.get(pos);
+        interval.name = name;
+        interval.delayMillis = (long) (TimeUnit.MINUTES.toMillis(1) * lengthInMinutes);
+        Instance.getInstance(this).db.intervalDao().updateInterval(interval);
+        adapter.notifyItemChanged(pos);
+        intervalSetsHint.setVisibility(View.INVISIBLE);
+    }
+
+    private void addInterval(String name, double lengthInMinutes) {
+        Interval interval = new Interval();
+        interval.id = System.currentTimeMillis();
+        interval.setId = intervalSetId;
+        interval.name = name;
+        interval.delayMillis = (long) (TimeUnit.MINUTES.toMillis(1) * lengthInMinutes);
         Instance.getInstance(this).db.intervalDao().insertInterval(interval);
         adapter.intervals.add(interval);
         adapter.notifyItemInserted(adapter.intervals.size() - 1);

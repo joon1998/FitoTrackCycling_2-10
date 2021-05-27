@@ -28,7 +28,7 @@ import androidx.room.RoomDatabase;
 import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(version = 13, entities = {Workout.class, WorkoutSample.class, Interval.class, IntervalSet.class, WorkoutType.class}, exportSchema = false)
+@Database(version = 14, entities = {Workout.class, WorkoutSample.class, Interval.class, IntervalSet.class, WorkoutType.class}, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static final String DATABASE_NAME = "fito-track";
@@ -295,6 +295,48 @@ public abstract class AppDatabase extends RoomDatabase {
                             database.execSQL("update workout set max_elevation_msl = " +
                                     "(select max(elevation_msl) from workout_sample where workout_id = workout.id) " +
                                     "where max_elevation_msl=0 and (select count(id) from workout_sample where workout_id = workout.id) > 0");
+
+                            database.setTransactionSuccessful();
+                        } finally {
+                            database.endTransaction();
+                        }
+                    }
+                }, new Migration(13, 14) {
+                    @Override
+                    public void migrate(@NonNull SupportSQLiteDatabase database) {
+                        try {
+                            database.beginTransaction();
+
+                            database.execSQL("ALTER TABLE workout RENAME TO workout2;");
+
+                            database.execSQL("CREATE TABLE workout (" +
+                                    "id INTEGER NOT NULL DEFAULT NULL PRIMARY KEY," +
+                                    "start INTEGER NOT NULL DEFAULT 0," +
+                                    "`end` INTEGER NOT NULL DEFAULT 0," +
+                                    "duration INTEGER NOT NULL DEFAULT 0," +
+                                    "pauseDuration INTEGER NOT NULL DEFAULT 0," +
+                                    "comment TEXT DEFAULT NULL," +
+                                    "length INTEGER NOT NULL DEFAULT 0," +
+                                    "avgSpeed REAL NOT NULL DEFAULT 0," +
+                                    "topSpeed REAL NOT NULL DEFAULT 0," +
+                                    "avgPace REAL NOT NULL DEFAULT 0," +
+                                    "workoutType TEXT DEFAULT NULL," +
+                                    "min_elevation_msl REAL NOT NULL DEFAULT 0," +
+                                    "max_elevation_msl REAL NOT NULL DEFAULT 0," +
+                                    "ascent REAL NOT NULL DEFAULT 0," +
+                                    "descent REAL NOT NULL DEFAULT 0," +
+                                    "calorie INTEGER NOT NULL DEFAULT 0," +
+                                    "edited INTEGER NOT NULL DEFAULT 0," +
+                                    "interval_set_used_id INTEGER NOT NULL DEFAULT 0," +
+                                    "avg_heart_rate INTEGER NOT NULL DEFAULT 0," +
+                                    "max_heart_rate INTEGER NOT NULL DEFAULT 0);");
+
+                            database.execSQL("INSERT INTO workout (id,start,`end`,duration,pauseDuration,comment,length,avgSpeed,topSpeed,avgPace,avgPace,workoutType,min_elevation_msl,max_elevation_msl,ascent,descent,calorie,edited,interval_set_used_id,avg_heart_rate,max_heart_rate) " +
+                                    "SELECT id,start,`end`,duration,pauseDuration,comment,length,avgSpeed,topSpeed,avgPace,avgPace,workoutType,min_elevation_msl,max_elevation_msl,ascent,descent,calorie,edited,interval_set_used_id,avg_heart_rate,max_heart_rate FROM workout2");
+
+                            database.execSQL("DROP TABLE workout2");
+
+                            database.execSQL("ALTER table workout_sample add COLUMN interval_triggered INTEGER not null default -1;");
 
                             database.setTransactionSuccessful();
                         } finally {
