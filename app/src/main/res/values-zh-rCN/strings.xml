@@ -376,4 +376,6 @@
     <string name="deleteIntervalSetMessage">想要删除此间隔设置吗？</string>
     <string name="manageIntervalSets">管理间隔设置</string>
     <string name="add_interval">添加间隔</string>
+    <string name="workoutMaxHeight">最高高度</string>
+    <string name="workoutMinHeight">最低高度</string>
 </resources>

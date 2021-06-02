@@ -404,4 +404,5 @@
     <string name="trackStyle">Estilo da ruta</string>
     <string name="workoutMaxHeight">Altura máx</string>
     <string name="workoutMinHeight">Altura min</string>
+    <string name="unitHeartBeatsPerMinute">ppm</string>
 </resources>

@@ -436,4 +436,10 @@
     <string name="preferencesCategoryMap">Mapa</string>
     <string name="workoutMaxHeight">Altura máxima</string>
     <string name="workoutMinHeight">Altura mínima</string>
+    <string name="auto">Automático</string>
+    <string name="noColoring">Sin colorantes</string>
+    <string name="selectColoring">Seleccionar coloración</string>
+    <string name="runningMigrations">Ejecución de migraciones</string>
+    <string name="prefTrackStyleUsageTitle">Utilizar la coloración de la pista automáticamente</string>
+    <string name="trackStyle">Estilo de pista</string>
 </resources>

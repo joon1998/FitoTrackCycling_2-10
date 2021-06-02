@@ -404,4 +404,5 @@
     <string name="trackStyle">Takip Etme Tarzı</string>
     <string name="workoutMaxHeight">Azami yükseklik</string>
     <string name="workoutMinHeight">Asgari yükseklik</string>
+    <string name="unitHeartBeatsPerMinute">bpm</string>
 </resources>

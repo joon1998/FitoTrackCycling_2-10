@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
   ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
   ~
@@ -17,9 +16,7 @@
   ~
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-
-<resources>
+  --><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">FitoTrack</string>
     <string name="workout_add">Ajouter</string>
     <string name="stop">Arrêter</string>
@@ -73,7 +70,7 @@
     <string name="workoutPace">Rythme</string>
     <string name="workoutRoute">Parcours</string>
     <string name="workoutSpeed">Vitesse</string>
-    <string name="workoutAvgSpeedShort">Vitesse moy.</string>
+    <string name="workoutAvgSpeedShort">Vitesse moyenne</string>
     <string name="workoutAvgSpeedLong">Vitesse moyenne</string>
     <string name="workoutTopSpeed">Vitesse maximale</string>
     <string name="workoutBurnedEnergy">Énergie consommée</string>
@@ -381,4 +378,73 @@
     <string name="pref_map_file">Répertoire de cartes hors ligne</string>
     <string name="recordingBackgroundPermissionNotGrantedMessage">FitoTrack collecte également des données de localisation en arrière-plan pour enregistrer l\'entraînement lorsque l\'écran est éteint. Par conséquent, veuillez autoriser FitoTrack à accéder à votre position à tout moment.</string>
     <string name="recordingPermissionNotGrantedMessage">FitoTrack a besoin d\'une autorisation de localisation pour suivre vos mouvements pendant votre entraînement. FitoTrack collecte également des données de localisation lorsque l\'application est en arrière-plan ou que l\'écran est éteint pour enregistrer vos entraînements. Les données de localisation restent toujours sur votre téléphone sans votre consentement clair pour les partager.</string>
+    <string name="workoutAutoStartAborted">Démarrage automatique annulé</string>
+    <string name="invalidNumberFormat">Format de numéro non valide.</string>
+    <string name="pref_announcements_pace_control_title">Avertissements sur le contrôle du rythme</string>
+    <string name="pref_announcements_pace_control_summary">Avertir en cas de dépassement d\'une vitesse donnée</string>
+    <string name="noColoring">Pas de coloration</string>
+    <string name="auto">Auto</string>
+    <string name="selectColoring">Sélectionner la coloration</string>
+    <string name="pref_auto_start_mode_unknown">Mode inconnu (ne pas sélectionner)</string>
+    <string name="pref_auto_start_mode_on_move">En attendant que vous commenciez à vous déplacer</string>
+    <string name="pref_auto_start_mode_wait_for_gps">En attente d\'une position GPS précise</string>
+    <string name="pref_auto_start_mode_instant">Démarrer immédiatement</string>
+    <string name="pref_auto_start_mode_title">Mode de démarrage automatique</string>
+    <string name="intervalAutoStartModeTraining">Mode d\'entraînement avec démarrage automatique</string>
+    <string name="manageAutoStartModeSummary">Modifier le mode de démarrage automatique de l\'entraînement</string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g id="mins" example="1 minute">%1$s</xliff:g> and <xliff:g id="secs" example="7 seconds">%2$s</xliff:g> jusqu\'au début </string>
+    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g id="mins" example="12 minutes">%1$s</xliff:g> jusqu\'au début </string>
+    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g id="secs" example="5 seconds">%1$s</xliff:g> jusqu\'au début </string>
+    <string name="ttsAboveTargetSpeed">Trop rapide</string>
+    <string name="ttsBelowTargetSpeed">Trop lent</string>
+    <string name="lowerPaceLimit">Limite inférieure du rythme</string>
+    <string name="upperPaceLimit">Limite supérieure du rythme</string>
+    <plurals name="minutes">
+        <item quantity="one"><xliff:g id="mins" example="1">%1$d</xliff:g> minute</item>
+        <item quantity="other"><xliff:g id="mins" example="5">%1$d</xliff:g> minutes</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="one"><xliff:g id="secs" example="1">%1$d</xliff:g> seconde</item>
+        <item quantity="other"><xliff:g id="secs" example="12">%1$d</xliff:g> secondes</item>
+    </plurals>
+    <string name="editStartEndHelp">Sélectionnez une position sur la carte ou le diagramme. Cliquez ensuite sur l\'une des flèches pour sélectionner un nouveau point de départ ou d\'arrivée. Lorsque vous avez terminé, cliquez sur l\'icône d\'enregistrement pour appliquer les modifications.</string>
+    <string name="launchError">Impossible de lancer l\'application</string>
+    <string name="actionApply">Appliquer</string>
+    <string name="moveEndOfWorkout">Fin de la coupure</string>
+    <string name="moveStartOfWorkout">Début de la coupure</string>
+    <string name="scanFailed">Échec du scan</string>
+    <string name="scanning">Scan…</string>
+    <string name="announcementCountdown">Actions de démarrage automatique (compte à rebours, état, etc.)</string>
+    <string name="action_nfc_settings">Aller aux réglages NFC</string>
+    <string name="dialog_nfc_disabled">Afin d\'utiliser les tags NFC pour démarrer et arrêter les entraînements, vous devez d\'abord activer la fonction NFC dans les paramètres de l\'appareil</string>
+    <string name="dialog_nfc_disabled_title">Le NFC est actuellement désactivé</string>
+    <string name="nfcStartSummary">Si l\'option est activée, vous pourrez commencer et arrêter vos séances d\'entraînement en scannant un tag NFC</string>
+    <string name="nfcStartTitle">Scanner pour commencer</string>
+    <string name="abort">Annuler</string>
+    <string name="popup_auto_start_wait_for_gps">Quand le positionnement GPS est précis</string>
+    <string name="popup_auto_start_on_move">Dès que je me déplace</string>
+    <string name="popup_auto_start_immediately">Commencer immédiatement</string>
+    <string name="popup_auto_start">Avec délai par défaut</string>
+    <string name="popup_auto_start_delay">Avec délai personnalisé</string>
+    <string name="workoutAutoStarted">L\'entraînement a démarré automatiquement</string>
+    <string name="autoStartCountdownMsgMove">Démarrage de l\'entraînement dès que vous bougez</string>
+    <string name="autoStartCountdownMsgGps">Démarrage de l\'entraînement dès que la position du GPS est suffisamment précise</string>
+    <string name="autoStartCountdownMsg">Démarrage de l\'entraînement dans</string>
+    <string name="customAutoStartDelay">Autre</string>
+    <string name="noAutoStartDelay">Aucun</string>
+    <string name="pref_auto_start_delay_title">Démarrage automatique du compte à rebours</string>
+    <string name="manageAutoStartDelaySummary">Choisissez un compte à rebours par défaut pour le démarrage automatique de l\'entraînement</string>
+    <string name="intervalAutoStartDelayTraining">Délai de démarrage automatique de l\'entraînement</string>
+    <string name="runningMigrations">Effectuer des migrations</string>
+    <string name="editWorkoutStartEnd">Editer Début/Fin</string>
+    <string name="unitHeartBeatsPerMinute">bpm</string>
+    <string name="preferenceUseAverageForCurrentSpeed">Utilisez la vitesse moyenne sur une certaine période au lieu du dernier enregistrement de vitesse unique pour le calcul de la vitesse actuelle.</string>
+    <string name="preferenceCurrentSpeedAverageTimeTitle">Vitesse actuelle par moyenne</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">Remplacer le calcul de la vitesse actuelle par un calcul de la moyenne.</string>
+    <string name="preferenceCurrentSpeedTime">Durée du calcul de la moyenne</string>
+    <string name="preferencesCategoryMap">Carte</string>
+    <string name="prefTrackStyleUsageTitle">Utiliser automatiquement la coloration des parcours</string>
+    <string name="trackStyle">Type d\'enregistrement</string>
+    <string name="workoutMaxHeight">Hauteur maximale</string>
+    <string name="workoutMinHeight">Hauteur minimale</string>
 </resources>

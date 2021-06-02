@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
   ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
   ~
@@ -337,4 +336,26 @@
     <string name="downloadMapsTitle">Last ned kart</string>
     <string name="pref_map_file">Mappe for frakoblede kart</string>
     <string name="workoutTypeAll">Alle</string>
+    <string name="invalidNumberFormat">Ugyldig nummerformat.</string>
+    <string name="noColoring">Ingen fargelegging</string>
+    <string name="auto">Auto</string>
+    <string name="selectColoring">Velg fargelegging</string>
+    <string name="launchError">Kunne ikke starte program</string>
+    <string name="actionApply">Bruk</string>
+    <string name="moveEndOfWorkout">Beskjær slutt</string>
+    <string name="moveStartOfWorkout">Beskjær start</string>
+    <string name="scanFailed">Skanning mislyktes</string>
+    <string name="scanning">Skanner …</string>
+    <string name="action_nfc_settings">Gå til NFC-innstillinger</string>
+    <string name="nfcStartTitle">Skann for å starte</string>
+    <string name="abort">Avbryt</string>
+    <string name="popup_auto_start_wait_for_gps">Når GPS-posisjonen er presis</string>
+    <string name="popup_auto_start_on_move">Når jeg begynner å bevege meg</string>
+    <string name="popup_auto_start_immediately">Start umiddelbart</string>
+    <string name="customAutoStartDelay">Annet</string>
+    <string name="noAutoStartDelay">Ingen</string>
+    <string name="editWorkoutStartEnd">Rediger start/slutt</string>
+    <string name="preferencesCategoryMap">Kart</string>
+    <string name="workoutMaxHeight">Maksimumshøyde</string>
+    <string name="workoutMinHeight">Minimumshøyde</string>
 </resources>

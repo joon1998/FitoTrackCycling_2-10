@@ -212,7 +212,7 @@
     <string name="preferenceCurrentSpeedTime">Zeitraum über welchen der Durchschnitt berechnet wird</string>
     <string name="preferenceCurrentSpeedAverageTimeSummary">Verwende den Durchschnitt über einen eingestellten Zeitraum um die aktuelle Geschwindigkeit zu berechnen.</string>
     <string name="preferenceCurrentSpeedAverageTimeTitle">Durchschnitt als aktuelle Geschwindingkeit</string>
-    <string name="preferenceUseAverageForCurrentSpeed">Verwende den Durchschnitt über einen Zeitraum anstatt der letzten, einzelnen Geschwindigkeitsmessung um die aktuelle Geschwindigkeit zu berechnen.</string>
+    <string name="preferenceUseAverageForCurrentSpeed">Verwende den Durchschnitt über einen Zeitraum anstatt der letzten, einzelnen Geschwindigkeitsmessung, um die aktuelle Geschwindigkeit zu berechnen.</string>
     <string name="workoutDiscarded">Workout verworfen</string>
     <string name="timeSecondsSingular">Sekunde</string>
     <string name="timeSecondsPlural">Sekunden</string>
@@ -466,4 +466,5 @@
     <string name="auto">Auto</string>
     <string name="noColoring">Keine Färbung</string>
     <string name="launchError">Starten der App fehlgeschlagen</string>
+    <string name="unitHeartBeatsPerMinute">bpm</string>
 </resources>

@@ -271,7 +271,7 @@
     <string name="actionGrant">Предоставить</string>
     <string name="manageIntervalsSummary">Отредактируйте наборы интервалов, которые вы сможете использовать во время тренировки, с помощью голосовой обратной связи.</string>
     <string name="aboutPrivacyPolicy">Политика конфиденциальности</string>
-    <string name="no_workouts_recorded">Нет записанных тренировок</string>
+    <string name="no_workouts_recorded">Запись тренировок не ведется</string>
     <string name="workoutDiscarded">Тренировка отменена</string>
     <string name="inclination">Наклон</string>
     <string name="nothingSelected">Ничего не выбрано</string>
@@ -322,7 +322,7 @@
     <string name="noAutoStartDelay">Нет</string>
     <string name="overwriteMapConfirmation">Вы уверены что хотите перезаписать существующий файл карты %s\?</string>
     <string name="pref_auto_start_mode_unknown">Неизвестный режим (пожалуйста, не выбирайте)</string>
-    <string name="nfcStartSummary">Если эта функция активирована, вы сможете запускать и останавливать тренировки, отсканировав тег NFC.</string>
+    <string name="nfcStartSummary">Если функция активирована, вы сможете начинать и прекращать тренировки, сканируя метку NFC</string>
     <string name="manageAutoStartModeSummary">Изменить режим автоматического запуска тренировки</string>
     <string name="popup_auto_start">С задержкой по умолчанию</string>
     <string name="popup_auto_start_delay">С настраиваемой задержкой</string>
@@ -356,7 +356,7 @@
     <string name="scanning">Сканирование…</string>
     <string name="announcementCountdown">Действия при автоматическом запуске (обратный отсчет, состояние и т. д.)</string>
     <string name="action_nfc_settings">Перейти к настройке NFC</string>
-    <string name="dialog_nfc_disabled">Чтобы использовать теги NFC для запуска и остановки тренировок, сначала вам необходимо включить NFC в настройках устройства.</string>
+    <string name="dialog_nfc_disabled">Чтобы использовать метки NFC для запуска и остановки тренировок, необходимо сначала включить NFC в настройках устройства</string>
     <string name="dialog_nfc_disabled_title">В настоящее время NFC отключен</string>
     <string name="workoutAutoStartAborted">Автоматический запуск прерван</string>
     <string name="abort">Отмена</string>
@@ -393,4 +393,20 @@
     <string name="trackStyle">Стиль трека</string>
     <string name="workoutMaxHeight">Макс. высота</string>
     <string name="workoutMinHeight">Мин. высота</string>
+    <string name="unitHeartBeatsPerMinute">уд/мин</string>
+    <string name="moveEndOfWorkout">Отрезанный конец</string>
+    <string name="moveStartOfWorkout">Начало резки</string>
+    <string name="runningMigrations">Запуск миграций</string>
+    <string name="upperPaceLimit">Верхний предел темпа</string>
+    <string name="lowerPaceLimit">Нижний предел темпа</string>
+    <string name="ttsBelowTargetSpeed">Очень медленно</string>
+    <string name="ttsAboveTargetSpeed">Очень быстро</string>
+    <string name="selectColoring">Выберите окраску</string>
+    <string name="pref_announcements_pace_control_title">Предупреждения о контроле темпа</string>
+    <string name="editWorkoutStartEnd">Редактировать начало/конец</string>
+    <string name="preferenceUseAverageForCurrentSpeed">Для расчета текущей скорости используйте среднюю скорость за определенное время вместо последней единичной записи скорости.</string>
+    <string name="preferenceCurrentSpeedAverageTimeTitle">Текущая скорость по средней</string>
+    <string name="preferenceCurrentSpeedTime">Временной интервал для расчета среднего значения</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">Заменить расчёт текущей скорости на расчёт средней.</string>
+    <string name="prefTrackStyleUsageTitle">Использовать автоматическую окраску трека</string>
 </resources>

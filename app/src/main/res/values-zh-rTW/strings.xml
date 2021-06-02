@@ -16,7 +16,7 @@
   ~
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  --><resources>
+  --><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="downloading">下載中</string>
     <string name="noGpsMessage">請啟用 GPS 來追蹤健身項目</string>
     <string name="noGpsTitle">GPS (導航系統) 功能停用了</string>
@@ -315,4 +315,56 @@
     <string name="preferences">偏好設定</string>
     <string name="shareFile">分享文件</string>
     <string name="delete">刪除</string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g id="mins" example="1 minute">%1$s</xliff:g> 和 <xliff:g id="secs" example="7 seconds">%2$s</xliff:g> 直至開始 </string>
+    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g id="mins" example="12 minutes">%1$s</xliff:g> 直至開始 </string>
+    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g id="secs" example="5 seconds">%1$s</xliff:g> 直到開始 </string>
+    <plurals name="minutes">
+        <item quantity="other"><xliff:g id="mins" example="5">%1$d</xliff:g> 分</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="other"><xliff:g id="secs" example="12">%1$d</xliff:g> 秒</item>
+    </plurals>
+    <string name="scanFailed">掃描失敗</string>
+    <string name="scanning">正在掃描 ⋯⋯</string>
+    <string name="announcementCountdown">自動開始動作（倒計時、狀態檢測等）</string>
+    <string name="action_nfc_settings">轉到 NFC 設置</string>
+    <string name="dialog_nfc_disabled">為了使用 NFC 標籤來開始或停止鍛煉，您需要先在手機上啟用 NFC 功能</string>
+    <string name="dialog_nfc_disabled_title">NFC 功能未啟用</string>
+    <string name="nfcStartSummary">如果啟用，您將可以通過掃描 NFC 標籤來啟動或停止鍛煉</string>
+    <string name="nfcStartTitle">掃描即開始</string>
+    <string name="workoutAutoStartAborted">取消自動開始</string>
+    <string name="abort">取消</string>
+    <string name="popup_auto_start_wait_for_gps">當位置信息精確時</string>
+    <string name="popup_auto_start_on_move">當我開始移動時</string>
+    <string name="popup_auto_start_immediately">立即開始</string>
+    <string name="popup_auto_start">使用默認延遲</string>
+    <string name="popup_auto_start_delay">使用自動延遲</string>
+    <string name="customAutoStartDelay">其他</string>
+    <string name="noAutoStartDelay">無</string>
+    <string name="pref_auto_start_delay_title">自動開始倒計時</string>
+    <string name="showIntervals">顯示間隔</string>
+    <string name="intervals">間隔</string>
+    <string name="unitMetersPerSecond">公尺/秒</string>
+    <string name="unitKilometersPerHour">公里/小時</string>
+    <string name="unitMilesPerHour">英里/小時</string>
+    <string name="intervalSets">間隔設置</string>
+    <string name="intervalSet">間隔設置</string>
+    <string name="intervalTraining">間隔訓練</string>
+    <string name="intervalsIncludePauseSummary">如果激活，健身項目中的暫停時間將記入間隔。</string>
+    <string name="intervalsIncludePauseTitle">在間隔訓練中包括暫停時間</string>
+    <string name="intervalSetSelected">選定了間隔設置</string>
+    <string name="selectIntervalSet">選擇間隔設置</string>
+    <string name="deleteIntervalSetMessage">想要刪除此間隔設置嗎？</string>
+    <string name="deleteIntervalSet">刪除間隔設置</string>
+    <string name="hintEditIntervalSet">添加間隔，其將被播報。</string>
+    <string name="hintManageIntervalSets">添加可在健身項目期間使用的間隔設置。</string>
+    <string name="createIntervalSet">新增間隔設置</string>
+    <string name="manageIntervalsSummary">編輯間隔設置之後，您將可以在鍛鍊期間使用語音提示。</string>
+    <string name="manageIntervalSets">管理間隔設置</string>
+    <string name="add_interval">添加間隔</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">用平均計算值代替當前的速度計算。</string>
+    <string name="preferenceCurrentSpeedTime">計算平均值的時間跨度</string>
+    <string name="preferencesCategoryMap">地圖</string>
+    <string name="workoutMinHeight">最低高度</string>
+    <string name="workoutMaxHeight">最高高度</string>
 </resources>
