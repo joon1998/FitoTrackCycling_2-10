@@ -442,4 +442,6 @@
     <string name="runningMigrations">Ejecución de migraciones</string>
     <string name="prefTrackStyleUsageTitle">Utilizar la coloración de la pista automáticamente</string>
     <string name="trackStyle">Estilo de pista</string>
+    <string name="preferenceFirstDayOfWeek">Inicio de la semana</string>
+    <string name="edit_interval">Editar intervalo</string>
 </resources>

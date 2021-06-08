@@ -64,16 +64,25 @@ abstract public class FitoTrackActivity extends AppCompatActivity {
     }
 
     protected int getThemeColor(@AttrRes int colorRes) {
-        final TypedValue value = new TypedValue ();
+        final TypedValue value = new TypedValue();
         getTheme().resolveAttribute(colorRes, value, true);
         return value.data;
     }
 
     protected void showErrorDialog(Exception e, @StringRes int title, @StringRes int message) {
+        showErrorDialog(e, title, message, null);
+    }
+
+    protected void showErrorDialog(Exception e, @StringRes int title, @StringRes int message, @Nullable Runnable listener) {
         new AlertDialog.Builder(this)
                 .setTitle(title)
                 .setMessage(getString(message) + "\n\n" + e.getMessage())
-                .setPositiveButton(R.string.okay, null)
+                .setPositiveButton(R.string.okay, (dialog, which) -> {
+                    if (listener != null) listener.run();
+                })
+                .setOnDismissListener(dialog -> {
+                    if (listener != null) listener.run();
+                })
                 .create().show();
     }
 

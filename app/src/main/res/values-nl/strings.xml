@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
   ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
   ~
@@ -395,4 +394,33 @@
     <string name="recordingBackgroundPermissionNotGrantedMessage">FitoTrack verzamelt ook locatiegegevens op de achtergrond om de training op te nemen wanneer het scherm is uitgeschakeld. Geef FitoTrack daarom altijd toegang tot uw locatie.</string>
     <string name="recordingPermissionNotGrantedMessage">FitoTrack heeft locatietoestemming nodig om uw bewegingen tijdens uw training te volgen. FitoTrack verzamelt ook locatiegegevens terwijl de app op de achtergrond is of het scherm is uitgeschakeld om uw trainingen op te nemen. Locatiegegevens blijven altijd op uw telefoon staan zonder uw duidelijke toestemming om deze te delen.</string>
     <string name="workoutTypeAll">Alle</string>
+    <string name="edit_interval">Interval bewerken</string>
+    <string name="invalidNumberFormat">Ongeldig getalformaat.</string>
+    <string name="pref_announcements_pace_control_title">Waarschuwingen voor tempocontrole</string>
+    <string name="pref_announcements_pace_control_summary">Waarschuw bij onder of boven een bepaalde snelheid</string>
+    <string name="noColoring">Geen kleur</string>
+    <string name="auto">Automatisch</string>
+    <string name="selectColoring">Selecteer kleur</string>
+    <string name="ttsAboveTargetSpeed">Te snel</string>
+    <string name="ttsBelowTargetSpeed">Te langzaam</string>
+    <string name="lowerPaceLimit">Lagere tempolimiet</string>
+    <string name="upperPaceLimit">Bovenste tempolimiet</string>
+    <string name="editStartEndHelp">Selecteer een positie op de kaart of het diagram. Klik vervolgens op een van de pijlen om een nieuw begin- of eindpunt te selecteren. Als u klaar bent, klikt u op het pictogram Opslaan om de wijzigingen toe te passen.</string>
+    <string name="launchError">Kan de applicatie niet starten</string>
+    <string name="actionApply">Toepassen</string>
+    <string name="moveEndOfWorkout">Knip eind</string>
+    <string name="moveStartOfWorkout">Knip start</string>
+    <string name="runningMigrations">Migraties uitvoeren</string>
+    <string name="editWorkoutStartEnd">Bewerken Start/Einde</string>
+    <string name="unitHeartBeatsPerMinute">bpm</string>
+    <string name="preferenceFirstDayOfWeek">Begin van de week</string>
+    <string name="preferenceUseAverageForCurrentSpeed">Gebruik de gemiddelde snelheid over een bepaalde tijd in plaats van het laatste enkele snelheidsrecord voor de huidige snelheidsberekening.</string>
+    <string name="preferenceCurrentSpeedAverageTimeTitle">Huidige snelheid gemiddeld</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">Vervang de huidige snelheidsberekening door een gemiddelde berekening.</string>
+    <string name="preferenceCurrentSpeedTime">Tijdspan voor gemiddelde berekening</string>
+    <string name="preferencesCategoryMap">Kaart</string>
+    <string name="prefTrackStyleUsageTitle">Gebruik trackkleuring automatisch</string>
+    <string name="trackStyle">Track Stijl</string>
+    <string name="workoutMaxHeight">Max. hoogte</string>
+    <string name="workoutMinHeight">Min. hoogte</string>
 </resources>

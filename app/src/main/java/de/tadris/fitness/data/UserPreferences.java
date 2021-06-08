@@ -406,7 +406,7 @@ public class UserPreferences {
     }
 
     public int getLastVersionCode() {
-        return preferences.getInt("lastVersion", 1100); // TODO: change 1100 to BuildConfig.VERSION_CODE after 12.0 release
+        return preferences.getInt("lastVersion", BuildConfig.VERSION_CODE);
     }
 
     public void updateLastVersionCode() {

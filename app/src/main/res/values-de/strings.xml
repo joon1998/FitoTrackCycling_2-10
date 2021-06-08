@@ -467,4 +467,5 @@
     <string name="noColoring">Keine Färbung</string>
     <string name="launchError">Starten der App fehlgeschlagen</string>
     <string name="unitHeartBeatsPerMinute">bpm</string>
+    <string name="preferenceFirstDayOfWeek">Anfang der Woche</string>
 </resources>

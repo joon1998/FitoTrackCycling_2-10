@@ -405,4 +405,6 @@
     <string name="workoutMaxHeight">Azami yükseklik</string>
     <string name="workoutMinHeight">Asgari yükseklik</string>
     <string name="unitHeartBeatsPerMinute">bpm</string>
+    <string name="preferenceFirstDayOfWeek">Haftanın başlangıcı</string>
+    <string name="edit_interval">Aralık Düzenle</string>
 </resources>

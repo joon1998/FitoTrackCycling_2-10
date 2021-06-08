@@ -57,7 +57,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.settings.DownloadMapsActivity"></activity>
+
+        <activity
+            android:name=".ui.ImportGpxActivity"
+            android:label="@string/importWorkout">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/octet-stream" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/*" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.settings.DownloadMapsActivity" />
         <activity android:name=".ui.settings.EditWorkoutTypeActivity" />
         <activity android:name=".ui.settings.ManageWorkoutTypesActivity" />
         <activity android:name=".ui.ShareFileActivity" />

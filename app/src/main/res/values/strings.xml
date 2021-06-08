@@ -424,6 +424,7 @@
     <string name="pref_announcements_pace_control_summary">Warn when below or above a specified speed</string>
     <string name="pref_announcements_pace_control_title">Pace Control Warnings</string>
     <string name="invalidNumberFormat">Invalid number format.</string>
+    <string name="fileNotFound">File not found</string>
     <string-array name="osm_track_visibility">
         <item>Identifiable</item>
         <item>Trackable</item>

@@ -67,12 +67,7 @@ public class LauncherActivity extends Activity implements Migration.MigrationLis
             }
         } catch (Exception e) {
             e.printStackTrace();
-            new AlertDialog.Builder(this)
-                    .setTitle(R.string.launchError)
-                    .setMessage(e.getMessage())
-                    .setPositiveButton(R.string.okay, null)
-                    .setOnDismissListener(dialog -> finish())
-                    .show();
+            showErrorDialog(e);
         }
     }
 
@@ -87,15 +82,28 @@ public class LauncherActivity extends Activity implements Migration.MigrationLis
         progressDialog = new ProgressDialogController(this, getString(R.string.runningMigrations));
         progressDialog.show();
         new Thread(() -> {
-            for (Migration migration : migrations) {
-                migration.migrate();
+            try {
+                for (Migration migration : migrations) {
+                    migration.migrate();
+                }
+                preferences.updateLastVersionCode();
+                runOnUiThread(() -> {
+                    progressDialog.cancel();
+                    init();
+                });
+            } catch (Exception e) {
+                runOnUiThread(() -> showErrorDialog(e));
             }
-            preferences.updateLastVersionCode();
-            runOnUiThread(() -> {
-                progressDialog.cancel();
-                init();
-            });
         }).start();
+    }
+
+    private void showErrorDialog(Exception e) {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.launchError)
+                .setMessage(e.getMessage())
+                .setPositiveButton(R.string.okay, null)
+                .setOnDismissListener(dialog -> finish())
+                .show();
     }
 
     @Override

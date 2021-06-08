@@ -43,14 +43,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 
-import java.io.InputStream;
-
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
 import de.tadris.fitness.data.Workout;
 import de.tadris.fitness.data.WorkoutType;
 import de.tadris.fitness.ui.adapter.WorkoutAdapter;
-import de.tadris.fitness.ui.dialog.ProgressDialogController;
 import de.tadris.fitness.ui.dialog.SelectWorkoutTypeDialog;
 import de.tadris.fitness.ui.dialog.ThreadSafeProgressDialogController;
 import de.tadris.fitness.ui.record.RecordWorkoutActivity;
@@ -160,26 +157,9 @@ public class ListWorkoutsActivity extends FitoTrackActivity implements WorkoutAd
     }
 
     private void importFile(Uri uri){
-        ProgressDialogController dialogController= new ProgressDialogController(this, getString(R.string.importWorkout));
-        dialogController.show();
-
-        new Thread(() -> {
-            try {
-                InputStream stream = getContentResolver().openInputStream(uri);
-                IOHelper.GpxImporter.importWorkout(getApplicationContext(), stream);
-                mHandler.post(() -> {
-                    Toast.makeText(this, R.string.workoutImported, Toast.LENGTH_LONG).show();
-                    dialogController.cancel();
-                    refresh();
-                });
-            } catch (Exception e) {
-                e.printStackTrace();
-                mHandler.post(() -> {
-                    dialogController.cancel();
-                    showErrorDialog(e, R.string.error, R.string.errorImportFailed);
-                });
-            }
-        }).start();
+        Intent intent = new Intent(this, ImportGpxActivity.class);
+        intent.setData(uri);
+        startActivity(intent);
     }
 
     private void showMassImportGpx() {

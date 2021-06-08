@@ -44,7 +44,7 @@
     <string name="editDisplayedInformationHint">Sempre que o adestramento non tivese comezado, podes editar os valores mostrados premendo nalgún dos catro campos.</string>
     <string name="editDisplayedInformation">Editar a información presentada</string>
     <string name="sendEmail">Enviar email</string>
-    <string name="aboutSendFeedback">Enviar comentarios ó desenvolvedor</string>
+    <string name="aboutSendFeedback">Enviar comentarios ao desenvolvedor</string>
     <string name="aboutSourceCode">Ver código fonte</string>
     <string name="aboutContributors">Colaboradores</string>
     <string name="aboutAuthor">Autor</string>
@@ -115,7 +115,7 @@
     <string name="preferencesBackupSummary">Copia/Restauración dos teus datos de adestramento</string>
     <string name="preferencesBackupTitle">Base de datos</string>
     <string name="preferencesRecordingSummary">Xestionar a gravación do adestramento</string>
-    <string name="preferencesRecordingTitle">Ó gravar</string>
+    <string name="preferencesRecordingTitle">Ao gravar</string>
     <string name="preferencesUserInterfaceSummary">Personalizar a aplicación</string>
     <string name="preferencesUserInterfaceTitle">Interface da usuaria</string>
     <string name="avgSpeedTotalLong">Velocidade promedio en Total</string>
@@ -167,8 +167,8 @@
     <string name="mapStyle">Estilo do mapa</string>
     <string name="data">Datos</string>
     <string name="gps">GPS</string>
-    <string name="importBackupSummary">Restaurar unha copia de seguridade</string>
-    <string name="importBackup">Importar copia de seguridade</string>
+    <string name="importBackupSummary">Restaurar unha copia de apoio</string>
+    <string name="importBackup">Importar copia de apoio</string>
     <string name="exportDataSummary">Isto fai unha copia de apoio de todos os adestramentos</string>
     <string name="exportData">Exportar datos</string>
     <string name="settings">Axustes</string>
@@ -272,14 +272,14 @@
     <string name="actionGrant">Conceder</string>
     <string name="aboutPrivacyPolicy">Política de Privacidade</string>
     <string name="aboutHelpTranslating">Axuda a traducir</string>
-    <string name="aboutUnlistedContributors">Grazas a todas as colaboradoras non mencionadas que axudaron a traducir e ampliar FitoTrack!</string>
+    <string name="aboutUnlistedContributors">Grazas a todas as colaboradoras non mencionadas que axudaron a traducir e mellorar FitoTrack!</string>
     <string name="inclination">Inclinación</string>
     <string name="nothingSelected">Nada seleccionado</string>
     <string name="showIntervals">Amosar intervalos</string>
     <string name="connectHeartRateDevice">Conectar monitor ritmo cardíaco</string>
     <string name="selectBluetoothDevice">Selecciona dispositivo Bluetooth</string>
     <string name="workoutAvgHeartRate">Ritmo card. promedio</string>
-    <string name="workoutMaxHeartRate">Ritmo cardíaco Máx.</string>
+    <string name="workoutMaxHeartRate">Ritmo cardíaco Máx</string>
     <string name="workoutHeartRate">Ritmo cardíaco</string>
     <string name="workoutStarted">Adestramento iniciado</string>
     <string name="workoutStopped">Adestramento detido</string>
@@ -405,4 +405,6 @@
     <string name="workoutMaxHeight">Altura máx</string>
     <string name="workoutMinHeight">Altura min</string>
     <string name="unitHeartBeatsPerMinute">ppm</string>
+    <string name="preferenceFirstDayOfWeek">Comezo da semana</string>
+    <string name="edit_interval">Editar intervalo</string>
 </resources>
