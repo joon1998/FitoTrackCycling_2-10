@@ -27,13 +27,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-import de.tadris.fitness.data.WorkoutData;
+import de.tadris.fitness.data.GpsWorkoutData;
 
 public interface IWorkoutImporter {
     class WorkoutImportResult {
-        List<WorkoutData> workouts;
+        public List<GpsWorkoutData> workouts;
 
-        public WorkoutImportResult(List<WorkoutData> workouts) {
+        public WorkoutImportResult(List<GpsWorkoutData> workouts) {
             this.workouts = workouts;
         }
     }
@@ -45,7 +45,7 @@ public interface IWorkoutImporter {
      */
     default int importWorkout(Context context, InputStream input) throws IOException {
         WorkoutImportResult importResult = readWorkouts(input);
-        for (WorkoutData data : importResult.workouts) {
+        for (GpsWorkoutData data : importResult.workouts) {
             new ImportWorkoutSaver(context, data).saveWorkout();
         }
         return importResult.workouts.size();

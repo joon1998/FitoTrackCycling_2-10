@@ -18,6 +18,7 @@
  */
 
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 allprojects {
     dependencies {
@@ -29,11 +30,11 @@ allprojects {
 }
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         applicationId "de.tadris.fitness"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1210
         versionName "12.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -54,27 +55,28 @@ android {
         coreLibraryDesugaringEnabled true
     }
     lintOptions {
-        checkReleaseBuilds false
-        // Or, if you prefer, you can continue to check for errors in release builds,
-        // but continue the build even when errors are found:
-//        abortOnError false
+        abortOnError false
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
     // Android
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.recyclerview:recyclerview:1.2.0'
-    implementation "androidx.preference:preference:1.1.1"
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation "androidx.preference:preference-ktx:1.1.1"
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.documentfile:documentfile:1.0.1'
+    implementation "androidx.core:core-ktx:1.6.0"
 
     // Maps
-    def mapsforge_version = "0.14.0"
+    def mapsforge_version = "0.16.0"
     implementation "org.mapsforge:mapsforge-core:$mapsforge_version"
     implementation "org.mapsforge:mapsforge-map:$mapsforge_version"
     implementation "org.mapsforge:mapsforge-map-reader:$mapsforge_version"
@@ -83,22 +85,20 @@ dependencies {
     implementation 'com.caverock:androidsvg:1.4'
 
     // UI
-    implementation 'net.sf.kxml:kxml2:2.3.0'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.github.clans:fab:1.6.4'
 
     // XML
     implementation 'stax:stax-api:1.0.1'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.9.8'
+    implementation 'net.sf.kxml:kxml2:2.3.0'
+    implementation 'xmlpull:xmlpull:1.1.3.1'
 
     // File Utils
     implementation 'commons-io:commons-io:2.6'
 
     // Upload to OSM
     implementation('de.westnordost:osmapi-traces:1.0')
-    configurations {
-        compile.exclude group: 'net.sf.kxml', module: 'kxml2' // already included in Android
-    }
 
     // Parsing date strings in GPX-files
     implementation 'com.github.sisyphsu:dateparser:1.0.4'
@@ -123,4 +123,8 @@ dependencies {
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    configurations {
+        all*.exclude group: 'xmlpull', module: 'xmlpull'
+    }
 }

@@ -32,8 +32,8 @@ import java.util.Date;
 import java.util.List;
 
 import de.tadris.fitness.R;
-import de.tadris.fitness.data.Workout;
-import de.tadris.fitness.data.WorkoutSample;
+import de.tadris.fitness.data.GpsSample;
+import de.tadris.fitness.data.GpsWorkout;
 import de.tadris.fitness.ui.dialog.ProgressDialogController;
 import de.westnordost.osmapi.OsmConnection;
 import de.westnordost.osmapi.common.errors.OsmAuthorizationException;
@@ -44,19 +44,19 @@ import oauth.signpost.OAuthConsumer;
 
 public class OsmTraceUploader {
 
-    private static final int CUT_DISTANCE= 300;
+    private static final int CUT_DISTANCE = 300;
 
     private final Activity activity;
     private final Handler handler;
-    private final Workout workout;
-    private final List<WorkoutSample> samples;
+    private final GpsWorkout workout;
+    private final List<GpsSample> samples;
     private final GpsTraceDetails.Visibility visibility;
     private final OAuthConsumer consumer;
     private final boolean cut;
     private final ProgressDialogController dialogController;
     private final String description;
 
-    public OsmTraceUploader(Activity activity, Handler handler, Workout workout, List<WorkoutSample> samples, GpsTraceDetails.Visibility visibility, OAuthConsumer consumer, boolean cut, String description) {
+    public OsmTraceUploader(Activity activity, Handler handler, GpsWorkout workout, List<GpsSample> samples, GpsTraceDetails.Visibility visibility, OAuthConsumer consumer, boolean cut, String description) {
         this.activity = activity;
         this.handler = handler;
         this.workout = workout;
@@ -64,8 +64,8 @@ public class OsmTraceUploader {
         this.visibility = visibility;
         this.consumer = consumer;
         this.cut = cut;
-        this.description= description;
-        this.dialogController= new ProgressDialogController(activity, activity.getString(R.string.uploading));
+        this.description = description;
+        this.dialogController = new ProgressDialogController(activity, activity.getString(R.string.uploading));
     }
 
     private void cut(){
@@ -75,10 +75,10 @@ public class OsmTraceUploader {
 
     private void cut(boolean last){
         double distance= 0;
-        int count= 0;
-        WorkoutSample lastSample= samples.remove(last ? samples.size()-1 : 0);
+        int count = 0;
+        GpsSample lastSample = samples.remove(last ? samples.size() - 1 : 0);
         while(distance < CUT_DISTANCE){
-            WorkoutSample currentSample= samples.remove(last ? samples.size()-1 : 0);
+            GpsSample currentSample = samples.remove(last ? samples.size() - 1 : 0);
             distance+= lastSample.toLatLong().sphericalDistance(currentSample.toLatLong());
             count++;
             lastSample= currentSample;
@@ -117,10 +117,10 @@ public class OsmTraceUploader {
 
         List<GpsTrackpoint> trackpoints= new ArrayList<>();
 
-        for(WorkoutSample sample : samples){
-            GpsTrackpoint trackpoint= new GpsTrackpoint(new GpsTraceLatLong(sample));
-            trackpoint.time= new Date(sample.absoluteTime);
-            trackpoint.elevation= (float)sample.elevation;
+        for (GpsSample sample : samples) {
+            GpsTrackpoint trackpoint = new GpsTrackpoint(new GpsTraceLatLong(sample));
+            trackpoint.time = new Date(sample.absoluteTime);
+            trackpoint.elevation = (float) sample.elevation;
             trackpoints.add(trackpoint);
         }
         setProgress(25);

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -23,7 +23,7 @@ import android.content.Context;
 
 import de.tadris.fitness.R;
 import de.tadris.fitness.aggregation.AggregationType;
-import de.tadris.fitness.data.Workout;
+import de.tadris.fitness.data.BaseWorkout;
 
 public class WorkoutCount extends AbstractWorkoutInformation {
     public WorkoutCount(Context context) {
@@ -41,7 +41,7 @@ public class WorkoutCount extends AbstractWorkoutInformation {
     }
 
     @Override
-    public double getValueFromWorkout(Workout workout) {
+    public double getValueFromWorkout(BaseWorkout workout) {
         return 1;
     }
 

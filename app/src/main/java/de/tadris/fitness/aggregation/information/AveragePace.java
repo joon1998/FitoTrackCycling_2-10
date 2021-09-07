@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -23,9 +23,9 @@ import android.content.Context;
 
 import de.tadris.fitness.R;
 import de.tadris.fitness.aggregation.AggregationType;
-import de.tadris.fitness.data.Workout;
+import de.tadris.fitness.data.GpsWorkout;
 
-public class AveragePace extends AbstractWorkoutInformation {
+public class AveragePace extends GpsWorkoutInformation {
     public AveragePace(Context context) {
         super(context);
     }
@@ -41,7 +41,7 @@ public class AveragePace extends AbstractWorkoutInformation {
     }
 
     @Override
-    public double getValueFromWorkout(Workout workout) {
+    public double getValueFromWorkout(GpsWorkout workout) {
         return ((double) workout.duration / 1000 / 60) / distanceUnitUtils.getDistanceUnitSystem().getDistanceFromKilometers((double) workout.length / 1000);
     }
 

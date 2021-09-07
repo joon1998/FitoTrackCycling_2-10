@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -26,11 +26,12 @@ import java.util.Arrays;
 import java.util.List;
 
 import de.tadris.fitness.data.AppDatabase;
+import de.tadris.fitness.data.GpsSample;
+import de.tadris.fitness.data.GpsWorkout;
 import de.tadris.fitness.data.UserPreferences;
-import de.tadris.fitness.data.Workout;
-import de.tadris.fitness.data.WorkoutSample;
 import de.tadris.fitness.data.WorkoutType;
-import de.tadris.fitness.recording.WorkoutRecorder;
+import de.tadris.fitness.recording.BaseWorkoutRecorder;
+import de.tadris.fitness.recording.gps.GpsWorkoutRecorder;
 import de.tadris.fitness.util.DataManager;
 import de.tadris.fitness.util.FitoTrackThemes;
 import de.tadris.fitness.util.UserDateTimeUtils;
@@ -45,14 +46,13 @@ public class Instance {
             Log.e("Instance", "no Context Provided");
         }
         if(instance == null){
-            instance= new Instance(context);
+            instance = new Instance(context);
         }
         return instance;
     }
 
-
     public final AppDatabase db;
-    public WorkoutRecorder recorder;
+    public BaseWorkoutRecorder recorder;
     public final UserPreferences userPreferences;
     public final FitoTrackThemes themes;
     public final UserDateTimeUtils userDateTimeUtils;
@@ -77,20 +77,20 @@ public class Instance {
         DataManager.cleanFilesASync(context);
     }
 
-    private WorkoutRecorder restoreRecorder(Context context) {
-        Workout lastWorkout = db.workoutDao().getLastWorkout();
+    private GpsWorkoutRecorder restoreRecorder(Context context) {
+        GpsWorkout lastWorkout = db.gpsWorkoutDao().getLastWorkout();
         if (lastWorkout != null && lastWorkout.end == -1) {
             return restoreRecorder(context, lastWorkout);
         }
-        return new WorkoutRecorder(context, WorkoutType.getWorkoutTypeById(context, WorkoutType.WORKOUT_TYPE_ID_OTHER));
+        return new GpsWorkoutRecorder(context, WorkoutType.getWorkoutTypeById(context, WorkoutType.WORKOUT_TYPE_ID_OTHER));
     }
 
-    private WorkoutRecorder restoreRecorder(Context context, Workout workout) {
-        List<WorkoutSample> samples = Arrays.asList(db.workoutDao().getAllSamplesOfWorkout(workout.id));
-        return new WorkoutRecorder(context, workout, samples);
+    private GpsWorkoutRecorder restoreRecorder(Context context, GpsWorkout workout) {
+        List<GpsSample> samples = Arrays.asList(db.gpsWorkoutDao().getAllSamplesOfWorkout(workout.id));
+        return new GpsWorkoutRecorder(context, workout, samples);
     }
 
-    public void prepareResume(Context context, Workout workout) {
+    public void prepareResume(Context context, GpsWorkout workout) {
         recorder = restoreRecorder(context, workout);
     }
 }

@@ -31,12 +31,10 @@
     <string name="trackingInfoDescription">Maklumat mengenai pengesan</string>
     <string name="trackingInfo">Maklumat engesanan</string>
     <string name="trackerWaitingMessage">Menunggu senaman</string>
-    <string name="trackerRunningMessage">Senaman anda sedang direkod</string>
     <string name="trackerRunning">Pengesan sedang</string>
     <string name="deleteWorkoutMessage">Adakah anda ingin memadam senaman berikut\?</string>
     <string name="deleteWorkout">Padam</string>
     <string name="noGpsMessage">Sila hidupkan GPS untuk mengesan senaman anda.</string>
-    <string name="action_edit_comment">Sunting</string>
     <string name="pref_weight_summary">Berat badan anda diperlukan untuk mengira kalori yang dibakar</string>
     <string name="pref_weight">Berat</string>
     <string name="speechConfigNoSpeech">Tiada</string>

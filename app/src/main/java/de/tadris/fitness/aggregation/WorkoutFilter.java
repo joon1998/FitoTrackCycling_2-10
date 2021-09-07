@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -19,10 +19,10 @@
 
 package de.tadris.fitness.aggregation;
 
-import de.tadris.fitness.data.Workout;
+import de.tadris.fitness.data.BaseWorkout;
 
 public interface WorkoutFilter {
 
-    boolean isAccepted(Workout workout);
+    boolean isAccepted(BaseWorkout workout);
 
 }

@@ -21,13 +21,13 @@ package de.tadris.fitness.util.io.general;
 
 import android.content.Context;
 
-import de.tadris.fitness.data.WorkoutData;
-import de.tadris.fitness.data.WorkoutSample;
-import de.tadris.fitness.recording.WorkoutSaver;
+import de.tadris.fitness.data.GpsSample;
+import de.tadris.fitness.data.GpsWorkoutData;
+import de.tadris.fitness.recording.gps.GpsWorkoutSaver;
 
-public class ImportWorkoutSaver extends WorkoutSaver {
+public class ImportWorkoutSaver extends GpsWorkoutSaver {
 
-    public ImportWorkoutSaver(Context context, WorkoutData data) {
+    public ImportWorkoutSaver(Context context, GpsWorkoutData data) {
         super(context, data);
     }
 
@@ -43,7 +43,7 @@ public class ImportWorkoutSaver extends WorkoutSaver {
 
     private void setMSLElevationToElevation() {
         // Usually the elevation used in GPX files is already the median sea level
-        for (WorkoutSample sample : samples) {
+        for (GpsSample sample : samples) {
             sample.elevationMSL = sample.elevation;
         }
     }
@@ -57,8 +57,8 @@ public class ImportWorkoutSaver extends WorkoutSaver {
             // Speed values already present
             return;
         }
-        WorkoutSample lastSample = samples.get(0);
-        for(WorkoutSample sample : samples){
+        GpsSample lastSample = samples.get(0);
+        for (GpsSample sample : samples) {
             double distance = lastSample.toLatLong().sphericalDistance(sample.toLatLong());
             long timeDiff = sample.absoluteTime - lastSample.absoluteTime;
             if (timeDiff != 0) {

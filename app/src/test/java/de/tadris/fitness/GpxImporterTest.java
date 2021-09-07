@@ -25,6 +25,7 @@ import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
+import de.tadris.fitness.data.GpsWorkoutData;
 import de.tadris.fitness.data.WorkoutType;
 import de.tadris.fitness.util.io.GpxImporter;
 import de.tadris.fitness.util.io.general.IWorkoutImporter;
@@ -40,46 +41,50 @@ public class GpxImporterTest {
     @Test
     public void testImportFitoTrackGpx() throws IOException {
         IWorkoutImporter.WorkoutImportResult importResult = importer.readWorkouts(new ByteArrayInputStream(fitotrackGpx.getBytes()));
+        GpsWorkoutData workoutData = importResult.workouts.get(0);
 
         // Main test is that above method runs without error, additionally perform some checks:
-        Assert.assertEquals(importResult.workout.comment, "...");
-        Assert.assertEquals(importResult.workout.workoutTypeId, WorkoutType.WORKOUT_TYPE_ID_RUNNING);
-        Assert.assertEquals(importResult.samples.size(), 10);
-        Assert.assertEquals(importResult.samples.get(0).elevation, 148.5465381985937, 0.001);
-        Assert.assertEquals(importResult.samples.get(6).speed, 3.25, 0.001);
-        Assert.assertEquals(importResult.samples.get(7).lat, 42.25636801, 0.001);
-        Assert.assertEquals(importResult.samples.get(9).lon, 30.23244414, 0.001);
+        Assert.assertEquals(workoutData.getWorkout().comment, "...");
+        Assert.assertEquals(workoutData.getWorkout().workoutTypeId, WorkoutType.WORKOUT_TYPE_ID_RUNNING);
+        Assert.assertEquals(workoutData.getSamples().size(), 10);
+        Assert.assertEquals(workoutData.getSamples().get(0).elevation, 148.5465381985937, 0.001);
+        Assert.assertEquals(workoutData.getSamples().get(6).speed, 3.25, 0.001);
+        Assert.assertEquals(workoutData.getSamples().get(7).lat, 42.25636801, 0.001);
+        Assert.assertEquals(workoutData.getSamples().get(9).lon, 30.23244414, 0.001);
     }
 
     @Test
     public void testImportOpenTracksGpx() throws IOException {
         IWorkoutImporter.WorkoutImportResult importResult = importer.readWorkouts(new ByteArrayInputStream(opentracksGpx.getBytes()));
+        GpsWorkoutData workoutData = importResult.workouts.get(0);
 
         // Main test is that above method runs without error, additionally perform some checks:
-        Assert.assertEquals(importResult.workout.comment, "...");
-        Assert.assertEquals(importResult.samples.size(), 10);
-        Assert.assertEquals(importResult.samples.get(0).elevation, 152.5, 0.001);
-        Assert.assertEquals(importResult.samples.get(7).lat, 30.232106, 0.001);
-        Assert.assertEquals(importResult.samples.get(9).lon, 10.534532, 0.001);
+        Assert.assertEquals(workoutData.getWorkout().comment, "...");
+        Assert.assertEquals(workoutData.getSamples().size(), 10);
+        Assert.assertEquals(workoutData.getSamples().get(0).elevation, 152.5, 0.001);
+        Assert.assertEquals(workoutData.getSamples().get(7).lat, 30.232106, 0.001);
+        Assert.assertEquals(workoutData.getSamples().get(9).lon, 10.534532, 0.001);
     }
 
     @Test
     public void testImportRuntasticGpx() throws IOException {
         IWorkoutImporter.WorkoutImportResult importResult = importer.readWorkouts(new ByteArrayInputStream(runtasticGpx.getBytes()));
+        GpsWorkoutData workoutData = importResult.workouts.get(0);
 
-        Assert.assertEquals(importResult.workout.comment, "runtastic_20160215_0843");
-        Assert.assertEquals(importResult.workout.workoutTypeId, WorkoutType.WORKOUT_TYPE_ID_OTHER);
-        Assert.assertEquals(importResult.samples.size(), 10);
+        Assert.assertEquals("runtastic_20160215_0843", workoutData.getWorkout().comment);
+        Assert.assertEquals("", workoutData.getWorkout().workoutTypeId);
+        Assert.assertEquals(10, workoutData.getSamples().size());
         //TrackSegment / samples not tested cause its similar to other imports
     }
 
     @Test
     public void testImportKomootGpx() throws IOException {
         IWorkoutImporter.WorkoutImportResult importResult = importer.readWorkouts(new ByteArrayInputStream(komootGpx.getBytes()));
+        GpsWorkoutData workoutData = importResult.workouts.get(0);
 
-        Assert.assertEquals(importResult.workout.comment, "NameOfTrack");
-        Assert.assertEquals(importResult.workout.workoutTypeId, WorkoutType.WORKOUT_TYPE_ID_OTHER);
-        Assert.assertEquals(importResult.samples.size(), 10);
+        Assert.assertEquals("NameOfTrack", workoutData.getWorkout().comment);
+        Assert.assertEquals("", workoutData.getWorkout().workoutTypeId);
+        Assert.assertEquals(10, workoutData.getSamples().size());
         //TrackSegment / samples not tested cause its similar to other imports
     }
 

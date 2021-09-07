@@ -27,10 +27,10 @@ import java.util.List;
 
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.data.AppDatabase;
+import de.tadris.fitness.data.GpsSample;
+import de.tadris.fitness.data.GpsWorkout;
+import de.tadris.fitness.data.GpsWorkoutData;
 import de.tadris.fitness.data.Interval;
-import de.tadris.fitness.data.Workout;
-import de.tadris.fitness.data.WorkoutData;
-import de.tadris.fitness.data.WorkoutSample;
 
 /**
  * Before release 12 interval data was reconstructed from the interval sets.
@@ -51,9 +51,9 @@ public class Migration12IntervalSets extends Migration {
 
     @Override
     public void migrate() {
-        Workout[] workouts = database.workoutDao().getWorkouts();
+        GpsWorkout[] workouts = database.gpsWorkoutDao().getWorkouts();
         int i = 0;
-        for (Workout workout : workouts) {
+        for (GpsWorkout workout : workouts) {
             migrateWorkout(workout);
             listener.onProgressUpdate(100 * i / workouts.length);
             i++;
@@ -61,18 +61,18 @@ public class Migration12IntervalSets extends Migration {
         listener.onProgressUpdate(100);
     }
 
-    public void migrateWorkout(Workout workout) {
+    public void migrateWorkout(GpsWorkout workout) {
         if (workout.intervalSetUsedId > 0) {
-            WorkoutData workoutData = WorkoutData.fromWorkout(context, workout);
-            List<WorkoutSample> samples = new ArrayList<>(workoutData.getSamples());
+            GpsWorkoutData workoutData = GpsWorkoutData.fromWorkout(context, workout);
+            List<GpsSample> samples = new ArrayList<>(workoutData.getSamples());
             for (Pair<Long, Interval> pair : getIntervalSetTimesFromWorkout(workoutData)) {
                 long relativeTime = pair.first;
                 Interval interval = pair.second;
                 while (!samples.isEmpty()) {
-                    WorkoutSample sample = samples.remove(0);
+                    GpsSample sample = samples.remove(0);
                     if (sample.relativeTime >= relativeTime) {
                         sample.intervalTriggered = interval.id;
-                        database.workoutDao().updateSample(sample);
+                        database.gpsWorkoutDao().updateSample(sample);
                         break;
                     }
                 }
@@ -80,20 +80,20 @@ public class Migration12IntervalSets extends Migration {
         }
     }
 
-    private List<Pair<Long, Interval>> getIntervalSetTimesFromWorkout(WorkoutData data) {
+    private List<Pair<Long, Interval>> getIntervalSetTimesFromWorkout(GpsWorkoutData data) {
         List<Pair<Long, Interval>> result = new ArrayList<>();
         Interval[] intervals = database.intervalDao().getAllIntervalsOfSet(data.getWorkout().intervalSetUsedId);
         if (intervals == null || intervals.length == 0) {
             return result;
         }
-        Workout workout = data.getWorkout();
-        List<WorkoutSample> samples = data.getSamples();
+        GpsWorkout workout = data.getWorkout();
+        List<GpsSample> samples = data.getSamples();
 
         int index = 0;
         long time = 0;
         if (intervalSetIncludesPauses) {
             long lastTime = samples.get(0).absoluteTime;
-            for (WorkoutSample sample : samples) {
+            for (GpsSample sample : samples) {
                 if (index >= intervals.length) {
                     index = 0;
                 }

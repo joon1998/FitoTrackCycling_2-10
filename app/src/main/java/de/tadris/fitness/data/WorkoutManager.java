@@ -23,26 +23,26 @@ import java.util.List;
 
 public class WorkoutManager {
 
-    public static void roundSpeedValues(List<WorkoutSample> samples){
-        for(int i= 0; i < samples.size(); i++){
-            WorkoutSample sample= samples.get(i);
-            if(i == 0){
-                sample.tmpRoundedSpeed= (sample.speed+samples.get(i+1).speed) / 2;
-            }else if(i == samples.size()-1){
-                sample.tmpRoundedSpeed= (sample.speed+samples.get(i-1).speed) / 2;
-            }else{
-                sample.tmpRoundedSpeed= (sample.speed+samples.get(i-1).speed+samples.get(i+1).speed) / 3;
+    public static void roundSpeedValues(List<GpsSample> samples) {
+        for (int i = 0; i < samples.size(); i++) {
+            GpsSample sample = samples.get(i);
+            if (i == 0) {
+                sample.tmpRoundedSpeed = (sample.speed + samples.get(i + 1).speed) / 2;
+            } else if (i == samples.size() - 1) {
+                sample.tmpRoundedSpeed = (sample.speed + samples.get(i - 1).speed) / 2;
+            } else {
+                sample.tmpRoundedSpeed = (sample.speed + samples.get(i - 1).speed + samples.get(i + 1).speed) / 3;
             }
         }
     }
 
-    public static void calculateInclination(List<WorkoutSample> samples){
+    public static void calculateInclination(List<GpsSample> samples) {
         samples.get(0).tmpInclination = 0;
 
         // Calculate inclination
         for (int i = 1; i < samples.size(); i++) {
-            WorkoutSample sample = samples.get(i);
-            WorkoutSample lastSample = samples.get(i - 1);
+            GpsSample sample = samples.get(i);
+            GpsSample lastSample = samples.get(i - 1);
             double elevationDifference = sample.elevation - lastSample.elevation;
             double distance = sample.toLatLong().sphericalDistance(lastSample.toLatLong());
             sample.tmpInclination = (float) (elevationDifference * 100 / distance);
@@ -50,7 +50,7 @@ public class WorkoutManager {
 
         // Some rounding
         for (int i = 0; i < samples.size(); i++) {
-            WorkoutSample sample = samples.get(i);
+            GpsSample sample = samples.get(i);
             if (i == 0) {
                 sample.tmpInclination = (sample.tmpInclination + samples.get(i + 1).tmpInclination) / 2;
             } else if (i == samples.size() - 1) {

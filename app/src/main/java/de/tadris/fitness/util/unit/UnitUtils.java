@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -27,6 +27,8 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
 public abstract class UnitUtils {
+
+    public static String unitHertzShort = "Hz";
 
     protected Context context;
 

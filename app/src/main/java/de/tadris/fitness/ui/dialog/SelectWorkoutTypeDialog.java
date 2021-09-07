@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -48,8 +48,8 @@ public class SelectWorkoutTypeDialog implements WorkoutTypeAdapter.WorkoutTypeAd
     public SelectWorkoutTypeDialog(FitoTrackActivity context, WorkoutTypeSelectListener listener) {
         this.context = context;
         this.listener = listener;
-        this.options = WorkoutType.getAllTypes(context);
-        this.options.add(new WorkoutType(ID_ADD, context.getString(R.string.workoutTypeAdd), 0, context.getThemePrimaryColor(), Icon.ADD.name, 0));
+        this.options = WorkoutType.getAllTypesSorted(context);
+        this.options.add(0, new WorkoutType(ID_ADD, context.getString(R.string.workoutTypeAdd), 0, context.getThemePrimaryColor(), Icon.ADD.name, 0, WorkoutType.RecordingType.GPS.id));
     }
 
     public void show() {

@@ -21,6 +21,7 @@ package de.tadris.fitness.map;
 
 import org.mapsforge.map.rendertheme.XmlRenderTheme;
 import org.mapsforge.map.rendertheme.XmlRenderThemeMenuCallback;
+import org.mapsforge.map.rendertheme.XmlThemeResourceProvider;
 
 import java.io.InputStream;
 
@@ -29,11 +30,11 @@ import java.io.InputStream;
  */
 public enum InternalRenderTheme implements XmlRenderTheme {
 
-    OLD("/assets/mapsforge/default.xml"),
-    DEFAULT("/assets/mapsforge/osmarender.xml");
+    OLD("/assets/mapsforge/default.xml"), DEFAULT("/assets/mapsforge/osmarender.xml");
 
     private final String path;
-    private XmlRenderThemeMenuCallback callback;
+    private XmlRenderThemeMenuCallback menuCallback;
+    private XmlThemeResourceProvider resourceProvider;
 
     InternalRenderTheme(String path) {
         this.path = path;
@@ -41,7 +42,7 @@ public enum InternalRenderTheme implements XmlRenderTheme {
 
     @Override
     public XmlRenderThemeMenuCallback getMenuCallback() {
-        return callback;
+        return menuCallback;
     }
 
     /**
@@ -58,7 +59,17 @@ public enum InternalRenderTheme implements XmlRenderTheme {
     }
 
     @Override
+    public XmlThemeResourceProvider getResourceProvider() {
+        return this.resourceProvider;
+    }
+
+    @Override
     public void setMenuCallback(XmlRenderThemeMenuCallback menuCallback) {
-        callback= menuCallback;
+        this.menuCallback = menuCallback;
+    }
+
+    @Override
+    public void setResourceProvider(XmlThemeResourceProvider resourceProvider) {
+        this.resourceProvider = resourceProvider;
     }
 }

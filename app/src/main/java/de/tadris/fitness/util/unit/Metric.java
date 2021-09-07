@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -94,5 +94,20 @@ public class Metric implements DistanceUnitSystem {
     @Override
     public int getSpeedUnitTitle() {
         return R.string.unitKilometersPerHour;
+    }
+
+    @Override
+    public String getReallyShortDistanceUnit() {
+        return "cm";
+    }
+
+    @Override
+    public double getDistanceFromCentimeters(double centimeters) {
+        return centimeters;
+    }
+
+    @Override
+    public double getCentimetersFromReallyShortDistance(double reallyShortDistance) {
+        return reallyShortDistance;
     }
 }

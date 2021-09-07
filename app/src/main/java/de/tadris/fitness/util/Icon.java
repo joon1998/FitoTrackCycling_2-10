@@ -48,6 +48,9 @@ public enum Icon {
     ADD("add", R.drawable.ic_add_white),
     DOWNHILL_SKI("downhill_ski", R.drawable.ic_downhill_ski),
     CROSS_COUNTRY_SKI("cross_country_ski", R.drawable.ic_cross_country_ski),
+    ROPE_SKIPPING("rope_skipping", R.drawable.ic_rope_skipping),
+    PUSH_UPS("push_ups", R.drawable.ic_push_ups),
+    TRAMPOLINE_JUMPING("trampoline_jumping", R.drawable.ic_trampoline_jumping),
     OTHER("other", R.drawable.ic_other);
 
     public final String name;

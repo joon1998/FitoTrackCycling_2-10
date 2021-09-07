@@ -21,7 +21,6 @@
 
 <resources>
     <string name="app_name">FitoTrack</string>
-    <string name="workout_add">Aggiungi</string>
     <string name="stop">Ferma</string>
     <string name="delete">Cancella</string>
     <string name="exporting">Esportazione</string>
@@ -31,7 +30,6 @@
     <string name="errorImportFailed">Importazione dati fallita.</string>
     <string name="shareFile">Condividi file</string>
     <string name="initialising">Inizializzazione</string>
-    <string name="preferences">Preferenze</string>
     <string name="workouts">Allenamenti</string>
     <string name="locationData">Dati relativi alla posizione</string>
     <string name="converting">Conversione</string>
@@ -41,7 +39,6 @@
     <string name="importBackupMessage">ATTENZIONE: tutti i dati esistenti nella app saranno cancellati. Se non vuoi perderli, crea prima un backup. Vuoi veramente ripristinare un backup precedente?</string>
     <string name="restore">Ripristina</string>
     <string name="backup">Backup</string>
-    <string name="pref_ringtone_silent">Silente</string>
     <string name="setPreferencesTitle">Preferenze</string>
     <string name="setPreferencesMessage">Puoi impostare il tuo sistema di misura ed il tuo peso nelle preferenze.</string>
     <string name="timeMinuteSingular">Minuto</string>
@@ -92,7 +89,6 @@
     <string name="height">Altezza</string>
     <string name="workoutTypeRunning">Corsa</string>
     <string name="workoutTypeWalking">Camminata</string>
-    <string name="workoutTypeJogging">Jogging</string>
     <string name="workoutTypeCycling">Bicicletta</string>
     <string name="workoutTypeHiking">Escursione</string>
     <string name="workoutTypeOther">Altro</string>
@@ -114,7 +110,6 @@
     <string name="deleteWorkout">Cancella allenamento</string>
     <string name="deleteWorkoutMessage">Vuoi veramente cancellare questo allenamento?</string>
     <string name="trackerRunning">Il tracciamento è in funzione</string>
-    <string name="trackerRunningMessage">L\'allenamento è in corso di registrazione</string>
     <string name="trackingInfo">Info tracciamento</string>
     <string name="trackingInfoDescription">Info sul tracciamento in corso</string>
     <string name="cancel">Cancella</string>
@@ -128,7 +123,6 @@
     <string name="importBackup">Importa un backup dei dati</string>
     <string name="importBackupSummary">Ripristina un backup precedente</string>
     <string name="gps">GPS</string>
-    <string name="data">Dati</string>
     <string name="mapStyle">Stile mappa</string>
     <string name="waiting_gps">Attesa GPS</string>
     <string name="actionUploadToOSM">Carica su OSM</string>
@@ -136,7 +130,6 @@
     <string name="trackVisibilityPref">Visibilità tracciato</string>
     <string name="description">Descrizione</string>
     <string name="ttsNotAvailable">TextToSpeech non disponibile</string>
-    <string name="action_edit_comment">Edita commento</string>
     <string name="pref_announcement_mode">Modalità annunci vocali</string>
     <string name="save">Salva</string>
     <string name="share">Condividi</string>
@@ -152,7 +145,6 @@
     <string name="add_interval">Aggiungi intervallo di tempo</string>
     <string name="manageIntervalSets">Gestisci gli intervalli di tempo</string>
     <string name="manageIntervalsSummary">Edita gli intervalli di tempo: potrai usarli durante gli allenamenti con gli annunci vocali.</string>
-    <string name="workoutRecording">Registrazione allenamento</string>
     <string name="createIntervalSet">Crea un nuovo intervallo di tempo</string>
     <string name="create">Crea</string>
     <string name="hintManageIntervalSets">Aggiungi un intervallo di tempo per i tuoi allenamenti.</string>
@@ -207,7 +199,6 @@
     <string name="intervalAutoTimeoutTraining">Timeout automatico dell\'allenamento</string>
     <string name="pref_auto_timeout_title">Intervallo di tempo per lo stop automatico</string>
     <string name="currentTime">Orario corrente</string>
-    <string name="oClock">ore</string>
     <string name="unlockPhoneStopWorkout">Per favore sblocca il telefono per terminare la registrazione</string>
     <string-array name="pref_energy_units">
         <item>kcal</item>
@@ -240,7 +231,6 @@
     <string name="workoutStatsHelpText">Questa schermata mostra le statistiche storiche degli allenamenti. Per utilizzarlo devi prima specificare il tipo di allenamento cliccandoci sopra. Quindi imposta le informazioni che desideri conoscere e l\'intervallo di tempo.
 \n
 \nPer esempio, se si seleziona «Settimana» come intervallo di tempo, tutti gli allenamenti di ogni settimana verranno uniti in un punto dati calcolando la media o la somma di ogni settimana.</string>
-    <string name="dataSamples">Campioni</string>
     <string name="no_workouts_recorded">Nessun allenamento registrato</string>
     <string name="announcementSuppressDuringCall">Sopprimere durante la chiamata</string>
     <string name="replaceOrMergeMessage">Sostituire o unire la base di dati con un file di backup\?</string>
@@ -281,7 +271,6 @@
     <string name="aboutContributors">Contributori</string>
     <string name="aboutSendFeedback">Invia suggerimenti allo sviluppatore</string>
     <string name="aboutSourceCode">Visualizza il codice sorgente</string>
-    <string name="sendEmail">Invia un\'e-mail</string>
     <string name="editDisplayedInformation">Modifica le informazioni visualizzate</string>
     <string name="editDisplayedInformationHint">Finché l\'allenamento non è iniziato, è possibile modificare i valori visualizzati cliccando su uno dei quattro campi.</string>
     <string name="noWorkoutStarted">Nessun allenamento iniziato</string>
@@ -299,8 +288,6 @@
     <string name="workoutTypeRowing">Canottaggio</string>
     <string name="importedWorkouts">Allenamenti %d importati</string>
     <string name="importingFiles">Importare file</string>
-    <string name="bulkActions">Azioni di massa</string>
-    <string name="importMultipleGpxFilesSummary">Importare più di un file GPX in una sola volta dal filesystem</string>
     <string name="importMultipleMessageSelectFolder">Selezionare una cartella contenente tutti i file GPX che si desidera importare.</string>
     <string name="importMultipleGpxFiles">Importare file GPX multipli</string>
     <string name="actionGrant">Sovvenzione</string>
@@ -323,7 +310,6 @@
     <string name="autoPauseTitle">Pausa automatica</string>
     <string name="resumeWorkout">Riprendere L\'Allenamento</string>
     <string name="heartRateNotAvailable">La frequenza cardiaca non è attualmente disponibile.</string>
-    <string name="intervals">Intervallo</string>
     <string name="announcementWorkoutActions">Azioni di allenamento (pausa, riprendere, ecc.)</string>
     <string name="resumeWorkoutConfirmation">Vuoi davvero riprendere questo allenamento\? Questo aggiungerà anche una pausa dal momento in cui l\'allenamento è stato interrotto.</string>
     <string name="prefShowOnLockScreenSummary">Mostra le informazioni sull\'allenamento anche se il telefono è bloccato.</string>
@@ -337,8 +323,6 @@
     <string name="actionSave">Salvare</string>
     <string name="customWorkoutTypesTitle">Tipi Di Allenamento Personalizzati</string>
     <string name="preferenceCategoryVoiceFeedback">Risposte di voce</string>
-    <string name="workoutTypeEditMETHint">Una misura per il consumo di energia</string>
-    <string name="workoutTypeEditMinDistanceHint">Distanza minima tra due campioni GPS</string>
     <string name="workoutTypeEditMinDistance">Distanza del campione</string>
     <string name="workoutTypeEditNameError">Inserisci un nome</string>
     <string name="workoutTypeEditName">Nome</string>

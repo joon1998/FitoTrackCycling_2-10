@@ -32,6 +32,7 @@ import de.tadris.fitness.aggregation.information.BurnedEnergy;
 import de.tadris.fitness.aggregation.information.Distance;
 import de.tadris.fitness.aggregation.information.Duration;
 import de.tadris.fitness.aggregation.information.EnergyConsumption;
+import de.tadris.fitness.aggregation.information.Repetitions;
 import de.tadris.fitness.aggregation.information.TopSpeed;
 import de.tadris.fitness.aggregation.information.WorkoutCount;
 
@@ -55,8 +56,8 @@ public class WorkoutInformationManager {
         information.add(new BurnedEnergy(context));
         information.add(new EnergyConsumption(context));
         information.add(new AverageHeartRate(context));
+        information.add(new Repetitions(context));
         information.add(new WorkoutCount(context));
-
     }
 
     public List<WorkoutInformation> getInformation() {

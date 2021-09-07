@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.tadris.fitness.Instance;
-import de.tadris.fitness.data.Workout;
+import de.tadris.fitness.data.BaseWorkout;
 
 public class WorkoutAggregator {
 
@@ -47,8 +47,8 @@ public class WorkoutAggregator {
 
     private List<WorkoutInformationResult> getResults() {
         List<WorkoutInformationResult> results = new ArrayList<>();
-        Workout[] workouts = Instance.getInstance(context).db.workoutDao().getWorkouts();
-        for (Workout workout : workouts) {
+        List<BaseWorkout> workouts = Instance.getInstance(context).db.getAllWorkouts();
+        for (BaseWorkout workout : workouts) {
             if (filter.isAccepted(workout)) {
                 if (isAvailableFor(workout)) {
                     results.add(getResultFor(workout));
@@ -58,11 +58,11 @@ public class WorkoutAggregator {
         return results;
     }
 
-    private boolean isAvailableFor(Workout workout) {
+    private boolean isAvailableFor(BaseWorkout workout) {
         return information.isInformationAvailableFor(workout);
     }
 
-    private WorkoutInformationResult getResultFor(Workout workout) {
+    private WorkoutInformationResult getResultFor(BaseWorkout workout) {
         return new WorkoutInformationResult(workout, information.getValueFromWorkout(workout));
     }
 }

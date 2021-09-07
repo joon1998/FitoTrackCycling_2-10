@@ -26,20 +26,20 @@ import java.util.List;
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.data.Interval;
 import de.tadris.fitness.data.UserPreferences;
-import de.tadris.fitness.recording.WorkoutRecorder;
+import de.tadris.fitness.recording.BaseWorkoutRecorder;
 import de.tadris.fitness.recording.announcement.TTSController;
 
 public class IntervalAnnouncements {
 
-    private WorkoutRecorder recorder;
-    private TTSController ttsController;
+    private final BaseWorkoutRecorder recorder;
+    private final TTSController ttsController;
     private List<Interval> intervals;
-    private UserPreferences preferences;
+    private final UserPreferences preferences;
 
-    private int index= -1; // Last spoken interval
-    private long speakNextAt= 0;
+    private int index = -1; // Last spoken interval
+    private long speakNextAt = 0;
 
-    public IntervalAnnouncements(Context context, WorkoutRecorder recorder, TTSController ttsController, List<Interval> intervals) {
+    public IntervalAnnouncements(Context context, BaseWorkoutRecorder recorder, TTSController ttsController, List<Interval> intervals) {
         this.preferences = Instance.getInstance(context).userPreferences;
         this.recorder = recorder;
         this.ttsController = ttsController;

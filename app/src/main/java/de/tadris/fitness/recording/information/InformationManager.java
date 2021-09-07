@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -24,30 +24,40 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.tadris.fitness.data.WorkoutType;
+
 public class InformationManager {
 
     private final Context context;
     private final List<RecordingInformation> information = new ArrayList<>();
 
-    public InformationManager(Context context) {
+    public InformationManager(WorkoutType.RecordingType mode, Context context) {
         this.context = context;
-        addInformation();
+        addInformation(mode);
     }
 
-    private void addInformation() {
-        information.add(new GPSStatus(context));
+    private void addInformation(WorkoutType.RecordingType mode) {
         information.add(new SystemActions(context));
         information.add(new CurrentTime(context));
         information.add(new Duration(context));
         information.add(new PauseDuration(context));
-        information.add(new Distance(context));
-        information.add(new CurrentSpeed(context));
-        information.add(new SpeedLastMinute(context));
-        information.add(new AverageSpeedMotion(context));
-        information.add(new AverageSpeedTotal(context));
-        information.add(new AveragePace(context));
+        if (mode == WorkoutType.RecordingType.GPS) {
+            information.add(new GPSStatus(context));
+            information.add(new Distance(context));
+            information.add(new CurrentSpeed(context));
+            information.add(new SpeedLastMinute(context));
+            information.add(new AverageSpeedMotion(context));
+            information.add(new AverageSpeedTotal(context));
+            information.add(new AveragePace(context));
+            information.add(new Ascent(context));
+        }
+        if (mode == WorkoutType.RecordingType.INDOOR) {
+            information.add(new Repetitions(context));
+            information.add(new CurrentIntensity(context));
+            information.add(new CurrentFrequency(context));
+            information.add(new AverageFrequency(context));
+        }
         information.add(new CurrentHeartRate(context));
-        information.add(new Ascent(context));
         information.add(new BurnedEnergy(context));
     }
 

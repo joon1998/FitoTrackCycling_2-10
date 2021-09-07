@@ -22,7 +22,6 @@
     <string name="workoutRoute">מסלול</string>
     <string name="voiceAnnouncementsTitle">הודעות קוליות</string>
     <string name="announcementGPSStatus">מצב GPS</string>
-    <string name="pref_ringtone_silent">שקט</string>
     <string name="chooseBackupFile">בחירת קובץ גיבוי</string>
     <string name="loadingFile">כעת בטעינת הקובץ</string>
     <string name="recordingStatePaused">מושהה</string>
@@ -49,7 +48,6 @@
     <string name="aboutUnlistedContributors">תודה לכל המתנדבים שאינם רשומים אשר עזרו לתרגם ולהרחיב את FitoTrack!</string>
     <string name="aboutHelpTranslating">עזרה בתרגום</string>
     <string name="aboutPrivacyPolicy">מדיניות פרטיות</string>
-    <string name="sendEmail">שליחת דוא״ל</string>
     <string name="editDisplayedInformation">עריכת המידע שמוצג</string>
     <string name="unitFootPlural">רגליים</string>
     <string name="unitFootSingular">רגל</string>
@@ -105,14 +103,12 @@
     <string name="restore">שחזור</string>
     <string name="locationData">נתוני מיקומים</string>
     <string name="workouts">אימונים</string>
-    <string name="preferences">העדפות</string>
     <string name="shareFile">שיתוף קובץ</string>
     <string name="errorImportFailed">ייבוא הנתונים כשל.</string>
     <string name="errorExportFailed">ייצוא הנתונים כשל.</string>
     <string name="error">שגיאה</string>
     <string name="delete">מחיקה</string>
     <string name="stop">עצירה</string>
-    <string name="workout_add">הוספה</string>
     <string name="app_name">FitoTrack</string>
     <string name="gpsLost">אות GPS אבד</string>
     <string name="errorWorkoutAddFuture">האימון לא יכול להיות בעתיד</string>
@@ -123,7 +119,6 @@
     <string name="preferenceCategoryVoiceFeedback">חיווי קולי</string>
     <string name="workout_statistics">סטטיסטיקת האימון</string>
     <string name="cannotStart">לא ניתן להתחיל</string>
-    <string name="action_edit_comment">עריכת הערה</string>
     <string name="waiting_gps">כעת בהמתנה ל־GPS</string>
     <string name="exportAsGpxFile">ייצוא בתור קובץ GPX</string>
     <string name="trackingInfo">מידע מעקב</string>
@@ -136,7 +131,6 @@
     <string name="workoutTypeEditIdErrorEmpty">נא להזין מזהה</string>
     <string name="workoutTypeEditId">מזהה</string>
     <string name="nothingSelected">לא נבחר דבר</string>
-    <string name="oClock">על השעון</string>
     <string name="unitMilesPerHour">מַיילים בכל שעה</string>
     <string name="unitMilesSingular">מַייל</string>
     <string name="unitMilesPlural">מַיילים</string>
@@ -181,7 +175,6 @@
     <string name="share">שיתוף</string>
     <string name="save">שמירה</string>
     <string name="description">תיאור</string>
-    <string name="data">נתונים</string>
     <string name="gps">GPS</string>
     <string name="settings">הגדרות</string>
     <string name="pref_weight">המשקל שלך</string>
@@ -195,12 +188,10 @@
     <string name="unlockPhoneStopWorkout">נא לשחרר את נעילת הטלפון שלך כדי להפסיק את התיעוד</string>
     <string name="preferencesRecordingSummary">ניהול התיעוד של האימונים</string>
     <string name="preferencesRecordingTitle">תיעוד</string>
-    <string name="workoutRecording">תיעוד האימון</string>
     <string name="stopRecordingQuestionMessage">האם אכן ברצונך להפסיק את התיעוד\?</string>
     <string name="stopRecordingQuestion">להפסיק את התיעוד\?</string>
     <string name="converting">כעת בהמרה</string>
     <string name="exporting">כעת בייצוא</string>
-    <string name="intervals">מִרווחים</string>
     <string name="showIntervals">הצגת המִּרווחים</string>
     <string name="intervalSets">מערכי מִרווחים</string>
     <string name="intervalSetSelected">לא נבחרו מִרווחים</string>
@@ -217,7 +208,6 @@
     <string name="exportDataSummary">לגיבוי כל האימונים</string>
     <string name="enterComment">נא להזין הערה</string>
     <string name="workoutTypeSkateboarding">רכיבה על סקייטבורד</string>
-    <string name="workoutTypeJogging">ג׳וגינג</string>
     <string name="uploadFailedOsmNotAuthorized">האימות כשל, נא לנסות שוב</string>
     <string name="enterVerificationCode">נא להזין את קוד האימות</string>
     <string name="workoutEnergyConsumption">צריכת אנרגיה</string>
@@ -237,7 +227,6 @@
     <string name="heartRateNotAvailable">דופק הלב אינו זמין כרגע.</string>
     <string name="importedWorkouts">%d אימונים יובאו</string>
     <string name="importingFiles">כעת בייבוא הקבצים</string>
-    <string name="importMultipleGpxFilesSummary">ייבוא יותר מקובץ GPX אחד במערכת הקבצים בבת־אחת</string>
     <string name="importMultipleMessageSelectFolder">נא לבחור תיקיה שמכילה את כל קובצי GPX שברצונך לייבא.</string>
     <string name="importMultipleGpxFiles">ייבוא קובצי GPX מרובים</string>
     <string name="actionGrant">הענקה</string>
@@ -256,7 +245,6 @@
     <string name="pref_unit_system">יחידת המידה הרצויה</string>
     <string name="pref_weight_summary">המשקל שלך נחוץ לחישוב הקלוריות שנשרפו</string>
     <string name="trackerWaitingMessage">כעת בהמתנה להתחלת האימון</string>
-    <string name="trackerRunningMessage">תיעוד האימון שלך החל</string>
     <string name="recordWorkout">תיעוד האימון</string>
     <string name="workoutTopSpeed">המהירות הגבוהה ביותר</string>
     <string name="setPreferencesMessage">אפשר להגדיר את יחידת המידה ואת המשקל הרצויים בהגדרות.</string>
@@ -264,7 +252,6 @@
     <string name="editDisplayedInformationHint">כל עוד האימון לא החל, אפשר לערוך את הערכים המוצגים באמצעות לחיצה על אחד מארבעת השדות.</string>
     <string name="aboutSendFeedback">שליחת משוב למפתח/ת</string>
     <string name="aboutAuthor">יוצר/ת</string>
-    <string name="dataSamples">דגימות</string>
     <string name="calendarWeekYear">שבוע / שנה בלוח השנה</string>
     <string name="avg">ממוצע</string>
     <string name="no_workouts_recorded_for_this_activity">אין אימונים בפעילות זו</string>

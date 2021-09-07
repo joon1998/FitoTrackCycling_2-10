@@ -29,7 +29,7 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.highlight.Highlight;
 
 import de.tadris.fitness.R;
-import de.tadris.fitness.data.WorkoutSample;
+import de.tadris.fitness.data.GpsSample;
 import de.tadris.fitness.ui.dialog.SampleConverterPickerDialog;
 import de.tadris.fitness.ui.workout.diagram.HeartRateConverter;
 import de.tadris.fitness.ui.workout.diagram.HeightConverter;
@@ -84,7 +84,7 @@ public class ShowWorkoutMapDiagramActivity extends ShowWorkoutColoredMapActivity
     }
 
     @Override
-    public void onMapSelectionChanged(WorkoutSample sample) {
+    public void onMapSelectionChanged(GpsSample sample) {
 
         if (sample == null) {
             chart.highlightValue(null);

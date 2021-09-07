@@ -1,0 +1,34 @@
+<!--
+  ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+  ~
+  ~ This file is part of FitoTrack
+  ~
+  ~ FitoTrack is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     FitoTrack is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="#FFFFFF"
+    android:alpha="0.8">
+  <path
+      android:pathData="m12.7898,6.6582c0.6898,0 1.2542,-0.5644 1.2542,-1.2542 0,-0.6898 -0.5644,-1.2542 -1.2542,-1.2542 -0.6898,0 -1.2542,0.5644 -1.2542,1.2542 0,0.6898 0.5644,1.2542 1.2542,1.2542zM10.5322,15.3752 L11.1593,12.6158 12.4762,13.8701l0,3.7627l1.2542,0l0,-4.7034l-1.3169,-1.2542 0.3763,-1.8814c1.5652,1.3295 3.7477,-2.4237 4.3281,-3.8923L16.1311,5.4333C15.3972,6.8824 14.044,9.4802 13.5423,8.6023l-0.6271,-1.0034c-0.2508,-0.3763 -0.6271,-0.6271 -1.0661,-0.6271 -0.1881,0 -0.428,0.139 -0.6161,0.139L9.7943,5.8434 9.5785,3.5954 8.603,3.6884 8.8811,6.3715 10.7509,8.1091 9.4661,13.8701l-3.0729,-0.6271 -0.2508,1.2542z"
+      android:fillColor="#ffffff" />
+  <path
+      android:pathData="M3.2034,17.2373 L12.4762,17.6328 21.2542,17.2373l0,1.6271L20.161,18.8644L18.7373,21.6102 17.2119,18.8644 12.5841,19.2599 7.2458,18.8644 5.822,21.6102 4.3475,18.8644L3.2034,18.8644Z"
+      android:strokeLineJoin="miter"
+      android:fillColor="#ffffff" />
+</vector>

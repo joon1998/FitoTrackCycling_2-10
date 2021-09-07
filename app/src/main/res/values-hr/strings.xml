@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+  ~
+  ~ This file is part of FitoTrack
+  ~
+  ~ FitoTrack is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     FitoTrack is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+    <string name="deleteWorkout">Izbriši vježbu</string>
+    <string name="continue_">Dalje</string>
+    <string name="stopRecordingQuestionMessage">Želite li uistinu zaustaviti snimanje vježbe\?</string>
+    <string name="stopRecordingQuestion">Zaustaviti snimanje\?</string>
+    <string name="okay">U redu</string>
+    <string name="enterComment">Unesite komentar</string>
+    <string name="comment">Komentar</string>
+    <string name="recordWorkout">Snimi vježbu</string>
+    <string name="enable">Uključi</string>
+    <string name="noGpsMessage">Uključite GPS da bi mogli snimiti vježbu</string>
+    <string name="noGpsTitle">GPS je isključen</string>
+    <string name="setDuration">Postavite trajanje vježbe</string>
+    <string name="importWorkout">Uvezite vježbu</string>
+    <string name="enterWorkout">Unesite vježbu</string>
+    <string name="type">Vrsta</string>
+    <string name="workoutTypeAll">Sve</string>
+    <string name="workoutTypeAdd">Dodati</string>
+    <string name="unknown">Nepoznato</string>
+    <plurals name="workoutPushUp">
+        <item quantity="one">Sklek</item>
+        <item quantity="few">Sklekova</item>
+        <item quantity="other">Sklekova</item>
+    </plurals>
+    <string name="workoutTypePushUps">Sklekovi</string>
+    <plurals name="workoutJump">
+        <item quantity="one">Skok</item>
+        <item quantity="few">Skokova</item>
+        <item quantity="other">Skokova</item>
+    </plurals>
+    <string name="workoutTypeTrampolineJumping">Skakanje na trampolinu</string>
+    <string name="workoutTypeRopeSkipping">Preskakanje užeta</string>
+    <plurals name="workoutStep">
+        <item quantity="one">Korak</item>
+        <item quantity="few">Koraka</item>
+        <item quantity="other">Koraka</item>
+    </plurals>
+    <string name="workoutTypeTreadmill">Traka za trčanje</string>
+    <string name="workoutTypeOther">Ostalo</string>
+    <string name="workoutTypeRowing">Veslanje</string>
+    <string name="workoutTypeInlineSkating">Koturaljke</string>
+    <string name="workoutTypeSkateboarding">Vožnja Skateboard-a</string>
+    <string name="workoutTypeHiking">Planinarenje</string>
+    <string name="workoutTypeCycling">Biciklizam</string>
+    <string name="workoutTypeWalking">Hodanje</string>
+    <string name="workoutTypeRunning">Trčanje</string>
+    <string name="height">Visina</string>
+    <string name="workoutMaxHeight">Maksimalna visina</string>
+    <string name="workoutMinHeight">Minimalna visina</string>
+    <string name="workoutDescent">Pad</string>
+    <string name="workoutAscent">Uspon</string>
+    <string name="uploadFailedOsmNotAuthorized">Niste ovlašteni, pokušajte ponovno</string>
+    <string name="uploadFailed">Slanje nije uspiješno</string>
+    <string name="uploadSuccessful">Slanje uspiješno</string>
+    <string name="upload">Slanje</string>
+    <string name="authenticationFailed">Authentifikacija nije uspijela.</string>
+    <string name="enterVerificationCode">Unesite verifikacijski kod</string>
+    <string name="uploading">Slanje</string>
+    <string name="workoutEdited">Ova vježba je uređivana</string>
+    <string name="workoutAvgHeartRate">Prosječni puls</string>
+    <string name="workoutMaxHeartRate">Maksimalni puls</string>
+    <string name="workoutHeartRate">Puls</string>
+    <string name="workoutEnergyConsumption">Potrošnja energije</string>
+    <string name="workoutTotalEnergy">Ukupna energija</string>
+    <string name="workoutBurnedEnergy">Utrošena energija</string>
+    <string name="workoutTopSpeed">Maksimalna brzina</string>
+    <string name="workoutAvgSpeedLong">Prosječna brzina</string>
+    <string name="workoutAvgSpeedShort">Prosječna brzina</string>
+    <string name="workoutMaxIntensity">Maksimalni intenzitet</string>
+    <string name="workoutAvgIntensityShort">Prosječni intenzitet</string>
+    <string name="workoutIntensity">Intenzitet</string>
+    <string name="workoutMaxFrequency">Maksimalna frekvencija</string>
+    <string name="workoutAvgFrequencyShort">Prosječna frekvencija</string>
+    <string name="workoutFrequency">Frekvencija</string>
+    <string name="workoutSpeed">Brzina</string>
+    <string name="workoutRoute">Ruta</string>
+    <string name="workoutPace">Tempo</string>
+    <string name="workoutSets">Set</string>
+    <string name="workoutRepetitions">Ponavljanja</string>
+    <string name="workoutDistance">Udaljenost</string>
+    <string name="workoutEndTime">Kraj</string>
+    <string name="workoutStartTime">Početak</string>
+    <string name="workoutPauseDuration">Trajanje pauze</string>
+    <string name="workoutDuration">Trajanje</string>
+    <string name="workoutDate">Datum</string>
+    <string name="workoutTime">Vrijeme</string>
+    <string name="gpsFound">GPS Signal pronađen</string>
+    <string name="gpsLost">GPS Signal izgubljen</string>
+    <string name="pref_announcements_content">Sadržaj govorne najave</string>
+    <string name="pref_announcements_config_summary">Odaberite vrijeme i udaljenost između govornih najava</string>
+    <string name="pref_announcements_config_title">Okidač govora</string>
+    <string name="pref_voice_announcements_summary">Podesite govor, koji vas informira tijekom vježbanja</string>
+    <string name="voiceAnnouncementsTitle">Govor</string>
+    <string name="announcementWorkoutActions">Akcije za vježbu (pauza, nastavak itd)</string>
+    <string name="announcementGPSStatus">GPS Status</string>
+    <string name="errorEnterValidDuration">Unesite valjano trajanje</string>
+    <string name="errorWorkoutAddFuture">Vježba se ne može nalaziti u budućnosti</string>
+    <string name="errorEnterValidNumber">Unesite valjan broj</string>
+    <string name="and">i</string>
+    <string name="timeSecondsShort">sek</string>
+    <string name="timeHourShort">h</string>
+    <string name="timeHourPlural">Sati</string>
+    <string name="timeHourSingular">Sat</string>
+    <string name="timeMinuteShort">min</string>
+    <string name="timeMinutePlural">Minuta</string>
+    <string name="timeMinuteSingular">Minuta</string>
+    <string name="setPreferencesMessage">U postavkama možete postaviti željeni mjerni sustav i vašu težinu</string>
+    <string name="setPreferencesTitle">Izmjenite postavke</string>
+    <string name="backup">Sigurnosna kopija</string>
+    <string name="restore">Vrati</string>
+    <string name="importBackupMessage">PAŽNJA: Sve postojeće datoteke unutar aplikacije bit će obrisane. Ako ne želite da se to dogodi, napravite još jednu sigurnosnu kopiju. Jeste li sigurni da želite vratiti sigurnosnu kopiju\?</string>
+    <string name="chooseBackupFile">Odaberite datoteku sigurnosne kopije</string>
+    <string name="loadingFile">Učitavanje datoteke</string>
+    <string name="finished">Završeno</string>
+    <string name="converting">Konverzija</string>
+    <string name="locationData">Podaci o lokaciji</string>
+    <string name="workouts">Vježbe</string>
+    <string name="initialising">Inicijaliziranje</string>
+    <string name="shareFile">Podijeli datoteku</string>
+    <string name="errorImportFailed">Uvoz podataka nije uspio.</string>
+    <string name="errorExportFailed">Izvoz podataka nije uspio.</string>
+    <string name="errorGpxExportFailed">GPX izvoz nije uspio.</string>
+    <string name="error">Greška</string>
+    <string name="exporting">Izvoz</string>
+    <string name="delete">Izbriši</string>
+    <string name="stop">Stop</string>
+    <string name="app_name">FitoTrack</string>
+</resources>

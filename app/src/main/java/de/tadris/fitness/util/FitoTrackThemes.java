@@ -51,6 +51,7 @@ public class FitoTrackThemes {
         switch (type.id) {
             case "walking":
             case "running":
+            case "treadmill":
                 return R.style.Running;
             case "hiking":
                 return R.style.Hiking;

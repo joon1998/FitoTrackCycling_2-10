@@ -37,7 +37,7 @@ public class WorkoutBuilder {
 
     private String comment;
 
-    private Workout existingWorkout;
+    private GpsWorkout existingWorkout;
     private boolean fromExistingWorkout = false;
 
     private boolean wasEdited = false;
@@ -50,13 +50,13 @@ public class WorkoutBuilder {
         comment = "";
     }
 
-    public Workout create(Context context) {
-        Workout workout;
+    public GpsWorkout create(Context context) {
+        GpsWorkout workout;
 
         if (fromExistingWorkout) {
             workout = existingWorkout;
         } else {
-            workout = new Workout();
+            workout = new GpsWorkout();
         }
 
         // Calculate values
@@ -81,7 +81,7 @@ public class WorkoutBuilder {
             workout.topSpeed = workout.avgSpeed;
         }
 
-        workout.calorie = CalorieCalculator.calculateCalories(context, workout, Instance.getInstance(context).userPreferences.getUserWeight());
+        workout.calorie = CalorieCalculator.calculateCalories(context, workout);
         workout.comment = comment;
 
         workout.edited = wasEdited;
@@ -89,8 +89,8 @@ public class WorkoutBuilder {
         return workout;
     }
 
-    public Workout saveWorkout(Context context) {
-        Workout workout = create(context);
+    public GpsWorkout saveWorkout(Context context) {
+        GpsWorkout workout = create(context);
         if (fromExistingWorkout) {
             updateWorkout(context, workout);
         } else {
@@ -99,12 +99,12 @@ public class WorkoutBuilder {
         return workout;
     }
 
-    private void updateWorkout(Context context, Workout workout) {
-        Instance.getInstance(context).db.workoutDao().updateWorkout(workout);
+    private void updateWorkout(Context context, GpsWorkout workout) {
+        Instance.getInstance(context).db.gpsWorkoutDao().updateWorkout(workout);
     }
 
-    private void insertWorkout(Context context, Workout workout) {
-        Instance.getInstance(context).db.workoutDao().insertWorkout(workout);
+    private void insertWorkout(Context context, GpsWorkout workout) {
+        Instance.getInstance(context).db.gpsWorkoutDao().insertWorkout(workout);
     }
 
     public WorkoutType getWorkoutType() {
@@ -155,7 +155,7 @@ public class WorkoutBuilder {
         return fromExistingWorkout;
     }
 
-    public static WorkoutBuilder fromWorkout(Context context, Workout workout) {
+    public static WorkoutBuilder fromWorkout(Context context, GpsWorkout workout) {
         WorkoutBuilder builder = new WorkoutBuilder(context);
         builder.fromExistingWorkout = true;
         builder.existingWorkout = workout;

@@ -6,14 +6,13 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.List;
 
-import de.tadris.fitness.data.Workout;
-import de.tadris.fitness.data.WorkoutSample;
+import de.tadris.fitness.data.GpsSample;
+import de.tadris.fitness.data.GpsWorkout;
 
 public interface IWorkoutExporter {
-    void exportWorkout(Workout workout, List<WorkoutSample> samples, OutputStream outputStream) throws IOException;
+    void exportWorkout(GpsWorkout workout, List<GpsSample> samples, OutputStream outputStream) throws IOException;
 
-    default void exportWorkout(Workout workout, List<WorkoutSample> samples, File file) throws IOException
-    {
+    default void exportWorkout(GpsWorkout workout, List<GpsSample> samples, File file) throws IOException {
         exportWorkout(workout, samples, new FileOutputStream(file));
     }
 }

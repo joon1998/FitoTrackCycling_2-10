@@ -35,7 +35,8 @@ import de.tadris.fitness.data.UserPreferences;
 import de.tadris.fitness.data.migration.Migration;
 import de.tadris.fitness.data.migration.Migration12IntervalSets;
 import de.tadris.fitness.map.MapManager;
-import de.tadris.fitness.recording.WorkoutRecorder;
+import de.tadris.fitness.recording.BaseWorkoutRecorder;
+import de.tadris.fitness.recording.gps.GpsWorkoutRecorder;
 import de.tadris.fitness.ui.dialog.ProgressDialogController;
 import de.tadris.fitness.ui.record.RecordWorkoutActivity;
 
@@ -112,11 +113,11 @@ public class LauncherActivity extends Activity implements Migration.MigrationLis
     }
 
     private void start() {
-        WorkoutRecorder recorder = Instance.getInstance(this).recorder;
-        if (recorder.getState() == WorkoutRecorder.RecordingState.PAUSED ||
-                recorder.getState() == WorkoutRecorder.RecordingState.RUNNING) {
+        BaseWorkoutRecorder recorder = Instance.getInstance(this).recorder;
+        if (recorder.getState() == GpsWorkoutRecorder.RecordingState.PAUSED ||
+                recorder.getState() == GpsWorkoutRecorder.RecordingState.RUNNING) {
             // Resume to running Workout
-            Intent recorderActivityIntent = new Intent(this, RecordWorkoutActivity.class);
+            Intent recorderActivityIntent = new Intent(this, recorder.getActivityClass());
             recorderActivityIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             recorderActivityIntent.setAction(RecordWorkoutActivity.RESUME_ACTION);
             startActivity(recorderActivityIntent);

@@ -9,9 +9,9 @@ import org.greenrobot.eventbus.Subscribe;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import de.tadris.fitness.recording.MovementDetector;
-import de.tadris.fitness.recording.WorkoutRecorder;
 import de.tadris.fitness.recording.event.WorkoutGPSStateChanged;
+import de.tadris.fitness.recording.gps.GpsWorkoutRecorder;
+import de.tadris.fitness.recording.gps.MovementDetector;
 import de.tadris.fitness.util.event.EventBusMember;
 
 public class AutoStartWorkout implements EventBusMember {
@@ -394,6 +394,6 @@ public class AutoStartWorkout implements EventBusMember {
      */
     @Subscribe
     public void onGpsStateChanged(WorkoutGPSStateChanged gpsStateChanged) {
-        gpsOkay = gpsStateChanged.newState == WorkoutRecorder.GpsState.SIGNAL_OKAY;
+        gpsOkay = gpsStateChanged.newState == GpsWorkoutRecorder.GpsState.SIGNAL_OKAY;
     }
 }

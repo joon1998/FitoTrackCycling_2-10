@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -33,7 +33,9 @@ import java.util.Date;
 
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
-import de.tadris.fitness.data.Workout;
+import de.tadris.fitness.data.BaseWorkout;
+import de.tadris.fitness.data.GpsWorkout;
+import de.tadris.fitness.data.IndoorWorkout;
 import de.tadris.fitness.util.Icon;
 
 public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.WorkoutViewHolder>{
@@ -61,15 +63,15 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.WorkoutV
         }
     }
 
-    private Workout[] workouts;
+    private BaseWorkout[] workouts;
     private final WorkoutAdapterListener listener;
 
-    public WorkoutAdapter(Workout[] workouts, WorkoutAdapterListener listener) {
+    public WorkoutAdapter(BaseWorkout[] workouts, WorkoutAdapterListener listener) {
         setWorkouts(workouts);
         this.listener = listener;
     }
 
-    public void setWorkouts(Workout[] workouts) {
+    public void setWorkouts(BaseWorkout[] workouts) {
         this.workouts = workouts;
     }
 
@@ -84,19 +86,24 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.WorkoutV
     @Override
     public void onBindViewHolder(WorkoutViewHolder holder, final int position) {
         Context context = holder.root.getContext();
-        Workout workout= workouts[position];
+        BaseWorkout workout = workouts[position];
         holder.dateText.setText(Instance.getInstance(context).userDateTimeUtils.formatDateTime(new Date(workout.start)));
         holder.typeText.setText(workout.getWorkoutType(context).title);
-        if(workout.comment != null){
-            if(workout.comment.length() > 33){
+        if (workout.comment != null) {
+            if (workout.comment.length() > 33) {
                 holder.commentText.setText(workout.comment.substring(0, 30) + "...");
-            }else{
+            } else {
                 holder.commentText.setText(workout.comment);
             }
-        }else{
+        } else {
             holder.commentText.setText("");
         }
-        holder.lengthText.setText(Instance.getInstance(context).distanceUnitUtils.getDistance(workout.length));
+        if (workout instanceof GpsWorkout) {
+            holder.lengthText.setText(Instance.getInstance(context).distanceUnitUtils.getDistance(((GpsWorkout) workout).length));
+        } else if (workout instanceof IndoorWorkout) {
+            int repetitions = ((IndoorWorkout) workout).repetitions;
+            holder.lengthText.setText(repetitions + " " + context.getResources().getQuantityString(workout.getWorkoutType(context).repeatingExerciseName, repetitions));
+        }
         holder.timeText.setText(Instance.getInstance(context).distanceUnitUtils.getHourMinuteTime(workout.duration));
         holder.iconView.setImageResource(Icon.getIcon(workout.getWorkoutType(context).icon));
         holder.root.setOnClickListener(v -> listener.onItemClick(position, workout));
@@ -112,9 +119,10 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.WorkoutV
         return workouts.length;
     }
 
-    public interface WorkoutAdapterListener{
-        void onItemClick(int pos, Workout workout);
-        void onItemLongClick(int pos, Workout workout);
+    public interface WorkoutAdapterListener {
+        void onItemClick(int pos, BaseWorkout workout);
+
+        void onItemLongClick(int pos, BaseWorkout workout);
     }
 
 

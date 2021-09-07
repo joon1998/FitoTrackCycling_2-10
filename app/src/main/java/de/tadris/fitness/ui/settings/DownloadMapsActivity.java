@@ -114,7 +114,7 @@ public class DownloadMapsActivity extends FitoTrackActivity {
     }
 
     private void startMapDownload(Uri downloadMapUri) {
-        final Uri mapDirectoryUri = Uri.parse(Instance.getInstance(this).userPreferences.getOfflineMapFileName());
+        final Uri mapDirectoryUri = Uri.parse(Instance.getInstance(this).userPreferences.getOfflineMapDirectoryName());
         final DocumentFile mapDirectoryFile = DocumentFile.fromTreeUri(this, mapDirectoryUri);
         final String mapName = downloadMapUri.getLastPathSegment();
 

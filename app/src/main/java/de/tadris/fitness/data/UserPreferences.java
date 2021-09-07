@@ -43,6 +43,7 @@ public class UserPreferences {
     private static final String LOWER_TARGET_SPEED_LIMIT = "lowerTargetSpeedLimit";
     private static final String HAS_UPPER_TARGET_SPEED_LIMIT = "hasUpperTargetSpeedLimit";
     private static final String UPPER_TARGET_SPEED_LIMIT = "upperTargetSpeedLimit";
+    public static final String STEP_LENGTH = "stepLength";
 
     /**
      * Default NFC start enable state if no other has been chosen
@@ -70,7 +71,7 @@ public class UserPreferences {
     public static final boolean DEFAULT_USE_AUTO_PAUSE = true;
 
     /**
-     * Default asuppress announcements during call state if no other has been chosen
+     * Default suppress announcements during call state if no other has been chosen
      */
     public static final boolean DEFAULT_ANNOUNCE_SUPPRESS_DURING_CALL = true;
 
@@ -150,27 +151,44 @@ public class UserPreferences {
         return preferences.getBoolean("intervalsIncludePause", true);
     }
 
-    public String getIdOfDisplayedInformation(int slot) {
+    public String getIdOfDisplayedInformation(String mode, int slot) {
         String defValue = "";
-        switch (slot) {
-            case 0:
-                defValue = "distance";
-                break;
-            case 1:
-                defValue = "energy_burned";
-                break;
-            case 2:
-                defValue = "avgSpeedMotion";
-                break;
-            case 3:
-                defValue = "pause_duration";
-                break;
+        if (WorkoutType.RecordingType.INDOOR.id.equals(mode)) {
+            switch (slot) {
+                case 0:
+                    defValue = "avg_frequency";
+                    break;
+                case 1:
+                    defValue = "energy_burned";
+                    break;
+                case 2:
+                    defValue = "current_intensity";
+                    break;
+                case 3:
+                    defValue = "pause_duration";
+                    break;
+            }
+        } else {
+            switch (slot) {
+                case 0:
+                    defValue = "distance";
+                    break;
+                case 1:
+                    defValue = "energy_burned";
+                    break;
+                case 2:
+                    defValue = "avgSpeedMotion";
+                    break;
+                case 3:
+                    defValue = "pause_duration";
+                    break;
+            }
         }
-        return preferences.getString("information_display_" + slot, defValue);
+        return preferences.getString("information_display_" + mode + "_" + slot, defValue);
     }
 
-    public void setIdOfDisplayedInformation(int slot, String id) {
-        preferences.edit().putString("information_display_" + slot, id).apply();
+    public void setIdOfDisplayedInformation(String mode, int slot, String id) {
+        preferences.edit().putString("information_display_" + mode + "_" + slot, id).apply();
     }
 
     public String getDateFormatSetting() {
@@ -206,12 +224,13 @@ public class UserPreferences {
         return preferences.getBoolean("showOnLockScreen", false);
     }
 
-    public String getOfflineMapFileName() {
-        return preferences.getString("offlineMapFileName", null);
+    public String getOfflineMapDirectoryName() {
+        return preferences.getString("offlineMapDirectoryName", null);
     }
 
     /**
      * Check if NFC start is currently enabled
+     *
      * @return whether NFC start is enabled or not
      */
     public boolean getUseNfcStart() {
@@ -299,6 +318,7 @@ public class UserPreferences {
 
     /**
      * Check if auto start countdown related announcements are enabled
+     *
      * @return whether countdown announcements are enabled
      */
     public boolean isAutoStartCountdownAnnouncementsEnabled() {
@@ -389,12 +409,25 @@ public class UserPreferences {
 
     /**
      * Get upper target speed range limit (in m/s)
+     *
      * @return upper speed limit (in m/s)
      */
     public float getUpperTargetSpeedLimit() {
         return preferences.getFloat(UPPER_TARGET_SPEED_LIMIT, DEFAULT_UPPER_TARGET_SPEED_LIMIT);
     }
 
+    /**
+     * users step length in m
+     * <p>
+     * default value taken from https://www.livestrong.com/article/438170-the-average-walking-stride-length/ and converted to meters
+     */
+    public float getStepLength() {
+        return preferences.getFloat(STEP_LENGTH, 0.79f);
+    }
+
+    public void setStepLength(float meters) {
+        preferences.edit().putFloat(STEP_LENGTH, meters).apply();
+    }
 
     /**
      * Set upper target speed range limit (in m/s)
@@ -412,4 +445,5 @@ public class UserPreferences {
     public void updateLastVersionCode() {
         preferences.edit().putInt("lastVersion", BuildConfig.VERSION_CODE).apply();
     }
+
 }

@@ -34,6 +34,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
 
     <uses-feature
         android:name="android.hardware.location.gps"
@@ -62,7 +63,7 @@
             android:name=".ui.ImportGpxActivity"
             android:label="@string/importWorkout">
 
-            <intent-filter>
+            <intent-filter tools:ignore="AppLinkUrlError">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="application/octet-stream" />
@@ -75,6 +76,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.settings.DownloadMapsActivity" />
+        <activity android:name=".ui.record.RecordIndoorWorkoutActivity" />
         <activity android:name=".ui.settings.EditWorkoutTypeActivity" />
         <activity android:name=".ui.settings.ManageWorkoutTypesActivity" />
         <activity android:name=".ui.ShareFileActivity" />
@@ -88,10 +90,13 @@
             android:screenOrientation="portrait" />
         <activity android:name=".ui.workout.ShowWorkoutMapDiagramActivity" />
         <activity
-            android:name=".ui.workout.ShowWorkoutActivity"
+            android:name=".ui.workout.ShowGpsWorkoutActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.record.RecordWorkoutActivity"
+            android:name=".ui.workout.ShowIndoorWorkoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.record.RecordGpsWorkoutActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:showOnLockScreen="true" />
@@ -124,8 +129,16 @@
         </provider>
 
         <service
-            android:name=".recording.RecorderService"
+            android:name=".recording.gps.GpsRecorderService"
             android:foregroundServiceType="location" />
+
+        <service android:name=".recording.indoor.IndoorRecorderService" />
     </application>
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
 
 </manifest>

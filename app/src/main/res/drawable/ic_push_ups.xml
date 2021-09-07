@@ -1,0 +1,31 @@
+<!--
+  ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+  ~
+  ~ This file is part of FitoTrack
+  ~
+  ~ FitoTrack is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     FitoTrack is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="#FFFFFF"
+    android:alpha="0.8">
+  <path
+      android:pathData="M2.6672,16.7618C1.9636,16.4392 2.2421,14.6637 2.9936,14.4143 4.5608,13.8957 6.0785,13.4209 7.6355,12.8829l3.9803,-2.7243c1.776,-0.3567 3.5794,-0.8352 5.3679,-1.1247 0.9193,-0.0259 0.9045,1.7222 0.9208,2.3497 0.0059,0.629 -0.509,1.1955 -0.5015,1.8254 0.0081,0.6845 0.5366,1.4322 0.4861,2.1144 -0.1701,0.9039 -1.4368,1.0345 -1.7483,0.0859 -0.0423,-0.5491 -0.5489,-1.5141 -0.5522,-2.0657 -0.0037,-0.6272 0.5011,-1.1671 0.4236,-1.7884 -1.261,0.2366 -2.279,0.3895 -3.5443,0.6866 -1.3305,0.8795 -2.5598,1.9138 -3.8557,2.8363 -1.8325,0.5852 -3.6572,1.1958 -5.4998,1.7485 -0.1503,0.0218 -0.3055,-0.009 -0.4452,-0.0649zM19.0958,11.105c-1.2648,-0.5145 -1.5025,-2.4588 -0.3734,-3.2414 0.9606,-0.7979 2.6282,-0.284 2.9156,0.9409 0.2729,0.8576 -0.1056,1.8589 -0.9297,2.256 -0.4912,0.2499 -1.1035,0.2312 -1.6125,0.0445z"
+      android:strokeWidth="0.07600592"
+      android:fillColor="#ffffff" />
+</vector>

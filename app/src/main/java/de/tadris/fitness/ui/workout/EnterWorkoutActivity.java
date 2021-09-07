@@ -37,7 +37,7 @@ import java.util.Calendar;
 
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
-import de.tadris.fitness.data.Workout;
+import de.tadris.fitness.data.GpsWorkout;
 import de.tadris.fitness.data.WorkoutBuilder;
 import de.tadris.fitness.data.WorkoutType;
 import de.tadris.fitness.ui.dialog.DatePickerFragment;
@@ -139,7 +139,7 @@ public class EnterWorkoutActivity extends InformationActivity implements SelectW
         Intent intent = getIntent();
         long workoutId = intent.getLongExtra(WORKOUT_ID_EXTRA, 0);
         if (workoutId != 0) {
-            Workout workout = Instance.getInstance(this).db.workoutDao().getWorkoutById(workoutId);
+            GpsWorkout workout = Instance.getInstance(this).db.gpsWorkoutDao().getWorkoutById(workoutId);
             if (workout != null) {
                 loadFromWorkout(workout);
             } else {
@@ -153,7 +153,7 @@ public class EnterWorkoutActivity extends InformationActivity implements SelectW
         activityWasCreated = true;
     }
 
-    private void loadFromWorkout(Workout workout) {
+    private void loadFromWorkout(GpsWorkout workout) {
         workoutBuilder = WorkoutBuilder.fromWorkout(this, workout);
         distanceEditText.setText(String.valueOf(
                 UnitUtils.roundDouble(unitSystem.getDistanceFromKilometers(workoutBuilder.getLength() / 1000d), 3)
@@ -181,9 +181,9 @@ public class EnterWorkoutActivity extends InformationActivity implements SelectW
             Toast.makeText(this, R.string.errorEnterValidDuration, Toast.LENGTH_LONG).show();
             return;
         }
-        Workout workout = workoutBuilder.saveWorkout(this);
-        final Intent intent = new Intent(this, ShowWorkoutActivity.class);
-        intent.putExtra(ShowWorkoutActivity.WORKOUT_ID_EXTRA, workout.id);
+        GpsWorkout workout = workoutBuilder.saveWorkout(this);
+        final Intent intent = new Intent(this, ShowGpsWorkoutActivity.class);
+        intent.putExtra(ShowGpsWorkoutActivity.WORKOUT_ID_EXTRA, workout.id);
         startActivity(intent);
         finish();
     }

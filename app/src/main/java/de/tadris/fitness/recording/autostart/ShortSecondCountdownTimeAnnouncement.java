@@ -1,9 +1,28 @@
+/*
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ *
+ * This file is part of FitoTrack
+ *
+ * FitoTrack is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     FitoTrack is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package de.tadris.fitness.recording.autostart;
 
-import android.content.Context;
+import androidx.annotation.NonNull;
 
 import de.tadris.fitness.Instance;
-import de.tadris.fitness.recording.WorkoutRecorder;
+import de.tadris.fitness.recording.BaseWorkoutRecorder;
 
 /**
  * This class provides short countdown time announcements, i.e. only the amount of seconds left will
@@ -19,7 +38,7 @@ public class ShortSecondCountdownTimeAnnouncement extends CountdownTimeAnnouncem
     }
 
     @Override
-    public String getSpokenText(WorkoutRecorder recorder) {
+    public String getSpokenText(@NonNull BaseWorkoutRecorder recorder) {
         return String.valueOf(getCountdownS());
     }
 }

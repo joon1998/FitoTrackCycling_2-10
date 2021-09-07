@@ -28,7 +28,6 @@
     <string name="autoPauseTitle">Otomatik duraklat</string>
     <string name="resumeWorkout">Egzersizi Devam Ettir</string>
     <string name="heartRateNotAvailable">Kalp ritmi şu anda kullanılabilir değil.</string>
-    <string name="intervals">Aralıklar</string>
     <string name="inclination">Eğim</string>
     <string name="nothingSelected">Hiçbir şey seçilmedi</string>
     <string name="showIntervals">Aralıkları göster</string>
@@ -36,8 +35,6 @@
     <string name="selectBluetoothDevice">Bluetooth aygıtı seç</string>
     <string name="importedWorkouts">%d egzersiz içe aktarıldı</string>
     <string name="importingFiles">Dosyalar içe aktarılıyor</string>
-    <string name="bulkActions">Toplu eylemler</string>
-    <string name="importMultipleGpxFilesSummary">Dosya sisteminden aynı anda birden fazla GPX dosyasını içe aktarın</string>
     <string name="importMultipleGpxFiles">Birden fazla GPX dosyasını içe aktar</string>
     <string name="importMultipleMessageSelectFolder">Lütfen içe aktarmak istediğiniz tüm GPX dosyalarını içeren bir klasör seçin.</string>
     <string name="recordingStateStopped">Durduruldu</string>
@@ -52,7 +49,6 @@
     <string name="noWorkoutStarted">Egzersiz Başlamadı</string>
     <string name="editDisplayedInformationHint">Egzersiz başlamadığı sürece, dört alandan birine tıklayarak görüntülenen değerleri düzenleyebilirsiniz.</string>
     <string name="editDisplayedInformation">Görüntülenen bilgileri düzenle</string>
-    <string name="sendEmail">E-posta Gönder</string>
     <string name="aboutPrivacyPolicy">Gizlilik Politikası</string>
     <string name="aboutHelpTranslating">Çeviriye yardım et</string>
     <string name="aboutUnlistedContributors">FitoTrack\'in çevrilmesine ve genişletilmesine yardımcı olan listelenmemiş tüm katkıda bulunanlara teşekkürler!</string>
@@ -77,7 +73,6 @@
     <string name="merge">Birleştir</string>
     <string name="replace">Değiştir</string>
     <string name="replaceOrMergeMessage">Veri tabanı, yedekleme dosyasıyla değiştirilsin mi birleştirilsin mi\?</string>
-    <string name="dataSamples">Örnekler</string>
     <string name="workoutStatsHelpText">Bu ekran, egzersizlerin geçmiş istatistiklerini gösterir. Kullanmak için önce üzerine tıklayarak egzersiz türünü belirtmeniz gerekir. Daha sonra öğrenmek istediğiniz bilgileri ve zaman aralığını belirleyin.
 \n
 \nÖrneğin zaman aralığını \"Hafta\" olarak seçerseniz, her haftanın tüm egzersizleri ortalaması veya toplamı hesaplanarak tek bir veri noktasında birleştirilecektir.</string>
@@ -98,7 +93,6 @@
     <string name="workout_statistics">Egzersiz İstatistikleri</string>
     <string name="no_workouts_recorded_for_this_activity">Bu etkinlik için egzersiz yok</string>
     <string name="unlockPhoneStopWorkout">Kaydı durdurmak için lütfen telefonunuzun kilidini açın</string>
-    <string name="oClock">Saat</string>
     <string name="currentTime">Geçerli Saat</string>
     <string name="pref_auto_timeout_title">Otomatik Durdurma için Zaman Aralığı</string>
     <string name="intervalAutoTimeoutTraining">Otomatik Egzersiz Zaman Aşımı</string>
@@ -152,7 +146,6 @@
     <string name="hintManageIntervalSets">Egzersizlerinizde kullanmak için bir aralık kümesi ekleyin.</string>
     <string name="create">Oluştur</string>
     <string name="createIntervalSet">Yeni Aralık Kümesi Oluştur</string>
-    <string name="workoutRecording">Egzersiz Kaydı</string>
     <string name="manageIntervalsSummary">Egzersiz sırasında sesli geri bildirim ile kullanabileceğiniz aralık setlerini düzenleyin.</string>
     <string name="manageIntervalSets">Aralık Kümelerini Yönet</string>
     <string name="add_interval">Aralık Ekle</string>
@@ -169,7 +162,6 @@
     <string name="share">Paylaş</string>
     <string name="save">Kaydet</string>
     <string name="pref_announcement_mode">Duyuru Modu</string>
-    <string name="action_edit_comment">Yorumu Düzenle</string>
     <string name="ttsNotAvailable">Metinden konuşmaya (TextToSpeech) kullanılamıyor</string>
     <string name="description">Açıklama</string>
     <string name="trackVisibilityPref">Takip Etme Görünürlüğü</string>
@@ -177,7 +169,6 @@
     <string name="actionUploadToOSM">OSM\'ye yükle</string>
     <string name="waiting_gps">GPS bekleniyor</string>
     <string name="mapStyle">Harita Tarzı</string>
-    <string name="data">Veri</string>
     <string name="gps">GPS</string>
     <string name="importBackupSummary">Alınan bir yedeklemeyi geri yükleyin</string>
     <string name="importBackup">Veri Yedeklemesini İçe Aktar</string>
@@ -192,7 +183,6 @@
     <string name="trackingInfoDescription">Çalışan takip edici hakkındaki bilgiler</string>
     <string name="trackingInfo">Takip Etme Bilgileri</string>
     <string name="trackerWaitingMessage">Egzersize başlamak için bekleniyor</string>
-    <string name="trackerRunningMessage">Egzersiziniz kaydediliyor</string>
     <string name="trackerRunning">Takip edici çalışıyor</string>
     <string name="noGpsMessage">Lütfen egzersizinizi takip etmek için GPS\'i etkinleştirin.</string>
     <string name="deleteWorkoutMessage">Egzersizi gerçekten silmek istiyor musunuz\?</string>
@@ -217,7 +207,6 @@
     <string name="workoutTypeSkateboarding">Kaykay Yapma</string>
     <string name="workoutTypeHiking">Doğa Yürüyüşü</string>
     <string name="workoutTypeCycling">Bisiklet Sürme</string>
-    <string name="workoutTypeJogging">Tempolu Koşu</string>
     <string name="workoutTypeWalking">Yürüme</string>
     <string name="workoutTypeRunning">Koşma</string>
     <string name="height">Yükseklik</string>
@@ -272,7 +261,6 @@
     <string name="timeMinuteSingular">Dakika</string>
     <string name="setPreferencesMessage">Tercih ettiğiniz birim sistemini ve kilonuzu ayarlarda belirleyebilirsiniz.</string>
     <string name="setPreferencesTitle">Tercihleri Ayarla</string>
-    <string name="pref_ringtone_silent">Sessiz</string>
     <string name="backup">Yedekle</string>
     <string name="restore">Geri yükle</string>
     <string name="importBackupMessage">UYARI: Uygulamada bulunan tüm verileriniz silinecektir. Onları kaybetmek istemiyorsanız, önce başka bir yedek alın. Bu yedeği geri yüklemek istediğinizden emin misiniz\?</string>
@@ -282,7 +270,6 @@
     <string name="converting">Dönüştürülüyor</string>
     <string name="locationData">Konum verileri</string>
     <string name="workouts">Egzersiz</string>
-    <string name="preferences">Tercihler</string>
     <string name="exporting">Dışa aktarılıyor</string>
     <string name="initialising">Başlatılıyor</string>
     <string name="shareFile">Dosya paylaş</string>
@@ -291,7 +278,6 @@
     <string name="errorGpxExportFailed">GPX dışa aktarma başarısız oldu.</string>
     <string name="error">Hata</string>
     <string name="delete">Sil</string>
-    <string name="workout_add">Ekle</string>
     <string name="app_name">FitoTrack</string>
     <string name="resumeWorkoutConfirmation">Bu egzersizi gerçekten devam ettirmek istiyor musunuz\? Bu aynı zamanda egzersizin durdurulduğu andan itibaren bir duraklama ekleyecektir.</string>
     <string name="prefShowOnLockScreenSummary">Telefon kilitli olsa bile egzersiz bilgilerini göster.</string>
@@ -304,9 +290,7 @@
     <string name="actionSave">Kaydet</string>
     <string name="customWorkoutTypesTitle">Özel Egzersiz Türleri</string>
     <string name="preferenceCategoryVoiceFeedback">Sesli geri bildirim</string>
-    <string name="workoutTypeEditMETHint">Enerji tüketimi için bir ölçü</string>
     <string name="workoutTypeEditMET">MET</string>
-    <string name="workoutTypeEditMinDistanceHint">İki GPS örneği arasındaki asgari mesafe</string>
     <string name="workoutTypeEditMinDistance">Örnek mesafesi</string>
     <string name="workoutTypeEditNameError">Lütfen bir ad girin</string>
     <string name="workoutTypeEditName">Ad</string>
@@ -332,7 +316,6 @@
     <string name="overwriteMapConfirmation">Mevcut %s harita dosyasının üzerine yazmak istiyor musunuz\?</string>
     <string name="downloadMapsSpecifyDirectory">Lütfen önce çevrim dışı haritalar için bir dizin belirtin</string>
     <string name="downloadMapsTitle">Haritaları İndir</string>
-    <string name="pref_map_file">Çevrim Dışı Harita Dizini</string>
     <string name="recordingBackgroundPermissionNotGrantedMessage">FitoTrack, ekran kapalıyken egzersizi kaydetmek için arka plandayken de konum verilerini toplar. Bu nedenle, lütfen FitoTrack\'in her zaman konumunuza erişmesine izin verin.</string>
     <string name="recordingPermissionNotGrantedMessage">FitoTrack, egzersiz sırasında hareketinizi takip etmek için konum iznine ihtiyaç duyar. FitoTrack ayrıca uygulama arka plandayken veya egzersizlerinizi kaydetmek için ekran kapalıyken de konum verilerini toplar. Konum verileri, paylaşmak için açık rızanız olmadığı sürece her zaman telefonunuzda kalır.</string>
     <string name="workoutTypeAll">Tümü</string>
@@ -344,16 +327,16 @@
     <string name="pref_auto_start_mode_instant">Hemen başla</string>
     <string name="pref_auto_start_mode_title">Otomatik Başlatma Modu</string>
     <string name="manageAutoStartModeSummary">Otomatik egzersiz başlatma modunu değiştirin</string>
-    <string name="ttsMinuteSecondCountdownAnnouncement">" başlayana kadar &lt;xliff:g xmlns:xliff=\"urn:oasis:names:tc:xliff:document:1.2\" id=\"mins\" example=\"1 minute\"&gt;%1$s&lt;/xliff:g&gt; ve &lt;xliff:g xmlns:xliff=\"urn:oasis:names:tc:xliff:document:1.2\" id=\"secs\" example=\"7 seconds\"&gt;%2$s&lt;/xliff:g&gt; "</string>
-    <string name="ttsMinuteCountdownAnnouncement">" başlayana kadar &lt;xliff:g xmlns:xliff=\"urn:oasis:names:tc:xliff:document:1.2\" id=\"mins\" example=\"12 minutes\"&gt;%1$s&lt;/xliff:g&gt; "</string>
-    <string name="ttsLongSecondCountdownAnnouncement">" başlayana kadar &lt;xliff:g xmlns:xliff=\"urn:oasis:names:tc:xliff:document:1.2\" id=\"secs\" example=\"5 seconds\"&gt;%1$s&lt;/xliff:g&gt; "</string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> başlayana kadar <xliff:g example="1 minute" id="mins">%1$s</xliff:g> ve <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> </string>
+    <string name="ttsMinuteCountdownAnnouncement"> başlayana kadar <xliff:g example="12 minutes" id="mins">%1$s</xliff:g> </string>
+    <string name="ttsLongSecondCountdownAnnouncement"> başlayana kadar <xliff:g example="5 seconds" id="secs">%1$s</xliff:g> </string>
     <plurals name="minutes">
-        <item quantity="one">&lt;xliff:g xmlns:xliff=\"urn:oasis:names:tc:xliff:document:1.2\" id=\"mins\" example=\"1\"&gt;%1$d&lt;/xliff:g&gt; dakika</item>
-        <item quantity="other">&lt;xliff:g xmlns:xliff=\"urn:oasis:names:tc:xliff:document:1.2\" id=\"mins\" example=\"5\"&gt;%1$d&lt;/xliff:g&gt; dakika</item>
+        <item quantity="one"><xliff:g example="1" id="mins">%1$d</xliff:g> dakika</item>
+        <item quantity="other"><xliff:g example="1" id="mins">%1$d</xliff:g> dakika</item>
     </plurals>
     <plurals name="seconds">
-        <item quantity="one">&lt;xliff:g xmlns:xliff=\"urn:oasis:names:tc:xliff:document:1.2\" id=\"secs\" example=\"1\"&gt;%1$d&lt;/xliff:g&gt; saniye</item>
-        <item quantity="other">&lt;xliff:g xmlns:xliff=\"urn:oasis:names:tc:xliff:document:1.2\" id=\"secs\" example=\"12\"&gt;%1$d&lt;/xliff:g&gt; saniye</item>
+        <item quantity="one"><xliff:g example="1" id="secs">%1$d</xliff:g> saniye</item>
+        <item quantity="other"><xliff:g example="12" id="secs">%1$d</xliff:g> saniye</item>
     </plurals>
     <string name="announcementCountdown">Otomatik Başlatma Eylemleri (geri sayım, durum vs.)</string>
     <string name="action_nfc_settings">NFC ayarlarına git</string>
@@ -407,4 +390,41 @@
     <string name="unitHeartBeatsPerMinute">bpm</string>
     <string name="preferenceFirstDayOfWeek">Haftanın başlangıcı</string>
     <string name="edit_interval">Aralık Düzenle</string>
+    <string name="fileNotFound">Dosya bulunamadı</string>
+    <string name="pref_render_theme_style_info">Seçilen oluşturma teması için oluşturma teması tarzı menüsü yok.</string>
+    <string name="preferenceCategoryRenderThemeCategories">Kategoriler</string>
+    <string name="pref_render_theme_style">Oluşturma Tarzı</string>
+    <string name="pref_map_directory">Çevrim Dışı Harita Dizini</string>
+    <string name="recordingActivityPermissionMessage">FitoTrack, iç mekan egzersizlerini kaydetmek üzere fiziksel etkinliğinizi izlemek için izne ihtiyaç duymaktadır.</string>
+    <string name="pref_step_length">Adım Uzunluğu</string>
+    <plurals name="workoutPushUp">
+        <item quantity="one">Şınav</item>
+        <item quantity="other">Şınav</item>
+    </plurals>
+    <string name="workoutTypePushUps">Şınav</string>
+    <plurals name="workoutJump">
+        <item quantity="one">Atlama</item>
+        <item quantity="other">Atlama</item>
+    </plurals>
+    <string name="workoutTypeTrampolineJumping">Trambolin Atlama</string>
+    <string name="workoutTypeRopeSkipping">İp Atlama</string>
+    <plurals name="workoutStep">
+        <item quantity="one">Adım</item>
+        <item quantity="other">Adım</item>
+    </plurals>
+    <string name="workoutTypeTreadmill">Koşu Bandı</string>
+    <string name="workoutMaxIntensity">Azami Yoğunluk</string>
+    <string name="workoutAvgIntensityShort">Ortalama Yoğunluk</string>
+    <string name="workoutIntensity">Yoğunluk</string>
+    <string name="workoutMaxFrequency">Azami Sıklık</string>
+    <string name="workoutAvgFrequencyShort">Ortalama Sıklık</string>
+    <string name="workoutFrequency">Sıklık</string>
+    <string name="workoutSets">Kümeler</string>
+    <string name="workoutRepetitions">Tekrarlar</string>
+    <string name="currentTimeStructure">%s %s</string>
+    <string name="unitHertzLong">Hertz</string>
+    <string name="workoutCurrentFrequency">Geçerli Sıklık</string>
+    <string name="workoutAvgFrequencyLong">Ortalama Sıklık</string>
+    <string name="workoutRecordingTypeIndoor">İç Mekan Egzersizleri</string>
+    <string name="workoutRecordingTypeGps">Gps Egzersizleri</string>
 </resources>

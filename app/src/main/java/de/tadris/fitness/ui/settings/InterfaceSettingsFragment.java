@@ -35,13 +35,17 @@ import androidx.preference.PreferenceManager;
 
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
+import de.tadris.fitness.data.UserPreferences;
 import de.tadris.fitness.util.NumberPickerUtils;
 import de.tadris.fitness.util.unit.DistanceUnitSystem;
 
 public class InterfaceSettingsFragment extends FitoTrackSettingFragment {
 
+    private SharedPreferences sharedPreferences;
+
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
         setPreferencesFromResource(R.xml.preferences_user_interface, rootKey);
 
         bindPreferenceSummaryToValue(findPreference("unitSystem"));
@@ -63,8 +67,13 @@ public class InterfaceSettingsFragment extends FitoTrackSettingFragment {
             showWeightPicker();
             return true;
         });
+        findPreference(UserPreferences.STEP_LENGTH).setOnPreferenceClickListener(preference -> {
+            showStepLengthPicker();
+            return true;
+        });
+        refreshStepLengthSummary();
 
-        Preference mapFilePref = findPreference("offlineMapFileName");
+        Preference mapFilePref = findPreference("offlineMapDirectoryName");
         bindPreferenceSummaryToValue(mapFilePref);
         mapFilePref.setOnPreferenceClickListener(preference -> {
             showFilePicker();
@@ -82,15 +91,14 @@ public class InterfaceSettingsFragment extends FitoTrackSettingFragment {
         DistanceUnitSystem unitSystem = Instance.getInstance(getContext()).distanceUnitUtils.getDistanceUnitSystem();
 
         final AlertDialog.Builder d = new AlertDialog.Builder(requireActivity());
-        final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
         d.setTitle(getString(R.string.pref_weight));
-        View v = getLayoutInflater().inflate(R.layout.dialog_weight_picker, null);
-        NumberPicker np = v.findViewById(R.id.weightPicker);
+        View v = getLayoutInflater().inflate(R.layout.dialog_picker, null);
+        NumberPicker np = v.findViewById(R.id.picker);
         np.setMaxValue((int) unitSystem.getWeightFromKilogram(150));
         np.setMinValue((int) unitSystem.getWeightFromKilogram(20));
         np.setFormatter(value -> value + " " + unitSystem.getWeightUnit());
         final String preferenceVariable = "weight";
-        np.setValue((int) Math.round(unitSystem.getWeightFromKilogram(preferences.getInt(preferenceVariable, 80))));
+        np.setValue((int) Math.round(unitSystem.getWeightFromKilogram(sharedPreferences.getInt(preferenceVariable, 80))));
         np.setWrapSelectorWheel(false);
         NumberPickerUtils.fixNumberPicker(np);
 
@@ -100,10 +108,46 @@ public class InterfaceSettingsFragment extends FitoTrackSettingFragment {
         d.setPositiveButton(R.string.okay, (dialog, which) -> {
             int unitValue = np.getValue();
             int kilograms = (int) Math.round(unitSystem.getKilogramFromUnit(unitValue));
-            preferences.edit().putInt(preferenceVariable, kilograms).apply();
+            sharedPreferences.edit().putInt(preferenceVariable, kilograms).apply();
         });
 
         d.create().show();
+    }
+
+    private void showStepLengthPicker() {
+        UserPreferences preferences = Instance.getInstance(getContext()).userPreferences;
+        Instance.getInstance(getContext()).distanceUnitUtils.setUnit(); // Maybe the user changed unit system
+        DistanceUnitSystem unitSystem = Instance.getInstance(getContext()).distanceUnitUtils.getDistanceUnitSystem();
+
+        final AlertDialog.Builder d = new AlertDialog.Builder(requireActivity());
+        d.setTitle(getString(R.string.pref_step_length));
+        View v = getLayoutInflater().inflate(R.layout.dialog_picker, null);
+        NumberPicker np = v.findViewById(R.id.picker);
+        np.setMaxValue((int) unitSystem.getDistanceFromCentimeters(150));
+        np.setMinValue((int) unitSystem.getDistanceFromCentimeters(50));
+        np.setFormatter(value -> value + " " + unitSystem.getReallyShortDistanceUnit());
+        np.setValue((int) Math.round(unitSystem.getDistanceFromCentimeters(preferences.getStepLength() * 100)));
+        np.setWrapSelectorWheel(false);
+        NumberPickerUtils.fixNumberPicker(np);
+
+        d.setView(v);
+
+        d.setNegativeButton(R.string.cancel, null);
+        d.setPositiveButton(R.string.okay, (dialog, which) -> {
+            int unitValue = np.getValue();
+            double meters = unitSystem.getCentimetersFromReallyShortDistance(unitValue) / 100;
+            preferences.setStepLength((float) meters);
+            refreshStepLengthSummary();
+        });
+
+        d.create().show();
+    }
+
+    private void refreshStepLengthSummary() {
+        Instance instance = Instance.getInstance(getContext());
+        DistanceUnitSystem unitSystem = instance.distanceUnitUtils.getDistanceUnitSystem();
+        String summary = Math.round(unitSystem.getDistanceFromCentimeters(instance.userPreferences.getStepLength() * 100)) + " " + unitSystem.getReallyShortDistanceUnit();
+        findPreference(UserPreferences.STEP_LENGTH).setSummary(summary);
     }
 
     private static final int FOLDER_IMPORT_SELECT_CODE = 1;
@@ -116,15 +160,18 @@ public class InterfaceSettingsFragment extends FitoTrackSettingFragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK && requestCode == FOLDER_IMPORT_SELECT_CODE) {
-            final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
-            preferences.edit().putString("offlineMapFileName", data.getData().toString()).apply();
-            findPreference("offlineMapFileName").setSummary(data.getData().toString());
+            Uri uri = data.getData();
+            requireActivity().getContentResolver().takePersistableUriPermission(data.getData(),
+                    Intent.FLAG_GRANT_READ_URI_PERMISSION
+                            | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            sharedPreferences.edit().putString("offlineMapDirectoryName", uri.toString()).apply();
+            findPreference("offlineMapDirectoryName").setSummary(uri.toString());
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
 
     private void openMapDownloader() {
-        String mapFileName = Instance.getInstance(getContext()).userPreferences.getOfflineMapFileName();
+        String mapFileName = Instance.getInstance(getContext()).userPreferences.getOfflineMapDirectoryName();
         if (mapFileName != null && DocumentFile.fromTreeUri(requireContext(), Uri.parse(mapFileName)).canWrite()) {
             startActivity(new Intent(requireContext(), DownloadMapsActivity.class));
         } else {

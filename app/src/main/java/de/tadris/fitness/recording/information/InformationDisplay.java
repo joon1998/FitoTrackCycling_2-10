@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -23,20 +23,23 @@ import android.content.Context;
 
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.data.UserPreferences;
-import de.tadris.fitness.recording.WorkoutRecorder;
+import de.tadris.fitness.data.WorkoutType;
+import de.tadris.fitness.recording.BaseWorkoutRecorder;
 
 public class InformationDisplay {
 
-    private UserPreferences preferences;
-    private InformationManager manager;
+    private final WorkoutType.RecordingType mode;
+    private final UserPreferences preferences;
+    private final InformationManager manager;
 
-    public InformationDisplay(Context context) {
+    public InformationDisplay(WorkoutType.RecordingType mode, Context context) {
+        this.mode = mode;
         this.preferences = Instance.getInstance(context).userPreferences;
-        this.manager = new InformationManager(context);
+        this.manager = new InformationManager(mode, context);
     }
 
-    public DisplaySlot getDisplaySlot(WorkoutRecorder recorder, int slot) {
-        String informationId = preferences.getIdOfDisplayedInformation(slot);
+    public DisplaySlot getDisplaySlot(BaseWorkoutRecorder recorder, int slot) {
+        String informationId = preferences.getIdOfDisplayedInformation(mode.id, slot);
         RecordingInformation information = manager.getInformationById(informationId);
         if (information != null) {
             return new DisplaySlot(slot, information.getTitle(), information.getDisplayedText(recorder));

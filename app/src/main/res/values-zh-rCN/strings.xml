@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!--
   ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
   ~
@@ -16,7 +17,9 @@
   ~
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  --><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="recordingBackgroundPermissionNotGrantedMessage">屏幕关闭时，FitoTrack 也会在后台收集位置数据，以便记录您的运动。因此，请允许 FitoTrack 随时访问位置信息。</string>
     <string name="recordingPermissionNotGrantedMessage">为了追踪锻炼期间您的运行，FitoTrack 需要位置权限。 FitoTrack 也会在后台运行，或屏幕关闭时收集位置数据，以便记录您的锻炼。除非您明确同意分享，否则位置数据只会储存在手机上。</string>
     <string name="editDisplayedInformationHint">只要锻炼未开始，您就可以点击四个区域之一，来编辑显示值。</string>
@@ -36,7 +39,6 @@
     <string name="overwriteMapConfirmation">想要覆盖已有的地图文件 %s 吗？</string>
     <string name="downloadMapsSpecifyDirectory">请先指定离线地图目录</string>
     <string name="downloadMapsTitle">下载地图</string>
-    <string name="pref_map_file">离线地图目录</string>
     <string name="editWorkoutType">编辑锻炼类型</string>
     <string name="workoutTypeEditIcon">图标</string>
     <string name="deleteWorkoutTypeConfirmation">真想删除此锻炼类型吗？</string>
@@ -44,9 +46,7 @@
     <string name="actionSave">保存</string>
     <string name="customWorkoutTypesTitle">自定义锻炼类型</string>
     <string name="preferenceCategoryVoiceFeedback">语音提示</string>
-    <string name="workoutTypeEditMETHint">能量消耗衡量标准</string>
     <string name="workoutTypeEditMET">MET</string>
-    <string name="workoutTypeEditMinDistanceHint">两次 GPS 采样之间的最短距离</string>
     <string name="workoutTypeEditMinDistance">采样距离</string>
     <string name="workoutTypeEditNameError">请输入名称</string>
     <string name="workoutTypeEditName">名称</string>
@@ -74,11 +74,9 @@
     <string name="selectBluetoothDevice">请选择蓝牙设备</string>
     <string name="importedWorkouts">已导入 %d 条锻炼记录</string>
     <string name="importingFiles">导入文件</string>
-    <string name="bulkActions">批量动作</string>
     <string name="actionImportMultiple">导入多个</string>
     <string name="actionImport">导入</string>
     <string name="importWorkoutMultipleQuestion">想要导入一个，还是多个 GPX 文件？</string>
-    <string name="importMultipleGpxFilesSummary">一次导入多个 GPX 文件</string>
     <string name="importMultipleMessageSelectFolder">请选择一个包含所有您想导入的 GPX 文件的文件夹。</string>
     <string name="importMultipleGpxFiles">导入多份 GPX 文件</string>
     <string name="recordingStateStopped">停止</string>
@@ -92,7 +90,6 @@
     <string name="unitFootPlural">英尺</string>
     <string name="noWorkoutStarted">无已开始的锻炼</string>
     <string name="editDisplayedInformation">编辑显示信息</string>
-    <string name="sendEmail">发送电邮</string>
     <string name="aboutPrivacyPolicy">隐私政策</string>
     <string name="aboutHelpTranslating">帮助翻译</string>
     <string name="aboutUnlistedContributors">感谢所有帮助我们翻译和扩展 FitoTrack 的未列出贡献者！</string>
@@ -117,7 +114,6 @@
     <string name="merge">合并</string>
     <string name="replace">替换</string>
     <string name="replaceOrMergeMessage">用备份数据替换或合并到数据库吗？</string>
-    <string name="dataSamples">采样</string>
     <string name="singleWorkout">单次锻炼</string>
     <string name="dayInMonth">月中每天</string>
     <string name="calendarWeekYear">日历 周/年</string>
@@ -135,7 +131,6 @@
     <string name="workout_statistics">锻炼统计</string>
     <string name="no_workouts_recorded_for_this_activity">此活动无锻炼记录</string>
     <string name="unlockPhoneStopWorkout">请解锁手机，以便停止记录</string>
-    <string name="oClock">点</string>
     <string name="currentTime">当前时间</string>
     <string name="pref_auto_timeout_title">自动停止时长</string>
     <string name="intervalAutoTimeoutTraining">锻炼自动停止</string>
@@ -174,7 +169,6 @@
     <string name="length_in_minutes">时长 (分钟) :</string>
     <string name="interval_name">名称：</string>
     <string name="create">创建</string>
-    <string name="workoutRecording">锻炼纪录</string>
     <string name="add">添加</string>
     <string name="cannotStart">无法开始</string>
     <string name="start">开始</string>
@@ -188,14 +182,12 @@
     <string name="share">分享</string>
     <string name="save">保存</string>
     <string name="pref_announcement_mode">语音提示模式</string>
-    <string name="action_edit_comment">编辑备注</string>
     <string name="ttsNotAvailable">TextToSpeech无效</string>
     <string name="description">详细信息</string>
     <string name="trackVisibilityPref">显示跟踪</string>
     <string name="actionUploadToOSM">上传到 OSM (OpenStreetMap)</string>
     <string name="waiting_gps">正在等待位置信息</string>
     <string name="mapStyle">地图类型</string>
-    <string name="data">数据</string>
     <string name="gps">GPS（位置信息）</string>
     <string name="importBackupSummary">恢复已有的备份</string>
     <string name="importBackup">导入数据备份</string>
@@ -210,7 +202,6 @@
     <string name="trackingInfoDescription">关于跟踪器运行的信息</string>
     <string name="trackingInfo">跟踪信息</string>
     <string name="trackerWaitingMessage">正在等待锻炼开始</string>
-    <string name="trackerRunningMessage">正在记录您的锻炼</string>
     <string name="trackerRunning">跟踪器正在运行</string>
     <string name="deleteWorkoutMessage">确定删除此锻炼记录吗？</string>
     <string name="deleteWorkout">删除锻炼记录</string>
@@ -237,7 +228,6 @@
     <string name="workoutTypeSkateboarding">滑板</string>
     <string name="workoutTypeHiking">远足郊游</string>
     <string name="workoutTypeCycling">骑自行车</string>
-    <string name="workoutTypeJogging">慢跑</string>
     <string name="workoutTypeWalking">步行</string>
     <string name="workoutTypeRunning">跑步</string>
     <string name="height">高度</string>
@@ -292,7 +282,6 @@
     <string name="timeMinuteSingular">分钟</string>
     <string name="setPreferencesMessage">在设置中，你可以选择单位体系和您的体重。</string>
     <string name="setPreferencesTitle">设置参数</string>
-    <string name="pref_ringtone_silent">静音</string>
     <string name="backup">备份</string>
     <string name="restore">恢复</string>
     <string name="importBackupMessage">警告！应用中已有的数据将被清除。如不想丢失这些数据，请先行备份。确定要恢复此备份吗？</string>
@@ -302,7 +291,6 @@
     <string name="converting">正在转换</string>
     <string name="locationData">位置数据</string>
     <string name="workouts">锻炼</string>
-    <string name="preferences">参数</string>
     <string name="initialising">正在初始化</string>
     <string name="shareFile">分享文件</string>
     <string name="errorImportFailed">数据导入失败。</string>
@@ -312,7 +300,6 @@
     <string name="exporting">正在导出</string>
     <string name="delete">删除</string>
     <string name="stop">停止</string>
-    <string name="workout_add">添加</string>
     <string name="app_name">FitoTrack</string>
     <string name="pref_auto_start_mode_unknown">未知模式（请勿选择）</string>
     <string name="pref_auto_start_mode_on_move">等您开始移动</string>
@@ -361,7 +348,6 @@
     <string name="createIntervalSet">新建间隔设置</string>
     <string name="manageIntervalsSummary">编辑间隔设置之后，你将可以在锻炼期间使用语音提示。</string>
     <string name="pref_auto_start_delay_title">自动开始倒计时</string>
-    <string name="intervals">间隔</string>
     <string name="showIntervals">显示间隔</string>
     <string name="manageAutoTimeoutSummary">编辑用于自动锻炼停止的间隔</string>
     <string name="unitMetersPerSecond">米/秒</string>
@@ -378,4 +364,38 @@
     <string name="add_interval">添加间隔</string>
     <string name="workoutMaxHeight">最高高度</string>
     <string name="workoutMinHeight">最低高度</string>
+    <string name="preferencesCategoryMap">地图</string>
+    <string name="edit_interval">编辑间隔</string>
+    <string name="prefTrackStyleUsageTitle">自动使用跟踪色彩</string>
+    <string name="trackStyle">跟踪风格</string>
+    <string name="recordingActivityPermissionMessage">FitoTrack 需要权限跟踪您的身体活动以便记录室内锻炼。</string>
+    <string name="editWorkoutStartEnd">编辑开始/结束</string>
+    <string name="unitHeartBeatsPerMinute">bpm</string>
+    <string name="preferenceFirstDayOfWeek">每周开始</string>
+    <string name="preferenceUseAverageForCurrentSpeed">使用某一时段的平均速度替代该时段最后时刻的瞬时速度。</string>
+    <string name="preferenceCurrentSpeedAverageTimeTitle">当前平均速度</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">用平均计算代替当前速度计算。</string>
+    <string name="preferenceCurrentSpeedTime">平均计算的时间跨度</string>
+    <string name="pref_step_length">步长</string>
+    <plurals name="workoutPushUp">
+        <item quantity="other">俯卧撑</item>
+    </plurals>
+    <string name="workoutTypePushUps">俯卧撑</string>
+    <plurals name="workoutJump">
+        <item quantity="other">跳跃</item>
+    </plurals>
+    <string name="workoutTypeTrampolineJumping">蹦床跳</string>
+    <string name="workoutTypeRopeSkipping">跳绳</string>
+    <plurals name="workoutStep">
+        <item quantity="other">步</item>
+    </plurals>
+    <string name="workoutTypeTreadmill">跑步 机</string>
+    <string name="workoutMaxIntensity">最大强度</string>
+    <string name="workoutAvgIntensityShort">平均强度</string>
+    <string name="workoutIntensity">强度</string>
+    <string name="workoutMaxFrequency">最大频率</string>
+    <string name="workoutAvgFrequencyShort">平均频率</string>
+    <string name="workoutFrequency">频率</string>
+    <string name="workoutSets">组</string>
+    <string name="workoutRepetitions">重复次数</string>
 </resources>

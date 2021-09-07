@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -20,8 +20,8 @@
 package de.tadris.fitness.ui.dialog;
 
 import de.tadris.fitness.R;
-import de.tadris.fitness.data.WorkoutType;
 import de.tadris.fitness.aggregation.WorkoutTypeFilter;
+import de.tadris.fitness.data.WorkoutType;
 import de.tadris.fitness.ui.FitoTrackActivity;
 
 public class SelectWorkoutTypeDialogAll extends SelectWorkoutTypeDialog {
@@ -29,8 +29,8 @@ public class SelectWorkoutTypeDialogAll extends SelectWorkoutTypeDialog {
     public SelectWorkoutTypeDialogAll(FitoTrackActivity context, WorkoutTypeSelectListener listener) {
         super(context, listener);
         this.options.add(0, new WorkoutType(WorkoutTypeFilter.ID_ALL,
-                context.getString(R.string.workoutTypeAll),0,
-                context.getThemePrimaryColor(), "list", 0));
+                context.getString(R.string.workoutTypeAll), 0,
+                context.getThemePrimaryColor(), "list", 0, WorkoutType.RecordingType.GPS.id));
     }
 
 }

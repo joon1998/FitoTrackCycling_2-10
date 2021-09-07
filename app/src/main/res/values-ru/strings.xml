@@ -18,13 +18,11 @@
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
   --><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">FitoTrack</string>
-    <string name="workout_add">Добавить</string>
     <string name="stop">Остановить</string>
     <string name="delete">Удалить</string>
     <string name="error">Ошибка</string>
     <string name="shareFile">Поделиться файлом</string>
     <string name="initialising">Инициализация</string>
-    <string name="preferences">Параметры</string>
     <string name="workouts">Тренировки</string>
     <string name="locationData">Данные о местоположении</string>
     <string name="converting">Преобразование</string>
@@ -62,7 +60,6 @@
     <string name="okay">ОК</string>
     <string name="continue_">Продолжить</string>
     <string name="deleteWorkout">Удалить тренировку</string>
-    <string name="trackerRunningMessage">Ваша тренировка записывается</string>
     <string name="trackerWaitingMessage">Ожидание начала тренировки</string>
     <string name="trackingInfo">Информация для отслеживания</string>
     <string name="cancel">Отмена</string>
@@ -70,7 +67,6 @@
     <string name="pref_weight">Ваш вес</string>
     <string name="settings">Настройки</string>
     <string name="exportData">Экспорт данных</string>
-    <string name="data">Данные</string>
     <string name="recordingStateStopped">Остановлено</string>
     <string name="recordingStatePaused">Пауза</string>
     <string name="recordingStateRunning">Запущено</string>
@@ -82,7 +78,6 @@
     <string name="noWorkoutStarted">Тренировка не началась</string>
     <string name="editDisplayedInformationHint">Пока тренировка не началась, вы можете изменить отображаемые значения, нажав одно из четырех полей.</string>
     <string name="editDisplayedInformation">Изменить отображаемую информацию</string>
-    <string name="sendEmail">Отправить электронное письмо</string>
     <string name="aboutHelpTranslating">Помощь в переводе</string>
     <string name="aboutUnlistedContributors">Спасибо всем участникам, не включенным в список, за помощь с переводом и расширением FitoTrack!</string>
     <string name="aboutSourceCode">Просмотреть исходный код</string>
@@ -105,7 +100,6 @@
     <string name="merge">Объединить</string>
     <string name="replace">Заменить</string>
     <string name="replaceOrMergeMessage">Заменить или объединить базу данных с резервной копией\?</string>
-    <string name="dataSamples">Примеры</string>
     <string name="workoutStatsHelpText">Этот экран показывать историческую статистику тренировок. Для использования необходимо сначала выбрать тип тренировки, нажав на нее. После выбрать информацию, которую хотите узнать, и период времени.
 \n
 \nТ.е. если вы выберете \"Неделя\" в периоде времени, все тренировки каждой недели будут объединены в одну точку данных либо в виде среднего значения, либо суммы за каждую неделю.</string>
@@ -126,7 +120,6 @@
     <string name="workout_statistics">Статистика тренировок</string>
     <string name="no_workouts_recorded_for_this_activity">Нет тренировок этого типа</string>
     <string name="unlockPhoneStopWorkout">Пожалуйста, разблокируйте телефон для остановки записи</string>
-    <string name="oClock">Часов</string>
     <string name="currentTime">Текущее время</string>
     <string name="pref_auto_timeout_title">Период для автоматической остановки</string>
     <string name="intervalAutoTimeoutTraining">Автоматический таймаут тренировки</string>
@@ -180,7 +173,6 @@
     <string name="create">Создать</string>
     <string name="createIntervalSet">Создать новый набор интервалов</string>
     <string name="manageIntervalSets">Управление наборами интервалов</string>
-    <string name="workoutRecording">Запись тренировки</string>
     <string name="add_interval">Добавить интервал</string>
     <string name="add">Добавить</string>
     <string name="cannotStart">Невозможно начать</string>
@@ -195,7 +187,6 @@
     <string name="share">Поделиться</string>
     <string name="save">Сохранить</string>
     <string name="pref_announcement_mode">Режим оповещения</string>
-    <string name="action_edit_comment">Изменить комментарий</string>
     <string name="ttsNotAvailable">Синтезатор речи недоступен</string>
     <string name="description">Описание</string>
     <string name="trackVisibilityPref">Видимость трека</string>
@@ -224,7 +215,6 @@
     <string name="workoutTypeRowing">Гребля</string>
     <string name="workoutTypeInlineSkating">Роликовые коньки</string>
     <string name="workoutTypeCycling">Велосипед</string>
-    <string name="workoutTypeJogging">Бег трусцой</string>
     <string name="workoutTypeRunning">Бег</string>
     <string name="workoutDescent">Убывание</string>
     <string name="workoutAscent">Возрастание</string>
@@ -236,7 +226,7 @@
     <string name="uploading">Загрузка</string>
     <string name="workoutEdited">Эта тренировка была изменена.</string>
     <string name="workoutEnergyConsumption">Потребление энергии</string>
-    <string name="workoutAvgSpeedShort">Ср. скорость</string>
+    <string name="workoutAvgSpeedShort">Средн. скорость</string>
     <string name="workoutPace">Темп</string>
     <string name="workoutEndTime">Время конца</string>
     <string name="workoutStartTime">Время начала</string>
@@ -254,7 +244,6 @@
     <string name="timeMinuteSingular">Минута</string>
     <string name="setPreferencesMessage">Вы можете выставить предпочитаемую систему измерений и ваш вес в настройках.</string>
     <string name="setPreferencesTitle">Установка параметров</string>
-    <string name="pref_ringtone_silent">Без звука</string>
     <string name="importBackupMessage">ВНИМАНИЕ: Все данные приложения будут очищены. Если вы не хотите потерять их, сначала сделайте резервную копию. Вы уверены, что хотите восстановить эту резервную копию\?</string>
     <string name="chooseBackupFile">Выберите файл резервной копии</string>
     <string name="exporting">Экспорт</string>
@@ -264,8 +253,6 @@
     <string name="errorGpxExportFailed">Ошибка в экспорте GPX.</string>
     <string name="importedWorkouts">Импортировано %d тренировок</string>
     <string name="importingFiles">Импорт файлов</string>
-    <string name="bulkActions">Массовые действия</string>
-    <string name="importMultipleGpxFilesSummary">Импортировать более одного GPX-файла из файловой системы одновременно</string>
     <string name="importMultipleMessageSelectFolder">Пожалуйста, выберите папку, содержащую все GPX-файлы, которые вы хотите импортировать.</string>
     <string name="importMultipleGpxFiles">Импортировать несколько GPX-файлов</string>
     <string name="actionGrant">Предоставить</string>
@@ -291,7 +278,6 @@
     <string name="autoPauseTitle">Автоматическая пауза</string>
     <string name="resumeWorkout">Возобновить тренировку</string>
     <string name="heartRateNotAvailable">Частота сердечных сокращений в настоящее время недоступна.</string>
-    <string name="intervals">Интервалы</string>
     <string name="announcementWorkoutActions">Действия тренировки (пауза, возобновление и т. д.)</string>
     <string name="workoutTypeEditMET">MET</string>
     <string name="editWorkoutType">Изменить тип тренировки</string>
@@ -301,8 +287,6 @@
     <string name="actionSave">Сохранить</string>
     <string name="customWorkoutTypesTitle">Пользовательские типы тренировок</string>
     <string name="preferenceCategoryVoiceFeedback">Голосовая обратная связь</string>
-    <string name="workoutTypeEditMETHint">Мера потребления энергии</string>
-    <string name="workoutTypeEditMinDistanceHint">Минимальное расстояние между двумя образцами GPS</string>
     <string name="workoutTypeEditMinDistance">Расстояние выборки</string>
     <string name="workoutTypeEditNameError">Пожалуйста, введите имя</string>
     <string name="workoutTypeEditName">Имя</string>
@@ -316,8 +300,8 @@
     <string name="prefShowOnLockScreenTitle">Видимый на экране блокировки</string>
     <string name="notimeout">Нет тайм-аута</string>
     <string name="workoutTypeAdd">Добавить</string>
-    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g id="mins" example="12 minutes">%1$s</xliff:g> до старта </string>
-    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g id="mins" example="1 minute">%1$s</xliff:g> и <xliff:g id="secs" example="7 seconds">%2$s</xliff:g> до старта </string>
+    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g example="12 minutes" id="mins">%1$s</xliff:g> до старта </string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g example="1 minute" id="mins">%1$s</xliff:g> и <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> до старта </string>
     <string name="nfcStartTitle">Сканирование для запуска</string>
     <string name="noAutoStartDelay">Нет</string>
     <string name="overwriteMapConfirmation">Вы уверены что хотите перезаписать существующий файл карты %s\?</string>
@@ -339,18 +323,18 @@
     <string name="recordingPermissionNotGrantedMessage">Для того, чтобы во время тренеровок была возможность отслеживать ваше движение, FitoTrack требуется предоставить разрешение на определение местоположения. Также приложение FitoTrack собирает данные о местоположении, записывает действия ваших тренировок в фоновом режиме или когда экран выключен. Данные о местоположении всегда остаются в вашем телефоне без вашего явного согласия на их передачу.</string>
     <string name="workoutTypeAll">Все</string>
     <string name="pref_auto_start_mode_title">Режим автозапуска</string>
-    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g id="secs" example="5 seconds">%1$s</xliff:g> до начала </string>
+    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g example="5 seconds" id="secs">%1$s</xliff:g> до начала </string>
     <plurals name="minutes">
         <item quantity="one"><xliff:g id="mins" example="1">%1$d</xliff:g> минута</item>
-        <item quantity="few"><xliff:g id="mins" example="5">%1$d</xliff:g> минуты</item>
+        <item quantity="few"><xliff:g id="mins" example="2">%1$d</xliff:g> минуты</item>
         <item quantity="many"><xliff:g id="mins" example="5">%1$d</xliff:g> минут</item>
         <item quantity="other"><xliff:g id="mins" example="5">%1$d</xliff:g> минут</item>
     </plurals>
     <plurals name="seconds">
-        <item quantity="one"><xliff:g id="secs" example="1">%1$d</xliff:g> секунда</item>
-        <item quantity="few"><xliff:g id="secs" example="12">%1$d</xliff:g> секунды</item>
-        <item quantity="many"><xliff:g id="secs" example="12">%1$d</xliff:g> секунд</item>
-        <item quantity="other"><xliff:g id="secs" example="12">%1$d</xliff:g> секунд</item>
+        <item quantity="one"><xliff:g example="1" id="secs">%1$d</xliff:g> секунда</item>
+        <item quantity="few"><xliff:g example="2" id="secs">%1$d</xliff:g> секунды</item>
+        <item quantity="many"><xliff:g example="12" id="secs">%1$d</xliff:g> секунд</item>
+        <item quantity="other"><xliff:g example="12" id="secs">%1$d</xliff:g> секунд</item>
     </plurals>
     <string name="scanFailed">Сканирование не удалось</string>
     <string name="scanning">Сканирование…</string>
@@ -377,7 +361,6 @@
     <string name="actionDownloadMap">Скачать карту</string>
     <string name="downloadMapsSpecifyDirectory">Пожалуйста, сначала укажите каталог для хранения автономных карт</string>
     <string name="downloadMapsTitle">Скачать карты</string>
-    <string name="pref_map_file">Каталог для автономных карт</string>
     <string name="actionImportMultiple">Импортировать несколько</string>
     <string name="actionImport">Импортировать</string>
     <string name="importWorkoutMultipleQuestion">Вы хотите импортировать один файл GPX или несколько\?</string>
@@ -409,4 +392,49 @@
     <string name="preferenceCurrentSpeedTime">Временной интервал для расчета среднего значения</string>
     <string name="preferenceCurrentSpeedAverageTimeSummary">Заменить расчёт текущей скорости на расчёт средней.</string>
     <string name="prefTrackStyleUsageTitle">Использовать автоматическую окраску трека</string>
+    <string name="fileNotFound">Файл не найден</string>
+    <string name="preferenceFirstDayOfWeek">Начало недели</string>
+    <string name="edit_interval">Изменить промежуток</string>
+    <string name="pref_render_theme_style_info">Отсутствует меню стилей темы рендеринга для выбранной темы рендеринга.</string>
+    <string name="preferenceCategoryRenderThemeCategories">Категории</string>
+    <string name="pref_render_theme_style">Стиль рендеринга</string>
+    <string name="pref_map_directory">Каталог автономных карт</string>
+    <string name="recordingActivityPermissionMessage">FitoTrack требуется разрешение на отслеживание вашей физической активности для записи тренировок в помещении.</string>
+    <string name="currentTimeStructure">%s %s</string>
+    <string name="unitHertzLong">Герц</string>
+    <string name="pref_step_length">Длина шага</string>
+    <string name="workoutTypeTreadmill">Беговая дорожка</string>
+    <plurals name="workoutPushUp">
+        <item quantity="one">Отжимание</item>
+        <item quantity="few">Отжимания</item>
+        <item quantity="many">Отжиманий</item>
+        <item quantity="other">Отжиманий</item>
+    </plurals>
+    <string name="workoutTypePushUps">Отжимания</string>
+    <plurals name="workoutJump">
+        <item quantity="one">Прыжок</item>
+        <item quantity="few">Прыжка</item>
+        <item quantity="many">Прыжков</item>
+        <item quantity="other">Прыжков</item>
+    </plurals>
+    <string name="workoutTypeTrampolineJumping">Прыжки на батуте</string>
+    <string name="workoutTypeRopeSkipping">Скакалка</string>
+    <plurals name="workoutStep">
+        <item quantity="one">Шаг</item>
+        <item quantity="few">Шага</item>
+        <item quantity="many">Шагов</item>
+        <item quantity="other">Шагов</item>
+    </plurals>
+    <string name="workoutMaxIntensity">Макс. интенсивность</string>
+    <string name="workoutAvgIntensityShort">Средн. интенсивность</string>
+    <string name="workoutIntensity">Интенсивность</string>
+    <string name="workoutMaxFrequency">Макс. частота</string>
+    <string name="workoutCurrentFrequency">Текущая частота</string>
+    <string name="workoutAvgFrequencyLong">Средняя частота</string>
+    <string name="workoutAvgFrequencyShort">Средн. частота</string>
+    <string name="workoutFrequency">Частота</string>
+    <string name="workoutRepetitions">Повторы</string>
+    <string name="workoutRecordingTypeIndoor">Тренировки в помещении</string>
+    <string name="workoutSets">Наборы</string>
+    <string name="workoutRecordingTypeGps">Gps тренировки</string>
 </resources>

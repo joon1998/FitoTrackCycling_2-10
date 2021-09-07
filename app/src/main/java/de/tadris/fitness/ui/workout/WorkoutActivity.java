@@ -21,7 +21,6 @@ package de.tadris.fitness.ui.workout;
 
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.view.MenuItem;
@@ -43,52 +42,31 @@ import com.github.mikephil.charting.formatter.DefaultAxisValueFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
-import org.mapsforge.core.graphics.Paint;
-import org.mapsforge.core.model.BoundingBox;
-import org.mapsforge.core.model.MapPosition;
-import org.mapsforge.core.util.LatLongUtils;
-import org.mapsforge.map.android.graphics.AndroidGraphicFactory;
-import org.mapsforge.map.android.view.MapView;
-import org.mapsforge.map.layer.Layer;
-import org.mapsforge.map.layer.download.TileDownloadLayer;
-import org.mapsforge.map.layer.overlay.FixedPixelCircle;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
+import de.tadris.fitness.data.BaseSample;
+import de.tadris.fitness.data.BaseWorkout;
+import de.tadris.fitness.data.BaseWorkoutData;
+import de.tadris.fitness.data.GpsSample;
 import de.tadris.fitness.data.Interval;
 import de.tadris.fitness.data.IntervalSet;
-import de.tadris.fitness.data.UserPreferences;
-import de.tadris.fitness.data.Workout;
-import de.tadris.fitness.data.WorkoutData;
-import de.tadris.fitness.data.WorkoutSample;
-import de.tadris.fitness.map.ColoringStrategy;
-import de.tadris.fitness.map.GradientColoringStrategy;
-import de.tadris.fitness.map.MapManager;
-import de.tadris.fitness.map.MapSampleSelectionListener;
-import de.tadris.fitness.map.SimpleColoringStrategy;
-import de.tadris.fitness.map.WorkoutLayer;
 import de.tadris.fitness.ui.workout.diagram.SampleConverter;
-import de.tadris.fitness.ui.workout.diagram.SpeedConverter;
 import de.tadris.fitness.util.WorkoutCalculator;
 import de.tadris.fitness.util.unit.DistanceUnitUtils;
 import de.tadris.fitness.util.unit.EnergyUnitUtils;
 
-public abstract class WorkoutActivity extends InformationActivity implements MapSampleSelectionListener {
+public abstract class WorkoutActivity extends InformationActivity {
 
     public static final String WORKOUT_ID_EXTRA = "de.tadris.fitness.WorkoutActivity.WORKOUT_ID_EXTRA";
 
-    List<WorkoutSample> samples;
-    Workout workout;
+    List<BaseSample> samples;
+    private BaseWorkout workout;
     private Resources.Theme theme;
-    protected MapView mapView;
-    protected WorkoutLayer workoutLayer;
-    private FixedPixelCircle highlightingCircle;
-    final Handler mHandler = new Handler();
+    protected final Handler mHandler = new Handler();
     protected IntervalSet usedIntervalSet;
     protected Interval[] intervals;
 
@@ -102,7 +80,7 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
         Intent intent = getIntent();
         long workoutId = intent.getLongExtra(WORKOUT_ID_EXTRA, 0);
         if (workoutId != 0) {
-            workout = Instance.getInstance(this).db.workoutDao().getWorkoutById(workoutId);
+            workout = findWorkout(workoutId);
         }
         if (workout == null) {
             Toast.makeText(this, R.string.cannotFindWorkout, Toast.LENGTH_LONG).show();
@@ -110,13 +88,17 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
             return;
         }
 
-        samples = Arrays.asList(Instance.getInstance(this).db.workoutDao().getAllSamplesOfWorkout(workout.id));
+        samples = findSamples(workoutId);
         if (workout.intervalSetUsedId != 0) {
             usedIntervalSet = Instance.getInstance(this).db.intervalDao().getSet(workout.intervalSetUsedId);
             intervals = Instance.getInstance(this).db.intervalDao().getAllIntervalsOfSet(usedIntervalSet.id);
         }
         setTheme(Instance.getInstance(this).themes.getWorkoutTypeTheme(workout.getWorkoutType(this)));
     }
+
+    abstract BaseWorkout findWorkout(long id);
+
+    abstract List<BaseSample> findSamples(long workoutId);
 
     void initAfterContent() {
         setupActionBar();
@@ -131,41 +113,16 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
         return chart;
     }
 
+    protected int getMapHeight() {
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        return displayMetrics.widthPixels * 3 / 4;
+    }
+
     boolean diagramsInteractive = false;
 
     private CombinedChart getDiagram(SampleConverter converter) {
         return getDiagram(Collections.singletonList(converter), converter.isIntervalSetVisible());
-    }
-
-
-    protected WorkoutSample selectedSample = null;
-
-    @Override
-    public void onMapSelectionChanged(WorkoutSample sample) {
-        //nada onChartSelectionChanged(sample)
-    }
-
-    protected void onChartSelectionChanged(WorkoutSample sample) {
-        //remove any previous layer
-        if (selectedSample != null){
-            if(highlightingCircle != null){
-                mapView.getLayerManager().getLayers().remove(highlightingCircle);
-            }
-        }
-
-        selectedSample = sample;
-
-        // if a sample was selected show it on the map
-        if (selectedSample != null) {
-            Paint p = AndroidGraphicFactory.INSTANCE.createPaint();
-            p.setColor(0xff693cff);
-            highlightingCircle = new FixedPixelCircle(selectedSample.toLatLong(), 10, p, null);
-            mapView.addLayer(highlightingCircle);
-
-            if (!mapView.getBoundingBox().contains(selectedSample.toLatLong())) {
-                mapView.getModel().mapViewPosition.animateTo(selectedSample.toLatLong());
-            }
-        };
     }
 
 
@@ -207,6 +164,9 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
         return chart;
     }
 
+    protected void onChartSelectionChanged(BaseSample sample) {
+    }
+
     protected void updateChart(CombinedChart chart, List<SampleConverter> converters, boolean showIntervalSets) {
         boolean hasMultipleConverters = converters.size() > 1;
         CombinedData combinedData = new CombinedData();
@@ -226,10 +186,10 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
 
         int converterIndex = 0;
         for (SampleConverter converter : converters) {
-            converter.onCreate(getWorkoutData());
+            converter.onCreate(getBaseWorkoutData());
 
             List<Entry> entries = new ArrayList<>();
-            for (WorkoutSample sample : samples) {
+            for (BaseSample sample : samples) {
                 // turn data into Entry objects
                 Entry e = new Entry((float) (sample.relativeTime) / 1000f / 60f, converter.getValue(sample), sample);
                 entries.add(e);
@@ -263,7 +223,7 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
         if (showIntervalSets && intervals != null && intervals.length > 0) {
             List<BarEntry> barEntries = new ArrayList<>();
 
-            for (long relativeTime : WorkoutCalculator.getIntervalSetTimesFromWorkout(getWorkoutData())) {
+            for (long relativeTime : WorkoutCalculator.getIntervalSetTimesFromWorkout(getBaseWorkoutData())) {
                 barEntries.add(new BarEntry((float) (relativeTime) / 1000f / 60f, yMax));
             }
 
@@ -285,9 +245,9 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
         chart.invalidate();
     }
 
-    private WorkoutSample findSample(Entry entry) {
-        if (entry.getData() instanceof WorkoutSample) {
-            return (WorkoutSample) entry.getData();
+    private GpsSample findSample(Entry entry) {
+        if (entry.getData() instanceof GpsSample) {
+            return (GpsSample) entry.getData();
         } else {
             return null;
         }
@@ -297,137 +257,12 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
     boolean fullScreenItems = false;
     LinearLayout mapRoot;
 
-    void addMap(){
-        mapView = MapManager.setupMap(this);
-        String trackStyle = Instance.getInstance(this).userPreferences.getTrackStyle();
-        // emulate current behaviour
-
-
-        ColoringStrategy coloringStrategy;
-
-        // predefined set of settings that play with the colors, the mapping of the color to some
-        // value and whether to blend or not. In the future it would be nice to have a nice editor
-        // in the settings to tweak the numbers here and possibly create good looking colors.
-        switch (trackStyle) {
-            case "purple_rain":
-                /* a nice set of colors generated from colorbrewer */
-                coloringStrategy = GradientColoringStrategy.fromPattern(GradientColoringStrategy.PATTERN_PURPLE, true);
-                break;
-            case "pink_mist":
-                /* Pink is nice */
-                coloringStrategy = GradientColoringStrategy.fromPattern(GradientColoringStrategy.PATTERN_PINK, false);
-                break;
-            case "rainbow_warrior":
-                /* Attempt to use different colors, this would be best suited for a fixed scale e.g. green is target value , red is to fast , yellow it to slow */
-                coloringStrategy = GradientColoringStrategy.fromPattern(GradientColoringStrategy.PATTERN_MAP, true);
-                break;
-            case "height_map":
-                /* based on height map colors from green till almost black*/
-                coloringStrategy = GradientColoringStrategy.fromPattern(GradientColoringStrategy.PATTERN_HEIGHT_MAP, true);
-                break;
-            case "bright_night":
-                coloringStrategy = GradientColoringStrategy.fromPattern(GradientColoringStrategy.PATTERN_BRIGHT, false);
-                break;
-            case "mondriaan":
-                coloringStrategy = GradientColoringStrategy.fromPattern(GradientColoringStrategy.PATTERN_YELLOW_RED_BLUE, false);
-                break;
-            default: // theme_color
-                /* default: original color based on theme*/
-                coloringStrategy = new SimpleColoringStrategy(getThemePrimaryColor());
-                break;
-        }
-
-        workoutLayer = new WorkoutLayer(samples, new SimpleColoringStrategy(getThemePrimaryColor()), coloringStrategy);
-        workoutLayer.addMapSampleSelectionListener(this);
-
-        if (Instance.getInstance(this).userPreferences.getTrackStyleMode().equals(UserPreferences.STYLE_USAGE_ALWAYS)) {
-            // Always show coloring
-            workoutLayer.setSampleConverter(workout, new SpeedConverter(this));
-        }
-
-        mapView.addLayer(workoutLayer);
-
-        final BoundingBox bounds = workoutLayer.getBoundingBox().extendMeters(50);
-        mHandler.postDelayed(() -> {
-            mapView.getModel().mapViewPosition.setMapPosition(new MapPosition(bounds.getCenterPoint(),
-                    (LatLongUtils.zoomForBounds(mapView.getDimension(), bounds,
-                            mapView.getModel().displayModel.getTileSize()))));
-            mapView.animate().alpha(1f).setDuration(1000).start();
-        }, 1000);
-
-        mapRoot = new LinearLayout(this);
-        mapRoot.setOrientation(LinearLayout.VERTICAL);
-        mapRoot.addView(mapView);
-
-        root.addView(mapRoot, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                                                         fullScreenItems ? ViewGroup.LayoutParams.MATCH_PARENT : getMapHeight()));
-        mapView.setAlpha(0);
-
-        if(showPauses){
-            Paint pBlue = AndroidGraphicFactory.INSTANCE.createPaint();
-            pBlue.setColor(Color.BLUE);
-            for (WorkoutCalculator.Pause pause : WorkoutCalculator.getPausesFromWorkout(getWorkoutData())) {
-                float radius = Math.min(10, Math.max(2, (float) Math.sqrt((float) pause.duration / 1000)));
-                mapView.addLayer(new FixedPixelCircle(pause.location, radius, pBlue, null));
-            }
-        }
-
-        Paint pGreen = AndroidGraphicFactory.INSTANCE.createPaint();
-        pGreen.setColor(Color.GREEN);
-        mapView.addLayer(new FixedPixelCircle(samples.get(0).toLatLong(), 10, pGreen, null));
-
-        Paint pRed = AndroidGraphicFactory.INSTANCE.createPaint();
-        pRed.setColor(Color.RED);
-        mapView.addLayer(new FixedPixelCircle(samples.get(samples.size() - 1).toLatLong(), 10, pRed, null));
-
-        mapView.setClickable(false);
-
-    }
-
-    private int getMapHeight() {
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        return displayMetrics.widthPixels * 3 / 4;
-    }
-
     protected boolean hasSamples() {
         return samples.size() > 1;
     }
 
-    protected WorkoutData getWorkoutData() {
-        return new WorkoutData(workout, samples);
-    }
-
-    @Override
-    protected void onDestroy() {
-        if (mapView != null) {
-            mapView.destroyAll();
-        }
-        AndroidGraphicFactory.clearResourceMemoryCache();
-        super.onDestroy();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        if (mapView != null) {
-            for (Layer layer : mapView.getLayerManager().getLayers()) {
-                if (layer instanceof TileDownloadLayer) {
-                    ((TileDownloadLayer) layer).onPause();
-                }
-            }
-        }
-    }
-
-    public void onResume() {
-        super.onResume();
-        if (mapView != null) {
-            for (Layer layer : mapView.getLayerManager().getLayers()) {
-                if (layer instanceof TileDownloadLayer) {
-                    ((TileDownloadLayer) layer).onResume();
-                }
-            }
-        }
+    protected BaseWorkoutData getBaseWorkoutData() {
+        return new BaseWorkoutData(workout, samples);
     }
 
     @Override
@@ -438,6 +273,10 @@ public abstract class WorkoutActivity extends InformationActivity implements Map
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public BaseWorkout getWorkout() {
+        return workout;
     }
 
 }

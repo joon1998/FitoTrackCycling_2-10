@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -19,13 +19,17 @@
 
 package de.tadris.fitness.recording.announcement;
 
-import de.tadris.fitness.recording.WorkoutRecorder;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import de.tadris.fitness.recording.BaseWorkoutRecorder;
 
 public interface Announcement {
 
     boolean isAnnouncementEnabled();
 
-    String getSpokenText(WorkoutRecorder recorder);
+    @Nullable
+    String getSpokenText(@NotNull BaseWorkoutRecorder recorder);
 
     default boolean isPlayedAlways() {
         return false;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -66,7 +66,8 @@ public class EditWorkoutTypeActivity extends InformationActivity implements Icon
         }
         if (workoutTypeId.equals("")) {
             isNewType = true;
-            type = new WorkoutType("", "", 5, getThemePrimaryColor(), Icon.RUNNING.name, 0);
+            // TODO indoor
+            type = new WorkoutType("", "", 5, getThemePrimaryColor(), Icon.RUNNING.name, 0, WorkoutType.RecordingType.GPS.id);
         } else {
             isNewType = false;
             type = Instance.getInstance(this).db.workoutTypeDao().findById(workoutTypeId);

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -19,7 +19,7 @@
 
 package de.tadris.fitness.aggregation;
 
-import de.tadris.fitness.data.Workout;
+import de.tadris.fitness.data.BaseWorkout;
 import de.tadris.fitness.data.WorkoutType;
 
 public class WorkoutTypeFilter implements WorkoutFilter {
@@ -33,7 +33,7 @@ public class WorkoutTypeFilter implements WorkoutFilter {
     }
 
     @Override
-    public boolean isAccepted(Workout workout) {
+    public boolean isAccepted(BaseWorkout workout) {
         if (type.id.equals(ID_ALL)) {
             return true;
         } else {

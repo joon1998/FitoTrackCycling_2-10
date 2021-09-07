@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -21,7 +21,10 @@ package de.tadris.fitness.util;
 
 import android.content.Context;
 
-import de.tadris.fitness.data.Workout;
+import de.tadris.fitness.Instance;
+import de.tadris.fitness.data.BaseWorkout;
+import de.tadris.fitness.data.GpsWorkout;
+import de.tadris.fitness.data.IndoorWorkout;
 
 public class CalorieCalculator {
 
@@ -29,12 +32,15 @@ public class CalorieCalculator {
      * workoutType, duration, ascent and avgSpeed of workout have to be set
      *
      * @param workout the workout
-     * @param weight  the weight of the person in kilogram
      * @return calories burned
      */
-    public static int calculateCalories(Context context, Workout workout, double weight) {
+    public static int calculateCalories(Context context, BaseWorkout workout) {
+        double weight = Instance.getInstance(context).userPreferences.getUserWeight();
         double mins = (double) (workout.duration / 1000) / 60;
-        int ascent = (int) workout.ascent; // 1 calorie per meter
+        int ascent = 0;
+        if (workout instanceof GpsWorkout) {
+            ascent = (int) ((GpsWorkout) workout).ascent; // 1 calorie per meter
+        }
         return (int) (mins * (getMET(context, workout) * 3.5 * weight) / 200) + ascent;
     }
 
@@ -52,13 +58,23 @@ public class CalorieCalculator {
      *
      * @return MET
      */
-    private static double getMET(Context context, Workout workout) {
-        double speedInKmh = workout.avgSpeed * 3.6;
+    private static double getMET(Context context, BaseWorkout workout) {
+        double speedInKmh = 0;
+
+        if (workout instanceof GpsWorkout) {
+            speedInKmh = ((GpsWorkout) workout).avgSpeed * 3.6;
+        } else if (workout instanceof IndoorWorkout) {
+            IndoorWorkout indoorWorkout = (IndoorWorkout) workout;
+            if (indoorWorkout.hasEstimatedDistance()) {
+                speedInKmh = indoorWorkout.estimateSpeed(context) * 3.6;
+            }
+        }
 
         switch (workout.workoutTypeId) {
             case "running":
             case "walking":
             case "hiking":
+            case "treadmill":
                 return Math.max(3, speedInKmh * 0.97);
             case "cycling":
                 return Math.max(3.5, 0.00818 * Math.pow(speedInKmh, 2) + 0.1925 * speedInKmh + 1.13);

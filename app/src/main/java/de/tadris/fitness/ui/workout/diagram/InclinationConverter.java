@@ -22,10 +22,11 @@ package de.tadris.fitness.ui.workout.diagram;
 import android.content.Context;
 
 import de.tadris.fitness.R;
-import de.tadris.fitness.data.Workout;
-import de.tadris.fitness.data.WorkoutData;
+import de.tadris.fitness.data.BaseSample;
+import de.tadris.fitness.data.BaseWorkout;
+import de.tadris.fitness.data.BaseWorkoutData;
+import de.tadris.fitness.data.GpsSample;
 import de.tadris.fitness.data.WorkoutManager;
-import de.tadris.fitness.data.WorkoutSample;
 
 public class InclinationConverter extends AbstractSampleConverter {
 
@@ -34,13 +35,13 @@ public class InclinationConverter extends AbstractSampleConverter {
     }
 
     @Override
-    public void onCreate(WorkoutData data) {
-        WorkoutManager.calculateInclination(data.getSamples());
+    public void onCreate(BaseWorkoutData data) {
+        WorkoutManager.calculateInclination(data.castToGpsData().getSamples());
     }
 
     @Override
-    public float getValue(WorkoutSample sample) {
-        return sample.tmpInclination;
+    public float getValue(BaseSample sample) {
+        return ((GpsSample) sample).tmpInclination;
     }
 
     @Override
@@ -59,12 +60,12 @@ public class InclinationConverter extends AbstractSampleConverter {
     }
 
     @Override
-    public float getMinValue(Workout workout) {
+    public float getMinValue(BaseWorkout workout) {
         return -10;
     }
 
     @Override
-    public float getMaxValue(Workout workout) {
+    public float getMaxValue(BaseWorkout workout) {
         return 10;
     }
 }

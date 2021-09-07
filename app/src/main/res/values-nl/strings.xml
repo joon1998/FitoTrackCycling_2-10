@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!--
   ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
   ~
@@ -16,9 +17,10 @@
   ~
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  --><resources>
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">FitoTrack</string>
-    <string name="workout_add">Toevoegen</string>
     <string name="stop">Stop</string>
     <string name="delete">Verwijderen</string>
     <string name="exporting">Exporteren</string>
@@ -28,7 +30,6 @@
     <string name="errorImportFailed">Data import is mislukt.</string>
     <string name="shareFile">Bestand delen</string>
     <string name="initialising">Initialiseren</string>
-    <string name="preferences">Voorkeuren</string>
     <string name="workouts">Trainingen</string>
     <string name="locationData">Locatie data</string>
     <string name="converting">Converteren</string>
@@ -38,7 +39,6 @@
     <string name="importBackupMessage">WAARSCHUWING: Al je huidige gegevens in de app worden verwijderd. Als je deze niet wilt verliezen, maak dan vooraf een back-up. Weet je zeker dat je de back-up wilt herstellen?</string>
     <string name="restore">Herstellen</string>
     <string name="backup">Back-up</string>
-    <string name="pref_ringtone_silent">Stil</string>
     <string name="setPreferencesTitle">Voorkeuren opgeven</string>
     <string name="setPreferencesMessage">Geef je voorkeur voor het eenheidssysteem en je gewicht op bij instellingen.</string>
     <string name="timeMinuteSingular">Minuut</string>
@@ -89,7 +89,6 @@
     <string name="height">Hoogte</string>
     <string name="workoutTypeRunning">Hardlopen</string>
     <string name="workoutTypeWalking">Wandelen</string>
-    <string name="workoutTypeJogging">Joggen</string>
     <string name="workoutTypeCycling">Fietsen</string>
     <string name="workoutTypeHiking">Bergwandelen</string>
     <string name="workoutTypeSkateboarding">Skateboarden</string>
@@ -114,7 +113,6 @@
     <string name="deleteWorkout">Training verwijderen</string>
     <string name="deleteWorkoutMessage">Weet je zeker dat je de training wilt verwijderen?</string>
     <string name="trackerRunning">Tracker loopt</string>
-    <string name="trackerRunningMessage">Je training wordt opgenomen</string>
     <string name="trackingInfo">Tracking info</string>
     <string name="trackingInfoDescription">Info over de lopende opname</string>
     <string name="cancel">Annuleren</string>
@@ -128,7 +126,6 @@
     <string name="importBackup">Importeer data back-up</string>
     <string name="importBackupSummary">Herstel een gemaakte back-up</string>
     <string name="gps">GPS</string>
-    <string name="data">Data</string>
     <string name="mapStyle">Kaartstijl</string>
     <string name="waiting_gps">Wacht op GPS</string>
     <string name="actionUploadToOSM">Upload naar OSM</string>
@@ -136,7 +133,6 @@
     <string name="trackVisibilityPref">Zichtbaarheid opname</string>
     <string name="description">Beschrijving</string>
     <string name="ttsNotAvailable">Tekst-naar-spraak is niet beschikbaar</string>
-    <string name="action_edit_comment">Bewerk opmerking</string>
     <string name="pref_announcement_mode">Aankondigingsmodus</string>
     <string name="save">Opslaan</string>
     <string name="share">Delen</string>
@@ -152,7 +148,6 @@
     <string name="add_interval">Interval toevoegen</string>
     <string name="manageIntervalSets">Interval reeksen beheren</string>
     <string name="manageIntervalsSummary">Bewerk de interval reeksen die je tijdens de training kunt gebruiken met behulp van gesproken feedback.</string>
-    <string name="workoutRecording">Training opnemen</string>
     <string name="createIntervalSet">Nieuwe interval reeks maken</string>
     <string name="create">Maken</string>
     <string name="hintManageIntervalSets">Voeg een interval reeks toe om deze in je trainingen te gebruiken.</string>
@@ -206,7 +201,6 @@
     <string name="intervalAutoTimeoutTraining">Automatische trainingspauze</string>
     <string name="pref_auto_timeout_title">Tijd voor Auto-Stop</string>
     <string name="currentTime">Huidige tijd</string>
-    <string name="oClock">op de klok</string>
     <string name="unlockPhoneStopWorkout">Ontgrendel uw telefoon om de opname te stoppen</string>
     <string name="no_workouts_recorded_for_this_activity">Geen trainingen voor deze activiteit</string>
     <string name="workout_statistics">Trainingsstatistieken</string>
@@ -225,7 +219,6 @@
     <string name="dayInMonth">Dag in maand</string>
     <string name="singleWorkout">Enkele training</string>
     <string name="workoutStatsHelpText">Dit scherm toont historische statistieken van de trainingen. Om het te gebruiken, moet je eerst het trainingstype specificeren door erop te klikken. Stel vervolgens de informatie in waarover je meer wilt weten en de tijdsduur. \n\nE.g. Bijvoorbeeld als je \"Week\" selecteert als tijdsperiode, worden alle trainingen van elke week samengevoegd tot één gegevenspunt, waarbij ofwel het gemiddelde ofwel de som van elke week wordt berekend.</string>
-    <string name="dataSamples">Voorbeelden</string>
     <string name="replaceOrMergeMessage">Database vervangen of samenvoegen met back-upbestand?</string>
     <string name="replace">Vervangen</string>
     <string name="merge">Samenvoegen</string>
@@ -276,7 +269,6 @@
     <string name="noWorkoutStarted">Geen training gestart</string>
     <string name="editDisplayedInformationHint">Zolang de training nog niet is gestart, kun je de weergegeven waarden bewerken door op een van de vier velden te klikken.</string>
     <string name="editDisplayedInformation">Bewerk de weergegeven informatie</string>
-    <string name="sendEmail">Stuur een e-mail</string>
     <string name="aboutSourceCode">Bekijk de broncode</string>
     <string name="aboutSendFeedback">Stuur feedback naar de ontwikkelaar</string>
     <string name="aboutContributors">Bijdragers</string>
@@ -294,8 +286,6 @@
     <string name="aboutUnlistedContributors">Met dank aan alle niet-beursgenoteerde medewerkers die hebben geholpen bij het vertalen en uitbreiden van FitoTrack!</string>
     <string name="importedWorkouts">Geïmporteerde %d trainingen</string>
     <string name="importingFiles">Bestanden importeren</string>
-    <string name="bulkActions">Bulkacties</string>
-    <string name="importMultipleGpxFilesSummary">Importeer meer dan één GPX-bestand tegelijk uit het bestandssysteem</string>
     <string name="importMultipleMessageSelectFolder">Selecteer een map met alle GPX-bestanden die u wilt importeren.</string>
     <string name="importMultipleGpxFiles">Meerdere GPX-bestanden importeren</string>
     <string name="actionGrant">Toesteming verlenen</string>
@@ -318,7 +308,6 @@
     <string name="autoPauseTitle">Automatisch pauzeren</string>
     <string name="resumeWorkout">Weer Trainen</string>
     <string name="heartRateNotAvailable">Hartslag is momenteel niet beschikbaar.</string>
-    <string name="intervals">Interval</string>
     <string name="announcementWorkoutActions">Training acties (pauzeren, hervatten, enz.)</string>
     <string name="resumeWorkoutConfirmation">Wil je echt doorgaan met deze training\? Dit zal ook een pauze toevoegen vanaf het moment dat de training werd gestopt.</string>
     <string name="prefShowOnLockScreenSummary">Toon training informatie, zelfs als de telefoon op slot zit.</string>
@@ -332,9 +321,7 @@
     <string name="actionSave">Opslaan</string>
     <string name="customWorkoutTypesTitle">Aangepaste Trainingstypes</string>
     <string name="preferenceCategoryVoiceFeedback">Feedback</string>
-    <string name="workoutTypeEditMETHint">Een maatregel voor energieverbruik</string>
-    <string name="workoutTypeEditMinDistanceHint">Minimumafstand tussen twee GPS-monsters</string>
-    <string name="workoutTypeEditMinDistance">Monsterafstand</string>
+    <string name="workoutTypeEditMinDistance">Afstand meting</string>
     <string name="workoutTypeEditNameError">Voer a. U. B. een naam in</string>
     <string name="workoutTypeEditName">Naam</string>
     <string name="workoutTypeEditIdErrorUnique">Er is al een workout type met behulp van deze ID</string>
@@ -390,7 +377,6 @@
     <string name="overwriteMapConfirmation">Wil je de bestaande kaart %s overschrijven\?</string>
     <string name="downloadMapsSpecifyDirectory">Geef eerst een locatie op voor offline kaarten</string>
     <string name="downloadMapsTitle">Kaarten downloaden</string>
-    <string name="pref_map_file">Locatie offline kaarten</string>
     <string name="recordingBackgroundPermissionNotGrantedMessage">FitoTrack verzamelt ook locatiegegevens op de achtergrond om de training op te nemen wanneer het scherm is uitgeschakeld. Geef FitoTrack daarom altijd toegang tot uw locatie.</string>
     <string name="recordingPermissionNotGrantedMessage">FitoTrack heeft locatietoestemming nodig om uw bewegingen tijdens uw training te volgen. FitoTrack verzamelt ook locatiegegevens terwijl de app op de achtergrond is of het scherm is uitgeschakeld om uw trainingen op te nemen. Locatiegegevens blijven altijd op uw telefoon staan zonder uw duidelijke toestemming om deze te delen.</string>
     <string name="workoutTypeAll">Alle</string>
@@ -420,7 +406,50 @@
     <string name="preferenceCurrentSpeedTime">Tijdspan voor gemiddelde berekening</string>
     <string name="preferencesCategoryMap">Kaart</string>
     <string name="prefTrackStyleUsageTitle">Gebruik trackkleuring automatisch</string>
-    <string name="trackStyle">Track Stijl</string>
-    <string name="workoutMaxHeight">Max. hoogte</string>
-    <string name="workoutMinHeight">Min. hoogte</string>
+    <string name="trackStyle">Track stijl</string>
+    <string name="workoutMaxHeight">Max hoogte</string>
+    <string name="workoutMinHeight">Min hoogte</string>
+    <plurals name="minutes">
+        <item quantity="one"><xliff:g example="1" id="mins">%1$d</xliff:g> minuut</item>
+        <item quantity="other"><xliff:g example="5" id="mins">%1$d</xliff:g> minuten</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="one"><xliff:g example="1" id="secs">%1$d</xliff:g> seconde</item>
+        <item quantity="other"><xliff:g example="12" id="secs">%1$d</xliff:g> seconden</item>
+    </plurals>
+    <string name="fileNotFound">Bestand niet gevonden</string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g example="1 minuut" id="mins">%1$s</xliff:g> en
+\n<xliff:g example="7 seconden" id="secs">%2$s</xliff:g> tot begin </string>
+    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g example="12 minuten" id="mins">%1$s</xliff:g> tot begin </string>
+    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g example="5 seconden" id="secs">%1$s</xliff:g> tot begin </string>
+    <string name="pref_render_theme_style_info">Geen thema-stijl beschikbaar voor geselecteerd thema.</string>
+    <string name="preferenceCategoryRenderThemeCategories">Categorieën</string>
+    <string name="pref_render_theme_style">Stijl</string>
+    <string name="pref_map_directory">Offline kaartmap</string>
+    <string name="recordingActivityPermissionMessage">FitoTrack heeft toestemming nodig om je fysieke activiteit bij te houden om indoortrainingen op te nemen.</string>
+    <string name="pref_step_length">Stap lengte</string>
+    <plurals name="workoutPushUp">
+        <item quantity="one">Opdrukking</item>
+        <item quantity="other">Opdrukkingen</item>
+    </plurals>
+    <string name="workoutTypePushUps">Opdrukken</string>
+    <plurals name="workoutJump">
+        <item quantity="one">Sprong</item>
+        <item quantity="other">Sprongen</item>
+    </plurals>
+    <string name="workoutTypeTrampolineJumping">Trampoline springen</string>
+    <string name="workoutTypeRopeSkipping">Touwtje springen</string>
+    <plurals name="workoutStep">
+        <item quantity="one">Stap</item>
+        <item quantity="other">Stappen</item>
+    </plurals>
+    <string name="workoutTypeTreadmill">Loopband</string>
+    <string name="workoutMaxIntensity">Max. Intensiteit</string>
+    <string name="workoutAvgIntensityShort">Gem. Intensiteit</string>
+    <string name="workoutIntensity">Intensiteit</string>
+    <string name="workoutMaxFrequency">Max. Frequentie</string>
+    <string name="workoutAvgFrequencyShort">Gem. Frequentie</string>
+    <string name="workoutFrequency">Frequentie</string>
+    <string name="workoutSets">Sets</string>
+    <string name="workoutRepetitions">Herhalingen</string>
 </resources>

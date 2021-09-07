@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -63,7 +63,8 @@ import de.tadris.fitness.aggregation.WorkoutAggregator;
 import de.tadris.fitness.aggregation.WorkoutInformation;
 import de.tadris.fitness.aggregation.WorkoutInformationManager;
 import de.tadris.fitness.aggregation.WorkoutTypeFilter;
-import de.tadris.fitness.data.Workout;
+import de.tadris.fitness.data.BaseWorkout;
+import de.tadris.fitness.data.GpsWorkout;
 import de.tadris.fitness.data.WorkoutType;
 import de.tadris.fitness.ui.FitoTrackActivity;
 import de.tadris.fitness.ui.dialog.SelectWorkoutTypeDialog;
@@ -132,8 +133,8 @@ public class AggregatedWorkoutStatisticsActivity extends FitoTrackActivity imple
         }
     }
 
-    private Workout getLastWorkout() {
-        return Instance.getInstance(this).db.workoutDao().getLastWorkout();
+    private GpsWorkout getLastWorkout() {
+        return Instance.getInstance(this).db.gpsWorkoutDao().getLastWorkout();
     }
 
     private void initInformationSpinner() {
@@ -159,9 +160,7 @@ public class AggregatedWorkoutStatisticsActivity extends FitoTrackActivity imple
     }
 
     private void initTypeSelector() {
-        typeSelector.setOnClickListener(v -> {
-            new SelectWorkoutTypeDialogAll(this, this).show();
-        });
+        typeSelector.setOnClickListener(v -> new SelectWorkoutTypeDialogAll(this, this).show());
     }
 
     private void initTimeSpanSpinner() {
@@ -287,6 +286,10 @@ public class AggregatedWorkoutStatisticsActivity extends FitoTrackActivity imple
         chart.invalidate();
         chart.animateY(500, Easing.EaseOutCubic);
         chart.zoomAndCenterAnimated(1, 1, 0, 0, YAxis.AxisDependency.LEFT, 500);
+
+        float minY = selectedInformation.getAggregationType() == AggregationType.SUM ? 0 : chart.getLineData().getYMin();
+        chart.getAxisLeft().setAxisMinimum(minY);
+        chart.getAxisRight().setAxisMinimum(minY);
     }
 
 
@@ -371,10 +374,10 @@ public class AggregatedWorkoutStatisticsActivity extends FitoTrackActivity imple
     }
 
     private void openWorkoutAt(long time) {
-        Workout workout = Instance.getInstance(this).db.workoutDao().getWorkoutByStart(time);
+        BaseWorkout workout = Instance.getInstance(this).db.getWorkoutByStart(time);
         if (workout != null) {
-            final Intent intent = new Intent(this, ShowWorkoutActivity.class);
-            intent.putExtra(ShowWorkoutActivity.WORKOUT_ID_EXTRA, workout.id);
+            final Intent intent = new Intent(this, workout.getWorkoutType(this).getRecordingType().showDetailsActivityClass);
+            intent.putExtra(ShowGpsWorkoutActivity.WORKOUT_ID_EXTRA, workout.id);
             startActivity(intent);
         } else {
             Log.i("DiagramActivity", "Cannot get workout at time=" + time);

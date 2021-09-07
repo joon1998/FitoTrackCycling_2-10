@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -19,19 +19,19 @@
 
 package de.tadris.fitness.aggregation;
 
-import de.tadris.fitness.data.Workout;
+import de.tadris.fitness.data.BaseWorkout;
 
 public class WorkoutInformationResult {
 
-    private final Workout workout;
+    private final BaseWorkout workout;
     private final double value;
 
-    public WorkoutInformationResult(Workout workout, double value) {
+    public WorkoutInformationResult(BaseWorkout workout, double value) {
         this.workout = workout;
         this.value = value;
     }
 
-    public Workout getWorkout() {
+    public BaseWorkout getWorkout() {
         return workout;
     }
 

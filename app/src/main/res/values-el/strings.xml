@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!--
   ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
   ~
@@ -16,15 +17,15 @@
   ~
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  --><resources>
+  -->
+
+<resources>
     <string name="length_in_minutes">Διάρκεια (λεπτά):</string>
-    <string name="workoutRecording">Καταγραφή Προπόνησης</string>
     <string name="add_interval">Προσθήκη Διαλείμματος</string>
     <string name="cannotStart">Αποτυχία έναρξης</string>
     <string name="noComment">Ουδέν σχόλιο</string>
     <string name="savingFailed">Αποτυχία αποθήκευσης</string>
     <string name="pref_announcement_mode">Λειτουργία Ανακοίνωσης</string>
-    <string name="action_edit_comment">Επεξεργασία Σχολίου</string>
     <string name="trackVisibilityPref">Ορατότητα ίχνους</string>
     <string name="mapStyle">Στυλ Χάρτη</string>
     <string name="exportData">Εξαγωγή Δεδομένων</string>
@@ -44,7 +45,6 @@
     <string name="workoutTypeEditId">Αναγνωριστικό</string>
     <string name="actionResume">Συνέχεια</string>
     <string name="actionPause">Παύση</string>
-    <string name="intervals">Διαλείμματα</string>
     <string name="inclination">Κλίση</string>
     <string name="actionImport">Εισαγωγή</string>
     <string name="recordingStateStopped">Σε Διακοπή</string>
@@ -63,7 +63,6 @@
     <string name="sections">Τμήματα</string>
     <string name="merge">Συγχωνεύση</string>
     <string name="replace">Αντικατάσταση</string>
-    <string name="dataSamples">Δείγματα</string>
     <string name="help">Βοήθεια</string>
     <string name="statsFilter">Φίλτρο:</string>
     <string name="sum">Σύνολο</string>
@@ -98,7 +97,6 @@
     <string name="share">Διαμοιρασμός</string>
     <string name="save">Αποθήκευση</string>
     <string name="description">Περιγραφή</string>
-    <string name="data">Δεδομένα</string>
     <string name="settings">Ρυθμίσεις</string>
     <string name="cancel">Ακύρωση</string>
     <string name="deleteWorkoutMessage">Θέλετε να διαγράψετε την προπόνηση;</string>
@@ -170,7 +168,6 @@
     <string name="timeMinuteSingular">Λεπτό</string>
     <string name="setPreferencesMessage">Μπορείς να ρυθμίσεις το σύστημα μονάδων και να προσθέσεις το βάρος σου.</string>
     <string name="setPreferencesTitle">Ρύθμισε</string>
-    <string name="pref_ringtone_silent">Αθόρυβο</string>
     <string name="backup">Αντίγραφο ασφαλείας</string>
     <string name="restore">Επαναφορά</string>
     <string name="chooseBackupFile">Επέλεξε αρχείο ανάκτησης</string>
@@ -180,7 +177,6 @@
     <string name="converting">μετατροπή</string>
     <string name="locationData">Δεδομένα τοποθεσίας</string>
     <string name="workouts">Προπονήσεις</string>
-    <string name="preferences">Ρυθμίσεις</string>
     <string name="initialising">αρχικοποίηση</string>
     <string name="shareFile">Διαμοιρασμός αρχείου</string>
     <string name="errorImportFailed">Η εισαγωγή Δεδομένων απέτυχε.</string>
@@ -190,7 +186,6 @@
     <string name="exporting">εξαγωγή</string>
     <string name="delete">διαγραφή</string>
     <string name="stop">τερματισμός</string>
-    <string name="workout_add">προσθήκη</string>
     <string name="app_name">FitoTrack</string>
     <string name="workoutNumber">Αριθμός προπονήσεων</string>
     <string name="workout_statistics">Στατιστικές Προπονήσεων</string>
@@ -248,10 +243,8 @@
     <string name="trackingInfoDescription">Πληροφορίες για την ενεργή ιχνηλάτηση</string>
     <string name="trackerRunning">Η ιχνηλάτηση είναι ενεργή</string>
     <string name="trackerWaitingMessage">Αναμονή για εκκίνηση προπόνησης</string>
-    <string name="trackerRunningMessage">Η προπόνηση σας καταγράφεται</string>
     <string name="unknown">Άγνωστο</string>
     <string name="workoutTypeSkateboarding">Σκέιτμπορντ</string>
-    <string name="workoutTypeJogging">Τζόκινγκ</string>
     <string name="workoutMaxHeight">Μεγ. ύψος</string>
     <string name="workoutMinHeight">Ελαχ. ύψος</string>
     <string name="pref_announcements_content">Περιεχόμενο ανακοινώσεων</string>
@@ -295,14 +288,11 @@
     <string name="overwriteMapConfirmation">Θέλετε να αντικαταστήσετε ένα υπάρχον αρχείο χάρτη %s;</string>
     <string name="downloadMapsSpecifyDirectory">Προσδιορίστε πρώτα μία τοποθεσία για τους χάρτες εκτός σύνδεσης</string>
     <string name="downloadMapsTitle">Λήψη Χαρτών</string>
-    <string name="pref_map_file">Τοποθεσία Χάρτη εκτός Σύνδεσης</string>
     <string name="editWorkoutType">Επεξεργασία είδους προπόνησης</string>
     <string name="deleteWorkoutTypeConfirmation">Θέλετε να διαγράψετε αυτό το είδος προπόνησης;</string>
     <string name="deleteWorkoutType">Διαγραφή Είδους Προπόνησης</string>
     <string name="customWorkoutTypesTitle">Είδη Προσαρμοσμένων Προπονήσεων</string>
     <string name="preferenceCategoryVoiceFeedback">Φωνητικές εντολές</string>
-    <string name="workoutTypeEditMETHint">Μέτρο κατανάλωσης ενέργειας</string>
-    <string name="workoutTypeEditMinDistanceHint">Ελάχιστη απόσταση μεταξύ δύο δειγμάτων GPS</string>
     <string name="workoutTypeEditMinDistance">Δειγματική απόσταση</string>
     <string name="workoutTypeEditNameError">Εισάγετε ένα όνομα</string>
     <string name="workoutTypeEditIdErrorEmpty">Εισάγετε ένα αναγνωριστικό</string>
@@ -326,10 +316,8 @@
     <string name="selectBluetoothDevice">Επιλογή συσκευής Bluetooth</string>
     <string name="importedWorkouts">Έγινε εισαγωγή %d προπονήσεων</string>
     <string name="importingFiles">Γίνεται εισαγωγή αρχείων</string>
-    <string name="bulkActions">Πολλαπλές ενέργειες</string>
     <string name="actionImportMultiple">Εισαγωγή πολλαπλών</string>
     <string name="importWorkoutMultipleQuestion">Θέλετε να κάνετε εισαγωγή ενός αρχείου GPX ή πολλαπλών;</string>
-    <string name="importMultipleGpxFilesSummary">Εισαγωγή περισσότερων από ένα αρχείων GPX ταυτόχρονα από το σύστημα αρχείων</string>
     <string name="importMultipleMessageSelectFolder">Επιλέξτε ένα φάκελο που περιέχει όλα τα αρχεία GPX που θέλετε να εισάγετε.</string>
     <string name="importMultipleGpxFiles">Εισαγωγή πολλαπλών αρχείων GPX</string>
     <string name="speechConfigNoSpeech">Δεν υπάρχουν ανακοινώσεις</string>
@@ -339,7 +327,6 @@
     <string name="noWorkoutStarted">Δεν έχει ξεκινήσει προπόνηση</string>
     <string name="editDisplayedInformationHint">Εφόσον δεν έχει ξεκινήσει η προπόνηση, μπορείτε να επεξεργαστείτε τις προβαλλόμενες τιμές πατώντας σε ένα από τα τέσσερα πεδία.</string>
     <string name="editDisplayedInformation">Επεξεργασία προβαλλόμενων πληροφοριών</string>
-    <string name="sendEmail">Αποστολή Email</string>
     <string name="aboutPrivacyPolicy">Πολιτική Απορρήτου</string>
     <string name="aboutHelpTranslating">Συμβάλετε στη μετάφραση</string>
     <string name="aboutUnlistedContributors">Ευχαριστούμε όλους τους μη καταχωρημένους συνεργάτες που βοήθησαν στη μετάφραση και την επέκταση του FitoTrack!</string>
@@ -364,7 +351,6 @@
     <string name="calendarWeekYear">Εβδομάδα / Έτος</string>
     <string name="no_workouts_recorded_for_this_activity">Δεν έχει καταχωρηθεί αυτή η δραστηριότητα</string>
     <string name="unlockPhoneStopWorkout">Ξεκλειδώστε το κινητό σας για να σταματήσετε την καταγραφή</string>
-    <string name="oClock">η Ώρα</string>
     <string name="currentTime">Τρέχων Χρόνος</string>
     <string name="pref_auto_timeout_title">Χρόνος μέχρι Αυτόματη Διακοπή</string>
     <string name="intervalAutoTimeoutTraining">Αυτόματη Διακοπή Προπόνησης</string>

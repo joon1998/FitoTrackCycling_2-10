@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+  ~
+  ~ This file is part of FitoTrack
+  ~
+  ~ FitoTrack is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     FitoTrack is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <resources>
     <string name="timeHourShort">h</string>
     <string name="timeHourPlural">Hores</string>
@@ -20,7 +39,6 @@
     <string name="year">Any</string>
     <string name="month">Mes</string>
     <string name="min">Min</string>
-    <string name="action_edit_comment">Edita el comentari</string>
     <string name="aboutVersion">Versió</string>
     <string name="add">Afegeix</string>
     <string name="max">Max</string>
@@ -28,7 +46,6 @@
     <string name="preferencesCategoryAppearance">Aparença</string>
     <string name="timeSecondsPlural">Segons</string>
     <string name="timeMinutePlural">Minuts</string>
-    <string name="preferences">Prefrències</string>
     <string name="initialising">Inicialitzant</string>
     <string name="shareFile">Comparteix el fitxer</string>
     <string name="errorImportFailed">L\'importació de la informació ha fallat.</string>
@@ -38,7 +55,6 @@
     <string name="exporting">Exportant</string>
     <string name="delete">Esborra</string>
     <string name="stop">Atura</string>
-    <string name="workout_add">Afegeix</string>
     <string name="app_name">FitoTrack</string>
     <string name="pref_announcements_config_title">Activador de l\'anunci</string>
     <string name="pref_voice_announcements_summary">Configureu els missatges de veu que us informin durant l\'entrenament</string>
@@ -51,7 +67,6 @@
     <string name="and">i</string>
     <string name="setPreferencesMessage">Podeu configurar el vostre sistema d’unitat preferit i el vostre pes a la configuració.</string>
     <string name="setPreferencesTitle">Estableix les preferències</string>
-    <string name="pref_ringtone_silent">Silenciós</string>
     <string name="backup">Còpia de seguretat</string>
     <string name="restore">Restaura</string>
     <string name="importBackupMessage">ADVERTÈNCIA: s\'esborraran totes les dades existents a l\'aplicació. Si no els voleu perdre, primer feu una altra còpia de seguretat. Esteu segur que voleu restaurar aquesta còpia de seguretat\?</string>

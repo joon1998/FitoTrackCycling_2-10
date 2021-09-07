@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -28,15 +28,15 @@ import java.util.List;
 import java.util.Map;
 
 import de.tadris.fitness.Instance;
-import de.tadris.fitness.data.Workout;
+import de.tadris.fitness.data.BaseWorkout;
 
 public class AggregatedWorkoutData {
 
-    private List<WorkoutInformationResult> data;
+    private final List<WorkoutInformationResult> data;
     private double min, avg, max, sum;
-    private AggregationSpan span;
+    private final AggregationSpan span;
 
-    private Map<Long, AggregatedInformationDataPoint> dataPoints = new HashMap<>();
+    private final Map<Long, AggregatedInformationDataPoint> dataPoints = new HashMap<>();
 
     public AggregatedWorkoutData(List<WorkoutInformationResult> data, AggregationSpan span) {
         this.data = data;
@@ -74,7 +74,7 @@ public class AggregatedWorkoutData {
         dataPoint.setCount(dataPoint.getCount() + 1);
     }
 
-    private AggregatedInformationDataPoint getDataPoint(Workout workout) {
+    private AggregatedInformationDataPoint getDataPoint(BaseWorkout workout) {
         long key = getDataPointDateFromWorkout(workout);
         if (!dataPoints.containsKey(key)) {
             dataPoints.put(key, new AggregatedInformationDataPoint(new Date(key), 0, 0));
@@ -82,7 +82,7 @@ public class AggregatedWorkoutData {
         return dataPoints.get(key);
     }
 
-    private long getDataPointDateFromWorkout(Workout workout) {
+    private long getDataPointDateFromWorkout(BaseWorkout workout) {
         Calendar calendar = Calendar.getInstance();
 
         // attempt to get the Instance an use the app preferences

@@ -1,12 +1,12 @@
 package de.tadris.fitness.recording.event;
 
-import de.tadris.fitness.recording.RecorderService;
+import de.tadris.fitness.recording.gps.GpsRecorderService;
 
 public class HeartRateConnectionChangeEvent {
 
-    public final RecorderService.HeartRateConnectionState state;
+    public final GpsRecorderService.HeartRateConnectionState state;
 
-    public HeartRateConnectionChangeEvent(RecorderService.HeartRateConnectionState state) {
+    public HeartRateConnectionChangeEvent(GpsRecorderService.HeartRateConnectionState state) {
         this.state = state;
     }
 }

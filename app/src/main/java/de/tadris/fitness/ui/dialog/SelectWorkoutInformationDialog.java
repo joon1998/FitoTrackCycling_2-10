@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -27,21 +27,24 @@ import java.util.List;
 
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
+import de.tadris.fitness.data.WorkoutType;
 import de.tadris.fitness.recording.information.InformationManager;
 import de.tadris.fitness.recording.information.RecordingInformation;
 
 public class SelectWorkoutInformationDialog {
 
-    private Activity context;
-    private WorkoutInformationSelectListener listener;
-    private int slot;
-    private List<RecordingInformation> informationList;
+    private final Activity context;
+    private final WorkoutInformationSelectListener listener;
+    private final WorkoutType.RecordingType mode;
+    private final int slot;
+    private final List<RecordingInformation> informationList;
 
-    public SelectWorkoutInformationDialog(Activity context, int slot, WorkoutInformationSelectListener listener) {
+    public SelectWorkoutInformationDialog(Activity context, WorkoutType.RecordingType mode, int slot, WorkoutInformationSelectListener listener) {
         this.context = context;
         this.listener = listener;
+        this.mode = mode;
         this.slot = slot;
-        this.informationList = new InformationManager(context).getDisplayableInformation();
+        this.informationList = new InformationManager(mode, context).getDisplayableInformation();
     }
 
     public void show() {
@@ -58,7 +61,7 @@ public class SelectWorkoutInformationDialog {
 
     private void onSelect(int which) {
         RecordingInformation information = informationList.get(which);
-        Instance.getInstance(context).userPreferences.setIdOfDisplayedInformation(slot, information.getId());
+        Instance.getInstance(context).userPreferences.setIdOfDisplayedInformation(mode.id, slot, information.getId());
         listener.onSelectWorkoutInformation(slot, information);
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -96,5 +96,20 @@ public class Imperial implements DistanceUnitSystem {
     @Override
     public int getSpeedUnitTitle() {
         return R.string.unitMilesPerHour;
+    }
+
+    @Override
+    public String getReallyShortDistanceUnit() {
+        return "in";
+    }
+
+    @Override
+    public double getDistanceFromCentimeters(double centimeters) {
+        return centimeters / 2.54;
+    }
+
+    @Override
+    public double getCentimetersFromReallyShortDistance(double reallyShortDistance) {
+        return reallyShortDistance * 2.54;
     }
 }

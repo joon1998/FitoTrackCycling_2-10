@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -24,14 +24,14 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.tadris.fitness.data.WorkoutData;
+import de.tadris.fitness.data.GpsWorkoutData;
 
 public class ConverterManager {
 
     public List<SampleConverter> availableConverters = new ArrayList<>();
     public List<SampleConverter> selectedConverters = new ArrayList<>();
 
-    public ConverterManager(Context context, WorkoutData data) {
+    public ConverterManager(Context context, GpsWorkoutData data) {
         availableConverters.add(new SpeedConverter(context));
         availableConverters.add(new HeightConverter(context));
         availableConverters.add(new InclinationConverter(context));
