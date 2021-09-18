@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="announcementGPSStatus">Status GPS</string>
+    <string name="errorEnterValidDuration">Masukkan durasi yang valid</string>
+    <string name="errorEnterValidNumber">Masukkan angka yang valid</string>
+    <string name="and">dan</string>
+    <string name="timeSecondsShort">d</string>
+    <string name="timeHourShort">j</string>
+    <string name="timeHourPlural">Jam</string>
+    <string name="timeHourSingular">Jam</string>
+    <string name="timeMinuteShort">mnt</string>
+    <string name="timeMinutePlural">Menit</string>
+    <string name="timeMinuteSingular">Menit</string>
+    <string name="setPreferencesMessage">Anda dapat mengatur sistem satuan Anda dan berat Anda di pengaturan.</string>
+    <string name="setPreferencesTitle">Atur Preferensi</string>
+    <string name="loadingFile">Memuat berkas</string>
+    <string name="finished">Selesai</string>
+    <string name="locationData">Data lokasi</string>
+    <string name="initialising">Memulai</string>
+    <string name="shareFile">Bagikan berkas</string>
+    <string name="errorImportFailed">Pengimporan data gagal.</string>
+    <string name="errorExportFailed">Pengeksporan data gagal.</string>
+    <string name="errorGpxExportFailed">Pengeksporan GPX gagal.</string>
+    <string name="error">Kesalahan</string>
+    <string name="exporting">Mengekspor</string>
+    <string name="delete">Hapus</string>
+    <string name="stop">Berhenti</string>
+    <string name="app_name">FitoTrack</string>
+</resources>

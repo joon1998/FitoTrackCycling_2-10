@@ -178,7 +178,7 @@
     <string name="delete">Ta bort</string>
     <string name="stop">Stopp</string>
     <string name="app_name">FitoTrack</string>
-    <string name="pref_auto_start_mode_title">Läge för automatisk start</string>
+    <string name="pref_auto_start_mode_title">Auto-start-läge</string>
     <string name="editWorkoutType">Redigera träningsform</string>
     <string name="customWorkoutTypesTitle">Egna träningsformer</string>
     <string name="hintManageWorkoutTypes">Tryck på plusset för att lägga till egna träningsformer.</string>
@@ -365,9 +365,9 @@
     <string name="aboutPrivacyPolicy">Integritetspolicy</string>
     <string name="editDisplayedInformation">Redigera visad information</string>
     <string name="chooseMapHint">Vänligen välj en kartfil</string>
-    <string name="workoutTypeEditNameError">Vänligen ange ett namn</string>
+    <string name="workoutTypeEditNameError">Var god ange ett namn</string>
     <string name="workoutTypeEditIdErrorEmpty">Vänligen ange ett ID</string>
-    <string name="importMultipleMessageSelectFolder">Vänligen välj en mapp som innehåller alla de GPX-filer du vill importera.</string>
+    <string name="importMultipleMessageSelectFolder">Var god välj en mapp som innehåller alla de GPX-filer du vill importera.</string>
     <string name="recordingBackgroundPermissionNotGrantedMessage">FitoTrack samlar också in platsdata i bakgrunden för att kunna spela in träningspasset medan skärmen är avstängd. Var därför vänlig och ge FitoTrack tillgång till din plats hela tiden.</string>
     <string name="importWorkoutMultipleQuestion">Vill du importera en GPX-fil eller flera\?</string>
     <string name="actionImportMultiple">Importera flera</string>
@@ -379,4 +379,52 @@
     <string name="resumeWorkoutConfirmation">Vill du verkligen återuppta detta träningspass\? Detta kommer även lägga till en paus motsvarande den tid som träningspasset var stoppat.</string>
     <string name="nothingSelected">Ingenting har valts</string>
     <string name="pref_announcements_pace_control_summary">Varna när du går under eller över en specificerad hastighet</string>
+    <string name="workoutTypeEditMinDistance">Mätavstånd</string>
+    <string name="workoutDescent">Fall</string>
+    <string name="workoutAscent">Stigning</string>
+    <string name="workoutTypeEditMET">MET</string>
+    <string name="trackVisibilityPref">Spårsynlighet</string>
+    <string name="runningMigrations">Kör migreringar</string>
+    <string name="pref_render_theme_style_info">Ingen stilmeny finns tillgänglig för det valda renderingstemat.</string>
+    <string name="pref_render_theme_style">Renderingsstil</string>
+    <string name="aboutUnlistedContributors">Tack till alla de olistade medarbetare som har hjälpt till att översätta och utöka FitoTrack!</string>
+    <string name="aboutContributors">Medarbetare</string>
+    <string name="downloadMapsSpecifyDirectory">Var god ange först en mapp för offline-kartor</string>
+    <string name="workoutTypeTrampolineJumping">Trampolinhoppning</string>
+    <string name="workoutTypePushUps">Armhävningar</string>
+    <plurals name="workoutPushUp">
+        <item quantity="one">Armhävning</item>
+        <item quantity="other">Armhävningar</item>
+    </plurals>
+    <string name="intervalAutoTimeoutTraining">Automatiskt tidsavbrott för träningspass</string>
+    <string name="aboutSendFeedback">Skicka återkoppling till utvecklaren</string>
+    <string name="inclination">Lutning</string>
+    <string name="intervalAutoStartModeTraining">Läge för auto-start av träningspass</string>
+    <string name="announcementCountdown">Funktioner för auto-start (nedräkning, tillstånd, etc.)</string>
+    <string name="preferenceCategoryVoiceFeedback">Röståterkoppling</string>
+    <string name="recordingActivityPermissionMessage">FitoTrack behöver behörighet att mäta din fysiska aktivitet för att kunna spara träningspass inomhus.</string>
+    <string name="recordingPermissionNotGrantedMessage">FitoTrack behöver tillgång till enhetens plats för att spåra din förflyttning under dina träningspass. FitoTrack samlar också in platsdata medan appen är i bakgrunden eller skärmen är avstängd, för att spela in dina träningspass. Platsdatan stannar alltid i din telefon så länge du inte ger ditt uttryckliga tillstånd att dela den.</string>
+    <string name="manageIntervalsSummary">Redigera de intervallset du kommer att kunna använda under träningspass med hjälp av röståterkoppling.</string>
+    <string name="importBackupMessage">VARNING: Alla dina existerande data i appen kommer att raderas. Om du inte vill förlora dem, spara först en ny säkerhetskopia. Är du säker på att du vill återställa denna säkerhetskopia\?</string>
+    <plurals name="workoutJump">
+        <item quantity="one">Hopp</item>
+        <item quantity="other">Hopp</item>
+    </plurals>
+    <plurals name="workoutStep">
+        <item quantity="one">Steg</item>
+        <item quantity="other">Steg</item>
+    </plurals>
+    <string name="workoutSets">Set</string>
+    <string name="pref_unit_system">Föredraget enhetssystem</string>
+    <string name="manageIntervalSets">Hantera intervallset</string>
+    <string name="createIntervalSet">Skapa nytt intervallset</string>
+    <string name="hintEditIntervalSet">Lägg till intervall som ska bli upplästa.</string>
+    <string name="hintManageIntervalSets">Lägg till ett intervallset så att det kan användas i dina träningspass.</string>
+    <string name="deleteIntervalSet">Ta bort intervallset</string>
+    <string name="deleteIntervalSetMessage">Vill du ta bort intervallsetet\?</string>
+    <string name="selectIntervalSet">Välj intervallset</string>
+    <string name="intervalSetSelected">Intervallset valt</string>
+    <string name="intervalSet">Intervallset</string>
+    <string name="intervalSets">Intervallset</string>
+    <string name="setPreferencesMessage">Du kan ställa in ditt föredragna enhetssystem och din vikt i inställningarna.</string>
 </resources>
