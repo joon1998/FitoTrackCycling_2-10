@@ -19,6 +19,7 @@
 package de.tadris.fitness.recording.information
 
 import android.content.Context
+import androidx.preference.PreferenceManager
 import de.tadris.fitness.R
 import de.tadris.fitness.recording.BaseWorkoutRecorder
 
@@ -49,9 +50,11 @@ class Duration(context: Context) : RecordingInformation(context) {
         spokenTime.append(minutes).append(" ")
         spokenTime.append(getString(if (minutes == 1L) R.string.timeMinuteSingular else R.string.timeMinutePlural))
 
-        val seconds = (duration % minute) / 1000L
-        spokenTime.append(seconds).append(" ")
-        spokenTime.append(getString(if (seconds == 1L) R.string.timeSecondsSingular else R.string.timeSecondsPlural))
+        if(durationWithSeconds()) {
+            val seconds = (duration % minute) / 1000L
+            spokenTime.append(seconds).append(" ")
+            spokenTime.append(getString(if (seconds == 1L) R.string.timeSecondsSingular else R.string.timeSecondsPlural))
+        }
         return spokenTime.toString()
     }
 
@@ -62,4 +65,7 @@ class Duration(context: Context) : RecordingInformation(context) {
     override fun getDisplayedText(recorder: BaseWorkoutRecorder): String {
         return ""
     }
+
+    private fun durationWithSeconds() = PreferenceManager.getDefaultSharedPreferences(context)
+        .getBoolean("announcement_duration_with_seconds", false)
 }

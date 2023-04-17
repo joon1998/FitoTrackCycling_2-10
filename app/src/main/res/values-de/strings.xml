@@ -65,6 +65,7 @@
     <string name="workoutDate">Datum</string>
     <string name="workoutDistance">Distanz</string>
     <string name="workoutDuration">Dauer</string>
+    <string name="workoutDurationPrecisionToSeconds">Dauer sekundengenau</string>
     <string name="workoutEndTime">Endzeit</string>
     <string name="workoutEnergyConsumption">Energieverbrauch</string>
     <string name="workoutPace">Tempo</string>
