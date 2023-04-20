@@ -34,39 +34,39 @@ public enum AggregationSpan {
 
     SINGLE(R.string.singleWorkout, R.string.dayInMonth, TimeUnit.MINUTES.toMillis(1), Calendar.MILLISECOND, "dd/MMM/yy") {
         @Override
-        public Calendar setCalendarToAggregationStart(Calendar calendar) {
+        public Calendar setCalendarToAggregationStart(Calendar calendar, int firstDayOfWeek) {
             return calendar;
         }
     },
     DAY(R.string.day, R.string.dayInMonth, TimeUnit.DAYS.toMillis(1), Calendar.DAY_OF_MONTH, "dd/mm/yy"),
     WEEK(R.string.week, R.string.calendarWeekYear, TimeUnit.DAYS.toMillis(7), Calendar.WEEK_OF_YEAR, "ww/yy") {
         @Override
-        public Calendar setCalendarToAggregationStart(Calendar calendar) {
-            super.setCalendarToAggregationStart(calendar);
-            calendar.set(Calendar.DAY_OF_WEEK, calendar.getFirstDayOfWeek());
+        public Calendar setCalendarToAggregationStart(Calendar calendar, int firstDayOfWeek) {
+            super.setCalendarToAggregationStart(calendar, firstDayOfWeek);
+            calendar.set(Calendar.DAY_OF_WEEK, firstDayOfWeek);
             return calendar;
         }
     },
     MONTH(R.string.month, R.string.monthYear, TimeUnit.DAYS.toMillis(30), Calendar.MONTH, "MMM/yy") {
         @Override
-        public Calendar setCalendarToAggregationStart(Calendar calendar) {
-            super.setCalendarToAggregationStart(calendar);
+        public Calendar setCalendarToAggregationStart(Calendar calendar, int firstDayOfWeek) {
+            super.setCalendarToAggregationStart(calendar, firstDayOfWeek);
             calendar.set(Calendar.DAY_OF_MONTH, 1);
             return calendar;
         }
     },
     YEAR(R.string.year, R.string.year, TimeUnit.DAYS.toMillis(365), Calendar.YEAR, "yyyy") {
         @Override
-        public Calendar setCalendarToAggregationStart(Calendar calendar) {
-            super.setCalendarToAggregationStart(calendar);
+        public Calendar setCalendarToAggregationStart(Calendar calendar, int firstDayOfWeek) {
+            super.setCalendarToAggregationStart(calendar, firstDayOfWeek);
             calendar.set(Calendar.DAY_OF_YEAR, 1);
             return calendar;
         }
     },
     ALL(R.string.workoutTypeAll, R.string.workoutTypeAll, Long.MAX_VALUE, Integer.MAX_VALUE, "yyyy") {
         @Override
-        public Calendar setCalendarToAggregationStart(Calendar calendar) {
-            super.setCalendarToAggregationStart(calendar);
+        public Calendar setCalendarToAggregationStart(Calendar calendar, int firstDayOfWeek) {
+            super.setCalendarToAggregationStart(calendar, firstDayOfWeek);
             calendar.set(Calendar.YEAR, 1);
             calendar.set(Calendar.DAY_OF_YEAR, 1);
             return calendar;
@@ -102,7 +102,7 @@ public enum AggregationSpan {
         this.dateFormat = new SimpleDateFormat(formatString);
     }
 
-    public Calendar setCalendarToAggregationStart(Calendar calendar) {
+    public Calendar setCalendarToAggregationStart(Calendar calendar, int firstDayOfWeek) {
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);

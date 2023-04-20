@@ -41,6 +41,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
+import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
 import de.tadris.fitness.aggregation.AggregationSpan;
 import de.tadris.fitness.data.preferences.UserPreferences;
@@ -178,7 +179,8 @@ public class TimeSpanSelection extends LinearLayout {
                 selectedDate.getTimeInMillis();
                 break;
             case WEEK:
-                calendar.set(GregorianCalendar.DAY_OF_WEEK, 1);
+                calendar.setFirstDayOfWeek(Instance.getInstance(getContext()).userPreferences.getFirstDayOfWeek());
+                calendar.set(GregorianCalendar.DAY_OF_WEEK, 0);
                 break;
             case MONTH:
                 calendar.set(GregorianCalendar.DAY_OF_MONTH, 1);

@@ -45,6 +45,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import de.tadris.fitness.Instance;
 import de.tadris.fitness.aggregation.AggregationSpan;
 import de.tadris.fitness.util.WorkoutProperty;
 import de.tadris.fitness.util.charts.DataSetStyles;
@@ -286,7 +287,7 @@ public class StatsProvider {
             GregorianCalendar calendar = new GregorianCalendar();
             calendar.setTimeInMillis(oldestWorkoutTime);
 
-            span.setCalendarToAggregationStart(calendar);
+            span.setCalendarToAggregationStart(calendar, Instance.getInstance(ctx).userPreferences.getFirstDayOfWeek());
 
 
             // Iterate all time spans from first workout time to last workout time
@@ -337,7 +338,7 @@ public class StatsProvider {
             // Find start time of aggregation span
             GregorianCalendar calendar = new GregorianCalendar();
             calendar.setTimeInMillis(oldestWorkoutTime);
-            span.setCalendarToAggregationStart(calendar);
+            span.setCalendarToAggregationStart(calendar, Instance.getInstance(ctx).userPreferences.getFirstDayOfWeek());
 
             // Iterate all time spans from first workout time to last workout time
             while (calendar.getTimeInMillis() < newestWorkoutTime) {
