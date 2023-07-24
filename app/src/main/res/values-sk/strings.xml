@@ -514,4 +514,10 @@
     <string name="takeBackups7">Každý týždeň</string>
     <string name="selectExportTarget">Vyberte ciel exportu</string>
     <string name="takeBackups14">Každý druhý týždeň</string>
+    <string name="workoutTypePullUps">Zdvihy nahor</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Vytiahnuť</item>
+        <item quantity="few">Vytiahnuť</item>
+        <item quantity="other">Vytiahnuť</item>
+    </plurals>
 </resources>

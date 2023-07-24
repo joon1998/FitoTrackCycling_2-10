@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FitoTrack</string>
+    <string name="exporting">Exporta</string>
+    <string name="errorGpxExportFailed">Exportul GPX a eșuat.</string>
+    <string name="errorImportFailed">Importul datelor a eșuat.</string>
+    <string name="initialising">Inițializare</string>
+    <string name="workouts">Antrenamente</string>
+    <string name="locationData">Date despre locație</string>
+    <string name="converting">Convertește</string>
+    <string name="finished">Finalizare</string>
+    <string name="backup">Backup</string>
+    <string name="errorEnterValidNumber">Introdu un număr valid</string>
+    <string name="errorWorkoutAddFuture">Antrenamentul nu poate fi în viitor</string>
+    <string name="errorEnterValidDuration">Introduceți o durată validă</string>
+    <string name="announcementGPSStatus">GPS Status</string>
+    <string name="voiceAnnouncementsTitle">Anunțuri vocale</string>
+    <string name="pref_voice_announcements_summary">Configurați solicitările vocale care vă informează în timpul antrenamentului</string>
+    <string name="stop">Opreste</string>
+    <string name="error">Eroare</string>
+    <string name="importBackupMessage">Faceți acum backup pentru datele dvs. actuale dacă doriți să le păstrați. Restabiliți acum backupul anterior\?</string>
+    <string name="delete">Sterge</string>
+    <string name="timeMinutePlural">Minute</string>
+    <string name="timeHourSingular">Ora</string>
+    <string name="errorExportFailed">Exportul datelor a eșuat.</string>
+    <string name="shareFile">Partajați fișierul</string>
+    <string name="timeMinuteShort">min</string>
+    <string name="loadingFile">Încărcare fișier</string>
+    <string name="restore">Restabilește</string>
+    <string name="chooseBackupFile">Alege fișierul de backup</string>
+    <string name="setPreferencesTitle">Setați Preferințe</string>
+    <string name="timeMinuteSingular">Minut</string>
+    <string name="setPreferencesMessage">Puteți seta sistemul de unități preferat și greutatea dvs. în setări.</string>
+    <string name="timeHourPlural">Ore</string>
+    <string name="timeSecondsShort">s</string>
+    <string name="and">și</string>
+    <string name="timeHourShort">h</string>
+    <string name="announcementWorkoutActions">Acțiuni de antrenament (pauză, reluare etc.)</string>
+    <string name="pref_announcements_config_title">Declanșare anunț</string>
+</resources>

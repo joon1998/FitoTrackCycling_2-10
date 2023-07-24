@@ -540,4 +540,11 @@
     <string name="stats_explore_title">Eksploruj</string>
     <string name="show_sum">Pokaż sumę</string>
     <string name="workoutTypeSwimming">Pływanie</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Podciągnięcie</item>
+        <item quantity="few">Podciągnięcia</item>
+        <item quantity="many">Podciągnięć</item>
+        <item quantity="other">Podciągnięć</item>
+    </plurals>
+    <string name="workoutTypePullUps">Podciąganie</string>
 </resources>

@@ -525,4 +525,9 @@
     <string name="workoutDurationSum">Suma de tempo</string>
     <string name="stats_explore_title">Explora</string>
     <string name="stats_history_title">Historia</string>
+    <string name="workoutTypePullUps">Dominadas</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Dominada</item>
+        <item quantity="other">Dominadas</item>
+    </plurals>
 </resources>

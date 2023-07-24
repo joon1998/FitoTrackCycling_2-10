@@ -533,4 +533,10 @@
     <string name="workoutDurationSum">Suma de la duración</string>
     <string name="workoutPauseDurationSum">Suma de la duración de la pausa</string>
     <string name="stats_overview_title">Resumen</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Dominada</item>
+        <item quantity="many">Dominadas</item>
+        <item quantity="other">Dominadas</item>
+    </plurals>
+    <string name="workoutTypePullUps">Dominadas</string>
 </resources>

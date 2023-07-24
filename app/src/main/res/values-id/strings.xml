@@ -44,10 +44,10 @@
     <string name="workoutAvgFrequencyLong">Frekuensi Rata-Rata</string>
     <string name="workoutAvgSpeedShort">Kecepatan Rata-Rata</string>
     <string name="workoutAvgSpeedLong">Kecepatan Rata-Rata</string>
-    <string name="workoutBurnedEnergy">Energi Terbakar</string>
+    <string name="workoutBurnedEnergy">Kalori terbakar</string>
     <string name="workoutTotalEnergy">Jumlah Energi</string>
     <string name="workoutHeartRate">Detak Jantung</string>
-    <string name="workoutAvgHeartRate">Rata-Rata Detak Jantung</string>
+    <string name="workoutAvgHeartRate">Rata-rata detak jantung</string>
     <string name="uploading">Mengunggah</string>
     <string name="enterVerificationCode">Masukkan Kode Verifikasi</string>
     <string name="authenticationFailed">Otentikasi gagal.</string>
@@ -214,4 +214,20 @@
     <string name="hintEditIntervalSet">Tambahkan interval yang akan diucapkan.</string>
     <string name="deleteIntervalSetMessage">Apakah Anda ingin menghapus set interval\?</string>
     <string name="intervalSetSelected">Set Interval dipilih</string>
+    <string name="workoutTypeSwimming">Berenang</string>
+    <string name="intervalsIncludePauseTitle">Sertakan Waktu Jeda dalam Latihan Interval</string>
+    <string name="intervalTraining">Pelatihan Interval</string>
+    <string name="currentSpeed">Kecepatan saat ini</string>
+    <string name="intervalSet">Set Interval</string>
+    <string name="workoutPauseDurationSum">Jumlah Durasi Jeda</string>
+    <string name="intervalSets">Set Interval</string>
+    <string name="workouts">Latihan</string>
+    <string name="workoutAvgDurationLong">Durasi Rata-rata</string>
+    <string name="workoutDurationSum">Jumlah durasi</string>
+    <string name="workoutAvgPauseDuration">Durasi Jeda Rata-rata</string>
+    <string name="workoutTypePullUps">Pull up</string>
+    <plurals name="workoutPullUp">
+        <item quantity="other">Pull up</item>
+    </plurals>
+    <string name="intervalsIncludePauseSummary">Jika diaktifkan, interval akan terus berlanjut meskipun Anda melakukan jeda dalam latihan.</string>
 </resources>

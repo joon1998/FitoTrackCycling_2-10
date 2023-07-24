@@ -187,8 +187,8 @@
     <plurals name="importedWorkouts">
         <item quantity="one">Імпортовано одне тренування</item>
         <item quantity="few">Імпортовано %d тренувань</item>
-        <item quantity="many">Імпортовані %d тренувань</item>
-        <item quantity="other">Імпортовані %d тренувань</item>
+        <item quantity="many">Імпортовано %d тренувань</item>
+        <item quantity="other">Імпортовано %d тренувань</item>
     </plurals>
     <string name="actionResume">Відновити</string>
     <string name="prefShowOnLockScreenSummary">Показувати інформацію про тренування, навіть якщо пристрій заблоковано.</string>
@@ -521,4 +521,11 @@
     <string name="pref_announcements_config_title">Тригер сповіщення</string>
     <string name="cannotStart">Не вдається розпочати</string>
     <string name="backup">Резервне копіювання</string>
+    <string name="workoutTypePullUps">підтягування</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Підтягування</item>
+        <item quantity="few">Підтягування</item>
+        <item quantity="many">Підтягувань</item>
+        <item quantity="other">Підтягувань</item>
+    </plurals>
 </resources>
