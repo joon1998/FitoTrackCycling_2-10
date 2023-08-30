@@ -186,7 +186,7 @@
     <string name="deleteWorkoutType">Ta bort träningsform</string>
     <string name="workoutTypeEditIdErrorUnique">Det finns redan en träningsform som har detta ID</string>
     <string name="manageAutoStartDelaySummary">Välj standardnedräkning för automatisk start av träningspass</string>
-    <string name="workoutTypeRopeSkipping">Hopprepshoppning</string>
+    <string name="workoutTypeRopeSkipping">Hopprep</string>
     <string name="workoutTypeInlineSkating">Inlinesåkning</string>
     <string name="workoutTypeTreadmill">Löpband</string>
     <string name="workoutTypeSkateboarding">Skateboardåkning</string>
@@ -302,7 +302,7 @@
     <string name="invalidNumberFormat">Ogiltigt nummerformat.</string>
     <string name="ttsAboveTargetSpeed">För snabbt</string>
     <string name="ttsBelowTargetSpeed">För långsamt</string>
-    <string name="pref_auto_start_mode_wait_for_gps">Vänta på noggrann GPS-position</string>
+    <string name="pref_auto_start_mode_wait_for_gps">Vänta på noggrann position</string>
     <string name="selectColoring">Välj färgsättning</string>
     <string name="pref_auto_start_mode_on_move">Väntar på att du börjar röra dig</string>
     <string name="cut">Klipp bort de första/sista 300 m</string>
@@ -342,8 +342,8 @@
     <string name="avg">Snitt</string>
     <string name="workout_statistics">Träningsstatistik</string>
     <string name="workoutDiscarded">Träningspasset borttaget</string>
-    <string name="preferenceCurrentSpeedAverageTimeSummary">Ersätt beräkningen av nuvarande hastighet med en snittberäkning.</string>
-    <string name="preferenceCurrentSpeedAverageTimeTitle">Nuvarande hastighet från genomsnitt</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">Ersätt nuvarande hastighet med en snittberäkning</string>
+    <string name="preferenceCurrentSpeedAverageTimeTitle">Genomsnitts hastighet</string>
     <string name="preferenceUseAverageForCurrentSpeed">Använd snitthastigheten över en viss tid istället för den senaste hastighetsmätningen för beräkning av nuvarande hastighet.</string>
     <string name="importBackup">Importera säkerhetskopia</string>
     <string name="importBackupSummary">Återställ säkerhetskopierad data</string>
@@ -383,7 +383,7 @@
     <string name="workoutTypeEditMET">MET</string>
     <string name="trackVisibilityPref">Spårsynlighet</string>
     <string name="runningMigrations">Kör migreringar</string>
-    <string name="pref_render_theme_style_info">Ingen stilmeny finns tillgänglig för det valda renderingstemat.</string>
+    <string name="pref_render_theme_style_info">Ingen meny tillgänglig för det valda temat.</string>
     <string name="pref_render_theme_style">Renderingsstil</string>
     <string name="aboutUnlistedContributors">Tack till alla de olistade medarbetare som har hjälpt till att översätta och utöka FitoTrack!</string>
     <string name="aboutContributors">Medarbetare</string>
@@ -465,4 +465,33 @@
     <string name="histogram">Histogram</string>
     <string name="monthYear">Månad / år</string>
     <string name="zoomWithVolumeButtonsTitle">Zooma med volymknapparna</string>
+    <string name="workoutTypeSwimming">Simmning</string>
+    <string name="statistics">Statistik</string>
+    <string name="heartRateSensorBattery">Sensor batteri</string>
+    <string name="metric_unit_system">Meter</string>
+    <string name="offline_local_map_file_with_local_render_theme">Lokal
+\nLokal kart-fil med lokalt renderat tema</string>
+    <string name="exportTargetDirectory">Katalog</string>
+    <string name="autoBackupTitle">Automatisk säkerhetskopiering</string>
+    <string name="takeBackups2">Varanan dag</string>
+    <string name="takeBackups3">Var tredje dag</string>
+    <string name="calibrating">Kalibrerar</string>
+    <string name="debugShareLogsTitle">Dela loggar</string>
+    <string name="debugSensorsTitle">Felsök sensorer</string>
+    <plurals name="satelliteCount">
+        <item quantity="one">En satelit</item>
+        <item quantity="other">%d sateliter</item>
+    </plurals>
+    <string name="noSensorAvailable">Ingen sensor tillgänglig</string>
+    <string name="workoutAvgPauseDuration">Medelpauslängd</string>
+    <string name="workoutPauseDurationSum">Summerad paus tid</string>
+    <string name="workoutCount">Trängingspass</string>
+    <string name="takeBackups7">Varje vecka</string>
+    <string name="takeBackups1">Varja dag</string>
+    <string name="show_sum">Visa summa</string>
+    <string name="trackable_visibility">Spårbar</string>
+    <string name="imperial_with_meters_unit_system">Imperial med meter</string>
+    <string name="metric_with_m_s_unit_system">Meter med m/s</string>
+    <string name="imperial_unit_system">Imperial</string>
+    <string name="takeBackups14">Varanan vecka</string>
 </resources>
