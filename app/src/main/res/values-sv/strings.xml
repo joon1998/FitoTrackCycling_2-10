@@ -494,4 +494,6 @@
     <string name="metric_with_m_s_unit_system">Meter med m/s</string>
     <string name="imperial_unit_system">Imperial</string>
     <string name="takeBackups14">Varanan vecka</string>
+    <string name="purple_rain">Lila regn</string>
+    <string name="pink_mist">Rosa dimma</string>
 </resources>
