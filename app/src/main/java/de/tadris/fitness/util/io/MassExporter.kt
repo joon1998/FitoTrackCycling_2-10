@@ -41,16 +41,17 @@ class MassExporter(
         val workouts = gpsWorkoutDao.workouts
         workouts.forEachIndexed { index, workout ->
             listener?.onProgressUpdate(index * 100 / workouts.size)
-            exportWorkout(workout)
+            exportWorkout(index, workout)
         }
         zipOut.close()
         output.close()
         listener?.onProgressUpdate(100)
     }
 
-    private fun exportWorkout(workout: GpsWorkout){
+    private fun exportWorkout(index: Int, workout: GpsWorkout){
         val data = GpsWorkoutData.fromWorkout(gpsWorkoutDao, workout)
-        val entry = ZipEntry(workout.exportFileName + ".gpx")
+        val zipEntryName = String.format("%05d", index) + "_" + workout.exportFileName + ".gpx";
+        val entry = ZipEntry(zipEntryName)
 
         zipOut.putNextEntry(entry)
         export.exportWorkout(data, zipOut)
