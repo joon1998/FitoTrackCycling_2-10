@@ -37,7 +37,7 @@
     <string name="workoutTime">Aika</string>
     <string name="workoutDate">Päivä</string>
     <string name="workoutDuration">Kesto</string>
-    <string name="workoutPauseDuration">Keskeytyksen kesto</string>
+    <string name="workoutPauseDuration">Tauon kesto</string>
     <string name="workoutStartTime">Aloitusaika</string>
     <string name="workoutEndTime">Lopetusaika</string>
     <string name="workoutPace">Tahti</string>
@@ -431,4 +431,22 @@
     <string name="details">Tiedot</string>
     <string name="stats_history_title">Historia</string>
     <string name="stats_overview_title">Yleisnäkymä</string>
+    <string name="dayInMonth">Päivä kuukaudessa</string>
+    <string name="kcal_unit">kcal</string>
+    <string name="calibrating">Kalibroidaan</string>
+    <string name="histogram">Histogrammi</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Leuanveto</item>
+        <item quantity="other">Leuanvetoa</item>
+    </plurals>
+    <string name="workoutAvgDistance">Keskimääräinen etäisyys</string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g example="1 minute" id="mins">%1$s</xliff:g> ja <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> alkuun </string>
+    <string name="stats_explore_title">Selaa</string>
+    <string name="monthYear">Kuukausi / vuosi</string>
+    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g example="12 minutes" id="mins">%1$s</xliff:g> alkuun </string>
+    <string name="zoomWithVolumeButtonsTitle">Zoomaa äänenvoimakkuuspainikkeilla</string>
+    <string name="workoutTypePullUps">Leuanveto</string>
+    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g example="5 seconds" id="secs">%1$s</xliff:g> alkuun </string>
+    <string name="workoutAvgPauseDuration">Keskimääräinen tauon kesto</string>
+    <string name="calendarWeekYear">Kalenteriviikko / vuosi</string>
 </resources>
