@@ -52,6 +52,8 @@ public class GpxImporterTest {
         Assert.assertEquals(0.72999995946, workoutData.getSamples().get(6).speed, 0.001);
         Assert.assertEquals(35.24767770, workoutData.getSamples().get(7).lat, 0.001);
         Assert.assertEquals(24.16795774, workoutData.getSamples().get(8).lon, 0.001);
+        Assert.assertEquals(1, workoutData.getSamples().get(1).heartRate);
+        Assert.assertEquals(8, workoutData.getSamples().get(8).heartRate);
     }
 
     @Test
@@ -122,7 +124,7 @@ public class GpxImporterTest {
             "        <extensions>\n" +
             "          <speed>0.0</speed>\n" +
             "          <gpxtpx:TrackPointExtension>\n" +
-            "            <gpxtpx:hr>0</gpxtpx:hr>\n" +
+            "            <gpxtpx:hr>1</gpxtpx:hr>\n" +
             "          </gpxtpx:TrackPointExtension>\n" +
             "        </extensions>\n" +
             "        <time>2020-07-10T09:57:06Z</time>\n" +
@@ -132,7 +134,7 @@ public class GpxImporterTest {
             "        <extensions>\n" +
             "          <speed>0.4599999785423279</speed>\n" +
             "          <gpxtpx:TrackPointExtension>\n" +
-            "            <gpxtpx:hr>0</gpxtpx:hr>\n" +
+            "            <gpxtpx:hr>2</gpxtpx:hr>\n" +
             "          </gpxtpx:TrackPointExtension>\n" +
             "        </extensions>\n" +
             "        <time>2020-07-10T09:57:14Z</time>\n" +
@@ -142,7 +144,7 @@ public class GpxImporterTest {
             "        <extensions>\n" +
             "          <speed>1.1899999380111694</speed>\n" +
             "          <gpxtpx:TrackPointExtension>\n" +
-            "            <gpxtpx:hr>0</gpxtpx:hr>\n" +
+            "            <gpxtpx:hr>3</gpxtpx:hr>\n" +
             "          </gpxtpx:TrackPointExtension>\n" +
             "        </extensions>\n" +
             "        <time>2020-07-10T09:57:18Z</time>\n" +
@@ -152,7 +154,7 @@ public class GpxImporterTest {
             "        <extensions>\n" +
             "          <speed>0.7599999904632568</speed>\n" +
             "          <gpxtpx:TrackPointExtension>\n" +
-            "            <gpxtpx:hr>0</gpxtpx:hr>\n" +
+            "            <gpxtpx:hr>4</gpxtpx:hr>\n" +
             "          </gpxtpx:TrackPointExtension>\n" +
             "        </extensions>\n" +
             "        <time>2020-07-10T09:57:23Z</time>\n" +
@@ -162,7 +164,7 @@ public class GpxImporterTest {
             "        <extensions>\n" +
             "          <speed>1.0299999713897705</speed>\n" +
             "          <gpxtpx:TrackPointExtension>\n" +
-            "            <gpxtpx:hr>0</gpxtpx:hr>\n" +
+            "            <gpxtpx:hr>5</gpxtpx:hr>\n" +
             "          </gpxtpx:TrackPointExtension>\n" +
             "        </extensions>\n" +
             "        <time>2020-07-10T09:57:28Z</time>\n" +
@@ -172,7 +174,7 @@ public class GpxImporterTest {
             "        <extensions>\n" +
             "          <speed>0.7299999594688416</speed>\n" +
             "          <gpxtpx:TrackPointExtension>\n" +
-            "            <gpxtpx:hr>0</gpxtpx:hr>\n" +
+            "            <gpxtpx:hr>6</gpxtpx:hr>\n" +
             "          </gpxtpx:TrackPointExtension>\n" +
             "        </extensions>\n" +
             "        <time>2020-07-10T09:57:35Z</time>\n" +
@@ -182,7 +184,7 @@ public class GpxImporterTest {
             "        <extensions>\n" +
             "          <speed>0.7999999523162842</speed>\n" +
             "          <gpxtpx:TrackPointExtension>\n" +
-            "            <gpxtpx:hr>0</gpxtpx:hr>\n" +
+            "            <gpxtpx:hr>7</gpxtpx:hr>\n" +
             "          </gpxtpx:TrackPointExtension>\n" +
             "        </extensions>\n" +
             "        <time>2020-07-10T09:57:39Z</time>\n" +
@@ -192,7 +194,7 @@ public class GpxImporterTest {
             "        <extensions>\n" +
             "          <speed>0.9899999499320984</speed>\n" +
             "          <gpxtpx:TrackPointExtension>\n" +
-            "            <gpxtpx:hr>0</gpxtpx:hr>\n" +
+            "            <gpxtpx:hr>8</gpxtpx:hr>\n" +
             "          </gpxtpx:TrackPointExtension>\n" +
             "        </extensions>\n" +
             "        <time>2020-07-10T09:57:44Z</time>\n" +
