@@ -13,6 +13,6 @@ public class SpeedFormatter extends ValueFormatter {
 
     @Override
     public String getFormattedValue(float value) {
-        return distanceUnitUtils.getSpeedWithoutUnit(value);
+        return distanceUnitUtils.getSpeedString(value);
     }
 }

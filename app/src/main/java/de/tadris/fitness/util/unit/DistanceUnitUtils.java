@@ -206,7 +206,7 @@ public class DistanceUnitUtils extends UnitUtils {
      * @return speed in km/h
      */
     public String getSpeed(double speed, boolean useLongNames) {
-        String value = getSpeedWithoutUnit(speed);
+        String value = getSpeedString(speed);
         if (useLongNames) {
             return value + " " + getString(distanceUnitSystem.getSpeedUnitTitle());
         } else {
@@ -214,8 +214,12 @@ public class DistanceUnitUtils extends UnitUtils {
         }
     }
 
-    public String getSpeedWithoutUnit(double speed) {
-        return round(distanceUnitSystem.getSpeedFromMeterPerSecond(speed), 1);
+    public double getSpeedWithoutUnit(double speed) {
+        return distanceUnitSystem.getSpeedFromMeterPerSecond(speed);
+    }
+
+    public String getSpeedString(double speed) {
+        return round(getSpeedWithoutUnit(speed), 2);
     }
 
     private String getHourText(int hours) {
