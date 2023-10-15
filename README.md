@@ -4,8 +4,8 @@ FitoTrack is a mobile app for logging and viewing your workouts. Whether you're 
 
 <p>
 
-  <a href="https://github.com/humanetech-community/awesome-humane-tech">
-    <img src="https://raw.githubusercontent.com/humanetech-community/awesome-humane-tech/main/humane-tech-badge.svg?sanitize=true" alt="Awesome Humane Tech" />
+  <a href="https://codeberg.org/teaserbot-labs/delightful-humane-design">
+    <img src="https://codeberg.org/teaserbot-labs/delightful-humane-design/raw/branch/main/humane-tech-badge.svg" alt="Delightful Humane Tech" />
   </a>
 
   <a href="https://hosted.weblate.org/engage/fitotrack/">
