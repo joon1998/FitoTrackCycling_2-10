@@ -1,0 +1,11 @@
+- Pulsmessung ergänzt
+- Pulswerte aus/in GPX-Dateien importieren/exportieren
+- Angehaltene Workouts fortsetzen
+- Automatische Pausen deaktivieren und manuelle Pausenoptionen verwenden
+- Neue Meldung: Workout-Status ändert z. B. Start, Pause, Fortsetzen
+
+- Verbesserter Diagramm-Bildschirm
+- Kartenausschnitt an Bildschirmgröße anpassen
+- Optional „auf Sperrbildschirm anzeigen“ (standardmäßig deaktiviert)
+
+Weitere Änderungen im Projekt-Repository auf Codeberg
