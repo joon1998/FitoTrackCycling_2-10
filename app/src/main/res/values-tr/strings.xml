@@ -525,4 +525,9 @@
     <string name="stats_explore_title">Keşfet</string>
     <string name="details">Ayrıntılar</string>
     <string name="workoutTypeSwimming">Yüzme</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Barfiks</item>
+        <item quantity="other">Barfiks</item>
+    </plurals>
+    <string name="workoutTypePullUps">Barfiks</string>
 </resources>
