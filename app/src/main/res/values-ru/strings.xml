@@ -68,7 +68,7 @@
     <string name="settings">Настройки</string>
     <string name="exportData">Экспорт данных</string>
     <string name="recordingStateStopped">Остановлено</string>
-    <string name="recordingStatePaused">Пауза</string>
+    <string name="recordingStatePaused">На паузе</string>
     <string name="recordingStateRunning">Запущено</string>
     <string name="recordingStateIdle">Простой</string>
     <string name="speechConfigNoSpeech">Нет оповещений</string>
@@ -436,7 +436,7 @@
     <string name="workoutSets">Наборы</string>
     <string name="workoutRecordingTypeGps">GPS тренировки</string>
     <plurals name="importedWorkouts">
-        <item quantity="one">Импортирована одна тренировка</item>
+        <item quantity="one">Импортирована %d тренировка</item>
         <item quantity="few">Импортированы %d тренировки</item>
         <item quantity="many">Импортировано %d тренировок</item>
         <item quantity="other">Импортировано %d тренировок</item>
@@ -512,7 +512,7 @@
     <string name="debugSensorsTitle">Отладка датчиков</string>
     <string name="calibrating">Калибровка</string>
     <plurals name="satelliteCount">
-        <item quantity="one">Один спутник</item>
+        <item quantity="one">%d спутник</item>
         <item quantity="few">%d спутника</item>
         <item quantity="many">%d спутников</item>
         <item quantity="other">%d спутников</item>
@@ -539,4 +539,11 @@
     <string name="workoutDurationSum">Суммарная продолжительность</string>
     <string name="workoutPauseDurationSum">Суммарная продолжительность паузы</string>
     <string name="stats_explore_title">Изучение</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Подтягивание</item>
+        <item quantity="few">Подтягивания</item>
+        <item quantity="many">Подтягиваний</item>
+        <item quantity="other">Подтягиваний</item>
+    </plurals>
+    <string name="workoutTypePullUps">Подтягивания</string>
 </resources>
