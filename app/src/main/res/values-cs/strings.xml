@@ -532,4 +532,10 @@
     <string name="showWorkoutZoomControlsSummary">Povolit ovládání přiblížení a posunu v mapě při nahrávání GPS cvičení</string>
     <string name="wednesday">Středa</string>
     <string name="autoExportWorkoutExplanation">Po nahrání nového cvičení se zde uloží export GPX:</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Přítah</item>
+        <item quantity="few">Přítahy</item>
+        <item quantity="other">Přítahů</item>
+    </plurals>
+    <string name="workoutTypePullUps">Přítahy</string>
 </resources>
