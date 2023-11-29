@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -256,7 +256,7 @@ public class GpsWorkoutRecorder extends BaseWorkoutRecorder {
                     GpsSample lastSample = samples.get(samples.size() - 1);
                     distance = Math.abs(GpsComponent.locationToLatLong(location).sphericalDistance(lastSample.toLatLong()));
                     long timediff = Math.abs(lastSample.absoluteTime - LocationUtils.getTimeFor(location));
-                    if (distance < workout.getWorkoutType(context).minDistance || timediff < 500) {
+                    if (distance < workout.getWorkoutType(context).minDistance || timediff < MIN_DURATION_DIFF) {
                         return;
                     }
                 }

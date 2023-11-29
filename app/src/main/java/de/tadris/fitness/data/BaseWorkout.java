@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -53,7 +53,7 @@ public abstract class BaseWorkout {
     public long end;
 
     /**
-     * Duration in ms
+     * Active duration in ms
      */
     public long duration;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -53,7 +53,9 @@ import de.tadris.fitness.util.WorkoutLogger;
  */
 public abstract class BaseWorkoutRecorder {
 
-    protected static final int PAUSE_TIME = 10_000; // 10 Seconds
+    public static final int PAUSE_TIME = 10_000; // 10 Seconds
+    public static final int MIN_DURATION_DIFF = 500; // minimum 500ms between two samples
+
     private static final int AUTO_TIMEOUT_MULTIPLIER = 1_000 * 60; // minutes to ms
 
 

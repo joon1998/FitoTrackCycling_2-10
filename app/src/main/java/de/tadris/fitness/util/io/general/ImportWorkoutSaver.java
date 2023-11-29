@@ -19,10 +19,16 @@
 
 package de.tadris.fitness.util.io.general;
 
+import static de.tadris.fitness.recording.BaseWorkoutRecorder.MIN_DURATION_DIFF;
+
 import android.content.Context;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import de.tadris.fitness.data.GpsSample;
 import de.tadris.fitness.data.GpsWorkoutData;
+import de.tadris.fitness.recording.BaseWorkoutRecorder;
 import de.tadris.fitness.recording.gps.GpsWorkoutSaver;
 
 public class ImportWorkoutSaver extends GpsWorkoutSaver {
@@ -32,13 +38,22 @@ public class ImportWorkoutSaver extends GpsWorkoutSaver {
     }
 
     public void saveWorkout() {
+        // Init
         setIds();
 
+        // Clean up geo data
+        eliminateDenseSamples();
+        calculateRelativeTimes();
+
+        // Update sample data
         setMSLElevationToElevation();
         setSpeed();
+
+        // Update aggregated data
         setStartAndEnd();
         calculateData(false);
 
+        // Save
         storeInDatabase();
     }
 
@@ -69,6 +84,55 @@ public class ImportWorkoutSaver extends GpsWorkoutSaver {
                 sample.speed = distance / ((double) timeDiff / 1000);
             }
             lastSample = sample;
+        }
+    }
+
+    /**
+     * Eliminate samples that are too close to each other using WorkoutType.minDistance or 500ms
+     */
+    private void eliminateDenseSamples() {
+        int minDistance = workout.getWorkoutType(context).minDistance;
+
+        List<GpsSample> removedSamples = new ArrayList<>();
+
+        GpsSample lastSample = null;
+        for (GpsSample sample : samples) {
+            if (lastSample == null) {
+                lastSample = sample;
+                continue;
+            }
+
+            double distance = Math.abs(sample.toLatLong().sphericalDistance(lastSample.toLatLong()));
+            long timediff = Math.abs(sample.absoluteTime - lastSample.absoluteTime);
+            if (distance < minDistance || timediff < MIN_DURATION_DIFF) {
+                removedSamples.add(sample); // this sample is dropped
+            }
+        }
+
+        samples.removeAll(removedSamples);
+    }
+
+    /**
+     * Replays the workout to calculate correct relative times (and thus pauses)
+     */
+    private void calculateRelativeTimes() {
+        if (samples.isEmpty()) return;
+
+        long absoluteTime = samples.get(0).absoluteTime;
+        long relativeTime = 0L;
+
+        for (GpsSample sample : samples) {
+            long timeDiffToLastSample = sample.absoluteTime - absoluteTime;
+            if (timeDiffToLastSample > BaseWorkoutRecorder.PAUSE_TIME * 2) {
+                // insert pause here
+                absoluteTime = sample.absoluteTime;
+            } else {
+                // do nothing
+                absoluteTime = sample.absoluteTime;
+                relativeTime += timeDiffToLastSample;
+            }
+
+            sample.relativeTime = relativeTime;
         }
     }
 

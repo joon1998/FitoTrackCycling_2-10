@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -18,6 +18,8 @@
  */
 
 package de.tadris.fitness.recording.gps;
+
+import static de.tadris.fitness.recording.BaseWorkoutRecorder.MIN_DURATION_DIFF;
 
 import android.content.Context;
 import android.location.Location;
@@ -91,7 +93,7 @@ public class DefaultMovementDetector extends MovementDetector {
                         sphericalDistance(GpsComponent.locationToLatLong(location)));
                 long timeDiff = (location.getElapsedRealtimeNanos() -
                         lastLocation.getElapsedRealtimeNanos()) / 1_000_000L;
-                if (distance < workout.getWorkoutType(context).minDistance || timeDiff < 500) {
+                if (distance < workout.getWorkoutType(context).minDistance || timeDiff < MIN_DURATION_DIFF) {
                     Log.d(TAG, "onLocationChange: not moving");
                     detectionState = DetectionState.NOT_MOVING;
                 } else {

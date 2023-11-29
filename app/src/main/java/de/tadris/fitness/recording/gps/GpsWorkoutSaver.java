@@ -43,7 +43,7 @@ import de.tadris.fitness.util.calorie.CalorieCalculator;
  */
 public class GpsWorkoutSaver {
 
-    private final Context context;
+    protected final Context context;
     protected final GpsWorkout workout;
     protected final List<GpsSample> samples;
     protected final AppDatabase db;
@@ -101,7 +101,7 @@ public class GpsWorkoutSaver {
     }
 
     protected void calculateData(boolean calculateElevation) {
-        calculateDurations(); // set start and end time
+        calculateDurations(); // set duration/pauses
         setLength();
         setTopSpeed();
 
