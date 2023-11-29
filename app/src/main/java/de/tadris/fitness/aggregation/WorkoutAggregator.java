@@ -42,7 +42,7 @@ public class WorkoutAggregator {
     }
 
     public AggregatedWorkoutData aggregate() {
-        return new AggregatedWorkoutData(getResults(), span);
+        return new AggregatedWorkoutData(getResults(), span, Instance.getInstance(context).userPreferences.getFirstDayOfWeek());
     }
 
     private List<WorkoutInformationResult> getResults() {

@@ -41,6 +41,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
+import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
 import de.tadris.fitness.aggregation.AggregationSpan;
 import de.tadris.fitness.data.preferences.UserPreferences;
@@ -48,9 +49,9 @@ import de.tadris.fitness.util.ThemeUtils;
 import de.tadris.fitness.util.statistics.DateFormatter;
 
 public class TimeSpanSelection extends LinearLayout {
-    private Spinner aggregationSpanSpinner;
+    private final Spinner aggregationSpanSpinner;
     private ArrayAdapter<String> aggregationSpanArrayAdapter;
-    private TextView timeSpanSelection;
+    private final TextView timeSpanSelection;
 
     DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
         @Override
@@ -70,7 +71,7 @@ public class TimeSpanSelection extends LinearLayout {
     UserPreferences preferences;
     int foregroundColor = ThemeUtils.resolveThemeColor(getContext(), android.R.attr.textColorPrimary);
 
-    private DateFormatter dateFormatter;
+    private final DateFormatter dateFormatter;
 
     private ArrayList<OnTimeSpanSelectionListener> listeners;
 
@@ -171,14 +172,16 @@ public class TimeSpanSelection extends LinearLayout {
     }
 
     public long getSelectedDate() {
+        final int firstDayOfWeek = Instance.getInstance(getContext()).userPreferences.getFirstDayOfWeek();
         GregorianCalendar calendar = (GregorianCalendar) selectedDate.clone();
+        calendar.setFirstDayOfWeek(firstDayOfWeek);
 
         switch (selectedAggregationSpan) {
             case DAY:
                 selectedDate.getTimeInMillis();
                 break;
             case WEEK:
-                calendar.set(GregorianCalendar.DAY_OF_WEEK, 1);
+                calendar.set(GregorianCalendar.DAY_OF_WEEK, firstDayOfWeek);
                 break;
             case MONTH:
                 calendar.set(GregorianCalendar.DAY_OF_MONTH, 1);
