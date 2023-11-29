@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -63,7 +63,7 @@ public class WorkoutBuilder {
         // Calculate values
         workout.start = start.getTimeInMillis();
         workout.duration = duration;
-        workout.end = workout.start + workout.duration;
+        workout.end = workout.start + workout.duration + workout.pauseDuration;
 
         if (!fromExistingWorkout) {
             workout.id = workout.start;
