@@ -291,12 +291,15 @@ public class GpsWorkoutSaver {
         }
     }
 
-    private void calculateDurations() {
-        if (samples.size() == 0) {
-            return;
-        }
+    protected void setStartAndEnd() {
         workout.start = samples.get(0).absoluteTime;
         workout.end = samples.get(samples.size() - 1).absoluteTime;
+    }
+
+    private void calculateDurations() {
+        if (samples.isEmpty()) {
+            return;
+        }
         workout.pauseDuration = WorkoutCalculator.calculatePauseDuration(getBaseWorkoutData());
         workout.duration = workout.end - workout.start - workout.pauseDuration;
     }

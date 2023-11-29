@@ -36,6 +36,7 @@ public class ImportWorkoutSaver extends GpsWorkoutSaver {
 
         setMSLElevationToElevation();
         setSpeed();
+        setStartAndEnd();
         calculateData(false);
 
         storeInDatabase();

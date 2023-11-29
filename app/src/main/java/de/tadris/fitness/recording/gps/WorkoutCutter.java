@@ -41,6 +41,7 @@ public class WorkoutCutter extends GpsWorkoutSaver {
         if (endSample != null) {
             cutEnd(endSample);
         }
+        setStartAndEnd(); // Start/End might change by cutting
         calculateData(false); // Recalculate data
 
         updateWorkoutAndSamples();
