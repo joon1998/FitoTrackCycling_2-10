@@ -25,6 +25,7 @@
         <item name="colorSecondary">@color/colorAccent</item>
         <item name="colorOnPrimary">@android:color/white</item>
         <item name="colorOnSecondary">@android:color/white</item>
+        <item name="android:colorBackground">@android:color/background_dark</item>
 
         <item name="actionBarStyle">@style/MyActionBar</item>
 
