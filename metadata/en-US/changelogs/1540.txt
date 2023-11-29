@@ -1,4 +1,4 @@
-- Themed app icon & launcher shortcust
+- Themed app icon & launcher shortcuts
 - Added pull ups
 - Stats in the workout list is hidden when scrolling down
 - Use two decimal places for speed in the workout overview
@@ -7,7 +7,6 @@
 - Correctly read heartrates from GPX files
 - Use "first day of week" preference for the statistics
 - Added Ukrainian
-- Updated translations
 
 
 please see the project repository on Codeberg for a full list of changes
