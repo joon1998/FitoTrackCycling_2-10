@@ -1,0 +1,12 @@
+- Ícono de aplicación temática y accesos directos al iniciador
+- Se agregaron dominadas
+- Las estadísticas en la lista de ejercicios se ocultan al desplazarse hacia abajo
+- Utilice dos decimales para la velocidad en la descripción general del entrenamiento
+- Recalcular la duración y los tiempos de pausa para duraciones consistentes
+- Se corrigió que la exportación masiva GPX fallara en nombres de archivos duplicados.
+- Leer correctamente la frecuencia cardíaca de archivos GPX
+- Utilice la preferencia "primer día de la semana" para las estadísticas
+- Ucraniano agregado
+
+
+por favor, consulte el repositorio del proyecto en Codeberg para obtener una lista completa de los cambios.
