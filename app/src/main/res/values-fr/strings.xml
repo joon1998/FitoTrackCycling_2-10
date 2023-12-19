@@ -501,4 +501,27 @@
     <string name="workoutDurationSum">Somme de la durée</string>
     <string name="workoutAvgPauseDuration">Durée Moyenne de la Pause</string>
     <string name="workoutPauseDurationSum">Somme de la durée des pauses</string>
+    <string name="stats_history_title">Historique</string>
+    <string name="stats_overview_title">Aperçu</string>
+    <string name="histogram">Histogramme</string>
+    <string name="workoutCount">Nombre d\'entraînements</string>
+    <string name="massExportGpxTitle">Exporter tous les entraînements au format GPX</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Traction</item>
+        <item quantity="many">Tractions</item>
+        <item quantity="other">Tractions</item>
+    </plurals>
+    <string name="workoutAvgDistance">Distance moyenne</string>
+    <string name="stats_explore_title">Explorer</string>
+    <string name="monthYear">Mois / Année</string>
+    <string name="details">Détails</string>
+    <plurals name="satelliteCount">
+        <item quantity="one">Un satellite</item>
+        <item quantity="many">%d satellites</item>
+        <item quantity="other">%d satellites</item>
+    </plurals>
+    <string name="heartRateSensorBattery">Batterie du capteur</string>
+    <string name="massExportGpxSummary">Crée un fichier ZIP contenant tous les entraînements au format GPX</string>
+    <string name="statistics">Statistiques</string>
+    <string name="workoutTypePullUps">Tractions</string>
 </resources>
