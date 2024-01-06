@@ -1,0 +1,7 @@
+This update includes a lot of bug fixes and minor improvements like:
+- Try to fix a bug where FitoTrack wouldn't record anything
+- Debug logging
+- Map zooming via volume buttons is now optional
+- Fix GPX format
+
+please see the project repository on Codeberg for a full list of changes

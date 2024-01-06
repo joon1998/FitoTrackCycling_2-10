@@ -1,0 +1,4 @@
+- Target Android 13
+- Confirm workout stop
+- Fix bugs and crashes thanks to @keesj
+- Updated translations

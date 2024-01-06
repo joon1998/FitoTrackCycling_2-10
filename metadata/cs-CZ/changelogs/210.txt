@@ -1,0 +1,1 @@
+- Fix workouts not showing after recorded (#25)

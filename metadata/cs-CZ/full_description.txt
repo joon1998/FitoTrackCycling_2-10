@@ -1,0 +1,6 @@
+FitoTrack je mobilní aplikace pro záznam a prohlížení vašich cvičení. Ať už běháte, jezdíte na kole nebo chodíte na túry, FitoTrack vám vždy zobrazí nejdůležitější informace s podrobnými grafy a statistikami. Je open-source a kompletně bez reklam.
+
+Funkce:
+* Záznam cvičení. Vyberte si typ sportu, který chcete zaznamenat a jednoduše začněte běhat, jezdit nebo dělat cokoli jiného. Obecné informace uvidíte přímo pod mapou na obrazovce záznamu.
+* Prohlédněte si svá cvičení. Zobrazte si obecné informace jako datum, čas, trvání, vzdálenost, rychlost a tempo. Prohlédněte si svou trasu na mapě. Z rychlostního diagramu zjistěte, jaká je vaše výkonnost.
+* Open-source. Aplikace je bez reklam a nesleduje vás, její kód je navíc otevřený a licencovaný jako GPLv3.

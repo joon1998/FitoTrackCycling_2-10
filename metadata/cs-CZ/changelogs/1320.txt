@@ -1,0 +1,2 @@
+- Fix crash on Android versions below Oreo (< 8)
+- Updated translations

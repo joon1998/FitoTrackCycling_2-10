@@ -1,0 +1,10 @@
+- Auto Start featuring multiple modes
+- Offline map support
+
+- Stability improvements
+- "All"-Filter for workout statistics
+- Only add the "edited" flag to workouts if distance, date or duration were edited
+
+- various bug fixes
+
+please see the project repository on Codeberg for a more detailed list of changes

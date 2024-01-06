@@ -1,0 +1,12 @@
+Improvements:
+- Option to save backup to internal storage (#29)
+- Make it clear that workout comments can be edited (#34)
+- Pace in the format MM’SS” (#36)
+- Consider ascent value when calculating calories (#39)
+
+Bugfixes:
+- Bug Imperial units wrong (#42)
+- Workout list does not refresh properly (#37)
+
+Language:
+- Updated spanish translation (#43)
