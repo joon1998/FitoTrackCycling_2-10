@@ -149,6 +149,7 @@ public abstract class RecordWorkoutActivity extends FitoTrackActivity implements
     private ChooseAutoStartModeDialog autoStartModeDialog;
     private MovementDetector movementDetector;
     private AutoStartWorkout autoStartWorkout;
+    private boolean askForComment;
     private VibratorController vibratorController;
     private AutoStartVibratorFeedback autoStartVibratorFeedback;
     private ToneGeneratorController toneGeneratorController;
@@ -181,6 +182,7 @@ public abstract class RecordWorkoutActivity extends FitoTrackActivity implements
         this.autoStartMode = instance.userPreferences.getAutoStartMode();
         Log.d(TAG, "auto start enabled, auto start delay: " +
                 this.autoStartDelayMs + ", auto start mode: " + autoStartMode);
+        this.askForComment = instance.userPreferences.getAskForComment();
 
         WorkoutLogger.log(TAG, "Activity created");
     }
@@ -456,7 +458,11 @@ public abstract class RecordWorkoutActivity extends FitoTrackActivity implements
         if (instance.recorder.getState() != GpsWorkoutRecorder.RecordingState.IDLE) { // Only Running Records can be stopped
             instance.recorder.stop(reason);
             if (instance.recorder.hasRecordedSomething()) {
-                showEnterDescriptionDialog();
+                if (askForComment) {
+                    showEnterDescriptionDialog();
+                } else {
+                    saveAndClose();
+                }
             } else {
                 Toast.makeText(this, R.string.workoutDiscarded, Toast.LENGTH_LONG).show();
                 instance.recorder.discard();

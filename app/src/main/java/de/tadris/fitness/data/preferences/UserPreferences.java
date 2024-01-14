@@ -56,6 +56,7 @@ public class UserPreferences {
     public static final String STATISTICS_SELECTED_TYPES = "statisticsSelectedTypes";
     public static final String VOICE_ANNOUNCEMENTS_INTERVAL_TIME = "spokenUpdateTimePeriod";
     public static final String VOICE_ANNOUNCEMENTS_INTERVAL_DISTANCE = "spokenUpdateDistancePeriod2";
+    public static final String ASK_FOR_COMMENT = "askForComment";
 
     /**
      * Default NFC start enable state if no other has been chosen
@@ -128,6 +129,11 @@ public class UserPreferences {
      * Default selection of WorkoutType in statistics in means of typeID
      */
     private static final Set<String> DEFAULT_STATISTICS_SELECTED_TYPES = new ArraySet<>();
+
+    /**
+     * Default ask for comment enable state if no other has been chosen
+     */
+    public static final boolean DEFAULT_ASK_FOR_COMMENT = true;
 
     private final SharedPreferences preferences;
     private final RecordingScreenInformationPreferences recordingScreenInformationPreferences;
@@ -264,6 +270,10 @@ public class UserPreferences {
 
     public boolean getZoomWithVolumeButtons() {
         return preferences.getBoolean("zoomWithVolumeButtons", true);
+    }
+
+    public boolean getAskForComment() {
+        return preferences.getBoolean(ASK_FOR_COMMENT, DEFAULT_ASK_FOR_COMMENT);
     }
 
     public int getAutoBackupIntervalHours() {

@@ -74,6 +74,12 @@
         android:summary="@string/zoomWithVolumeButtonsSummary"
         android:title="@string/zoomWithVolumeButtonsTitle" />
 
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="askForComment"
+        android:title="@string/askForComment"
+        app:summary="@string/askForCommentSummary" />
+
     <PreferenceCategory android:title="@string/preferenceCategoryVoiceFeedback">
 
         <Preference
