@@ -1,0 +1,10 @@
+- Autostart mit mehreren Modi 
+- Offline Kartenunterstützung 
+
+- Stabilitätsverbesserungen 
+- „Alle“ Filter für Trainingsstatistiken 
+- Die Markierung „Bearbeitet“ wird nur dann zu Trainingseinheiten hinzugefügt, wenn Distanz, Datum oder Dauer bearbeitet wurden 
+
+- Diverse Bugfixes
+
+Eine detailliertere Liste der Änderungen finden Sie in der Repository auf Codeberg

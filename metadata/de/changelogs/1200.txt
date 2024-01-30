@@ -1,0 +1,8 @@
+- Suchen Sie nach nicht gekoppelten Bluetooth Geräten 
+- Workouts Zurechtschneiden
+- Farben für Routen
+- Option zur Berechnung der Geschwindigkeit pro Zeiteinheit
+- Pacekeeper, der Sie darüber informiert, ob Sie zu langsam/schnell laufen 
+- Intervalle bearbeiten
+
+Eine detailliertere Liste der Änderungen finden Sie im Repository auf Codeberg
