@@ -1,0 +1,7 @@
+- Több edzés importálása
+
+- Android 10-en vagy régebbieken hibásan megjelenő jogosultság-párbeszédablak javítása
+- Kattintott edzés frissítése, ha visszatér az edzéslistához
+- A közleményaktiváló párbeszédablak megfelelő formázása
+
+- Fordítások frissítése

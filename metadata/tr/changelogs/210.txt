@@ -1,0 +1,1 @@
+- Kaydedildikten sonra görünmeyen egzersizler düzeltildi (#25)

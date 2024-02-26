@@ -35,12 +35,14 @@ public class AggregatedWorkoutData {
     private final List<WorkoutInformationResult> data;
     private double min, avg, max, sum;
     private final AggregationSpan span;
+    private final int firstDayOfWeek;
 
     private final Map<Long, AggregatedInformationDataPoint> dataPoints = new HashMap<>();
 
-    public AggregatedWorkoutData(List<WorkoutInformationResult> data, AggregationSpan span) {
+    public AggregatedWorkoutData(List<WorkoutInformationResult> data, AggregationSpan span, int firstDayOfWeek) {
         this.data = data;
         this.span = span;
+        this.firstDayOfWeek = firstDayOfWeek;
         aggregateAll();
     }
 
@@ -86,13 +88,13 @@ public class AggregatedWorkoutData {
         Calendar calendar = Calendar.getInstance();
 
         // attempt to get the Instance an use the app preferences
-        Instance i = Instance.getInstance(null);
+        Instance i = Instance.getInstance();
         if (i != null) {
             calendar = i.userDateTimeUtils.getCalendarInstance();
         }
 
         calendar.setTimeInMillis(workout.start);
-        span.applyToCalendar(calendar);
+        span.setCalendarToAggregationStart(calendar, firstDayOfWeek);
         return calendar.getTimeInMillis();
     }
 

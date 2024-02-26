@@ -1,0 +1,3 @@
+- Deisigh tuairteáil ar leaganacha Android faoi bhun Oreo (< 8)
+- Deisigh tuairteála nuair a shábhálann tú cleachtaí ar cuireadh isteach orthu
+- Deisigh fócas fuaime caillte

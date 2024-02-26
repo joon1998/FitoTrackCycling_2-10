@@ -1,11 +1,28 @@
+/*
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ *
+ * This file is part of FitoTrack
+ *
+ * FitoTrack is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     FitoTrack is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package de.tadris.fitness.util;
 
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
 import android.os.Build;
-
-import de.tadris.fitness.Instance;
 
 /**
  * This class provides an easier interface to the {@link ToneGenerator} class.
@@ -23,23 +40,18 @@ public class ToneGeneratorController {
     private final int audioStream;
     private static final int toneGeneratorVolumeRange = ToneGenerator.MAX_VOLUME - ToneGenerator.MIN_VOLUME;
 
-    private final Context context;
-    private final Instance instance;
     private final AudioManager audioManager;
 
     /**
      * Build an instance.
+     *
      * @param context the context it should run in
-     * @param instance needed for user prefs
-     * @param stream select an audio stream to use for playing tones (e.g. {@link AudioManager.STREAM_NOTIFICATION})
+     * @param stream  select an audio stream to use for playing tones (e.g. {@link AudioManager.STREAM_NOTIFICATION})
      */
-    public ToneGeneratorController(Context context, Instance instance, int stream) {
+    public ToneGeneratorController(Context context, int stream) {
         toneGenerator = null;
-        this.context = context;
-        this.instance = instance;
         audioStream = stream;
         audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
-        suppressOnCall = instance.userPreferences.getSuppressAnnouncementsDuringCall();
         enabled = true;
 
         // determine audio stream volume range, needed to convert to ToneGenerator volume
@@ -57,7 +69,7 @@ public class ToneGeneratorController {
      */
     public void playTone(int tone, int millis) {
         // don't play a sound when currently on a call or disabled entirely
-        if (!enabled || (suppressOnCall && TelephonyHelper.isOnCall(context))) {
+        if (!enabled) {
             return;
         }
         // otherwise we're good to go

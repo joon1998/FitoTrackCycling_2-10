@@ -1,0 +1,4 @@
+- Scáileán chun léaráid airde/agus an léarscáil a chur i gcomparáid
+- Taispeáin forleagan mura bhfuarthas comhartha GPS fós
+- Socraigh an rogha léarscáile (#15)
+- Luasaigh allmhairiú sonraí

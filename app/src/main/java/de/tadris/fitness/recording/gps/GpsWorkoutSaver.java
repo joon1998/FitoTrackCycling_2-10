@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -33,16 +33,17 @@ import de.tadris.fitness.data.BaseWorkoutData;
 import de.tadris.fitness.data.GpsSample;
 import de.tadris.fitness.data.GpsWorkout;
 import de.tadris.fitness.data.GpsWorkoutData;
+import de.tadris.fitness.data.preferences.UserMeasurements;
 import de.tadris.fitness.util.AltitudeCorrection;
-import de.tadris.fitness.util.CalorieCalculator;
 import de.tadris.fitness.util.WorkoutCalculator;
+import de.tadris.fitness.util.calorie.CalorieCalculator;
 
 /**
  * Calculates data for a workout+samples and saves everything to the database.
  */
 public class GpsWorkoutSaver {
 
-    private final Context context;
+    protected final Context context;
     protected final GpsWorkout workout;
     protected final List<GpsSample> samples;
     protected final AppDatabase db;
@@ -100,6 +101,7 @@ public class GpsWorkoutSaver {
     }
 
     protected void calculateData(boolean calculateElevation) {
+        calculateDurations(); // set duration/pauses
         setLength();
         setTopSpeed();
 
@@ -188,7 +190,11 @@ public class GpsWorkoutSaver {
             float altitude_difference =
                     SensorManager.getAltitude(SensorManager.PRESSURE_STANDARD_ATMOSPHERE, sample.pressure) -
                             SensorManager.getAltitude(SensorManager.PRESSURE_STANDARD_ATMOSPHERE, (float) avgPressure);
-            sample.elevation = avgElevation + altitude_difference;
+            if (!Double.isNaN(altitude_difference)) {
+                sample.elevation = avgElevation + altitude_difference;
+            } else {
+                Log.w("WorkoutSaver", "Cannot determine elevation for sample " + i + ": pressure=" + sample.pressure);
+            }
         }
     }
 
@@ -250,6 +256,9 @@ public class GpsWorkoutSaver {
         workout.ascent = 0f;
         workout.descent = 0f;
 
+        // Eliminate noise
+        roundSampleElevation();
+
         // Now sum up the ascent/descent
         if (samples.size() > 1) {
             GpsSample firstSample = samples.get(0);
@@ -263,7 +272,9 @@ public class GpsWorkoutSaver {
                 workout.minElevationMSL = Math.min(workout.minElevationMSL, (float) sample.elevationMSL);
                 workout.maxElevationMSL = Math.max(workout.maxElevationMSL, (float) sample.elevationMSL);
 
-                double diff = sample.elevation - prevSample.elevation;
+                // Use rounded sample elevation
+                double diff = sample.tmpElevation - prevSample.tmpElevation;
+
                 if (Double.isNaN(diff)) {
                     Log.e("WorkoutSaver", "ElevationDiff is NaN fallback to 0");
                     diff = 0d;
@@ -280,25 +291,22 @@ public class GpsWorkoutSaver {
         }
     }
 
-    // Should only be called when durations aren't there (e.g. when importing or cutting) but not on normal recorder save
-    protected void calculateDurations() {
-        if (samples.size() == 0) {
-            return;
-        }
+    protected void setStartAndEnd() {
         workout.start = samples.get(0).absoluteTime;
         workout.end = samples.get(samples.size() - 1).absoluteTime;
+    }
 
-        long pauseDuration = 0;
-        for (WorkoutCalculator.Pause pause : WorkoutCalculator.getPausesFromWorkout(getBaseWorkoutData())) {
-            pauseDuration += pause.duration;
+    private void calculateDurations() {
+        if (samples.isEmpty()) {
+            return;
         }
-        workout.pauseDuration = pauseDuration;
+        workout.pauseDuration = WorkoutCalculator.calculatePauseDuration(getBaseWorkoutData());
         workout.duration = workout.end - workout.start - workout.pauseDuration;
     }
 
     protected void setCalories() {
         // Ascent has to be set previously
-        workout.calorie = CalorieCalculator.calculateCalories(context, workout);
+        workout.calorie = new CalorieCalculator(context).calculateCalories(UserMeasurements.from(context), workout);
     }
 
     protected GpsWorkoutData getWorkoutData() {

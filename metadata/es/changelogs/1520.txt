@@ -1,0 +1,4 @@
+- Objetivo Android 13
+- Confirmar la parada del entrenamiento
+- Corregir los errores y los fallos gracias a @keesj
+- Traducciones actualizadas

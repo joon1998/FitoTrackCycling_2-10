@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+  ~ Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
   ~
   ~ This file is part of FitoTrack
   ~
@@ -33,7 +33,7 @@
     <string name="intervalAutoStartModeTraining">Automatinio pradėjimo treniruotės režimas</string>
     <string name="pref_auto_start_mode_title">Automatinio pradėjimo režimas</string>
     <string name="pref_auto_start_mode_instant">Pradėti iš karto</string>
-    <string name="pref_auto_start_mode_unknown">Nežinomas režimas (prašome nesirinkti)</string>
+    <string name="pref_auto_start_mode_unknown">Nežinoma (nenaudoti)</string>
     <string name="noColoring">Jokio spalvinimo</string>
     <string name="selectColoring">Pasirinkite spalvinimą</string>
     <string name="invalidNumberFormat">Netinkamas skaičiaus formatas.</string>
@@ -107,7 +107,7 @@
     <string name="timeSecondsPlural">Sekundės</string>
     <string name="timeSecondsSingular">Sekundė</string>
     <string name="preferenceFirstDayOfWeek">Savaitės pradžia</string>
-    <string name="preferenceCurrentSpeedAverageTimeTitle">Dabartinis greitis pagal vidurkį</string>
+    <string name="preferenceCurrentSpeedAverageTimeTitle">Vidutinis greitis</string>
     <string name="preferenceTimeFormat">Laiko formatas</string>
     <string name="preferenceDateFormat">Datos formatas</string>
     <string name="preferencesCategoryMap">Žemėlapis</string>
@@ -149,7 +149,7 @@
     <string name="share">Dalintis</string>
     <string name="save">Išsaugoti</string>
     <string name="description">Aprašymas</string>
-    <string name="cut">Iškirpti pirmuosius/paskutinius 300 metrų</string>
+    <string name="cut">Iškirpti pirmuosius/paskutinius 300 m.</string>
     <string name="actionUploadToOSM">Įkelti į OSM</string>
     <string name="waiting_gps">Laukiama GPS</string>
     <string name="mapStyle">Žemėlapio stilius</string>
@@ -271,11 +271,11 @@
     <string name="downloadFailed">Atsisiųsti nepavyko</string>
     <string name="downloadSuccess">Atsiųsta</string>
     <string name="alreadyDownloading">Failas jau yra siunčiamas</string>
-    <string name="downloadMapConfirmation">Ar norite atsisiųsti žemėlapio failą %s\?</string>
+    <string name="downloadMapConfirmation">Atsisiųsti žemėlapio failą \\\"%s\\\"\?</string>
     <string name="actionDownloadMap">Atsisiųsti žemėlapį</string>
-    <string name="overwriteMapConfirmation">Ar norite perrašyti esamą žemėlapio failą %s\?</string>
+    <string name="overwriteMapConfirmation">Perrašyti esamą \\\"%s\\\" žemėlapio failą\?</string>
     <string name="downloadMapsTitle">Atsisiųsti žemėlapius</string>
-    <string name="pref_render_theme_style_info">Pasirinktai atvaizdavimo temai nėra galimo atvaizdavimo temos stiliaus meniu.</string>
+    <string name="pref_render_theme_style_info">Pasirinktos temos meniu nėra.</string>
     <string name="preferenceCategoryRenderThemeCategories">Kategorijos</string>
     <string name="pref_render_theme_style">Atvaizdavimo stilius</string>
     <string name="editWorkoutType">Redaguoti treniruotės tipą</string>
@@ -291,8 +291,8 @@
     <string name="workoutTypeEditIdErrorCharacters">Leidžiami simboliai: a-z, A-Z, 0-9, _, -</string>
     <string name="workoutTypeEditId">ID</string>
     <string name="hintManageWorkoutTypes">Spustelėkite pliusą, kad pridėtumėte pasirinktinius treniruočių tipus.</string>
-    <string name="resumeWorkoutConfirmation">Ar tikrai norite tęsti šią treniruotę\? Taip pat bus pridėta pauzė nuo to laiko, kai treniruotė buvo sustabdyta.</string>
-    <string name="prefShowOnLockScreenSummary">Rodyti treniruotės informaciją, net jei telefonas užrakintas.</string>
+    <string name="resumeWorkoutConfirmation">Tęsti šią treniruotę\? Bus pridėta pauzė nuo tada, kai treniruotė buvo sustabdyta.</string>
+    <string name="prefShowOnLockScreenSummary">Rodyti treniruotės informaciją, net jei įrenginys užrakintas.</string>
     <string name="prefShowOnLockScreenTitle">Matoma užrakintame ekrane</string>
     <string name="workoutStarted">Treniruotė pradėta</string>
     <string name="workoutStopped">Treniruotė sustabdyta</string>
@@ -308,7 +308,6 @@
     <string name="showIntervals">Rodyti intervalus</string>
     <string name="connectHeartRateDevice">Prijunkite širdies ritmo įrenginį</string>
     <string name="selectBluetoothDevice">Pasirinkite Bluetooth įrenginį</string>
-    <string name="importedWorkouts">Importuotos %d treniruotės</string>
     <string name="importingFiles">Importuojami failai</string>
     <string name="actionImportMultiple">Importuoti kelis</string>
     <string name="actionImport">Importuoti</string>
@@ -321,7 +320,6 @@
     <string name="recordingStateIdle">Laukia</string>
     <string name="actionGrant">Suteikti</string>
     <string name="recordingActivityPermissionMessage">FitoTrack reikia leidimo sekti jūsų fizinį aktyvumą, kad būtų galima įrašyti treniruotes patalpose.</string>
-    <string name="recordingBackgroundPermissionNotGrantedMessage">FitoTrack taip pat renka vietos duomenis fone, kad galėtų įrašyti treniruotę, kai ekranas išjungtas. Todėl leiskite FitoTrack nuolat gauti prieigą prie jūsų buvimo vietos.</string>
     <string name="recordingPermissionNotGrantedMessage">FitoTrack reikia vietos nustatymo leidimo, kad būtų galima sekti jūsų judėjimą treniruotės metu. FitoTrack taip pat renka buvimo vietos duomenis, kai programėlė veikia fone arba kai ekranas išjungtas, kad būtų galima įrašyti treniruotes. Buvimo vietos duomenys visada lieka jūsų telefone be jūsų aiškaus sutikimo jais dalytis.</string>
     <string name="recordingPermissionNotGrantedTitle">Leidimai nesuteikti</string>
     <string name="unitFootSingular">Pėda</string>
@@ -331,7 +329,7 @@
     <string name="editDisplayedInformation">Redaguoti rodomą informaciją</string>
     <string name="aboutPrivacyPolicy">Privatumo politika</string>
     <string name="aboutHelpTranslating">Padėkite versti</string>
-    <string name="aboutUnlistedContributors">Dėkojame visiems į sąrašą neįtrauktiems bendraautoriams, padėjusiems versti ir išplėtoti FitoTrack!</string>
+    <string name="aboutUnlistedContributors">Dėkojame visiems į sąrašą neįtrauktiems bendraautoriams, padėjusiems išversti ir išplėtoti FitoTrack!</string>
     <string name="aboutSourceCode">Peržiūrėti pirminį kodą</string>
     <string name="aboutSendFeedback">Siųsti atsiliepimą kūrėjui</string>
     <string name="aboutContributors">Bendraautoriai</string>
@@ -372,8 +370,8 @@
     <string name="no_workouts_recorded_for_this_activity">Šios veiklos treniruočių nėra</string>
     <string name="workoutDiscarded">Treniruotė išmesta</string>
     <string name="preferenceUseAverageForCurrentSpeed">Apskaičiuojant dabartinį greitį, vietoj paskutinio atskiro greičio įrašo naudokite vidutinį greitį per tam tikrą laiko tarpą.</string>
-    <string name="preferenceCurrentSpeedAverageTimeSummary">Pakeiskite esamo greičio skaičiavimą vidurkio skaičiavimu.</string>
-    <string name="preferenceCurrentSpeedTime">Laiko tarpas vidurkio skaičiavimui</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">Pakeiskite esamą greitį vidutiniu</string>
+    <string name="preferenceCurrentSpeedTime">Vidurkio greičio skaičiavimo intervalas</string>
     <string name="announcementCountdown">Automatinio paleidimo veiksmai (atgalinis skaičiavimas, būsena ir kt.)</string>
     <string name="popup_auto_start">Su numatytuoju uždelsimu</string>
     <string name="popup_auto_start_delay">Su pasirinktiniu uždelsimu</string>
@@ -381,11 +379,11 @@
     <string name="moveStartOfWorkout">Iškirpti pradžią</string>
     <string name="scanFailed">Skenavimas nepavyko</string>
     <string name="scanning">Skenuojama…</string>
-    <string name="pref_announcements_pace_control_title">Įspėjimai dėl tempo kontrolės</string>
+    <string name="pref_announcements_pace_control_title">Tempo įspėjimai</string>
     <string name="pref_announcements_pace_control_summary">Įspėti, kai greitis yra mažesnis arba didesnis už nurodytą</string>
     <string name="auto">Automatinis</string>
     <string name="pref_auto_start_mode_on_move">Laukti, kol pradėsite judėti</string>
-    <string name="pref_auto_start_mode_wait_for_gps">Laukti tikslios GPS padėties</string>
+    <string name="pref_auto_start_mode_wait_for_gps">Laukti tikslios padėties</string>
     <plurals name="seconds">
         <item quantity="one"><xliff:g example="1" id="secs">%1$d</xliff:g> sekundė</item>
         <item quantity="few"><xliff:g example="12" id="secs">%1$d</xliff:g> sekundės</item>
@@ -409,12 +407,11 @@
     <string name="setPreferencesTitle">Nustatyti nuostatas</string>
     <string name="backup">Atsarginė kopija</string>
     <string name="restore">Atkurti</string>
-    <string name="importBackupMessage">ĮSPĖJIMAS: bus ištrinti visi programėlėje esami duomenys. Jei nenorite jų prarasti, pirmiausia padarykite kitą atsarginę kopiją. Ar tikrai norite atkurti šią atsarginę kopiją\?</string>
+    <string name="importBackupMessage">Jei norite išsaugoti esamus duomenis, dabar sukurkite atsarginę jų kopiją. Atkurti ankstesnę atsarginę kopiją dabar\?</string>
     <string name="chooseBackupFile">Pasirinkite atsarginės kopijos failą</string>
     <string name="loadingFile">Įkeliamas failas</string>
     <string name="finished">Baigta</string>
     <string name="converting">Konvertavimas</string>
-    <string name="workouts">Treniruotės</string>
     <string name="initialising">Inicijavimas</string>
     <string name="shareFile">Bendrinti failą</string>
     <string name="errorImportFailed">Duomenų importavimas nepavyko.</string>
@@ -423,7 +420,7 @@
     <string name="exporting">Eksportavimas</string>
     <string name="workoutEnergyConsumption">Energijos suvartojimas</string>
     <string name="workoutTotalEnergy">Viso energijos</string>
-    <string name="workoutBurnedEnergy">Sudeginta energija</string>
+    <string name="workoutBurnedEnergy">Sudegintos kalorijos</string>
     <string name="cannotStart">Nėra galimybės pradėti</string>
     <string name="pref_announcement_mode">Pranešimų rėžimas</string>
     <string name="ttsNotAvailable">Garsinis teksto atkūrimas neprieinamas</string>
@@ -432,4 +429,107 @@
     <string name="trackStyle">Trasos stilius</string>
     <string name="trackingInfoDescription">Informacija apie veikiantį sekimą</string>
     <string name="trackingInfo">Sekimo informacija</string>
+    <plurals name="importedWorkouts">
+        <item quantity="one">Importuota viena treniruotė</item>
+        <item quantity="few">Importuotos %d treniruotės</item>
+        <item quantity="other">Importuota %d treniruočių</item>
+    </plurals>
+    <string name="identifiable_visibility">Identifikuojama</string>
+    <string name="trackable_visibility">Sekama</string>
+    <string name="always_track_style">Visada</string>
+    <string name="in_the_diagram_screen_track_style">Diagramos ekrane</string>
+    <string name="never_track_style">Niekada</string>
+    <string name="purple_rain">Purpurinis lietus</string>
+    <string name="pink_mist">Rožinė migla</string>
+    <string name="rainbow_warrior">Vaivorykštinis karys</string>
+    <string name="mondriaan">Mondriaan</string>
+    <string name="bright_night">Šviesi naktis</string>
+    <string name="system_theme">Sistemos</string>
+    <string name="light_theme">Šviesi</string>
+    <string name="imperial_unit_system">Imperinė</string>
+    <string name="heartRateSensorBattery">Jutiklio baterija</string>
+    <string name="thursday">Ketvirtadienis</string>
+    <string name="friday">Penktadienis</string>
+    <string name="autoExportWorkoutExplanation">Įrašius naują treniruotę, GPX bus eksportuojamas čia:</string>
+    <string name="exportIntervalTitle">Atsarginės kopijos kūrimo intervalas</string>
+    <string name="autoExportBackupSummary">Automatiškai eksportuoti atsargines kopijas</string>
+    <string name="autoExportBackupExplanation">Nurodytu intervalu atsarginė kopija bus eksportuojama čia:</string>
+    <string name="takeBackups1">Kiekvieną dieną</string>
+    <string name="mapnik_default_osm_mapstyle">Mapnik
+\nNumatytasis OSM žemėlapio stilius</string>
+    <string name="humanitarian_clean_map_but_sometimes_not_available">Humanitarian
+\nŠvarus žemėlapis, bet ne visada prieinamas</string>
+    <string name="kcal_unit">kcal</string>
+    <string name="zoomWithVolumeButtonsSummary">Garsumo didinimo ir mažinimo valdikliai priartina ir tolina</string>
+    <string name="private_visibility">Privati</string>
+    <string name="offline_local_map_file_with_local_render_theme">Neprisijungęs
+\nVietinio žemėlapio failas su vietoje pateikta tema</string>
+    <string name="dark_theme">Tamsi</string>
+    <string name="imperial_with_meters_unit_system">Imperinė su metrais</string>
+    <string name="system_default">Sistemos numatytoji</string>
+    <string name="tuesday">Antradienis</string>
+    <string name="us_customary_unit_system">Amerikietiškoji</string>
+    <string name="deleteExportTargetConfirmation">Naikinti šią eksportavimo paskirties vietą\?</string>
+    <string name="takeBackups7">Kiekvieną savaitę</string>
+    <string name="takeBackups14">Kas antrą savaitę</string>
+    <string name="configureHttpPostRequest">Konfigūruoti HTTP POST užklausą</string>
+    <string name="selectExportTarget">Pasirinkti eksportavimo vietą</string>
+    <string name="httpUrl">URL</string>
+    <string name="preferencesDebugTitle">Derinimas</string>
+    <string name="showWorkoutZoomControlsSummary">Įgalinti priartinimo ir paslinkimo valdiklius žemėlapyje įrašinėjant GPS treniruotes</string>
+    <string name="always_mode">Visada</string>
+    <string name="only_on_headphones_mode">Kai prijungtos ausinės</string>
+    <string name="hidden">Paslėpta</string>
+    <string name="joule_unit">Džauliai</string>
+    <string name="metric_unit_system">Metrinė</string>
+    <string name="height_map">Aukščio žemėlapis</string>
+    <string name="wednesday">Trečiadienis</string>
+    <string name="saturday">Šeštadienis</string>
+    <string name="exportTargetDirectory">Katalogas</string>
+    <string name="workoutGPXExportTitle">Treniruotės GPX eksportavimas</string>
+    <string name="hintConfigureExportTargets">Pridėti paskirties vietas, į kurias turėtų būti eksportuojami failai.</string>
+    <string name="enterValidUrl">Įveskite galiojantį HTTP URL</string>
+    <string name="debugShareLogsTitle">Bendrinti programėlės žurnalus</string>
+    <string name="debugSensorsTitle">Derinti jutiklius</string>
+    <string name="autoExportBackupTitle">Automatinės programėlės atsarginės kopijos</string>
+    <string name="calibrating">Kalibravimas</string>
+    <string name="debugSensorsSummary">Rinkti jutiklio duomenis, kurie įrašomi į žurnalo failą</string>
+    <string name="debugPressureSensor">Derinti slėgio jutiklį</string>
+    <plurals name="satelliteCount">
+        <item quantity="one">Vienas palydovas</item>
+        <item quantity="few">%d palydovai</item>
+        <item quantity="other">%d palydovų</item>
+    </plurals>
+    <string name="noSensorAvailable">Nėra jokio jutiklio</string>
+    <string name="unitHeartRateSensorBattery">%</string>
+    <string name="metric_with_m_s_unit_system">Metrinė su m/s</string>
+    <string name="exportTargetHttpPost">HTTP POST užklausa</string>
+    <string name="autoExportWorkoutsSummary">Eksportuoti naujai įrašytas treniruotes</string>
+    <string name="autoBackupTitle">Automatinės atsarginės kopijos</string>
+    <string name="takeBackups2">Kas antrą dieną</string>
+    <string name="sunday">Sekmadienis</string>
+    <string name="monday">Pirmadienis</string>
+    <string name="debugShareLogsSummary">Bendrinkite žurnalus, kuriuose yra naudingų duomenų, kad galėtume rasti klaidas treniruočių įrašymo priemonėje. Paprastai juose nėra vietos duomenų.</string>
+    <string name="takeBackups3">Kas trečią dieną</string>
+    <string name="zoomWithVolumeButtonsTitle">Priartinimas su garso mygtukais</string>
+    <string name="showWorkoutZoomControlsTitle">Priartinimas ir slinkimas</string>
+    <string name="workoutCount">Treniruočių skaičius</string>
+    <string name="massExportGpxTitle">Eksportuoti visas treniruotes kaip GPX</string>
+    <string name="stats_explore_title">Naršyti</string>
+    <string name="massExportGpxSummary">Sukuria ZIP failą, kuriame visos treniruotės yra GPX dokumentai</string>
+    <string name="workoutTypeSwimming">Plaukimas</string>
+    <string name="stats_history_title">Istorija</string>
+    <string name="stats_overview_title">Apžvalga</string>
+    <string name="workouts">Treniruotės</string>
+    <string name="workoutAvgDurationLong">Vidutinė trukmė</string>
+    <string name="workoutDurationSum">Bendra trukmė</string>
+    <string name="workoutAvgPauseDuration">Vidutinė pauzės trukmė</string>
+    <string name="workoutPauseDurationSum">Bendra pauzių trukmė</string>
+    <string name="statistics">Statistika</string>
+    <string name="workoutDistanceSum">Bendras atstumas</string>
+    <string name="histogram">Histograma</string>
+    <string name="details">Išsamesnė informacija</string>
+    <string name="monthYear">Mėnuo / metai</string>
+    <string name="workoutAvgDistance">Vidutinis atstumas</string>
+    <string name="show_sum">Rodyti bendrą trukmę</string>
 </resources>

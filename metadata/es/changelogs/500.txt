@@ -1,0 +1,16 @@
+Nuevas características:
+- Agregar entrenamientos manualmente (#53)
+- Modo oscuro (#48)
+
+Nuevos desarrollos:
+- Corrección de altura
+- Detectar auriculares Bluetooth (#51)
+- Mostrar captura en la pantalla de bloqueo (#45)
+- Nombre de OpenStreetMap en la pantalla de grabación (#52)
+
+Corrección de errores:
+- Valores de velocidad incorrectos después de perder la señal GPS por un tiempo (#47)
+
+Naturalización:
+- Actualización de la traducción al holandés con contribuciones de albertheres y didierm (#57, #58)
+- Actualización de la traducción al húngaro con la ayuda del Sr. Balázs (#59)

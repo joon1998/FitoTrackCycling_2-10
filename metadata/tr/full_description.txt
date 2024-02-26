@@ -1,0 +1,6 @@
+FitoTrack, egzersizlerinizin günlüğünü kaydetmek ve görüntülemek için bir mobil uygulamadır. İster koşuyor, ister bisiklete biniyor veya yürüyüş yapıyor olun, FitoTrack size en önemli bilgileri ayrıntılı çizelgeler ve istatistiklerle gösterecektir. Açık kaynaklıdır ve tamamen reklamsızdır.
+
+Özellikleri:
+* Egzersizleri takip edin. Takip etmek istediğiniz spor türünü seçin ve örneğin koşmaya, bisiklete binmeye veya yürüyüşe başlayın. Genel bilgileri takip ekranında haritanın hemen altında görebilirsiniz.
+* Egzersizlerinizi görüntüleyin. Tarih, saat, süre, mesafe, hız ve tempo gibi genel bilgileri görüntüleyin. Rotanızı bir harita üzerinde görün. Hız diyagramından performans seviyenizi hesaplayın.
+* Açık kaynaklı. Reklam veya izleme yoktur ve kaynak kodu açık ve GPLv3 ile lisanslanmıştır.

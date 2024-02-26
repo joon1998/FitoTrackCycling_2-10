@@ -40,5 +40,8 @@ public class MainSettingsFragment extends FitoTrackSettingFragment {
         });
     }
 
-
+    @Override
+    protected String getTitle() {
+        return getString(R.string.settings);
+    }
 }

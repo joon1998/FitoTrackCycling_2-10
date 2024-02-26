@@ -1,0 +1,7 @@
+- Tipos de entrenamiento personalizados
+- Compartir los entrenamientos como imágenes
+- Mejoras en la interfaz de usuario/estabilidad
+- Ahora se pueden desactivar las "acciones del sistema" del anuncio
+- Traducciones actualizadas
+
+Por favor, consulte el repositorio del proyecto en Codeberg para obtener una lista más detallada de los cambios

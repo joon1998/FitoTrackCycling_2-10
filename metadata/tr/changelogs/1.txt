@@ -1,0 +1,9 @@
+İlk sürüm
+
+- Egzersizleri kaydet
+- Egzersizleri listele
+- Egzersiz verilerini göster (harita, hız diyagramı, enerji) + Egzersizleri sil
+- Verileri içe/dışa aktar
+- Egzersizleri GPX olarak dışa aktar
+- Birimleri değiştir
+- Ağırlığı değiştir

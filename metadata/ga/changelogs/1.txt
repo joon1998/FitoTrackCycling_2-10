@@ -1,0 +1,9 @@
+An chéad eisiúint
+
+- workouts Taifead
+- Déan liosta de na cleachtaí
+- Taispeáin sonraí aclaíochta (léarscáil, léaráid luais, fuinneamh) + Scrios cleachtaí
+- Iompórtáil / Easpórtáil sonraí
+- Easpórtáil Workouts mar GPX
+- Aonaid a athrú
+- Athraigh meáchan

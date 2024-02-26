@@ -1,0 +1,6 @@
+FitoTrack es una aplicación móvil para registrar y visualizar tus entrenamientos. Tanto si corres como si vas en bici o de excursión, FitoTrack te mostrará la información más importante, con gráficos y estadísticas detalladas. Es de código abierto y completamente libre de anuncios.
+
+Características:
+* Seguimiento de los entrenamientos. Elige el tipo de deporte que quieres seguir y empieza a correr, montar en bicicleta o hacer senderismo, por ejemplo. Puedes ver la información general justo debajo del mapa en la pantalla de seguimiento.
+* Ver tus entrenamientos. Ver información general como la fecha, la hora, la duración, la distancia, la velocidad y el ritmo. Ver tu ruta en un mapa. Calcula tu nivel de rendimiento a partir del diagrama de velocidad.
+* Código abierto. No hay publicidad ni seguimiento, y el código fuente es abierto y con licencia GPLv3.

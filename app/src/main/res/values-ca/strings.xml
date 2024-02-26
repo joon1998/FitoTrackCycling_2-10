@@ -17,7 +17,6 @@
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
-
 <resources>
     <string name="timeHourShort">h</string>
     <string name="timeHourPlural">Hores</string>
@@ -90,4 +89,101 @@
     <string name="workoutDuration">Duració</string>
     <string name="gpsLost">Senyal de GPS perdut</string>
     <string name="timeSecondsShort">s</string>
+    <string name="workoutTypeWalking">Caminar</string>
+    <string name="ttsNotAvailable">TextToSpeech no està disponible</string>
+    <string name="pref_step_length">Longitud de la passa</string>
+    <string name="pref_announcements_content">Contingut dels anuncis</string>
+    <string name="workoutRecordingTypeGps">Entrenaments gps</string>
+    <string name="workoutRecordingTypeIndoor">Entrenaments interiors</string>
+    <string name="gpsFound">Senyal GPS trobat</string>
+    <string name="workoutEndTime">Hora de finalització</string>
+    <string name="workoutRepetitions">Repeticions</string>
+    <string name="workoutFrequency">Freqüència</string>
+    <string name="workoutAvgFrequencyShort">Freqüència mitjana</string>
+    <string name="workoutCurrentFrequency">Freqüència actual</string>
+    <string name="workoutMaxFrequency">Freqüència màxima</string>
+    <string name="workoutIntensity">Intensitat</string>
+    <string name="workoutAvgIntensityShort">Intensitat mitjana</string>
+    <string name="workoutMaxIntensity">Intensitat màxima</string>
+    <string name="workoutBurnedEnergy">Energia cremada</string>
+    <string name="workoutTotalEnergy">Energia total</string>
+    <string name="workoutEnergyConsumption">Consum d\'energia</string>
+    <string name="workoutAvgHeartRate">Ritme cardíac mitjà</string>
+    <string name="workoutEdited">Aquest entrenament ha estat editat.</string>
+    <string name="uploading">Pujant</string>
+    <string name="enterVerificationCode">Introduïu el codi de verificació</string>
+    <string name="authenticationFailed">L\'autentificació ha fallat.</string>
+    <string name="upload">Pujar</string>
+    <string name="uploadFailed">La pujada ha fallat</string>
+    <string name="uploadFailedOsmNotAuthorized">No autoritzat, torneu-ho a provar</string>
+    <string name="workoutAscent">Ascens</string>
+    <string name="workoutDescent">Descens</string>
+    <string name="workoutMinHeight">Alçada mínima</string>
+    <string name="workoutTypeInlineSkating">Patins en línia</string>
+    <string name="workoutTypeRowing">Rem</string>
+    <string name="workoutTypeOther">Altre</string>
+    <string name="workoutTypeTreadmill">Cinta de córrer</string>
+    <plurals name="workoutStep">
+        <item quantity="one">Pas</item>
+        <item quantity="other">Passos</item>
+    </plurals>
+    <string name="workoutTypeRopeSkipping">Saltar a corda</string>
+    <string name="workoutTypeTrampolineJumping">Salt de trampolí</string>
+    <plurals name="workoutJump">
+        <item quantity="one">Salt</item>
+        <item quantity="other">Salts</item>
+    </plurals>
+    <string name="workoutTypePushUps">Flexions</string>
+    <plurals name="workoutPushUp">
+        <item quantity="one">Flexió</item>
+        <item quantity="other">Flexions</item>
+    </plurals>
+    <string name="unknown">Desconegut</string>
+    <string name="workoutTypeAdd">Afegeix</string>
+    <string name="workoutTypeAll">Tots</string>
+    <string name="type">Tipus</string>
+    <string name="enterWorkout">Introduïu l\'entrenament</string>
+    <string name="importWorkout">Importar entrenament</string>
+    <string name="recordWorkout">Enregistrar entrenament</string>
+    <string name="noGpsMessage">Si us plau, activeu el GPS per fer el seguiment de l\'entrenament.</string>
+    <string name="enable">Activar</string>
+    <string name="comment">Comentari</string>
+    <string name="enterComment">Introduïu comentari</string>
+    <string name="stopRecordingQuestion">Aturar l\'enregistrament\?</string>
+    <string name="stopRecordingQuestionMessage">Esteu segur que voleu aturar la gravació\?</string>
+    <string name="continue_">Continuar</string>
+    <string name="trackerWaitingMessage">Esperant per començar l\'entrenament</string>
+    <string name="cancel">Cancel·lar</string>
+    <string name="exportAsGpxFile">Exportar com a fitxer GPX</string>
+    <string name="pref_weight">El teu pes</string>
+    <string name="pref_weight_summary">El teu pes és necessari per calcular les calories cremades</string>
+    <string name="pref_unit_system">Sistema d\'unitats preferit</string>
+    <string name="settings">Configuració</string>
+    <string name="importBackup">Importar còpia de seguretat de dades</string>
+    <string name="importBackupSummary">Restaura una còpia de seguretat realitzada</string>
+    <string name="waiting_gps">Esperant el GPS</string>
+    <string name="description">Descripció</string>
+    <string name="save">Guardar</string>
+    <string name="hintRestart">Si us plau, reinicieu l\'aplicació per aplicar canvis</string>
+    <string name="start">Començar</string>
+    <string name="cannotStart">No es pot començar</string>
+    <string name="add_interval">Afegeix interval</string>
+    <string name="edit_interval">Edita l\'interval</string>
+    <string name="workoutAvgFrequencyLong">Freqüència mitjana</string>
+    <string name="workoutMaxHeartRate">Ritme cardíac màxim</string>
+    <string name="pref_announcements_config_summary">Trieu el temps i la distància entre els anuncis de veu</string>
+    <string name="uploadSuccessful">La càrrega s\'ha fet correctament</string>
+    <string name="workoutHeartRate">Ritme cardíac</string>
+    <string name="height">Altura</string>
+    <string name="workoutTypeRunning">Córrer</string>
+    <string name="workoutTypeHiking">Senderisme</string>
+    <string name="workoutTypeCycling">Ciclisme</string>
+    <string name="workoutMaxHeight">Alçada màxima</string>
+    <string name="exportData">Exportar les dades</string>
+    <string name="workoutTypeSkateboarding">Skateboarding</string>
+    <string name="deleteWorkout">Eliminar entrenament</string>
+    <string name="deleteWorkoutMessage">De debò vols eliminar l\'entrenament\?</string>
+    <string name="trackingInfo">Informació de seguiment</string>
+    <string name="mapStyle">Estil del mapa</string>
+    <string name="pref_announcement_mode">Mode d\'anunci</string>
 </resources>

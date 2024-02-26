@@ -1,0 +1,9 @@
+Wydanie początkowe
+
+- Nagrywanie ćwiczeń
+- Listowanie ćwiczeń
+- Pokazywanie danych (mapa, diagram prędkości, energia) + Usuwanie danych
+- Import/Eksport danych
+- Eksportowanie danych jako GPX
+- Zmiana jednostek
+- Zmiana wagi

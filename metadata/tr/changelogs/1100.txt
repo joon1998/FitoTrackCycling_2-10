@@ -1,0 +1,10 @@
+- Birden fazla mod içeren otomatik başlatma
+- Çevrim dışı harita desteği
+
+- Kararlılık iyileştirmeleri
+- Egzersiz istatistikleri için "Tümü"-filtresi
+- Egzersizlere yalnızca mesafe, tarih veya süre düzenlendiyse "düzenlendi" bayrağını ekle
+
+- çeşitli hata düzeltmeleri
+
+Değişikliklerin daha ayrıntılı bir listesi için lütfen Codeberg'deki proje deposuna bakın

@@ -1,15 +1,29 @@
+/*
+ * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ *
+ * This file is part of FitoTrack
+ *
+ * FitoTrack is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     FitoTrack is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package de.tadris.fitness.util;
 
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.preference.PreferenceManager;
-import android.telephony.TelephonyManager;
-
-import de.tadris.fitness.Instance;
 
 /**
  * This class provides an easier interface to the {@link Vibrator} class.
@@ -18,20 +32,14 @@ import de.tadris.fitness.Instance;
  */
 public class VibratorController {
     private boolean enabled = true;  // always enabled
-    private boolean suppressOnCall;
     private Vibrator vibrator;
-    private final Context context;
-    private final Instance instance;
 
     /**
      * Build an instance.
+     *
      * @param context the context it should run in
-     * @param instance needed for user prefs
      */
-    public VibratorController(Context context, Instance instance) {
-        this.context = context;
-        this.instance = instance;
-        this.suppressOnCall = Instance.getInstance(context).userPreferences.getSuppressAnnouncementsDuringCall();
+    public VibratorController(Context context) {
         vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
 
         if (!vibrator.hasVibrator()) {
@@ -44,7 +52,7 @@ public class VibratorController {
      * @param millis how long do you want the phone to vibrate
      */
     public void vibrate(int millis) {
-        if (!enabled || (suppressOnCall && TelephonyHelper.isOnCall(context))){
+        if (!enabled) {
             return;
         }
         if (Build.VERSION.SDK_INT < 26) {

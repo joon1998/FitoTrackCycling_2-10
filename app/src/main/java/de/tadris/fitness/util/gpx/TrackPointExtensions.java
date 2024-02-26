@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -27,7 +27,7 @@ public class TrackPointExtensions {
 
     private double speed;
 
-    @JacksonXmlProperty(localName = "gpxtpx:TrackPointExtension")
+    @JacksonXmlProperty(namespace = "gpxtxp", localName = "TrackPointExtension")
     private GpxTpxExtension gpxTpxExtension;
 
     public TrackPointExtensions() {

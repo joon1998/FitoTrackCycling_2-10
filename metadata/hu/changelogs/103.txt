@@ -1,0 +1,1 @@
+- Kalóriaszámítás javítása

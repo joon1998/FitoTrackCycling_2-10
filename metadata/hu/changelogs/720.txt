@@ -1,0 +1,4 @@
+- Remélhetőleg javítva lett egy összeomlás, amikor régebbi Java-verziókon történik a GPX-fájlok importálása
+- Magasság- és kalóriahibák javítva
+
+- Francia fordítás frissítve

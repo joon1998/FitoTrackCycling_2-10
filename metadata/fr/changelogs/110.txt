@@ -1,0 +1,8 @@
+Nouveautés:
+- Mesure de la hauteur par le GPS et le capteur de pression
+- Affichage de la hauteur du diagramme
+- Affichage du dialogue si le GPS est désactivé
+
+Corrections:
+- Le bouton de retour dans les paramètres qui tombe en échec sur les versions antérieures d'Android  (#20)
+- Corrige le système d'unités impériales en mètres

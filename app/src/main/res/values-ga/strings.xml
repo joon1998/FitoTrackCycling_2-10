@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
+  ~
+  ~ This file is part of FitoTrack
+  ~
+  ~ FitoTrack is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     FitoTrack is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+    <string name="app_name">FitoTrack</string>
+    <string name="stop">Stad</string>
+    <string name="exporting">Á easpórtáil</string>
+    <string name="error">Earráid</string>
+    <string name="errorImportFailed">Theip ar iompórtáil na sonraí.</string>
+    <string name="shareFile">Comhroinn comhad</string>
+    <string name="initialising">Á thúsú</string>
+    <string name="setPreferencesMessage">Is féidir leat a leagtar do chóras aonad is fearr agus do mheáchan sna suímh.</string>
+    <string name="errorWorkoutAddFuture">Ní féidir leis an workout a bheith sa todhchaí</string>
+    <string name="announcementWorkoutActions">Gníomhartha Workout (sos, atosú, etc.)</string>
+    <string name="voiceAnnouncementsTitle">Fógraí Gutha</string>
+    <string name="pref_voice_announcements_summary">Cumraigh leideanna gutha a chuireann in iúl duit le linn na hoibre</string>
+    <string name="pref_announcements_config_title">Truicear Fógraíochta</string>
+    <string name="pref_announcements_content">Ábhar na bhfógraí</string>
+    <string name="noGpsMessage">Cuir ar chumas GPS do rianú do workout.</string>
+    <string name="stopRecordingQuestionMessage">An bhfuil tú cinnte gur mian leat an taifeadadh a stopadh\?</string>
+    <string name="deleteWorkoutMessage">An bhfuil tú cinnte gur mian leat an workout a scriosadh\?</string>
+    <string name="pref_weight_summary">Tá do mheáchan ag teastáil chun na calories dóite a ríomh</string>
+    <string name="pref_unit_system">Córas de rogha na n-aonad</string>
+    <string name="manageIntervalsSummary">Cuir na tacair eatramh in eagar beidh tú in ann a úsáid le linn an workout ag baint úsáide as aiseolas gutha.</string>
+    <string name="intervalsIncludePauseSummary">Má gníomhachtaithe, beidh na heatraimh ar aghaidh fiú má dhéanann tú sosanna i do workout.</string>
+    <string name="hintAddWorkout">Cliceáil ar an deilbhín móide a thaifeadadh nó a chur isteach a workout.</string>
+    <string name="preferencesRecordingSummary">Bainistigh an taifeadadh workout</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">Cuir an meánluas in ionad an luas reatha</string>
+    <string name="preferenceUseAverageForCurrentSpeed">Bain úsáid as an meánluas thar am áirithe in ionad an taifead luas aonair deireanach don ríomh luas atá ann faoi láthair.</string>
+    <string name="manageAutoTimeoutSummary">Cuir an t-eatramh in eagar le haghaidh stad uathoibríoch workout</string>
+    <string name="aboutUnlistedContributors">A bhuíochas leis na ranníocóirí neamhliostaithe go léir a chabhraigh Le fi a aistriú agus a Leathnú chun Rianú!</string>
+    <string name="actionGrant">Deontas</string>
+    <string name="speechConfigNoSpeech">Gan Fógra</string>
+    <string name="recordingStateStopped">Stad</string>
+    <string name="showIntervals">Taispeáin eatraimh</string>
+    <string name="heartRateNotAvailable">Níl an ráta croí ar fáil faoi láthair.</string>
+    <string name="autoPauseSummary">Sos agus leanúint ar aghaidh ag obair go huathoibríoch</string>
+    <string name="workoutTypeEditIdErrorUnique">Tá cineál workout cheana ag baint úsáide as AN ID SEO</string>
+    <string name="editStartEndHelp">Roghnaigh post ar an léarscáil nó ar an léaráid. Ansin cliceáil ar cheann de na saigheada a roghnú pointe nua ag tosú nó dar críoch. Nuair atá tú ag déanamh, cliceáil ar an deilbhín sábhála chun na hathruithe a chur i bhfeidhm.</string>
+    <string name="connectHeartRateDevice">Ceangail gléas ráta croí</string>
+    <string name="resumeWorkoutConfirmation">Atosaigh an workout\? Beidh sos ón am a stopadh an workout a chur leis.</string>
+    <string name="dialog_nfc_disabled">D fhonn clibeanna NFC a úsáid chun workouts a thosú agus a stopadh ní mór duit NFC a chumasú i socruithe gléas ar dtús</string>
+    <string name="delete">Scrios</string>
+    <string name="errorGpxExportFailed">Theip ar easpórtáil GPX.</string>
+    <string name="errorExportFailed">Theip ar an easpórtáil sonraí.</string>
+    <string name="importBackupMessage">Déan cúltaca de do chuid sonraí reatha anois más mian leat é a choinneáil. Athchóirigh an cúltaca roimh ré anois\?</string>
+    <string name="pref_announcements_config_summary">Roghnaigh an t-am agus an fad idir fógairtí gutha</string>
+    <string name="workoutTypeSkateboarding">Skateboardinggenericname</string>
+    <string name="workoutTypeInlineSkating">Scátáil Inlíne</string>
+    <string name="trackingInfoDescription">Eolas faoin lorgaire ag rith</string>
+    <string name="editDisplayedInformationHint">Chomh fada agus nach bhfuil an workout tús, is féidir leat in eagar na luachanna ar taispeáint trí chliceáil ar cheann de na ceithre réimsí.</string>
+    <string name="recordingStateIdle">Díomhaoin</string>
+    <string name="recordingStateRunning">Ag rith</string>
+    <string name="importMultipleGpxFiles">Iompórtáil il-chomhaid GPX</string>
+    <string name="importMultipleMessageSelectFolder">Roghnaigh fillteán ina bhfuil na comhaid GPX go léir ar mhaith leat iad a iompórtáil.</string>
+    <string name="importWorkoutMultipleQuestion">Ar mhaith leat comhad GPX amháin nó níos mó a iompórtáil\?</string>
+    <string name="nfcStartSummary">Má gníomhachtaithe, beidh tú in ann a thosú agus a stopadh workouts ag scanadh chlib NFC</string>
+    <string name="actionImport">Iompórtáil</string>
+    <string name="actionImportMultiple">Iompórtáil il</string>
+    <string name="selectBluetoothDevice">Roghnaigh gléas Bluetooth</string>
+    <string name="exportDataSummary">Tógann sé seo cúltaca de gach workouts</string>
+    <string name="unlockPhoneStopWorkout">Díghlasáil do ghuthán chun stop a chur leis an taifeadadh</string>
+    <string name="workoutStatsHelpText">Taispeánann an scáileán stats stairiúil na workouts. Chun é a úsáid is gá duit a shonrú ar dtús leis an gcineál workout trí chliceáil ar sé. Ansin socraigh an fhaisnéis is mian leat a fháil amach faoi agus an tréimhse ama.
+\n
+\nM.sh. má roghnaíonn tú \"Seachtain\" mar réise ama, beidh gach workouts de gach seachtain a chumasc i bpointe sonraí amháin ceachtar ríomh an meán nó suim gach seachtain.</string>
+    <string name="recordingActivityPermissionMessage">FitoTrack riachtanais an cead a rianú do ghníomhaíocht fhisiciúil a thaifeadadh workouts faoi dhíon.</string>
+    <string name="recordingPermissionNotGrantedMessage">FitoTrack riachtanais suíomh cead a rianú do ghluaiseacht le linn do workout. Bailíonn FitoTrack sonraí suímh freisin agus an aip sa chúlra nó múchtar an scáileán chun do chuid oibre a thaifeadadh. Tá sonraí suímh i gcónaí ar do ghuthán gan do thoiliú soiléir chun é a roinnt.</string>
+    <string name="recordingStatePaused">Moillithe</string>
+    <string name="importingFiles">Comhaid á n-iompórtáil</string>
+    <string name="workoutRecordingTypeGps">Cleachtaí GPS</string>
+    <string name="workoutRecordingTypeIndoor">Cleachtaí Laistigh</string>
+</resources>

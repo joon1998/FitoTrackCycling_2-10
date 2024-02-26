@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -22,30 +22,45 @@ package de.tadris.fitness;
 import android.content.Context;
 import android.util.Log;
 
+import androidx.annotation.Nullable;
+
 import java.util.Arrays;
 import java.util.List;
 
 import de.tadris.fitness.data.AppDatabase;
 import de.tadris.fitness.data.GpsSample;
 import de.tadris.fitness.data.GpsWorkout;
-import de.tadris.fitness.data.UserPreferences;
-import de.tadris.fitness.data.WorkoutType;
+import de.tadris.fitness.data.WorkoutTypeManager;
+import de.tadris.fitness.data.preferences.UserPreferences;
 import de.tadris.fitness.recording.BaseWorkoutRecorder;
 import de.tadris.fitness.recording.gps.GpsWorkoutRecorder;
 import de.tadris.fitness.util.DataManager;
 import de.tadris.fitness.util.FitoTrackThemes;
 import de.tadris.fitness.util.UserDateTimeUtils;
+import de.tadris.fitness.util.WorkoutLogger;
+import de.tadris.fitness.util.autoexport.AutoExportPlanner;
 import de.tadris.fitness.util.unit.DistanceUnitUtils;
 import de.tadris.fitness.util.unit.EnergyUnitUtils;
+import de.tadris.fitness.util.ShortcutsUtils;
 
 public class Instance {
 
     private static Instance instance;
-    public static Instance getInstance(Context context){
+
+    /**
+     * Please use getInstance with context. Without context could return null if no Instance was created
+     */
+    @Nullable
+    @Deprecated
+    public static Instance getInstance() {
+        return getInstance(null);
+    }
+
+    public static Instance getInstance(Context context) {
         if (context == null) {
             Log.e("Instance", "no Context Provided");
         }
-        if(instance == null){
+        if (instance == null && context != null) {
             instance = new Instance(context);
         }
         return instance;
@@ -58,6 +73,9 @@ public class Instance {
     public final UserDateTimeUtils userDateTimeUtils;
     public final DistanceUnitUtils distanceUnitUtils;
     public final EnergyUnitUtils energyUnitUtils;
+    public final AutoExportPlanner planner;
+    public final WorkoutLogger logger;
+    public final ShortcutsUtils shortcuts;
 
     private Instance(Context context) {
         instance = this;
@@ -67,6 +85,9 @@ public class Instance {
         distanceUnitUtils = new DistanceUnitUtils(context);
         energyUnitUtils = new EnergyUnitUtils(context);
         db = AppDatabase.provideDatabase(context);
+        planner = new AutoExportPlanner(context);
+        logger = new WorkoutLogger(context);
+        shortcuts = new ShortcutsUtils(context);
 
         recorder = restoreRecorder(context);
 
@@ -82,7 +103,7 @@ public class Instance {
         if (lastWorkout != null && lastWorkout.end == -1) {
             return restoreRecorder(context, lastWorkout);
         }
-        return new GpsWorkoutRecorder(context, WorkoutType.getWorkoutTypeById(context, WorkoutType.WORKOUT_TYPE_ID_OTHER));
+        return new GpsWorkoutRecorder(context, WorkoutTypeManager.getInstance().getWorkoutTypeById(context, WorkoutTypeManager.WORKOUT_TYPE_ID_OTHER));
     }
 
     private GpsWorkoutRecorder restoreRecorder(Context context, GpsWorkout workout) {

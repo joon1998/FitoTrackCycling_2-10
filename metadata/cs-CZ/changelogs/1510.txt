@@ -1,0 +1,6 @@
+- New statistics screen, graphs overhaul and speed histogram
+- Mass export GPX files
+- Add swimming as default type
+- A lot more improvements :)
+
+please see the project repository on Codeberg for a full list of changes

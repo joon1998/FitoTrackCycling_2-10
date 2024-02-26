@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -20,7 +20,6 @@
 package de.tadris.fitness.recording;
 
 import android.content.Context;
-import android.util.Log;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -31,18 +30,32 @@ import de.tadris.fitness.Instance;
 import de.tadris.fitness.data.BaseWorkout;
 import de.tadris.fitness.data.Interval;
 import de.tadris.fitness.data.IntervalSet;
-import de.tadris.fitness.data.UserPreferences;
-import de.tadris.fitness.data.WorkoutType;
+import de.tadris.fitness.data.RecordingType;
+import de.tadris.fitness.data.preferences.UserPreferences;
+import de.tadris.fitness.recording.component.HeartRateComponent;
+import de.tadris.fitness.recording.event.HRBatteryLevelChangeEvent;
+import de.tadris.fitness.recording.event.HRBatteryLevelConnectionEvent;
 import de.tadris.fitness.recording.event.HeartRateChangeEvent;
 import de.tadris.fitness.recording.event.HeartRateConnectionChangeEvent;
 import de.tadris.fitness.recording.event.WorkoutAutoStopEvent;
-import de.tadris.fitness.recording.gps.GpsRecorderService;
 import de.tadris.fitness.recording.gps.GpsWorkoutRecorder;
 import de.tadris.fitness.ui.record.RecordWorkoutActivity;
+import de.tadris.fitness.util.WorkoutLogger;
 
+/**
+ * This class/subclasses is responsible for managing the workout data during a workout recording
+ * - receive new samples
+ * - save them to the database
+ * - provide useful data like current speed, distance, duration, etc
+ * - manage the workout state
+ * <p>
+ * It gets locations, pressure data, etc. from the RecorderService via the EventBus
+ */
 public abstract class BaseWorkoutRecorder {
 
-    protected static final int PAUSE_TIME = 10_000; // 10 Seconds
+    public static final int PAUSE_TIME = 10_000; // 10 Seconds
+    public static final int MIN_DURATION_DIFF = 500; // minimum 500ms between two samples
+
     private static final int AUTO_TIMEOUT_MULTIPLIER = 1_000 * 60; // minutes to ms
 
 
@@ -61,12 +74,14 @@ public abstract class BaseWorkoutRecorder {
     protected List<Interval> intervalList;
 
     protected int lastHeartRate = -1;
+    protected int lastHRBatteryLevel = -1;
 
     // Temporarily saved the last interval that was triggered.
     // It will be added to the next recorded sample.
     protected long lastTriggeredInterval = -1;
 
     public BaseWorkoutRecorder(Context context) {
+        WorkoutLogger.log("WorkoutRecorder", "Creating workout recorder");
         this.context = context;
         this.state = RecordingState.IDLE;
 
@@ -76,9 +91,10 @@ public abstract class BaseWorkoutRecorder {
         this.autoTimeoutMs = prefs.getAutoTimeout() * AUTO_TIMEOUT_MULTIPLIER;
     }
 
-    public void start() {
+    public void start(String reason) {
+        WorkoutLogger.log("Recorder", "Called start, reason: " + reason);
         if (state == RecordingState.IDLE) {
-            Log.i("Recorder", "Start");
+            WorkoutLogger.log("Recorder", "Start");
             startTime = System.currentTimeMillis();
             onStart();
             resume();
@@ -96,11 +112,13 @@ public abstract class BaseWorkoutRecorder {
      */
     public boolean handleWatchdog() {
         if (isActive()) {
+            WorkoutLogger.log("WorkoutRecorder", "handleWatchdog " + this.getState().toString() + " samples: " + getSampleSize() + " instance: " + this);
             onWatchdog();
             if (hasRecordedSomething()) {
                 long timeDiff = System.currentTimeMillis() - lastSampleTime;
                 if (autoTimeoutMs > 0 && timeDiff > autoTimeoutMs) {
                     if (isActive()) {
+                        WorkoutLogger.log("WorkoutRecorder", "Auto timeout was set to: " + autoTimeoutMs);
                         stop("Auto timeout, timediff: " + timeDiff);
                         save();
                         EventBus.getDefault().post(new WorkoutAutoStopEvent());
@@ -124,7 +142,7 @@ public abstract class BaseWorkoutRecorder {
     }
 
     public void resume() {
-        Log.i("Recorder", "Resume");
+        WorkoutLogger.log("Recorder", "Resume");
         state = RecordingState.RUNNING;
         lastResume = System.currentTimeMillis();
         if (lastPause != 0) {
@@ -134,7 +152,7 @@ public abstract class BaseWorkoutRecorder {
 
     public void pause() {
         if (state == RecordingState.RUNNING) {
-            Log.i("Recorder", "Pause");
+            WorkoutLogger.log("Recorder", "Pause");
             state = RecordingState.PAUSED;
             time += System.currentTimeMillis() - lastResume;
             lastPause = System.currentTimeMillis();
@@ -142,7 +160,7 @@ public abstract class BaseWorkoutRecorder {
     }
 
     public void stop(String reason) {
-        Log.i("Recorder", "Stopping workout, reason: " + reason);
+        WorkoutLogger.log("Recorder", "Stopping workout, reason: " + reason);
         if (state == RecordingState.PAUSED) {
             resume();
         }
@@ -152,7 +170,11 @@ public abstract class BaseWorkoutRecorder {
         EventBus.getDefault().unregister(this);
     }
 
-    public abstract boolean hasRecordedSomething();
+    public boolean hasRecordedSomething() {
+        return getSampleSize() > 2;
+    }
+
+    public abstract int getSampleSize();
 
     protected abstract void onWatchdog();
 
@@ -182,7 +204,7 @@ public abstract class BaseWorkoutRecorder {
 
     public abstract Class<? extends RecordWorkoutActivity> getActivityClass();
 
-    public abstract WorkoutType.RecordingType getRecordingType();
+    public abstract RecordingType getRecordingType();
 
     public void onIntervalWasTriggered(Interval interval) {
         lastTriggeredInterval = interval.id;
@@ -219,9 +241,22 @@ public abstract class BaseWorkoutRecorder {
 
     @Subscribe
     public void onHeartRateConnectionChange(HeartRateConnectionChangeEvent event) {
-        if (event.state != GpsRecorderService.HeartRateConnectionState.CONNECTED) {
+        if (event.state != HeartRateComponent.HeartRateConnectionState.CONNECTED) {
             // If heart rate sensor currently not available
             lastHeartRate = -1;
+        }
+    }
+
+    @Subscribe
+    public void onHRBatteryChange(HRBatteryLevelChangeEvent event) {
+        lastHRBatteryLevel = event.batteryLevel;
+    }
+
+    @Subscribe
+    public void onHRBatteryConnectionChange(HRBatteryLevelConnectionEvent event) {
+        if (event.state != HeartRateComponent.HeartRateConnectionState.CONNECTED) {
+            // If heart rate sensor currently not available
+            lastHRBatteryLevel = -1;
         }
     }
 
@@ -239,6 +274,10 @@ public abstract class BaseWorkoutRecorder {
 
     public int getCurrentHeartRate() {
         return lastHeartRate;
+    }
+
+    public int getCurrentHRBatteryLevel() {
+        return lastHRBatteryLevel;
     }
 
     public boolean isAutoPauseEnabled() {

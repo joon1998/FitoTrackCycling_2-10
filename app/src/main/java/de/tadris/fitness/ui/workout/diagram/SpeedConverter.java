@@ -21,13 +21,26 @@ package de.tadris.fitness.ui.workout.diagram;
 
 import android.content.Context;
 
+import com.github.mikephil.charting.formatter.ValueFormatter;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Comparator;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
 import de.tadris.fitness.data.BaseSample;
 import de.tadris.fitness.data.BaseWorkout;
 import de.tadris.fitness.data.BaseWorkoutData;
 import de.tadris.fitness.data.GpsSample;
 import de.tadris.fitness.data.GpsWorkout;
+import de.tadris.fitness.data.StatsDataTypes;
 import de.tadris.fitness.data.WorkoutManager;
+import de.tadris.fitness.util.charts.formatter.SpeedFormatter;
 
 public class SpeedConverter extends AbstractSampleConverter {
 
@@ -37,18 +50,19 @@ public class SpeedConverter extends AbstractSampleConverter {
 
     @Override
     public void onCreate(BaseWorkoutData data) {
-        WorkoutManager.roundSpeedValues(data.castToGpsData().getSamples());
+
     }
 
     @Override
     public float getValue(BaseSample sample) {
-        return (float) distanceUnitUtils.getDistanceUnitSystem().getSpeedFromMeterPerSecond(((GpsSample) sample).tmpRoundedSpeed);
+        return (float) distanceUnitUtils.getDistanceUnitSystem().getSpeedFromMeterPerSecond(((GpsSample) sample).speed);
     }
 
     @Override
     public String getName() {
         return getString(R.string.workoutSpeed);
     }
+
 
     @Override
     public String getUnit() {
@@ -67,11 +81,23 @@ public class SpeedConverter extends AbstractSampleConverter {
 
     @Override
     public float getMinValue(BaseWorkout workout) {
-        return (float) distanceUnitUtils.getDistanceUnitSystem().getSpeedFromMeterPerSecond(((GpsWorkout) workout).avgSpeed * 0.4);
+        Stream<GpsSample> samples = Arrays.stream(Instance.getInstance(context).db.gpsWorkoutDao().getAllSamplesOfWorkout(workout.id));
+        return (float) distanceUnitUtils.getDistanceUnitSystem().getSpeedFromMeterPerSecond(samples.min(speedComparator).get().speed);
     }
 
     @Override
     public float getMaxValue(BaseWorkout workout) {
-        return (float) distanceUnitUtils.getDistanceUnitSystem().getSpeedFromMeterPerSecond(((GpsWorkout) workout).avgSpeed * 1.6);
+        List<GpsSample> samples = Arrays.stream(Instance.getInstance(context).db.gpsWorkoutDao().getAllSamplesOfWorkout(workout.id)).collect(Collectors.toList());
+        return (float) distanceUnitUtils.getDistanceUnitSystem().getSpeedFromMeterPerSecond(samples.stream().max(speedComparator).get().speed);
     }
+
+    public static Comparator<GpsSample> speedComparator = (first, second) -> {
+        if (first.speed > second.speed) {
+            return 1;
+        } else if (first.speed < second.speed) {
+            return -1;
+        } else {
+            return 0;
+        }
+    };
 }

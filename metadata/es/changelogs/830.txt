@@ -1,0 +1,5 @@
+- Añadir política de privacidad
+- Arreglar el guardado de archivos GPX-Export en Android <10
+- Cambiar la forma en que se solicita el permiso de ubicación para cumplir con las nuevas reglas de Google Play
+
+- Actualización de las traducciones

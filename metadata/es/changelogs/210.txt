@@ -1,0 +1,1 @@
+- Arreglar los entrenamientos que no se muestran después de ser grabados (#25)

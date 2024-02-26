@@ -1,0 +1,9 @@
+Első kiadás
+
+- Edzések rögzítése
+- Edzések felsorolása
+- Edzésadatok megjelenítése (térkép, sebességdiagram, energia) + edzések törlése
+- Adatok importálás és exportálása
+- Edzések exportálása GPX-fájlként
+- Mértékegységek megváltoztatása
+- Súly megváltoztatása

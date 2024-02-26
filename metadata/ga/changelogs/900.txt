@@ -1,0 +1,11 @@
+- Cuir tomhas ráta croí leis
+- Iompórtáil / easpórtáil rátaí croí ó / chuig comhaid GPX
+- Lean workouts stop
+- Díchumasaigh sos uathoibríoch agus bain úsáid as an rogha sos láimhe
+- Fógra nua: athruithe ar staid na hoiliúna amhail tosú, sos, atosú
+
+- Scáileán cairte feabhsaithe
+- Léarscáil scála de réir mhéid an scáileáin
+- Déan "taispeáin ar lockscreen" roghnach (díchumasaithe de réir réamhshocraithe)
+
+féach le do thoil ar stór an tionscadail ar Codeberg le haghaidh tuilleadh athruithe

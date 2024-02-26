@@ -1,0 +1,10 @@
+- Beltéri edzések követése
+  - Jelenleg támogatott: futógép, fekvőtámasz, ugrókötél és trambulin
+- Zip megjelenítőtémák támogatása letöltött térképeknél / testreszabásoknál
+
+- Fájlszándék elfogadása: megoszthat és megnyithatja importálásra más alkalmazások GPX-fájljait
+- Edzéstípusok rendezése utolsó használat szerint
+- A „Várakozás a GPS-re" alatt is elkezdheti az edzéseket
+- Egyéb fejlesztések és hibajavítások…
+
+A változtatások részletesebb listájáért nézze meg a projekt tárolóját a Codebergen

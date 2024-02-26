@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -38,6 +38,14 @@ public abstract class UnitUtils {
 
     protected String getString(@StringRes int stringRes) {
         return context.getString(stringRes);
+    }
+
+    public static String autoRound(double d) {
+        if (d >= 100) {
+            return String.valueOf(Math.round(d));
+        } else {
+            return round(d, 2);
+        }
     }
 
     public static String round(double d, int count) {

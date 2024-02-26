@@ -50,16 +50,13 @@ public class Gpx {
 
     Metadata metadata;
 
-    String name;
-    private String desc;
-
     @JacksonXmlElementWrapper(useWrapping = false)
     List<Track> trk;
 
     public Gpx() {
     }
 
-    public Gpx(String version, String creator, String schemaLocation, String schemaInstance, String tpxSchemaLocation, String xmlNamespace, Metadata metadata, String name, String desc, List<Track> trk) {
+    public Gpx(String version, String creator, String schemaLocation, String schemaInstance, String tpxSchemaLocation, String xmlNamespace, Metadata metadata, List<Track> trk) {
         this.version = version;
         this.creator = creator;
         this.schemaLocation = schemaLocation;
@@ -67,17 +64,13 @@ public class Gpx {
         this.tpxSchemaLocation = tpxSchemaLocation;
         this.xmlNamespace = xmlNamespace;
         this.metadata = metadata;
-        this.name = name;
-        this.desc = desc;
         this.trk = trk;
     }
 
-    public Gpx(String version, String creator, Metadata metadata, String name, String desc, List<Track> trk) {
+    public Gpx(String version, String creator, Metadata metadata, List<Track> trk) {
         this.version = version;
         this.creator = creator;
         this.metadata = metadata;
-        this.name = name;
-        this.desc = desc;
         this.trk = trk;
     }
 
@@ -91,14 +84,6 @@ public class Gpx {
 
     public Metadata getMetadata() {
         return metadata;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getDesc() {
-        return desc;
     }
 
     public List<Track> getTrk() {
@@ -123,14 +108,6 @@ public class Gpx {
 
     public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
     }
 
     public void setTrk(List<Track> trk) {

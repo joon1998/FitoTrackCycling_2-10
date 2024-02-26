@@ -1,0 +1,11 @@
+- Añadida medición de la frecuencia cardíaca
+- Importar/exportar frecuencias cardíacas desde archivos GPX
+- Reanudar los entrenamientos detenidos
+- Desactivar la pausa automática y utilizar la opción de pausa manual
+- Nuevo anuncio: cambios de los estados del entrenamiento como inicio, pausa, reanudación
+
+- Pantalla de gráficos mejorada
+- Escala del mapa según el tamaño de la pantalla
+- Hacer que "mostrar en la pantalla de bloqueo" sea opcional (desactivado por defecto)
+
+por favor, consulte el repositorio del proyecto en Codeberg para más cambios

@@ -1,0 +1,8 @@
+- Exportación automática de GPX y copias de seguridad de la aplicación
+- Zoom y panorámica del mapa
+- Métricas personalizadas en la pantalla compartida
+- Mostrar la batería del sensor bluetooth si está disponible
+- Comprimir las copias de seguridad
+- Corrección de errores
+
+por favor, consulte el repositorio del proyecto en Codeberg para una lista más detallada de los cambios

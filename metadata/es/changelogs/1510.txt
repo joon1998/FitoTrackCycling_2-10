@@ -1,0 +1,6 @@
+- Nueva pantalla de estadísticas, revisión de gráficos e histograma de velocidad
+- Exportación masiva de archivos GPX
+- Añadir la natación como tipo por defecto
+- Muchas más mejoras :)
+
+por favor, consulte el repositorio del proyecto en Codeberg para una lista completa de los cambios

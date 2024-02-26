@@ -1,0 +1,3 @@
+Ez a frissítés egy olyan hiba javítását vezeti be, amely néhány eszközön előfordult, így azok nem tudták használni a FitoTrack alkalmazást, amiatt hogy a GPS nem található, még akkor sem, ha a készülék jó GPS-jelet kap.
+
+Ha úgy gondolja, hogy ez még mindig nem lett javítva, akkor nyisson egy hibajegyet a projekt tárolójában, vagy küldjön nekem egy e-mailt. Köszönöm.

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -32,6 +32,7 @@ import java.util.List;
 
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
+import de.tadris.fitness.data.preferences.UserMeasurements;
 import de.tadris.fitness.ui.workout.diagram.FrequencyConverter;
 import de.tadris.fitness.ui.workout.diagram.HeartRateConverter;
 import de.tadris.fitness.ui.workout.diagram.IntensityConverter;
@@ -71,8 +72,8 @@ public class ShowIndoorWorkoutActivity extends IndoorWorkoutActivity implements 
         addKeyValue(getString(R.string.workoutRepetitions), String.valueOf(workout.repetitions), getString(R.string.workoutSets), String.valueOf(sets.size()));
 
         if (workout.hasEstimatedDistance()) {
-            int estimatedDistance = (int) Math.round(workout.estimateDistance(this));
-            double estimatedSpeed = workout.estimateSpeed(this);
+            int estimatedDistance = (int) Math.round(workout.estimateDistance(UserMeasurements.from(this)));
+            double estimatedSpeed = workout.estimateSpeed(UserMeasurements.from(this));
             addKeyValue(getString(R.string.approxSymbol) + getString(R.string.workoutDistance), distanceUnitUtils.getDistance(estimatedDistance),
                     getString(R.string.approxSymbol) + getString(R.string.workoutSpeed), distanceUnitUtils.getSpeed(estimatedSpeed));
         }

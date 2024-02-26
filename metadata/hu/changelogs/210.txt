@@ -1,0 +1,1 @@
+- Annak javítása, hogy az edzések nem jelennek meg a rögzítés után (#25)

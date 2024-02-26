@@ -21,6 +21,10 @@ package de.tadris.fitness.ui.workout.diagram;
 
 import android.content.Context;
 
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.formatter.DefaultValueFormatter;
+import com.github.mikephil.charting.formatter.ValueFormatter;
+
 import de.tadris.fitness.R;
 import de.tadris.fitness.data.BaseSample;
 import de.tadris.fitness.data.BaseWorkout;
@@ -46,6 +50,11 @@ public class HeightConverter extends AbstractSampleConverter {
     @Override
     public String getName() {
         return getString(R.string.height);
+    }
+
+    @Override
+    public ValueFormatter getYValueFormatter() {
+            return new DefaultValueFormatter(0);
     }
 
     @Override

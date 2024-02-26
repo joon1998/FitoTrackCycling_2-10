@@ -1,0 +1,10 @@
+Nua:
+- Fógraí gutha: go roghnach tugann sé nuashonruithe duit faoi do chuid aclaíochta reatha
+
+Feabhsuithe:
+- Bíodh sé soiléir gur féidir tuairimí oiliúna a chur in eagar
+- Déileáil le fíordheimhniú OSM neamhbhailí
+- Uathsos díchumasaithe nuair nach bhfuil GPS ann (cosc ar dhrochthorthaí)
+
+Logánú:
+- Aistriúchán Spáinnise

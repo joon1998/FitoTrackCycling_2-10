@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.io.InputStream;
@@ -43,6 +44,12 @@ public class ImportGpxActivity extends FitoTrackActivity {
         dialogController = new ProgressDialogController(this, getString(R.string.importWorkout));
 
         Uri file = getIntent().getData();
+
+        if (file == null && getIntent().hasExtra(Intent.EXTRA_STREAM)) {
+            file = getIntent().getParcelableExtra(Intent.EXTRA_STREAM);
+        }
+
+        Log.d("ImportGpx", "Reading file: " + file);
 
         if (file != null) {
             importFile(file);

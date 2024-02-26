@@ -1,0 +1,8 @@
+Nuevo:
+- Medición de altura mediante GPS y sensor de presión
+- Mostrar diagrama de altura
+- Mostrar diálogo si el GPS está desactivado
+
+Arreglar:
+- Botón trasero en Configuración se bloquea en versiones anteriores de Android (#20) 
+- Sistema de unidad fija «Imperial con medidores»

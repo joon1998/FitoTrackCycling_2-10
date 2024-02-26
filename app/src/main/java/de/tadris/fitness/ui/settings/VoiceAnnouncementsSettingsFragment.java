@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -36,14 +36,17 @@ import android.widget.Toast;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
-import de.tadris.fitness.data.UserPreferences;
+import de.tadris.fitness.data.preferences.UserPreferences;
 import de.tadris.fitness.util.NumberPickerUtils;
 import de.tadris.fitness.util.unit.DistanceUnitSystem;
 import de.tadris.fitness.util.unit.DistanceUnitUtils;
+import kotlin.collections.ArraysKt;
 
 public class VoiceAnnouncementsSettingsFragment extends FitoTrackSettingFragment {
 
@@ -77,30 +80,35 @@ public class VoiceAnnouncementsSettingsFragment extends FitoTrackSettingFragment
         NumberPicker npT = v.findViewById(R.id.spokenUpdatesTimePicker);
         npT.setMaxValue(60);
         npT.setMinValue(0);
-        final String updateTimeVariable = "spokenUpdateTimePeriod";
-        npT.setValue(preferences.getInt(updateTimeVariable, 0));
+        npT.setValue(preferences.getInt(UserPreferences.VOICE_ANNOUNCEMENTS_INTERVAL_TIME, 0));
         npT.setWrapSelectorWheel(false);
         String[] npTValues = new String[61];
-        npTValues[0]=  getString(R.string.speechConfigNoSpeech);
-        for (int i=1; i<=60; i++){
+        npTValues[0] = getString(R.string.speechConfigNoSpeech);
+        for (int i = 1; i <= 60; i++) {
             npTValues[i] = i + " " + getString(R.string.timeMinuteShort);
         }
         npT.setDisplayedValues(npTValues);
         NumberPickerUtils.fixNumberPicker(npT);
 
+        float[] intervals = new float[]{0, 0.5f, 1.0f, 1.5f, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
         final String distanceUnit = " " + Instance.getInstance(getContext()).distanceUnitUtils.getDistanceUnitSystem().getLongDistanceUnit();
         NumberPicker npD = v.findViewById(R.id.spokenUpdatesDistancePicker);
-        npD.setMaxValue(10);
+        npD.setMaxValue(intervals.length - 1);
         npD.setMinValue(0);
-        final String updateDistanceVariable = "spokenUpdateDistancePeriod";
-        npD.setValue(preferences.getInt(updateDistanceVariable, 0));
+        int currentIndex = Arrays.binarySearch(intervals, preferences.getFloat(UserPreferences.VOICE_ANNOUNCEMENTS_INTERVAL_DISTANCE, 0));
+        npD.setValue(currentIndex == -1 ? 0 : currentIndex);
         npD.setWrapSelectorWheel(false);
-        String[] npDValues = new String[11];
-        npDValues[0] = getString(R.string.speechConfigNoSpeech);
-        for (int i=1; i<=10; i++){
-            npDValues[i] = i + distanceUnit;
-        }
-        npD.setDisplayedValues(npDValues);
+
+        List<String> distanceTitles = ArraysKt.map(intervals, (Float i) -> {
+            if (i == 0) {
+                return getString(R.string.speechConfigNoSpeech);
+            } else {
+                return String.format(Locale.getDefault(), "%.1f", i) + distanceUnit;
+            }
+        });
+        npD.setDisplayedValues(distanceTitles.toArray(new String[0]));
+
         NumberPickerUtils.fixNumberPicker(npD);
 
         d.setView(v);
@@ -108,8 +116,8 @@ public class VoiceAnnouncementsSettingsFragment extends FitoTrackSettingFragment
         d.setNegativeButton(R.string.cancel, null);
         d.setPositiveButton(R.string.okay, (dialog, which) ->
                 preferences.edit()
-                        .putInt(updateTimeVariable, npT.getValue())
-                        .putInt(updateDistanceVariable, npD.getValue())
+                        .putInt(UserPreferences.VOICE_ANNOUNCEMENTS_INTERVAL_TIME, npT.getValue())
+                        .putFloat(UserPreferences.VOICE_ANNOUNCEMENTS_INTERVAL_DISTANCE, intervals[npD.getValue()])
                         .apply());
 
         d.create().show();
@@ -214,7 +222,13 @@ public class VoiceAnnouncementsSettingsFragment extends FitoTrackSettingFragment
             }
 
             @Override
-            public void afterTextChanged(Editable editable) {}
+            public void afterTextChanged(Editable editable) {
+            }
         });
+    }
+
+    @Override
+    protected String getTitle() {
+        return getString(R.string.voiceAnnouncementsTitle);
     }
 }

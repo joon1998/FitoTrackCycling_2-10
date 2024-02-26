@@ -1,0 +1,3 @@
+- Oreo'nun altındaki (< 8) Android sürümlerindeki çökme düzeltildi
+- Kesintiye uğrayan antrenmanları kaydederken meydana gelen çökme düzeltildi
+- Ses odağının kaybolması düzeltildi

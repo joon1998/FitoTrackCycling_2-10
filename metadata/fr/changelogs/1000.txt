@@ -1,0 +1,7 @@
+- Types d'entraînement personnalisés
+- Partage des entraînements en tant qu'image
+- Amélioration de la stabilité de l'interface
+- Les annonces "actions système" peuvent maintenant être désactivées
+- Mise à jour des traductions
+
+Merci de vous reporter au dépôt du projet sur Codeberg pour une liste plus détaillée des changements

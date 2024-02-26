@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -26,24 +26,27 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.core.content.FileProvider;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
-import de.tadris.fitness.BuildConfig;
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
 import de.tadris.fitness.data.GpsSample;
+import de.tadris.fitness.data.StatsProvider;
 import de.tadris.fitness.osm.OAuthAuthentication;
 import de.tadris.fitness.osm.OsmTraceUploader;
 import de.tadris.fitness.ui.ShareFileActivity;
@@ -55,6 +58,10 @@ import de.tadris.fitness.ui.workout.diagram.SampleConverter;
 import de.tadris.fitness.ui.workout.diagram.SpeedConverter;
 import de.tadris.fitness.util.DataManager;
 import de.tadris.fitness.util.DialogUtils;
+import de.tadris.fitness.util.autoexport.source.WorkoutGpxExportSource;
+import de.tadris.fitness.util.charts.ChartStyles;
+import de.tadris.fitness.util.charts.formatter.SpeedFormatter;
+import de.tadris.fitness.util.charts.marker.DisplayValueMarker;
 import de.tadris.fitness.util.io.general.IOHelper;
 import de.tadris.fitness.util.sections.SectionListModel;
 import de.tadris.fitness.util.sections.SectionListPresenter;
@@ -110,6 +117,9 @@ public class ShowGpsWorkoutActivity extends GpsWorkoutActivity implements Dialog
             addKeyValue(getString(R.string.workoutTopSpeed), distanceUnitUtils.getSpeed(workout.topSpeed));
 
             addDiagram(new SpeedConverter(this), ShowWorkoutMapDiagramActivity.DIAGRAM_TYPE_SPEED);
+
+            addTitle(getString(R.string.histogram));
+            addSpeedHistogram();
         } else {
             addKeyValue(getString(R.string.workoutAvgSpeedShort), distanceUnitUtils.getSpeed(workout.avgSpeed));
         }
@@ -140,6 +150,46 @@ public class ShowGpsWorkoutActivity extends GpsWorkoutActivity implements Dialog
             addTitle(getString(R.string.sections));
             addSectionList();
         }
+
+    }
+
+    private void addSpeedHistogram(){
+        BarChart chart = new BarChart(this);
+        List<Double> data = new ArrayList<>();
+        List<Double> weights = new ArrayList<>();
+
+        // Gather the data for the histogram
+        SectionListModel sectionListModel = new SectionListModel(workout, samples);
+        sectionListModel.setCriterion(SectionListModel.SectionCriterion.TIME);
+        double sectionTime = 9213;
+        // Yes, this is kinda random. roughly 10 seconds seem like a good timespan for the histogram,
+        // and using this value makes it just a bit less obvious that we don't have more precise values.
+        // The goal here is to depend not to much on outliers but apply the histogram on an averaged
+        // speed diagram.
+        sectionListModel.setSectionLength(sectionTime);
+        List<SectionListModel.Section> sections = sectionListModel.getSectionList();
+        for(SectionListModel.Section section: sections)
+        {
+            weights.add(section.getTime(true));
+            double speed = 1/section.getPace();
+            data.add(speed);
+        }
+
+        // create the histogram
+        int nBins = 15;
+        BarDataSet dataSet = new StatsProvider(this).createWeightedHistogramData(data, weights, nBins, "");
+        BarData barData = new BarData(dataSet);
+        chart.setData(barData);
+
+        // Create the diagram
+        de.tadris.fitness.util.charts.formatter.TimeFormatter timeFormatter = new de.tadris.fitness.util.charts.formatter.TimeFormatter(TimeUnit.MILLISECONDS);
+        SpeedFormatter speedFormatter = new SpeedFormatter(distanceUnitUtils);
+        ChartStyles.defaultHistogram(chart, this, speedFormatter, timeFormatter);
+        ChartStyles.setXAxisLabel(chart, distanceUnitUtils.getSpeedUnit(), this);
+        ChartStyles.setYAxisLabel(chart, getString(R.string.timeMinuteShort), this);
+        chart.setMarker(new DisplayValueMarker(this, chart.getAxisLeft().getValueFormatter(), chart.getLegend().getEntries()[0].label, barData));
+
+        root.addView(chart, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, getMapHeight()/2));
     }
 
     private void addSectionList() {
@@ -242,21 +292,9 @@ public class ShowGpsWorkoutActivity extends GpsWorkoutActivity implements Dialog
         dialogController.setIndeterminate(true);
         new Thread(() -> {
             try {
-                final String filename;
-                if (!workout.getSafeComment().isEmpty()) {
-                    filename = String.format("workout-%s-%s.gpx", workout.getSafeDateString(), workout.getSafeComment());
-                } else {
-                    filename = String.format("workout-%s.gpx", workout.getSafeDateString());
-                }
-                String file = DataManager.getSharedDirectory(this) + "/" + filename;
-                File parent = new File(file).getParentFile();
-                if (!parent.exists() && !parent.mkdirs()) {
-                    throw new IOException("Cannot write to " + file);
-                }
-                Uri uri = FileProvider.getUriForFile(getBaseContext(), BuildConfig.APPLICATION_ID + ".fileprovider", new File(file));
-
-
-                IOHelper.GpxExporter.exportWorkout(workout, samples, new File(file));
+                File file = new WorkoutGpxExportSource(workout.id).provideFile(this).getFile();
+                Uri uri = DataManager.provide(this, file);
+                IOHelper.GpxExporter.exportWorkout(getGpsWorkoutData(), file);
                 mHandler.post(() -> {
                     dialogController.cancel();
                     Intent intent = new Intent(this, ShareFileActivity.class);

@@ -1,0 +1,3 @@
+Honosítás:
+- Francia fordítás frissítése Amadeous közreműködésével (#62)
+- Holland fordítás frissítése albertheres közreműködésével (#61)

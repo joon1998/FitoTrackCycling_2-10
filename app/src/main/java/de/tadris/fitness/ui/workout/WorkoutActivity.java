@@ -23,13 +23,14 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Handler;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.CombinedChart;
-import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -38,8 +39,10 @@ import com.github.mikephil.charting.data.CombinedData;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.formatter.DefaultAxisValueFormatter;
+import com.github.mikephil.charting.formatter.DefaultValueFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.ChartTouchListener;
+import com.github.mikephil.charting.listener.OnChartGestureListener;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
 import java.util.ArrayList;
@@ -54,13 +57,17 @@ import de.tadris.fitness.data.BaseWorkoutData;
 import de.tadris.fitness.data.GpsSample;
 import de.tadris.fitness.data.Interval;
 import de.tadris.fitness.data.IntervalSet;
+import de.tadris.fitness.data.StatsDataTypes;
 import de.tadris.fitness.ui.workout.diagram.SampleConverter;
 import de.tadris.fitness.util.WorkoutCalculator;
+import de.tadris.fitness.util.charts.ChartStyles;
+import de.tadris.fitness.util.charts.marker.DisplayValueMarker;
 import de.tadris.fitness.util.unit.DistanceUnitUtils;
 import de.tadris.fitness.util.unit.EnergyUnitUtils;
 
 public abstract class WorkoutActivity extends InformationActivity {
 
+    public static final int NUMBER_OF_SAMPLES_IN_DIAGRAM = 100;
     public static final String WORKOUT_ID_EXTRA = "de.tadris.fitness.WorkoutActivity.WORKOUT_ID_EXTRA";
 
     List<BaseSample> samples;
@@ -72,6 +79,7 @@ public abstract class WorkoutActivity extends InformationActivity {
 
     protected DistanceUnitUtils distanceUnitUtils;
     protected EnergyUnitUtils energyUnitUtils;
+    boolean diagramsInteractive = false;
 
     void initBeforeContent() {
         distanceUnitUtils = Instance.getInstance(this).distanceUnitUtils;
@@ -110,6 +118,8 @@ public abstract class WorkoutActivity extends InformationActivity {
     protected CombinedChart addDiagram(SampleConverter converter) {
         CombinedChart chart = getDiagram(converter);
         root.addView(chart, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, fullScreenItems ? ViewGroup.LayoutParams.MATCH_PARENT : getMapHeight() / 2));
+        chart.getDescription().setEnabled(true); // I don't know where thes two get disabled... Internally for combined charts perhaps? Anyway!
+        chart.getLegend().setEnabled(true);
         return chart;
     }
 
@@ -118,8 +128,6 @@ public abstract class WorkoutActivity extends InformationActivity {
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         return displayMetrics.widthPixels * 3 / 4;
     }
-
-    boolean diagramsInteractive = false;
 
     private CombinedChart getDiagram(SampleConverter converter) {
         return getDiagram(Collections.singletonList(converter), converter.isIntervalSetVisible());
@@ -144,13 +152,6 @@ public abstract class WorkoutActivity extends InformationActivity {
                 }
             });
         }
-        chart.invalidate();
-
-        chart.getAxisLeft().setTextColor(getThemeTextColor());
-        chart.getAxisRight().setTextColor(getThemeTextColor());
-        chart.getXAxis().setTextColor(getThemeTextColor());
-        chart.getLegend().setTextColor(getThemeTextColor());
-        chart.getDescription().setTextColor(getThemeTextColor());
 
         chart.setHighlightPerDragEnabled(diagramsInteractive);
         chart.setHighlightPerTapEnabled(diagramsInteractive);
@@ -161,26 +162,38 @@ public abstract class WorkoutActivity extends InformationActivity {
             converter.afterAdd(chart);
         }
 
+        ChartStyles.defaultLineChart(chart, this);
         return chart;
     }
 
     protected void onChartSelectionChanged(BaseSample sample) {
     }
 
+    abstract List<BaseSample> aggregatedSamples(int aggregationLength, StatsDataTypes.TimeSpan viewFieldSpan);
+
     protected void updateChart(CombinedChart chart, List<SampleConverter> converters, boolean showIntervalSets) {
         boolean hasMultipleConverters = converters.size() > 1;
         CombinedData combinedData = new CombinedData();
 
-        Description description = new Description();
-
-        if (hasMultipleConverters || converters.size() == 0) {
-            description.setText("");
+        String xLabel="", yLabel="";
+        if (hasMultipleConverters) {
+            xLabel = converters.get(0).getXAxisLabel();
         } else {
-            description.setText(converters.get(0).getDescription());
+            xLabel = converters.get(0).getXAxisLabel();
+            yLabel = converters.get(0).getYAxisLabel();
         }
-        chart.setDescription(description);
-        chart.getAxisLeft().setValueFormatter(null);
-        chart.getAxisRight().setValueFormatter(null);
+        ChartStyles.setXAxisLabel(chart, xLabel, this);
+        ChartStyles.setYAxisLabel(chart, yLabel, this);
+
+
+        // Generate a time span from the view field of the chart
+        StatsDataTypes.TimeSpan chartViewField = new StatsDataTypes.TimeSpan(Math.round(chart.getLowestVisibleX()*1000f*60f), Math.round(chart.getHighestVisibleX()*1000f*60f));
+
+        // At the Before zooming/scrolling in the chart the chartViewField starts and ends at 0
+        if (chartViewField.startTime == 0 && chartViewField.endTime == 0) {
+            chartViewField.startTime = samples.get(0).relativeTime;
+            chartViewField.endTime = samples.get(samples.size() - 1).relativeTime;
+        }
 
         LineData lineData = new LineData();
 
@@ -189,31 +202,36 @@ public abstract class WorkoutActivity extends InformationActivity {
             converter.onCreate(getBaseWorkoutData());
 
             List<Entry> entries = new ArrayList<>();
-            for (BaseSample sample : samples) {
+            for (BaseSample sample : aggregatedSamples(NUMBER_OF_SAMPLES_IN_DIAGRAM, chartViewField)) {
                 // turn data into Entry objects
                 Entry e = new Entry((float) (sample.relativeTime) / 1000f / 60f, converter.getValue(sample), sample);
                 entries.add(e);
             }
+            chart.getXAxis().setValueFormatter(converter.getXValueFormatter());
 
             LineDataSet dataSet = new LineDataSet(entries, converter.getName()); // add entries to dataset
             int color = hasMultipleConverters ? getResources().getColor(converter.getColor()) : getThemePrimaryColor();
             dataSet.setColor(color);
-            dataSet.setValueTextColor(color);
+            dataSet.setDrawValues(false);
             dataSet.setDrawCircles(false);
-            dataSet.setLineWidth(4);
+            dataSet.setLineWidth(2);
             dataSet.setHighlightLineWidth(2.5f);
-            dataSet.setMode(LineDataSet.Mode.HORIZONTAL_BEZIER);
+            dataSet.setMode(LineDataSet.Mode.LINEAR);
+            lineData.addDataSet(dataSet);
+
             if (converters.size() == 2) {
                 YAxis.AxisDependency axisDependency = converterIndex == 0 ? YAxis.AxisDependency.LEFT : YAxis.AxisDependency.RIGHT;
                 dataSet.setAxisDependency(axisDependency);
-                chart.getAxis(axisDependency).setValueFormatter(new DefaultAxisValueFormatter(0) {
-                    @Override
-                    public String getFormattedValue(float value) {
-                        return super.getFormattedValue(value) + " " + converter.getUnit();
-                    }
-                });
+                chart.getAxis(axisDependency).setValueFormatter(converter.getYValueFormatter());
+                chart.getAxisRight().setEnabled(true);
+                chart.setMarker(new DisplayValueMarker(this, new DefaultValueFormatter(1), "", lineData));
+                // TODO: Make marker for diagrams with plural datasets (eg Height+Speed) work better... -> Show Unit
+            } else {
+                chart.getAxisLeft().setValueFormatter(converter.getYValueFormatter());
+                chart.getAxisRight().setValueFormatter(converter.getYValueFormatter());
+                chart.getAxisRight().setEnabled(false);
+                chart.setMarker(new DisplayValueMarker(this, converter.getYValueFormatter(), converter.getUnit(), lineData));
             }
-            lineData.addDataSet(dataSet);
             converterIndex++;
         }
 
@@ -243,6 +261,16 @@ public abstract class WorkoutActivity extends InformationActivity {
 
         chart.setData(combinedData);
         chart.invalidate();
+    }
+
+    public void updateChartSelection(CombinedChart chart, List<SampleConverter> converters) {
+        // Fix Y-Axis scale
+        chart.getAxisLeft().setAxisMaximum(converters.get(0).getMaxValue(workout)*1.05f);
+        chart.getAxisLeft().setAxisMinimum(converters.get(0).getMinValue(workout)*0.95f);
+        if (converters.size() > 1) {
+            chart.getAxisRight().setAxisMaximum(converters.get(1).getMaxValue(workout)*1.05f);
+            chart.getAxisRight().setAxisMinimum(converters.get(1).getMinValue(workout)*0.95f);
+        }
     }
 
     private GpsSample findSample(Entry entry) {

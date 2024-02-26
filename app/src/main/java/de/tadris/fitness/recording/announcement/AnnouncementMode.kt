@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -19,14 +19,14 @@
 package de.tadris.fitness.recording.announcement
 
 import android.content.Context
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 
 enum class AnnouncementMode {
     ALWAYS, HEADPHONES;
 
     companion object {
 
-        fun getCurrentMode(context: Context?): AnnouncementMode {
+        fun getCurrentMode(context: Context): AnnouncementMode {
             return when (PreferenceManager.getDefaultSharedPreferences(context)
                 .getString("announcementMode", "headphones")!!) {
                 "always" -> ALWAYS

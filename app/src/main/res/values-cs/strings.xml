@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
-  ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+  ~ Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
   ~
   ~ This file is part of FitoTrack
   ~
@@ -17,13 +16,11 @@
   ~
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  --><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="gps">GPS</string>
     <string name="app_name">FitoTrack</string>
-    <string name="resumeWorkoutConfirmation">Opravdu chcete v tomto cvičení pokračovat\? To také přidá pauzu od okamžiku, kdy bylo cvičení zastaveno.</string>
-    <string name="prefShowOnLockScreenSummary">Zobrazit informace o cvičení, i když je telefon zamknutý.</string>
+    <string name="resumeWorkoutConfirmation">Pokračovat v tomto cvičení\? Bude přidána pauza od okamžiku zastavení cvičení.</string>
+    <string name="prefShowOnLockScreenSummary">Zobrazit informace o cvičení, i když je zařízení zamčené.</string>
     <string name="prefShowOnLockScreenTitle">Viditelné na zamykací obrazovce</string>
     <string name="notimeout">Žádný časový limit</string>
     <string name="workoutStarted">Cvičení zahájeno</string>
@@ -41,7 +38,6 @@
     <string name="showIntervals">Zobrazit intervaly</string>
     <string name="connectHeartRateDevice">Připojte zařízení k měření tepové frekvence</string>
     <string name="selectBluetoothDevice">Vyberte zařízení Bluetooth</string>
-    <string name="importedWorkouts">Importováno %d cvičení</string>
     <string name="importingFiles">Importuji soubory</string>
     <string name="importMultipleMessageSelectFolder">Vyberte složku obsahující všechny soubory GPX, které chcete importovat.</string>
     <string name="importMultipleGpxFiles">Import více souborů GPX</string>
@@ -59,7 +55,7 @@
     <string name="editDisplayedInformation">Upravit zobrazené informace</string>
     <string name="aboutPrivacyPolicy">Zásady soukromí</string>
     <string name="aboutHelpTranslating">Pomozte s překladem</string>
-    <string name="aboutUnlistedContributors">Děkujeme všem neveřejným přispěvatelům, kteří pomohli s překladem a rozšířením FitoTrack!</string>
+    <string name="aboutUnlistedContributors">Děkujeme všem přispěvatelům, kteří pomohli s překladem a rozšířením FitoTracku!</string>
     <string name="aboutSourceCode">Zobrazit zdrojový kód</string>
     <string name="aboutSendFeedback">Odeslat zpětnou vazbu vývojáři</string>
     <string name="aboutContributors">Přispěvatelé</string>
@@ -211,7 +207,7 @@
     <string name="workoutHeartRate">Tepová frekvence</string>
     <string name="workoutEnergyConsumption">Spotřeba energie</string>
     <string name="workoutTotalEnergy">Celková energie</string>
-    <string name="workoutBurnedEnergy">Spálená energie</string>
+    <string name="workoutBurnedEnergy">Spálené kalorie</string>
     <string name="workoutTopSpeed">Maximální rychlost</string>
     <string name="workoutAvgSpeedLong">Průměrná rychlost</string>
     <string name="workoutAvgSpeedShort">Prům. Rychlost</string>
@@ -270,7 +266,7 @@
     <string name="setPreferencesTitle">Nastavení předvoleb</string>
     <string name="backup">Záloha</string>
     <string name="restore">Obnovit</string>
-    <string name="importBackupMessage">UPOZORNĚNÍ: Všechna vaše stávající data v aplikaci budou vymazána. Pokud je nechcete ztratit, nejprve si udělejte další zálohu. Opravdu chcete tuto zálohu obnovit\?</string>
+    <string name="importBackupMessage">Pokud chcete zachovat svá data, zálohujte je. Obnovit předchozí zálohu\?</string>
     <string name="chooseBackupFile">Vyberte soubor zálohy</string>
     <string name="loadingFile">Načítání souboru</string>
     <string name="finished">Hotovo</string>
@@ -305,26 +301,26 @@
     <string name="workoutTypeAdd">Přidat</string>
     <string name="downloadFailed">Stahování selhalo</string>
     <string name="downloadSuccess">Stahováno dokončeno</string>
-    <string name="downloadMapConfirmation">Chcete stáhnout soubor s mapou %s\?</string>
-    <string name="pref_auto_start_mode_unknown">Neznámý režim (prosím nevybírejte)</string>
+    <string name="downloadMapConfirmation">Stáhnout soubor mapy \\\"%s\\\"\?</string>
+    <string name="pref_auto_start_mode_unknown">Neznámé (nepoužívat)</string>
     <string name="pref_auto_start_mode_on_move">Počkat než se začnete pohybovat</string>
-    <string name="pref_auto_start_mode_wait_for_gps">Počkat na přesnou polohu GPS</string>
+    <string name="pref_auto_start_mode_wait_for_gps">Počkat na přesnou polohu</string>
     <string name="pref_auto_start_mode_instant">Začít ihned</string>
     <string name="pref_auto_start_mode_title">Režim automatického spuštění</string>
     <string name="intervalAutoStartModeTraining">Režim automatického spuštění tréninku</string>
     <string name="manageAutoStartModeSummary">Změna režimu automatického spuštění tréninku</string>
-    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g id="mins" example="1 minute">%1$s</xliff:g> a <xliff:g id="secs" example="7 seconds">%2$s</xliff:g> do startu </string>
-    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g id="mins" example="12 minutes">%1$s</xliff:g> do startu </string>
-    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g id="secs" example="5 seconds">%1$s</xliff:g> do startu </string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g example="1 minute" id="mins">%1$s</xliff:g> a <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> do startu </string>
+    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g example="12 minutes" id="mins">%1$s</xliff:g> do startu </string>
+    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g example="5 seconds" id="secs">%1$s</xliff:g> do startu </string>
     <plurals name="minutes">
-        <item quantity="one"><xliff:g id="mins" example="1">%1$d</xliff:g> minuta</item>
-        <item quantity="few"><xliff:g id="mins" example="5">%1$d</xliff:g> minuty</item>
-        <item quantity="other"><xliff:g id="mins" example="5">%1$d</xliff:g> minut</item>
+        <item quantity="one"><xliff:g example="1" id="mins">%1$d</xliff:g> minuta</item>
+        <item quantity="few"><xliff:g example="5" id="mins">%1$d</xliff:g> minuty</item>
+        <item quantity="other"><xliff:g example="5" id="mins">%1$d</xliff:g> minut</item>
     </plurals>
     <plurals name="seconds">
-        <item quantity="one"><xliff:g id="secs" example="1">%1$d</xliff:g> sekunda</item>
-        <item quantity="few"><xliff:g id="secs" example="12">%1$d</xliff:g> sekundy</item>
-        <item quantity="other"><xliff:g id="secs" example="12">%1$d</xliff:g> sekund</item>
+        <item quantity="one"><xliff:g example="1" id="secs">%1$d</xliff:g> sekunda</item>
+        <item quantity="few"><xliff:g example="12" id="secs">%1$d</xliff:g> sekundy</item>
+        <item quantity="other"><xliff:g example="12" id="secs">%1$d</xliff:g> sekund</item>
     </plurals>
     <string name="scanFailed">Skenování se nezdařilo</string>
     <string name="scanning">Skenování…</string>
@@ -357,13 +353,189 @@
     <string name="actionCancelDownload">Zrušit stahování</string>
     <string name="alreadyDownloading">Soubor se již stahuje</string>
     <string name="actionDownloadMap">Stáhnout mapu</string>
-    <string name="overwriteMapConfirmation">Chcete přepsat stávající soubor mapy %s\?</string>
+    <string name="overwriteMapConfirmation">Přepsat stávající soubor mapy \\\"%s\\\"\?</string>
     <string name="downloadMapsSpecifyDirectory">Nejprve zadejte adresář pro offline mapy</string>
     <string name="downloadMapsTitle">Stáhnout mapy</string>
     <string name="actionImportMultiple">Importovat více</string>
     <string name="actionImport">Importovat</string>
     <string name="importWorkoutMultipleQuestion">Chcete importovat jeden soubor GPX nebo více souborů\?</string>
-    <string name="recordingBackgroundPermissionNotGrantedMessage">FitoTrack také shromažďuje údaje o poloze na pozadí během záznamu tréninku, i když je obrazovka vypnutá. Proto prosím povolte FitoTracku přístup k vaší poloze.</string>
     <string name="recordingPermissionNotGrantedMessage">FitoTrack vyžaduje povolení přístupu k vaší poloze aby mohl sledovat váš pohyb během tréninku. FitoTrack také může sbírat údaje o vaší poloze při běhu aplikace na pozadí nebo když je obrazovka vypnutá během záznamu tréninku. Údaje o poloze vždy zůstávají na vašem zařízení pokud neudělíte souhlas s jejich sdílením.</string>
     <string name="workoutTypeAll">Vše</string>
+    <string name="workoutRecordingTypeGps">Tréninky s GPS</string>
+    <string name="workoutRecordingTypeIndoor">Tréninky uvnitř</string>
+    <string name="workoutRepetitions">Opakování</string>
+    <string name="workoutFrequency">Frekvence</string>
+    <string name="workoutIntensity">Intenzita</string>
+    <string name="workoutAvgFrequencyShort">Prům. frekvence</string>
+    <string name="workoutAvgFrequencyLong">Průměrná frekvence</string>
+    <string name="workoutCurrentFrequency">Aktuální frekvence</string>
+    <string name="workoutMaxFrequency">Max. frekvence</string>
+    <string name="workoutAvgIntensityShort">Prům. intenzita</string>
+    <string name="workoutMaxIntensity">Max. intenzita</string>
+    <string name="workoutMaxHeight">Max výška</string>
+    <string name="workoutTypeRopeSkipping">Švihadlo</string>
+    <string name="workoutTypeTreadmill">Běhací pás</string>
+    <plurals name="workoutStep">
+        <item quantity="one">Krok</item>
+        <item quantity="few">Kroky</item>
+        <item quantity="other">Kroků</item>
+    </plurals>
+    <string name="workoutTypeTrampolineJumping">Trampolína</string>
+    <string name="preferenceCurrentSpeedAverageTimeTitle">Zprůměrovaná rychlost</string>
+    <plurals name="workoutJump">
+        <item quantity="one">Skok</item>
+        <item quantity="few">Skoky</item>
+        <item quantity="other">Skoků</item>
+    </plurals>
+    <string name="workoutSets">Setů</string>
+    <string name="heartRateSensorBattery">Baterie senzoru</string>
+    <string name="workoutTypePushUps">Kliky</string>
+    <plurals name="workoutPushUp">
+        <item quantity="one">Klik</item>
+        <item quantity="few">Kliky</item>
+        <item quantity="other">Kliků</item>
+    </plurals>
+    <string name="pref_step_length">Délka kroku</string>
+    <string name="prefTrackStyleUsageTitle">Automaticky zabarvovat trasu</string>
+    <string name="edit_interval">Upravit interval</string>
+    <string name="workoutMinHeight">Min výška</string>
+    <string name="trackStyle">Styl trasy</string>
+    <string name="preferencesDebugTitle">Ladit</string>
+    <string name="preferencesCategoryMap">Mapa</string>
+    <string name="workoutTypeSwimming">Plavání</string>
+    <string name="workoutCount">Počet cvičení</string>
+    <string name="editWorkoutStartEnd">Upravit začátek/konec</string>
+    <string name="recordingActivityPermissionMessage">FitoTrack potřebuje povolení ke sledování vaší fyzické aktivity, aby mohl zaznamenávat cvičení v interiéru.</string>
+    <string name="runningMigrations">Probíhající migrace</string>
+    <string name="moveEndOfWorkout">Uříznutí konce</string>
+    <string name="fileNotFound">Soubor nenalezen</string>
+    <string name="stats_explore_title">Prozkoumat</string>
+    <string name="stats_overview_title">Přehled</string>
+    <string name="histogram">Histogram</string>
+    <string name="details">Podrobnosti</string>
+    <string name="monthYear">Měsíc / Rok</string>
+    <string name="mapnik_default_osm_mapstyle">Mapnik
+\nVýchozí styl mapy OSM</string>
+    <string name="humanitarian_clean_map_but_sometimes_not_available">Humanitární
+\nČistá mapa, ale ne vždy dostupná</string>
+    <string name="zoomWithVolumeButtonsSummary">Zvýšení a snížení hlasitosti ovládá přiblížení a oddálení</string>
+    <string name="zoomWithVolumeButtonsTitle">Zoom pomocí tlačítek hlasitosti</string>
+    <string name="joule_unit">Joule</string>
+    <string name="always_mode">Vždy</string>
+    <string name="only_on_headphones_mode">Pouze ve sluchátkách</string>
+    <string name="always_track_style">Vždy</string>
+    <string name="height_map">Výšková mapa</string>
+    <string name="bright_night">Jasná noc</string>
+    <string name="mondriaan">Mondriaan</string>
+    <string name="light_theme">Světlé</string>
+    <string name="system_theme">Systémové</string>
+    <string name="dark_theme">Tmavé</string>
+    <string name="metric_unit_system">Metrický</string>
+    <string name="system_default">Výchozí nastavení systému</string>
+    <string name="tuesday">Úterý</string>
+    <string name="autoExportBackupTitle">Automatické zálohování</string>
+    <string name="autoExportBackupSummary">Automatický export záloh</string>
+    <string name="massExportGpxTitle">Export všech cvičení jako GPX</string>
+    <string name="massExportGpxSummary">Vytvoří soubor ZIP obsahující všechny cvičení jako dokumenty GPX</string>
+    <string name="debugShareLogsSummary">Sdílet logovací protokoly, které obsahují užitečné údaje pro hledání chyb v záznamníku cvičení. Obvykle neobsahují údaje o poloze.</string>
+    <string name="show_sum">Zobrazit součet</string>
+    <plurals name="satelliteCount">
+        <item quantity="one">Jeden satelit</item>
+        <item quantity="few">%d satelity</item>
+        <item quantity="other">%d satelitů</item>
+    </plurals>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">Nahradit aktuální rychlost průměrnou</string>
+    <string name="currentTimeStructure">%s %s</string>
+    <string name="actionApply">Použít</string>
+    <string name="launchError">Aplikaci se nepodařilo spustit</string>
+    <string name="upperPaceLimit">Horní hranice tempa</string>
+    <string name="selectColoring">Vyberte zbarvení</string>
+    <string name="preferenceFirstDayOfWeek">Začátek týdne</string>
+    <string name="rainbow_warrior">Duhový bojovník</string>
+    <string name="lowerPaceLimit">Spodní hranice tempa</string>
+    <string name="ttsBelowTargetSpeed">Příliš pomalé</string>
+    <string name="ttsAboveTargetSpeed">Příliš rychlé</string>
+    <string name="private_visibility">Soukromé</string>
+    <string name="kcal_unit">kcal</string>
+    <string name="offline_local_map_file_with_local_render_theme">Offline
+\nLokální mapový soubor s lokálně vykresleným motivem</string>
+    <string name="imperial_unit_system">Imperiální</string>
+    <string name="sunday">Neděle</string>
+    <string name="metric_with_m_s_unit_system">Metrický s m/s</string>
+    <string name="monday">Pondělí</string>
+    <string name="stats_history_title">Historie</string>
+    <string name="pref_map_directory">Adresář offline map</string>
+    <string name="auto">Automatické</string>
+    <string name="exportTargetHttpPost">Požadavek HTTP POST</string>
+    <string name="workoutGPXExportTitle">Exporty GPX cvičení</string>
+    <string name="exportTargetDirectory">Adresář</string>
+    <string name="autoBackupTitle">Automatické zálohování</string>
+    <string name="autoExportWorkoutsSummary">Export nově zaznamenaných cvičení</string>
+    <string name="deleteExportTargetConfirmation">Smazat tento cíl exportu\?</string>
+    <string name="in_the_diagram_screen_track_style">Na obrazovce diagramu</string>
+    <string name="preferenceCurrentSpeedTime">Průměrné časové rozpětí rychlosti</string>
+    <string name="workoutAvgDurationLong">Průměrná doba</string>
+    <string name="workoutDurationSum">Celková doba</string>
+    <string name="preferenceUseAverageForCurrentSpeed">Pro výpočet aktuální rychlosti použijte průměrnou rychlost za určitou dobu namísto posledního záznamu rychlosti.</string>
+    <string name="unitHeartRateSensorBattery">%</string>
+    <string name="unitHertzLong">Hertz</string>
+    <string name="moveStartOfWorkout">Uříznutí startu</string>
+    <string name="editStartEndHelp">Vyberte polohu na mapě nebo na diagramu. Poté kliknutím na jednu ze šipek vyberte nový počáteční nebo koncový bod. Až budete hotovi, kliknutím na ikonu uložit změny aplikujte.</string>
+    <string name="purple_rain">Purpurový déšť</string>
+    <string name="pink_mist">Růžová mlha</string>
+    <string name="thursday">Čtvrtek</string>
+    <string name="takeBackups7">Každý týden</string>
+    <string name="hintConfigureExportTargets">Přidejte cíle, do kterých by měly být soubory exportovány.</string>
+    <string name="takeBackups14">Každý druhý týden</string>
+    <string name="unitHeartBeatsPerMinute">tep/min</string>
+    <plurals name="importedWorkouts">
+        <item quantity="one">Importováno jedno cvičení</item>
+        <item quantity="few">Importována %d cvičení</item>
+        <item quantity="other">Importováno %d cvičení</item>
+    </plurals>
+    <string name="noColoring">Žádné zbarvení</string>
+    <string name="pref_announcements_pace_control_summary">Upozornit, pokud je pod nebo nad zadanou rychlostí</string>
+    <string name="invalidNumberFormat">Nesprávný formát čísla.</string>
+    <string name="hidden">Skryté</string>
+    <string name="showWorkoutZoomControlsTitle">Přibližování a posouvání</string>
+    <string name="identifiable_visibility">Identifikovatelné</string>
+    <string name="trackable_visibility">Sledovatelné</string>
+    <string name="imperial_with_meters_unit_system">Imperiální s metry</string>
+    <string name="us_customary_unit_system">Americký zvykový</string>
+    <string name="autoExportBackupExplanation">Ve stanoveném intervalu bude záloha exportována zde:</string>
+    <string name="friday">Pátek</string>
+    <string name="exportIntervalTitle">Interval zálohování</string>
+    <string name="takeBackups1">Každý den</string>
+    <string name="takeBackups2">Každý druhý den</string>
+    <string name="takeBackups3">Každý třetí den</string>
+    <string name="httpUrl">Adresa URL</string>
+    <string name="enterValidUrl">Zadejte platnou adresu URL protokolu HTTP</string>
+    <string name="selectExportTarget">Vyberte cíl exportu</string>
+    <string name="debugShareLogsTitle">Sdílet logovací protokoly</string>
+    <string name="debugSensorsTitle">Ladicí senzory</string>
+    <string name="debugPressureSensor">Ladění snímače tlaku</string>
+    <string name="calibrating">Kalibrace</string>
+    <string name="noSensorAvailable">Žádný senzor není k dispozici</string>
+    <string name="pref_announcements_pace_control_title">Upozornění na tempo</string>
+    <string name="configureHttpPostRequest">Konfigurace požadavku HTTP POST</string>
+    <string name="debugSensorsSummary">Shromažďování dat ze senzorů, která se zapisují do souboru protokolu</string>
+    <string name="never_track_style">Nikdy</string>
+    <string name="saturday">Sobota</string>
+    <string name="workoutAvgPauseDuration">Průměrná doba pauzy</string>
+    <string name="workoutPauseDurationSum">Celková doba pauzy</string>
+    <string name="preferenceCategoryRenderThemeCategories">Čeština</string>
+    <string name="pref_render_theme_style_info">Pro vybrané téma není k dispozici žádná nabídka.</string>
+    <string name="pref_render_theme_style">Styl vykreslování</string>
+    <string name="statistics">Statistiky</string>
+    <string name="workoutAvgDistance">Průměrná vzdálenost</string>
+    <string name="workoutDistanceSum">Celková vzdálenost</string>
+    <string name="showWorkoutZoomControlsSummary">Povolit ovládání přiblížení a posunu v mapě při nahrávání GPS cvičení</string>
+    <string name="wednesday">Středa</string>
+    <string name="autoExportWorkoutExplanation">Po nahrání nového cvičení se zde uloží export GPX:</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Přítah</item>
+        <item quantity="few">Přítahy</item>
+        <item quantity="other">Přítahů</item>
+    </plurals>
+    <string name="workoutTypePullUps">Přítahy</string>
 </resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="autoStartCountdownVal" translatable="false">%1$d%2$s</string>
+    <string name="approxSymbol" translatable="false">≈</string>
+    <string-array name="osm_track_visibility">
+        <item>@string/identifiable_visibility</item>
+        <item>@string/trackable_visibility</item>
+        <item>@string/private_visibility</item>
+    </string-array>
+    <string-array name="pref_energy_units">
+        <item>@string/kcal_unit</item>
+        <item>@string/joule_unit</item>
+    </string-array>
+    <string-array name="pref_announcement_mode">
+        <item>@string/always_mode</item>
+        <item>@string/only_on_headphones_mode</item>
+    </string-array>
+    <string-array name="pref_map_layers">
+        <item>@string/mapnik_default_osm_mapstyle</item>
+        <item>@string/humanitarian_clean_map_but_sometimes_not_available</item>
+        <item>@string/offline_local_map_file_with_local_render_theme</item>
+    </string-array>
+    <string-array name="pref_track_style_usage">
+        <item>@string/always_track_style</item>
+        <item>@string/in_the_diagram_screen_track_style</item>
+        <item>@string/never_track_style</item>
+    </string-array>
+    <string-array name="pref_track_style">
+        <item>@string/purple_rain</item>
+        <item>@string/pink_mist</item>
+        <item>@string/rainbow_warrior</item>
+        <item>@string/height_map</item>
+        <item>@string/bright_night</item>
+        <item>@string/mondriaan</item>
+    </string-array>
+    <string-array name="pref_theme_setting">
+        <item>@string/system_theme</item>
+        <item>@string/light_theme</item>
+        <item>@string/dark_theme</item>
+    </string-array>
+    <string-array name="pref_unit_systems">
+        <item>@string/metric_unit_system</item>
+        <item>@string/metric_with_m_s_unit_system</item>
+        <item>@string/imperial_unit_system</item>
+        <item>@string/imperial_with_meters_unit_system</item>
+        <item>@string/us_customary_unit_system</item>
+    </string-array>
+    <string-array name="pref_time_format">
+        <item>@string/system_default</item>
+        <item>12:08 PM</item>
+        <item>15:23</item>
+    </string-array>
+    <string-array name="pref_date_format">
+        <item>@string/system_default</item>
+        <item>2001-07-24</item>
+        <item>2001.07.24</item>
+        <item>2001/07/24</item>
+        <item>24-07-2001</item>
+        <item>24.07.2001</item>
+        <item>24/07/2001</item>
+        <item>07/24/2001</item>
+    </string-array>
+    <string-array name="pref_first_day_of_week">
+        <item>@string/system_default</item>
+        <item>@string/sunday</item>
+        <item>@string/monday</item>
+        <item>@string/tuesday</item>
+        <item>@string/wednesday</item>
+        <item>@string/thursday</item>
+        <item>@string/friday</item>
+        <item>@string/saturday</item>
+    </string-array>
+</resources>

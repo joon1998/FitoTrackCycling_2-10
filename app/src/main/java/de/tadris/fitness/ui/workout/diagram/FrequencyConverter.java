@@ -21,6 +21,9 @@ package de.tadris.fitness.ui.workout.diagram;
 
 import android.content.Context;
 
+import com.github.mikephil.charting.formatter.DefaultValueFormatter;
+import com.github.mikephil.charting.formatter.ValueFormatter;
+
 import de.tadris.fitness.R;
 import de.tadris.fitness.data.BaseSample;
 import de.tadris.fitness.data.BaseWorkout;

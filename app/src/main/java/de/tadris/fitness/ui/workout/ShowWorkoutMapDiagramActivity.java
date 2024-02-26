@@ -20,6 +20,8 @@
 package de.tadris.fitness.ui.workout;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -27,6 +29,8 @@ import android.widget.TextView;
 import com.github.mikephil.charting.charts.CombinedChart;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.ChartTouchListener;
+import com.github.mikephil.charting.listener.OnChartGestureListener;
 
 import de.tadris.fitness.R;
 import de.tadris.fitness.data.GpsSample;
@@ -102,6 +106,50 @@ public class ShowWorkoutMapDiagramActivity extends ShowWorkoutColoredMapActivity
         SampleConverter defaultConverter = getDefaultConverter();
         converterManager.selectedConverters.add(defaultConverter);
         chart = addDiagram(defaultConverter);
+
+        Runnable update = () -> updateChart();
+        chart.setOnChartGestureListener(new OnChartGestureListener() {
+            @Override
+            public void onChartGestureStart(MotionEvent me, ChartTouchListener.ChartGesture lastPerformedGesture) {
+
+            }
+
+            @Override
+            public void onChartGestureEnd(MotionEvent me, ChartTouchListener.ChartGesture lastPerformedGesture) {
+
+            }
+
+            @Override
+            public void onChartLongPressed(MotionEvent me) {
+
+            }
+
+            @Override
+            public void onChartDoubleTapped(MotionEvent me) {
+                chart.getHandler().post(update);
+            }
+
+            @Override
+            public void onChartSingleTapped(MotionEvent me) {
+
+            }
+
+            @Override
+            public void onChartFling(MotionEvent me1, MotionEvent me2, float velocityX, float velocityY) {
+
+            }
+
+            @Override
+            public void onChartScale(MotionEvent me, float scaleX, float scaleY) {
+                chart.getHandler().post(update);
+            }
+
+            @Override
+            public void onChartTranslate(MotionEvent me, float dX, float dY) {
+                chart.getHandler().post(update);
+            }
+        });
+
         updateChart();
     }
 
@@ -121,6 +169,7 @@ public class ShowWorkoutMapDiagramActivity extends ShowWorkoutColoredMapActivity
 
     private void updateChart() {
         updateChart(chart, converterManager.selectedConverters, showIntervals.isChecked());
+        updateChartSelection(chart, converterManager.selectedConverters);
         boolean first = true;
         StringBuilder sb = new StringBuilder();
         for (SampleConverter converter : converterManager.selectedConverters) {

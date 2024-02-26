@@ -1,0 +1,8 @@
+- Easpórtáil uathoibríoch GPX agus cúltacaí aip
+- Súmáil agus panning an léarscáil
+- Méadracht saincheaptha ar an scáileán sciar
+- Taispeáin ceallraí braite bluetooth má tá sé ar fáil
+- Comhbhrúigh cúltacaí
+- Ceartúcháin fhabht
+
+féach le do thoil ar stór an tionscadail ar Codeberg le haghaidh liosta níos mionsonraithe d'athruithe

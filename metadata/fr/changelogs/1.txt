@@ -1,0 +1,9 @@
+Version initiale
+
+- Enregistrement des entraînements
+- Liste des entraînements
+- Affichage des données d'un entraînement (carte, diagramme de vitesse, énergie) + effacement d'entraînements
+- Import/Export des données
+- Export d'entraînements au format GPX
+- Changement des unités
+- Changement de poids

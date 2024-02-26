@@ -1,0 +1,12 @@
+Mejoras:
+- Opción para guardar la copia de seguridad en el almacenamiento interno (#29) 
+- Dejar claro que los comentarios de entrenamiento pueden ser editados (#34) 
+- Ritmo en formato MM’SS» (#36) 
+- Considere el valor de ascenso al calcular calorías (#39) 
+
+Correcciones de errores:
+- Error de las unidades imperiales (#42) 
+- La lista de ejercicios no se actualiza correctamente (#37) 
+
+Idioma:
+- Traducción al español actualizada (#43)

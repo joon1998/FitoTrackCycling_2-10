@@ -1,0 +1,11 @@
+Új funkciók:
+- Indítás gomb az edzéseknél
+- Intervallum-közlemények
+- Egyéni információs nézetek a rögzítés képernyőn
+- Egysoros görkorcsolyázás tevékenységként való támogatása
+
+- Új lehetőség hozzáadása a beállításokhoz a dátum- és időformátum kiválasztása érdekében
+- Tevékenységet jelző ikon
+- Beállítás az energia mértékegységeihez (kcal/J), valamint a távolság és idő mértékegységek hibás helyesírásának javítása
+
+A további változtatásokért nézze meg a projekt tárolóját a Codebergen

@@ -1,0 +1,8 @@
+- Evezés hozzáadása
+- Cél: Android 10
+
+- A régebbi Android eszközökön történő GPX importálás és exportálás javítása
+- A tempó hangos közlemény javítása
+- Kisebb elrendezési javítások
+
+- Kezdeti orosz fordítás hozzáadva

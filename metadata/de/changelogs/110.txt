@@ -1,0 +1,8 @@
+Neu:
+- Höhenmessung per GPS und Drucksensoren
+- Höhendiagramm anzeigen
+- Dialogfenster anzeigen, falls GPS ausgeschaltet ist
+
+Fehlerbehebung:
+- Zurück-Button in den Einstellung führt in früheren Andriod-Versionen zu Abstürzen (#20)
+- Korrektur des Maßsystems "anglo-amerikanisch mit Metern"

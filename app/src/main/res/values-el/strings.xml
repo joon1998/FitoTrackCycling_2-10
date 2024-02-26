@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+  ~ Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
   ~
   ~ This file is part of FitoTrack
   ~
@@ -314,14 +314,12 @@
     <string name="showIntervals">Προβολή διαλειμμάτων</string>
     <string name="connectHeartRateDevice">Σύνδεση συσκευής καρδιακού ρυθμού</string>
     <string name="selectBluetoothDevice">Επιλογή συσκευής Bluetooth</string>
-    <string name="importedWorkouts">Έγινε εισαγωγή %d προπονήσεων</string>
     <string name="importingFiles">Γίνεται εισαγωγή αρχείων</string>
     <string name="actionImportMultiple">Εισαγωγή πολλαπλών</string>
     <string name="importWorkoutMultipleQuestion">Θέλετε να κάνετε εισαγωγή ενός αρχείου GPX ή πολλαπλών;</string>
     <string name="importMultipleMessageSelectFolder">Επιλέξτε ένα φάκελο που περιέχει όλα τα αρχεία GPX που θέλετε να εισάγετε.</string>
     <string name="importMultipleGpxFiles">Εισαγωγή πολλαπλών αρχείων GPX</string>
     <string name="speechConfigNoSpeech">Δεν υπάρχουν ανακοινώσεις</string>
-    <string name="recordingBackgroundPermissionNotGrantedMessage">Το FitoTrack συλλέγει επίσης δεδομένα τοποθεσίας στο παρασκήνιο για να καταγράψει προπονήσεις ενώ η οθόνη είναι σβηστή. Επομένως, επιτρέψτε στο FitoTrack να έχει πρόσβαση στην τοποθεσία σας συνεχώς.</string>
     <string name="recordingPermissionNotGrantedMessage">Το FitoTrack χρειάζεται άδεια τοποθεσίας για να ιχνηλατήσει τις κινήσεις σας κατά τη διάρκεια της προπόνησης σας. Το FitoTrack συλλέγει επίσης δεδομένα τοποθεσία όσο η εφαρμογή βρίσκεται στο παρασκήνιο ή η οθόνη είναι σβηστή για να καταγράψει τις προπονήσεις σας. Τα δεδομένα τοποθεσίας παραμένουν πάντα στη συσκευή σας χωρίς την ξεκάθαρη συναίνεση σας για διαμοιρασμό τους.</string>
     <string name="recordingPermissionNotGrantedTitle">Δεν έχουν δοθεί άδειες</string>
     <string name="noWorkoutStarted">Δεν έχει ξεκινήσει προπόνηση</string>

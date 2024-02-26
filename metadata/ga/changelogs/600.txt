@@ -1,0 +1,11 @@
+Gnéithe nua:
+- Cnaipe tosaigh le haghaidh cleachtaí
+- Fógraí eatramh
+- InfoViews Saincheaptha sa scáileán taifeadta
+- Tacaigh le Scátáil Inlíne mar ghníomhaíocht
+
+- Cuir rogha nua le socruithe chun formáid dáta agus ama a roghnú
+- Deilbhín a léiríonn an ghníomhaíocht
+- Socrú na n-aonad fuinnimh (kcal/J) agus Litriú mícheart na n-aonad faid agus ama
+
+féach le do thoil ar stór an tionscadail ar Codeberg le haghaidh tuilleadh athruithe

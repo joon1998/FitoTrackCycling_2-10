@@ -1,0 +1,2 @@
+- Corregir el fallo en las versiones de Android por debajo de Oreo (< 8)
+- Traducciones actualizadas

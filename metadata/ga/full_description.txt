@@ -1,0 +1,6 @@
+Is feidhmchlár soghluaiste é FitoTrack chun logáil isteach agus féachaint ar do chuid cleachtaí. Cibé an bhfuil tú ag rith, ag rothaíocht nó ag siúl, taispeánfaidh FitoTrack an fhaisnéis is tábhachtaí duit, le cairteacha mionsonraithe agus staitisticí. Tá sé foinse oscailte agus go hiomlán saor ó fhógraí.
+
+Gnéithe:
+* Traenacha rian. Roghnaigh an cineál spóirt ar mhaith leat a rianú agus gan ach tosú ag rith, ag rothaíocht nó ag fánaíocht, mar shampla. Is féidir leat an t-eolas ginearálta a fheiceáil díreach thíos den léarscáil ar an scáileán rianaithe.
+* Féach ar do workouts. Féach ar eolas ginearálta ar nós dáta, am, fad, luas agus luas. Féach ar do bhealach ar léarscáil. Oibrigh amach do leibhéal feidhmíochta ón léaráid luais.
+* Foinse oscailte. Níl fógra ná rianú ann, agus tá an cód foinse oscailte agus ceadúnaithe faoin GPLv3.

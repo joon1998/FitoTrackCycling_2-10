@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
-  ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+  ~ Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
   ~
   ~ This file is part of FitoTrack
   ~
@@ -17,10 +16,7 @@
   ~
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="recordingBackgroundPermissionNotGrantedMessage">屏幕关闭时，FitoTrack 也会在后台收集位置数据，以便记录您的运动。因此，请允许 FitoTrack 随时访问位置信息。</string>
+  --><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="recordingPermissionNotGrantedMessage">为了追踪锻炼期间您的运行，FitoTrack 需要位置权限。 FitoTrack 也会在后台运行，或屏幕关闭时收集位置数据，以便记录您的锻炼。除非您明确同意分享，否则位置数据只会储存在手机上。</string>
     <string name="editDisplayedInformationHint">只要锻炼未开始，您就可以点击四个区域之一，来编辑显示值。</string>
     <string name="workoutStatsHelpText">此屏幕显示的是您锻炼的历史统计数据。查看统计数据，请先点击选择锻炼类型，然后设置您想了解的信息和时间跨段。
@@ -34,9 +30,9 @@
     <string name="cancelDownloadConfirmation">想要取消正在进行的下载吗？</string>
     <string name="actionCancelDownload">取消下载</string>
     <string name="alreadyDownloading">文件已下载</string>
-    <string name="downloadMapConfirmation">想要下载地图文件 %s 吗？</string>
+    <string name="downloadMapConfirmation">要下载地图文件 \\\" %s \\\"吗？</string>
     <string name="actionDownloadMap">下载地图</string>
-    <string name="overwriteMapConfirmation">想要覆盖已有的地图文件 %s 吗？</string>
+    <string name="overwriteMapConfirmation">想要覆盖已有的地图文件 \\\"%s\\\"吗？</string>
     <string name="downloadMapsSpecifyDirectory">请先指定离线地图目录</string>
     <string name="downloadMapsTitle">下载地图</string>
     <string name="editWorkoutType">编辑锻炼类型</string>
@@ -55,7 +51,7 @@
     <string name="workoutTypeEditIdErrorCharacters">可用字符：a–z, A–Z, 0–9, _, -</string>
     <string name="workoutTypeEditId">ID</string>
     <string name="hintManageWorkoutTypes">点击加号图标可新增自定义锻炼类型。</string>
-    <string name="prefShowOnLockScreenSummary">即使手机锁屏，仍显示锻炼信息。</string>
+    <string name="prefShowOnLockScreenSummary">即使手机被锁定，仍显示锻炼信息。</string>
     <string name="prefShowOnLockScreenTitle">锁屏时显示</string>
     <string name="notimeout">没有超时</string>
     <string name="workoutStarted">锻炼开始</string>
@@ -72,7 +68,6 @@
     <string name="nothingSelected">未选择任何内容</string>
     <string name="connectHeartRateDevice">连接心率设备</string>
     <string name="selectBluetoothDevice">请选择蓝牙设备</string>
-    <string name="importedWorkouts">已导入 %d 条锻炼记录</string>
     <string name="importingFiles">导入文件</string>
     <string name="actionImportMultiple">导入多个</string>
     <string name="actionImport">导入</string>
@@ -92,7 +87,7 @@
     <string name="editDisplayedInformation">编辑显示信息</string>
     <string name="aboutPrivacyPolicy">隐私政策</string>
     <string name="aboutHelpTranslating">帮助翻译</string>
-    <string name="aboutUnlistedContributors">感谢所有帮助我们翻译和扩展 FitoTrack 的未列出贡献者！</string>
+    <string name="aboutUnlistedContributors">感谢所有帮助我们翻译和扩展 FitoTrack 的未列出姓名的贡献者们！</string>
     <string name="aboutSourceCode">查看源代码</string>
     <string name="aboutSendFeedback">向开发者反馈意见建议</string>
     <string name="aboutContributors">贡献者</string>
@@ -141,7 +136,7 @@
     <string name="unitKilometersPlural">千米</string>
     <string name="unitMetersSingular">米</string>
     <string name="unitMetersPlural">米</string>
-    <string name="cut">去年最初/最后的 300 米</string>
+    <string name="cut">减去最初/最后的 300 米</string>
     <string name="unitYardsPlural">码</string>
     <string name="unitYardsSingular">码</string>
     <string name="unitMilesPlural">英里</string>
@@ -246,7 +241,7 @@
     <string name="workoutHeartRate">心率</string>
     <string name="workoutEnergyConsumption">总能量消耗</string>
     <string name="workoutTotalEnergy">总能量</string>
-    <string name="workoutBurnedEnergy">能量消耗</string>
+    <string name="workoutBurnedEnergy">消耗的卡路里</string>
     <string name="workoutTopSpeed">最快速度</string>
     <string name="workoutAvgSpeedLong">平均速度</string>
     <string name="workoutAvgSpeedShort">平均速度</string>
@@ -284,7 +279,7 @@
     <string name="setPreferencesTitle">设置参数</string>
     <string name="backup">备份</string>
     <string name="restore">恢复</string>
-    <string name="importBackupMessage">警告！应用中已有的数据将被清除。如不想丢失这些数据，请先行备份。确定要恢复此备份吗？</string>
+    <string name="importBackupMessage">如果你想保存当前的数据，现在就备份它。现在恢复先前的备份？</string>
     <string name="chooseBackupFile">选择备份文件</string>
     <string name="loadingFile">正在载入文件</string>
     <string name="finished">完成</string>
@@ -301,21 +296,21 @@
     <string name="delete">删除</string>
     <string name="stop">停止</string>
     <string name="app_name">FitoTrack</string>
-    <string name="pref_auto_start_mode_unknown">未知模式（请勿选择）</string>
+    <string name="pref_auto_start_mode_unknown">未知（不要使用）</string>
     <string name="pref_auto_start_mode_on_move">等您开始移动</string>
-    <string name="pref_auto_start_mode_wait_for_gps">等待位置信息准确</string>
+    <string name="pref_auto_start_mode_wait_for_gps">等待精确位置</string>
     <string name="pref_auto_start_mode_instant">立即开始</string>
     <string name="pref_auto_start_mode_title">自动开始模式</string>
     <string name="intervalAutoStartModeTraining">自动锻炼开始模式</string>
     <string name="manageAutoStartModeSummary">修改自动锻炼开始的模式</string>
-    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g id="mins" example="1 minute">%1$s</xliff:g> 和 <xliff:g id="secs" example="7 seconds">%2$s</xliff:g> 直至开始 </string>
-    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g id="mins" example="12 minutes">%1$s</xliff:g> 直至开始 </string>
-    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g id="secs" example="5 seconds">%1$s</xliff:g> 直到开始 </string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g example="1 minute" id="mins">%1$s</xliff:g> 和 <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> 直至开始 </string>
+    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g example="12 minutes" id="mins">%1$s</xliff:g> 直到开始 </string>
+    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g example="5 seconds" id="secs">%1$s</xliff:g> 直到开始 </string>
     <plurals name="minutes">
-        <item quantity="other"><xliff:g id="mins" example="5">%1$d</xliff:g> 分</item>
+        <item quantity="other"><xliff:g example="5" id="mins">%1$d</xliff:g> 分</item>
     </plurals>
     <plurals name="seconds">
-        <item quantity="other"><xliff:g id="secs" example="12">%1$d</xliff:g> 秒</item>
+        <item quantity="other"><xliff:g example="12" id="secs">%1$d</xliff:g> 秒</item>
     </plurals>
     <string name="scanFailed">扫描失败</string>
     <string name="scanning">正在扫描…</string>
@@ -340,7 +335,7 @@
     <string name="noAutoStartDelay">无</string>
     <string name="manageAutoStartDelaySummary">为自动开始锻炼选择默认倒计时</string>
     <string name="intervalAutoStartDelayTraining">自动开始锻炼延迟</string>
-    <string name="resumeWorkoutConfirmation">真想继续锻炼吗？此操作将添加一个暂停——从锻炼停止开始计时。</string>
+    <string name="resumeWorkoutConfirmation">想继续锻炼吗？此操作将添加一段暂停时间——从锻炼停止开始计时。</string>
     <string name="intervalsIncludePauseSummary">如果激活，锻炼中的暂停时间，将计入间隔。</string>
     <string name="deleteIntervalSet">删除间隔设置</string>
     <string name="hintEditIntervalSet">添加间隔，其将被播报。</string>
@@ -371,11 +366,11 @@
     <string name="recordingActivityPermissionMessage">FitoTrack 需要权限跟踪您的身体活动以便记录室内锻炼。</string>
     <string name="editWorkoutStartEnd">编辑开始/结束</string>
     <string name="unitHeartBeatsPerMinute">bpm</string>
-    <string name="preferenceFirstDayOfWeek">每周开始</string>
+    <string name="preferenceFirstDayOfWeek">每周开始日</string>
     <string name="preferenceUseAverageForCurrentSpeed">使用某一时段的平均速度替代该时段最后时刻的瞬时速度。</string>
-    <string name="preferenceCurrentSpeedAverageTimeTitle">当前平均速度</string>
-    <string name="preferenceCurrentSpeedAverageTimeSummary">用平均计算代替当前速度计算。</string>
-    <string name="preferenceCurrentSpeedTime">平均计算的时间跨度</string>
+    <string name="preferenceCurrentSpeedAverageTimeTitle">平均速度</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">用平均值代替当前速度</string>
+    <string name="preferenceCurrentSpeedTime">一段时间内的平均速度</string>
     <string name="pref_step_length">步长</string>
     <plurals name="workoutPushUp">
         <item quantity="other">俯卧撑</item>
@@ -398,4 +393,18 @@
     <string name="workoutFrequency">频率</string>
     <string name="workoutSets">组</string>
     <string name="workoutRepetitions">重复次数</string>
+    <plurals name="importedWorkouts">
+        <item quantity="other">导入了 %d 条锻炼记录</item>
+    </plurals>
+    <string name="pref_render_theme_style_info">所选主题没有菜单可用。</string>
+    <string name="hintConfigureExportTargets">添加文本导出目标位置。</string>
+    <string name="configureHttpPostRequest">配置 HTTP POST 请求</string>
+    <string name="mapnik_default_osm_mapstyle">Mapnik
+\n默认 OSM 地图样式</string>
+    <string name="deleteExportTargetConfirmation">删除此导出目标？</string>
+    <string name="offline_local_map_file_with_local_render_theme">离线
+\n带本地渲染主题的本地地图</string>
+    <string name="autoExportBackupExplanation">指定每隔多长时间将备份文件导出到此处：</string>
+    <string name="autoExportWorkoutExplanation">记录新的锻炼后，GPX-export 将保存在这里：</string>
+    <string name="pref_announcements_pace_control_title">速度警报</string>
 </resources>

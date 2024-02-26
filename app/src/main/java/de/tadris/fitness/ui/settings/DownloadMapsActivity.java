@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -45,7 +45,7 @@ import de.tadris.fitness.ui.FitoTrackActivity;
 
 /**
  * Parts of this file were taken from the OpenTracks OSMDashboard
- * -> https://github.com/OpenTracksApp/OSMDashboard/blob/main/src/main/java/de/storchp/opentracks/osmplugin/DownloadMapsActivity.java
+ * -> https://github.com/OpenTracksApp/OSMDashboard/blob/34ba6b91d0aaffe0c12d4653fa38655d5f388227/src/main/java/de/storchp/opentracks/osmplugin/DownloadActivity.java
  * <p>
  * it is licensed under the Apache License 2.0
  */

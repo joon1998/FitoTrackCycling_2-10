@@ -28,7 +28,7 @@ import android.widget.Switch
 import androidx.preference.Preference
 import de.tadris.fitness.Instance
 import de.tadris.fitness.R
-import de.tadris.fitness.data.UserPreferences
+import de.tadris.fitness.data.preferences.UserPreferences
 import de.tadris.fitness.model.AutoStartWorkout
 import de.tadris.fitness.recording.announcement.TTSController
 import de.tadris.fitness.recording.event.TTSReadyEvent
@@ -93,16 +93,18 @@ class RecordingSettingsFragment : FitoTrackSettingFragment(), AutoStartModeSelec
                 true
             }
         findPreference<Preference>("autoTimeoutConfig")!!.onPreferenceClickListener =
-            Preference.OnPreferenceClickListener {
-                showAutoTimeoutConfig()
-                true
-            }
+                Preference.OnPreferenceClickListener {
+                    showAutoTimeoutConfig()
+                    true
+                }
         findPreference<Preference>("currentSpeedAverageTimeConfig")!!.onPreferenceClickListener =
-            Preference.OnPreferenceClickListener {
-                showCurrentSpeedAverageTimePicker()
-                true
-            }
+                Preference.OnPreferenceClickListener {
+                    showCurrentSpeedAverageTimePicker()
+                    true
+                }
     }
+
+    override fun getTitle() = getString(R.string.preferencesRecordingTitle)
 
     override fun onDestroy() {
         EventBus.getDefault().unregister(this)

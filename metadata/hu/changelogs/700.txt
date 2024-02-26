@@ -1,0 +1,6 @@
+- Edzésstatisztikák
+- GPX-fájlok importálása
+- Edzés felosztása szakaszokra vagy körökre
+- Biztonsági mentések egyesítése a jelenlegi állapotba
+
+A további változtatásokért nézze meg a projekt tárolóját a Codebergen

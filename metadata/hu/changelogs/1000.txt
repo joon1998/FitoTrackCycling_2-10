@@ -1,0 +1,7 @@
+- Egyéni edzéstípusok
+- Edzések megosztása képekként
+- Felhasználói felület és stabilitási továbbfejlesztések
+- A „rendszerműveletek” bejelentés mostantól letiltható
+- Frissített fordítások
+
+A változtatások részletesebb listájáért nézze meg a projekt tárolóját a Codebergen

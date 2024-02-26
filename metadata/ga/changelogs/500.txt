@@ -1,0 +1,16 @@
+Gnéithe nua:
+- Cuir cleachtaí leis de láimh (#53)
+- Mód Dorcha (#48)
+
+Feabhsuithe:
+- Ceartú airde
+- Braith cluasáin bluetooth (#51)
+- Taispeáin taifeadadh ar scáileán glas (#45)
+- Sannadh OpenStreetMap sa scáileán taifead (#52)
+
+Ceartúcháin ar Fhabht:
+- Luachanna luais míchearta tar éis do chomhartha GPS a bheith caillte le tamall anuas (#47)
+
+Logánú:
+- Nuashonraigh an Ollainnis a bhuíochas le albertheres agus didierm (#57, #58)
+- Nuashonraigh an Ungáir a bhuíochas le urbalazs (#59)

@@ -1,0 +1,1 @@
+Den här versionen fixar anslutningen till icke-parade blåtandsenheter.

@@ -1,0 +1,8 @@
+Újdonság:
+- Edzések feltöltése GPS-nyomvonalakként az OpenStreetMap adatbázisába (#24)
+- Automatikus edzésleállítás (#23)
+
+Továbbfejlesztések:
+- Birodalmi súly javítása (#26)
+- A térkép jobb viselkedése az elemzés képernyőkön
+- Jobb kalóriaszámítás

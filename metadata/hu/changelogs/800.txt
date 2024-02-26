@@ -1,0 +1,10 @@
+- Edzések szerkesztése: típus, távolság, időtartam
+- Névjegy képernyő
+- A lábat tartalmazó szokványos amerikai mértékegységrendszer hozzáadva
+- A tempó megjelenített információként és hangos közleményként
+
+- A ThunderForest térképek eltávolítása licencproblémák miatt
+- Hibajavítások, stabilitási és UI/UX továbbfejlesztések
+- Dán fordítás hozzáadva, holland fordítás frissítve
+
+A további változtatásokért nézze meg a projekt tárolóját a Codebergen

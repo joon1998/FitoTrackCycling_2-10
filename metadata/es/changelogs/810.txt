@@ -1,0 +1,8 @@
+- Añadir remo
+- Apuntar a Android 10
+
+- Corregir la importación/exportación de GPX en dispositivos Android antiguos
+- Arreglar el anuncio de voz del ritmo
+- Mejoras menores en el diseño
+
+- Añadido el ruso inicial

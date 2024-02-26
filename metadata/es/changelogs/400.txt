@@ -1,0 +1,10 @@
+Nuevo:
+- Anuncios de voz: opcionalmente te da actualizaciones sobre tu entrenamiento actual
+
+Mejoras:
+- Aclarar que los comentarios de los entrenamientos pueden ser editados
+- Maneja la autenticación OSM inválida
+- Desactivación de la pausa automática cuando no hay GPS (para evitar malos resultados)
+
+Localización:
+- Traducción al español

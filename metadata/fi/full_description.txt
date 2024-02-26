@@ -1,0 +1,6 @@
+FitoTrack on mobiilisovellus, jonka avulla voit tallettaa ja katsella kuntoiluun liittyviä tietoja. FitoTrack näyttää tärkeimmät juoksu-, pyöräily-, vaellus- ja muihin treeneihisi liittyvät tiedot yksityiskohtaisin kaavioin ja tilastoin. Sovellus on avointa lähdekoodia ja se ei sisällä lainkaan mainoksia.
+
+Ominaisuudet:
+* Seuraa treenejä. Valitse treenityyppi ja aloita kuntoilu. Näet yleistiedot seurantanäytöllä kartan alapuolella.
+* Katsele treenejäsi. Katso perustiedot kuten päivä, aika, kesto, etäisyys, nopeus ja tahti. Näe reittisi kartalla. Haasta itsesi nopeuskaavioita seuraamalla.
+* Avoin lähdekoodi. Ei mainoksia, ei seurantaa. Lähdekoodi on avointa ja GPLv3-lisenssin alaista.

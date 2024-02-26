@@ -1,0 +1,8 @@
+Nua:
+- Tomhas airde trí GPS agus braiteoir brú
+- Taispeáin léaráid airde
+- Taispeáin dialóg má tá GPS díchumasaithe
+
+Deisigh:
+- Buaileann an Cnaipe Cúil sna Socruithe ar leaganacha níos luaithe de Android (#20)
+- Córas Aonaid Deisigh "Imperial le méadair"

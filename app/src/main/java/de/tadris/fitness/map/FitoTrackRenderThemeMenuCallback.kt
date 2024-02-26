@@ -19,7 +19,7 @@
 package de.tadris.fitness.map
 
 import android.content.Context
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 import de.tadris.fitness.ui.settings.XmlThemeStyleSettingFragment
 import org.mapsforge.map.rendertheme.XmlRenderThemeMenuCallback
 import org.mapsforge.map.rendertheme.XmlRenderThemeStyleMenu

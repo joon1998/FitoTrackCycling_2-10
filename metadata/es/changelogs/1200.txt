@@ -1,0 +1,8 @@
+- Escaneo de dispositivos Bluetooth no emparejados
+- Corta los entrenamientos
+- Coloración de pista
+- Opción para calcular la velocidad a lo largo del tiempo
+- Pacekeeper que te informa corriendo demasiado lento/demasiado rápido
+- Editar intervalos gracias
+
+por favor vea el repositorio de proyectos en Codeberg para una lista más detallada de los cambios

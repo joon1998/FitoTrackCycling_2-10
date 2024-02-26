@@ -1,0 +1,7 @@
+- Anpassade träningstyper
+- Dela träningar som bilder
+- Gränssnitt/stabilitetsförbättringar
+- Kungörelsen "systemåtgärder" kan nu inaktiveras
+- Uppdaterade översättningar
+
+se filförrådet för projektet på Codeberg för en mer detaljerad lista över ändringar

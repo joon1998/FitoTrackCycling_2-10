@@ -1,0 +1,6 @@
+- Estadísticas de los entrenamientos
+- Importar archivos GPX
+- Dividir el entrenamiento en secciones/lapsos
+- Combinar las copias de seguridad en el estado actual
+
+Por favor, vea el repositorio del proyecto en Codeberg para más cambios

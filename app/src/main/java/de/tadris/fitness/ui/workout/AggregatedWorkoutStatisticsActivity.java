@@ -66,6 +66,7 @@ import de.tadris.fitness.aggregation.WorkoutTypeFilter;
 import de.tadris.fitness.data.BaseWorkout;
 import de.tadris.fitness.data.GpsWorkout;
 import de.tadris.fitness.data.WorkoutType;
+import de.tadris.fitness.data.WorkoutTypeManager;
 import de.tadris.fitness.ui.FitoTrackActivity;
 import de.tadris.fitness.ui.dialog.SelectWorkoutTypeDialog;
 import de.tadris.fitness.ui.dialog.SelectWorkoutTypeDialogAll;
@@ -111,7 +112,7 @@ public class AggregatedWorkoutStatisticsActivity extends FitoTrackActivity imple
         workoutTypeIcon = findViewById(R.id.aggregationWorkoutTypeIcon);
         chart = findViewById(R.id.aggregationChart);
 
-        selectedWorkoutType = WorkoutType.getWorkoutTypeById(this, WorkoutType.WORKOUT_TYPE_ID_RUNNING);
+        selectedWorkoutType = WorkoutTypeManager.getInstance().getWorkoutTypeById(this, WorkoutTypeManager.WORKOUT_TYPE_ID_RUNNING);
         informationManager = new WorkoutInformationManager(this);
         selectedInformation = informationManager.getInformation().get(0);
 

@@ -22,6 +22,7 @@ package de.tadris.fitness.ui.workout.diagram;
 import androidx.annotation.ColorRes;
 
 import com.github.mikephil.charting.charts.CombinedChart;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 
 import de.tadris.fitness.data.BaseSample;
 import de.tadris.fitness.data.BaseWorkout;
@@ -39,7 +40,13 @@ public interface SampleConverter {
 
     String getName();
 
-    String getDescription();
+    String getXAxisLabel();
+
+    ValueFormatter getXValueFormatter();
+
+    String getYAxisLabel();
+
+    ValueFormatter getYValueFormatter();
 
     boolean isIntervalSetVisible();
 

@@ -1,0 +1,10 @@
+- Affichage des points d'arrêt (pauses) sur la carte plein écran
+
+- Ajout d'icônes pour la randonnée équestre et le ski
+- Meilleure performance lors de la visualisation d'entraînements longs
+- L'import d'entraînements multiples a été déplacé vers l'écran principal
+- Import de toutes les pistes depuis un fichier GPX
+
+- Correction de l'import des types d'entraînements depuis les sauvegardes
+
+Merci de vous reporter au dépôt du projet sur Codeberg pour une liste plus détaillée des changements

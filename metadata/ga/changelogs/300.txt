@@ -1,0 +1,8 @@
+Nua:
+- Uaslódáil cleachtaí mar GPS-Tracks chuig OpenStreetMap (#24)
+- Stopadh Uathoibríoch Oiliúna (#23)
+
+Feabhsuithe:
+- Deisigh Meáchan Impiriúil (#26)
+- Iompar léarscáil níos fearr i scáileáin anailíse
+- Ríomh calorie níos fearr

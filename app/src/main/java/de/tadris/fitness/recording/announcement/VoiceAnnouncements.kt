@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -19,14 +19,12 @@
 package de.tadris.fitness.recording.announcement
 
 import android.content.Context
-import de.tadris.fitness.Instance
 import de.tadris.fitness.data.Interval
 import de.tadris.fitness.recording.BaseWorkoutRecorder
 import de.tadris.fitness.recording.announcement.interval.IntervalAnnouncements
-import de.tadris.fitness.util.TelephonyHelper
 
 class VoiceAnnouncements(
-    private val context: Context,
+    context: Context,
     recorder: BaseWorkoutRecorder,
     ttsController: TTSController,
     intervals: List<Interval>
@@ -36,14 +34,8 @@ class VoiceAnnouncements(
         InformationAnnouncements(context, recorder, ttsController)
     private val intervalAnnouncements =
         IntervalAnnouncements(context, recorder, ttsController, intervals)
-    private val suppressOnCall =
-        Instance.getInstance(context).userPreferences.suppressAnnouncementsDuringCall
 
     fun check() {
-        // Suppress all announcements when currently on call
-        if (suppressOnCall && TelephonyHelper.isOnCall(context)) {
-            return
-        }
         intervalAnnouncements.check()
         informationAnnouncements.check()
     }

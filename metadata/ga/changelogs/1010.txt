@@ -1,0 +1,10 @@
+- Taispeáin stopphointí (sosa) ar an léarscáil lánscáileáin
+
+- Deilbhíní curtha leis le haghaidh marcaíocht capall agus sciáil
+- Feidhmíocht níos fearr nuair a bhreathnaítear ar thraenáil fhada
+- Iompórtáil cleachtaí iolracha aistrithe go dtí an príomhscáileán
+- Iompórtáil gach rian ó chomhad GPX
+
+- Cineálacha aclaíochta a allmhairiú i gceart ó chúltacaí
+
+féach le do thoil ar stór an tionscadail ar Codeberg le haghaidh liosta níos mionsonraithe d'athruithe

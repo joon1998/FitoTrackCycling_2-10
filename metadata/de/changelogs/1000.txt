@@ -1,0 +1,7 @@
+- Eigene Workout-Typen
+- Workouts als Bilder teilen
+- UI-/Stabilitätsverbesserungen
+- Ankündigung "Systemaktion" kann jetzt deaktiviert werden
+- Aktualisierte Übersetzungen
+
+bitte sehen Sie sich das Repository auf Codeberg für eine detailliertere Änderungsliste an

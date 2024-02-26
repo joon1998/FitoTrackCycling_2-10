@@ -1,0 +1,8 @@
+- Automatic GPX export and app backups
+- Zooming and panning the map
+- Custom metrics on the share screen
+- Show bluetooth sensor battery if available
+- Compress backups
+- Bugfixes
+
+please see the project repository on Codeberg for a more detailed list of changes

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -37,9 +37,8 @@ import de.tadris.fitness.Instance
 import de.tadris.fitness.R
 import de.tadris.fitness.data.IndoorSample
 import de.tadris.fitness.data.WorkoutType
-import de.tadris.fitness.recording.BaseRecorderService
 import de.tadris.fitness.recording.BaseWorkoutRecorder
-import de.tadris.fitness.recording.indoor.IndoorRecorderService
+import de.tadris.fitness.data.WorkoutTypeManager
 import de.tadris.fitness.recording.indoor.IndoorWorkoutRecorder
 import de.tadris.fitness.recording.indoor.exercise.ExerciseRecognizer
 import de.tadris.fitness.util.unit.UnitUtils
@@ -75,8 +74,11 @@ class RecordIndoorWorkoutActivity : RecordWorkoutActivity() {
             val workoutType = intent.getSerializableExtra(WORKOUT_TYPE_EXTRA)
             if (workoutType is WorkoutType) {
                 activity = workoutType
-                instance.recorder = IndoorWorkoutRecorder(applicationContext, activity)
+            } else {
+                val workoutTypeId = intent.getStringExtra(WORKOUT_TYPE_EXTRA)
+                activity = WorkoutTypeManager.getInstance().getWorkoutTypeById(this, workoutTypeId)
             }
+            instance.recorder = IndoorWorkoutRecorder(applicationContext, activity)
         }
 
         initBeforeContent()
@@ -90,7 +92,7 @@ class RecordIndoorWorkoutActivity : RecordWorkoutActivity() {
 
         checkPermissions()
 
-        updateStartButton(true, R.string.start) { start() }
+        updateStartButton(true, R.string.start) { start("Start-Button pressed") }
 
         setTitle(R.string.recordWorkout)
 
@@ -196,10 +198,12 @@ class RecordIndoorWorkoutActivity : RecordWorkoutActivity() {
                     .setPositiveButton(R.string.settings) { _, _ -> openSystemSettings() }
                     .create().show()
             } else {
-                restartListener()
+                restartService()
             }
         }
     }
+
+    override fun onListenerStart() { }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onRepetitionRecognized(event: ExerciseRecognizer.RepetitionRecognizedEvent) {
@@ -268,9 +272,4 @@ class RecordIndoorWorkoutActivity : RecordWorkoutActivity() {
             resources.getQuantityString(activity.repeatingExerciseName, recorder.repetitionsTotal)
     }
 
-    public override fun getServiceClass(): Class<out BaseRecorderService?> {
-        return IndoorRecorderService::class.java
-    }
-
-    override fun onListenerStart() {}
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -19,6 +19,7 @@
 
 package de.tadris.fitness.ui.workout;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,6 +29,7 @@ import de.tadris.fitness.data.BaseWorkout;
 import de.tadris.fitness.data.IndoorSample;
 import de.tadris.fitness.data.IndoorWorkout;
 import de.tadris.fitness.data.IndoorWorkoutData;
+import de.tadris.fitness.data.StatsDataTypes;
 
 public abstract class IndoorWorkoutActivity extends WorkoutActivity {
 
@@ -53,6 +55,11 @@ public abstract class IndoorWorkoutActivity extends WorkoutActivity {
 
     protected IndoorWorkoutData getIndoorWorkoutData() {
         return new IndoorWorkoutData(workout, samples);
+    }
+
+    @Override
+    protected List<BaseSample> aggregatedSamples(int aggregationLength, StatsDataTypes.TimeSpan viewFieldSpan) {
+        return new ArrayList<>(samples);
     }
 
 }

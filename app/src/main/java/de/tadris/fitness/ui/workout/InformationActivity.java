@@ -39,11 +39,10 @@ public abstract class InformationActivity extends FitoTrackActivity {
     protected void addTitle(String title) {
         TextView textView = new TextView(this);
         textView.setText(title);
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
-        textView.setTextColor(getThemePrimaryColor());
-        textView.setTypeface(Typeface.DEFAULT_BOLD);
-        textView.setAllCaps(true);
+
+        textView.setTextAppearance(this, R.style.title);
         textView.setPadding(0, 20, 0, 0);
+        textView.setTextColor(getThemePrimaryColor());
 
         root.addView(textView);
     }

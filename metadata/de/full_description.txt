@@ -1,4 +1,4 @@
-FitoTrack ist eine App zum aufzeichnen und auswerten deiner Workouts. Ob du läufst, Fahrrad fährst oder wanderst: FitoTrack zeigt die wichtigsten Daten mit detaillierten Diagrammen und Statistiken. Es ist Open-Source und komplett ohne Werbung!
+FitoTrack ist eine App zum Aufzeichnen und Auswerten deiner Workouts. Ob du läufst, Fahrrad fährst oder wanderst: FitoTrack zeigt die wichtigsten Daten mit detaillierten Diagrammen und Statistiken. Es ist Open-Source und komplett ohne Werbung!
 
 Funktionen:
 * Workouts aufzeichnen. Wähle deine Sportart und fange einfach an zu laufen/Fahrrad fahren/wandern. Du kannst währenddessen die wichtigest Informationen unter der Karte sehen.

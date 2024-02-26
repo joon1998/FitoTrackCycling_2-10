@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <de.tadris.fitness.ui.statistics.WorkoutTypeSelection
+        android:id="@+id/stats_history_workout_type_selector"
+        style="@style/statsBar"
+        android:gravity="center_horizontal" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <de.tadris.fitness.ui.statistics.TextToggle
+                android:id="@+id/stats_history_speed_toggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                custom:currentText="@string/workoutSpeed"
+                custom:swapText="@string/workoutPace"/>
+
+            <com.github.mikephil.charting.charts.CombinedChart
+                android:id="@+id/stats_speed_chart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <de.tadris.fitness.ui.statistics.TextToggle
+                android:id="@+id/stats_history_distance_toggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                custom:currentText="@string/workoutDistance"
+                custom:swapText="@string/workoutDistanceSum" />
+
+            <com.github.mikephil.charting.charts.CombinedChart
+                android:id="@+id/stats_history_distance_chart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" >
+
+            </com.github.mikephil.charting.charts.CombinedChart>
+
+            <de.tadris.fitness.ui.statistics.TextToggle
+                android:id="@+id/stats_history_duration_toggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                custom:currentText="@string/workoutDuration"
+                custom:swapText="@string/workoutDurationSum" />
+
+            <com.github.mikephil.charting.charts.CombinedChart
+                android:id="@+id/stats_duration_chart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" >
+
+            </com.github.mikephil.charting.charts.CombinedChart>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/stats_explore_title"
+                    style="@style/titleSpinnerStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Switch
+                    android:id="@+id/stats_explore_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="48dp"
+                    android:minHeight="48dp"
+                    android:text="@string/show_sum"
+                    android:textColor="?android:attr/textColorTertiary"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.CombinedChart
+                android:id="@+id/stats_explore_chart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+            </com.github.mikephil.charting.charts.CombinedChart>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -23,12 +23,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import de.tadris.fitness.Instance;
-import de.tadris.fitness.data.UserPreferences;
+import de.tadris.fitness.data.preferences.UserPreferences;
 
 public class UserDateTimeUtils {
 
-    private UserPreferences preferences;
+    private final UserPreferences preferences;
 
     public UserDateTimeUtils(UserPreferences preferences) {
         this.preferences = preferences;

@@ -1,0 +1,3 @@
+- Arreglar fallo en versiones de Android por debajo de Oreo (< 8)
+- Fix crash al guardar entrenamientos que fueron interrumpidos
+- Arreglar la pérdida de enfoque de audio

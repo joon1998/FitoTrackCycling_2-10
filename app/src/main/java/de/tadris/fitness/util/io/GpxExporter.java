@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -21,6 +21,7 @@ package de.tadris.fitness.util.io;
 
 import android.annotation.SuppressLint;
 
+import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
@@ -30,13 +31,11 @@ import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import java.util.Locale;
 import java.util.TimeZone;
-import java.util.concurrent.TimeUnit;
 
 import de.tadris.fitness.data.GpsSample;
 import de.tadris.fitness.data.GpsWorkout;
+import de.tadris.fitness.data.GpsWorkoutData;
 import de.tadris.fitness.util.gpx.Gpx;
 import de.tadris.fitness.util.gpx.GpxTpxExtension;
 import de.tadris.fitness.util.gpx.Metadata;
@@ -46,33 +45,35 @@ import de.tadris.fitness.util.gpx.TrackPointExtensions;
 import de.tadris.fitness.util.gpx.TrackSegment;
 import de.tadris.fitness.util.io.general.IWorkoutExporter;
 
-import static java.lang.Math.abs;
-
 public class GpxExporter implements IWorkoutExporter {
 
     @SuppressLint("SimpleDateFormat") // This has nothing to do with localisation
-    public final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
+    public final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
     public GpxExporter() {
+        formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
     }
 
     @Override
-    public void exportWorkout(GpsWorkout workout, List<GpsSample> samples, OutputStream fileStream) throws IOException {
+    public void exportWorkout(GpsWorkoutData data, OutputStream fileStream) throws IOException {
         XmlMapper mapper = new XmlMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         mapper.enable(ToXmlGenerator.Feature.WRITE_XML_DECLARATION);
-        mapper.writeValue(fileStream, getGpxFromWorkout(workout, samples));
+        mapper.disable(JsonGenerator.Feature.AUTO_CLOSE_TARGET); // don't close output stream
+        mapper.writeValue(fileStream, getGpxFromWorkout(data));
     }
 
-    private Gpx getGpxFromWorkout(GpsWorkout workout, List<GpsSample> samples) {
-        Track track = getTrackFromWorkout(workout, samples, 0);
+    private Gpx getGpxFromWorkout(GpsWorkoutData data) {
+        GpsWorkout workout = data.getWorkout();
+        Track track = getTrackFromWorkout(data, 0);
         ArrayList<Track> tracks = new ArrayList<>();
         tracks.add(track);
         Metadata meta = new Metadata(workout.toString(), workout.comment, getDateTime(workout.start));
-        return new Gpx("1.0", "FitoTrack", meta, workout.toString(), workout.comment, tracks);
+        return new Gpx("1.1", "FitoTrack", meta, tracks);
     }
 
-    private Track getTrackFromWorkout(GpsWorkout workout, List<GpsSample> samples, int number) {
+    private Track getTrackFromWorkout(GpsWorkoutData data, int number) {
+        GpsWorkout workout = data.getWorkout();
         Track track = new Track();
         track.setNumber(number);
         track.setName(workout.toString());
@@ -85,9 +86,14 @@ public class GpxExporter implements IWorkoutExporter {
         TrackSegment segment = new TrackSegment();
         ArrayList<TrackPoint> trkpt = new ArrayList<>();
 
-        for (GpsSample sample : samples) {
-            trkpt.add(new TrackPoint(sample.lat, sample.lon, sample.elevation,
-                    getDateTime(sample.absoluteTime), new TrackPointExtensions(sample.speed, new GpxTpxExtension(sample.heartRate))));
+        for (GpsSample sample : data.getSamples()) {
+            trkpt.add(new TrackPoint(
+                    sample.lat,
+                    sample.lon,
+                    sample.elevation,
+                    getDateTime(sample.absoluteTime),
+                    new TrackPointExtensions(sample.speed, new GpxTpxExtension(sample.heartRate))
+            ));
         }
         segment.setTrkpt(trkpt);
 
@@ -103,17 +109,10 @@ public class GpxExporter implements IWorkoutExporter {
     }
 
     private String getDateTime(Date date) {
-        // Calculate time zone offset
-        // Normally we could use the 'X' char in the formatter to specify the timezone but this is only available in Android 7+
+        // Why adding a 'Z'?
+        // Normally we could use the 'X' char to specify the timezone but this is only available in Android 7+
         // Since this minSdkVersion is 21 (Android 5) we cannot use it
-        long milliseconds = TimeZone.getDefault().getOffset(date.getTime());
-        char sign = '+';
-        if (milliseconds < 0) {
-            sign = '-';
-        }
-        long hours = abs(TimeUnit.MILLISECONDS.toHours(milliseconds));
-        long minutes = abs(TimeUnit.MILLISECONDS.toMinutes(milliseconds) - TimeUnit.HOURS.toMinutes(hours));
-
-        return String.format(Locale.GERMANY,"%s%c%02d:%02d", formatter.format(date), sign, hours, minutes);
+        // Solution: add a 'Z'. This indicates a UTC-timestamp and the 'formatter' always returns UTC-timestamps (see constructor)
+        return formatter.format(date) + "Z";
     }
 }

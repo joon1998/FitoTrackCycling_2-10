@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -23,24 +23,27 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.FileProvider;
+import androidx.preference.Preference;
 
 import java.io.File;
-import java.io.IOException;
 
-import de.tadris.fitness.BuildConfig;
+import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
-import de.tadris.fitness.export.BackupController;
 import de.tadris.fitness.export.RestoreController;
 import de.tadris.fitness.ui.ShareFileActivity;
 import de.tadris.fitness.ui.dialog.ProgressDialogController;
 import de.tadris.fitness.util.DataManager;
+import de.tadris.fitness.util.PermissionUtils;
+import de.tadris.fitness.util.autoexport.AutoExportPlanner;
+import de.tadris.fitness.util.autoexport.source.BackupExportSource;
+import de.tadris.fitness.util.autoexport.source.ExportSource;
+import de.tadris.fitness.util.io.GpxExporter;
+import de.tadris.fitness.util.io.MassExporter;
 
 public class BackupSettingsFragment extends FitoTrackSettingFragment {
 
@@ -58,6 +61,33 @@ public class BackupSettingsFragment extends FitoTrackSettingFragment {
             showExportDialog();
             return true;
         });
+        findPreference("massExportGPX").setOnPreferenceClickListener(preference -> {
+            massExportGpx();
+            return true;
+        });
+        findPreference("autoExportWorkouts").setOnPreferenceClickListener(preference -> {
+            startExportTargetActivity(ExportSource.EXPORT_SOURCE_WORKOUT_GPX);
+            return true;
+        });
+        findPreference("autoExportBackup").setOnPreferenceClickListener(preference -> {
+            startExportTargetActivity(ExportSource.EXPORT_SOURCE_BACKUP);
+            return true;
+        });
+
+        Preference backupIntervalPreference = findPreference("autoBackupInterval");
+        backupIntervalPreference.setOnPreferenceChangeListener((preference, newValue) -> {
+            sBindPreferenceSummaryToValueListener.onPreferenceChange(preference, newValue);
+            new AutoExportPlanner(getContext()).planAutoBackup();
+            return true;
+        });
+        triggerChangeListener(backupIntervalPreference);
+
+    }
+
+    private void startExportTargetActivity(String exportSource) {
+        Intent intent = new Intent(requireContext(), ConfigureExportTargetsActivity.class);
+        intent.putExtra(ConfigureExportTargetsActivity.EXTRA_SOURCE, exportSource);
+        startActivity(intent);
     }
 
     private void showExportDialog() {
@@ -73,20 +103,32 @@ public class BackupSettingsFragment extends FitoTrackSettingFragment {
     }
 
     private void exportBackup() {
+        exportTask(progressDialog -> new BackupExportSource(true).provideFile(
+                requireContext(),
+                (progress, action) -> mHandler.post(() -> progressDialog.setProgress(progress, action))
+        ));
+    }
+
+    private void massExportGpx() {
+        exportTask(progressDialog -> {
+            File file = DataManager.createSharableFile(getContext(), "workouts.zip");
+            new MassExporter(
+                    Instance.getInstance(getContext()).db.gpsWorkoutDao(),
+                    new GpxExporter(),
+                    file,
+                    progress -> mHandler.post(() -> progressDialog.setProgress(progress))
+            ).export();
+            return file;
+        });
+    }
+
+    private void exportTask(BackupTask task){
         ProgressDialogController dialogController = new ProgressDialogController(requireActivity(), getString(R.string.backup));
         dialogController.show();
         new Thread(() -> {
             try {
-                String file = DataManager.getSharedDirectory(requireContext()) + "/backup" + System.currentTimeMillis() + ".ftb";
-                File parent = new File(file).getParentFile();
-                if (!parent.exists() && !parent.mkdirs()) {
-                    throw new IOException("Cannot write");
-                }
-                Uri uri = FileProvider.getUriForFile(requireContext(), BuildConfig.APPLICATION_ID + ".fileprovider", new File(file));
-
-                BackupController backupController = new BackupController(requireContext(), new File(file), (progress, action) -> mHandler.post(() -> dialogController.setProgress(progress, action)));
-                backupController.exportData();
-
+                File file = task.runAsyncTask(dialogController);
+                Uri uri = DataManager.provide(requireContext(), file);
                 mHandler.post(() -> {
                     dialogController.cancel();
                     Intent intent = new Intent(getContext(), ShareFileActivity.class);
@@ -129,8 +171,7 @@ public class BackupSettingsFragment extends FitoTrackSettingFragment {
     }
 
     private boolean hasPermission() {
-        return ActivityCompat.checkSelfPermission(requireActivity(), Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-                && ActivityCompat.checkSelfPermission(requireActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+        return PermissionUtils.checkStoragePermissions(requireContext(), true);
     }
 
     private static final int FILE_REPLACE_SELECT_CODE = 21;
@@ -191,6 +232,17 @@ public class BackupSettingsFragment extends FitoTrackSettingFragment {
                 });
             }
         }).start();
+    }
+
+    @Override
+    protected String getTitle() {
+        return getString(R.string.preferencesBackupTitle);
+    }
+
+    public interface BackupTask {
+
+        File runAsyncTask(ProgressDialogController progressDialog) throws Exception;
+
     }
 
 }

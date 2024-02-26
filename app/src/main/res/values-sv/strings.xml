@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+  ~ Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
   ~
   ~ This file is part of FitoTrack
   ~
@@ -49,7 +49,7 @@
     <string name="per">per</string>
     <string name="timeSecondsPlural">Sekunder</string>
     <string name="timeSecondsSingular">Sekund</string>
-    <string name="preferenceFirstDayOfWeek">Veckans första dag</string>
+    <string name="preferenceFirstDayOfWeek">Veckans början</string>
     <string name="preferenceTimeFormat">Tidsformat</string>
     <string name="preferenceDateFormat">Datumformat</string>
     <string name="preferencesCategoryMap">Karta</string>
@@ -57,7 +57,7 @@
     <string name="preferencesBackupSummary">Säkerhetskopiera/Återställ data för ditt träningspass</string>
     <string name="preferencesBackupTitle">Databas</string>
     <string name="preferencesRecordingSummary">Hantera inspelning av träningspasset</string>
-    <string name="preferencesRecordingTitle">Spelar in</string>
+    <string name="preferencesRecordingTitle">Inspelning</string>
     <string name="preferencesUserInterfaceSummary">Personifiera appen</string>
     <string name="preferencesUserInterfaceTitle">Användargränssnitt</string>
     <string name="avgSpeedTotalLong">Snitthastighet totalt</string>
@@ -133,7 +133,7 @@
     <string name="workoutHeartRate">Puls</string>
     <string name="workoutEnergyConsumption">Energiförbrukning</string>
     <string name="workoutTotalEnergy">Total energi</string>
-    <string name="workoutBurnedEnergy">Förbränd energi</string>
+    <string name="workoutBurnedEnergy">Kalorier som förbränts</string>
     <string name="workoutTopSpeed">Topphastighet</string>
     <string name="workoutAvgSpeedLong">Snitthastighet</string>
     <string name="workoutAvgSpeedShort">Snitthastighet</string>
@@ -186,13 +186,13 @@
     <string name="deleteWorkoutType">Ta bort träningsform</string>
     <string name="workoutTypeEditIdErrorUnique">Det finns redan en träningsform som har detta ID</string>
     <string name="manageAutoStartDelaySummary">Välj standardnedräkning för automatisk start av träningspass</string>
-    <string name="workoutTypeRopeSkipping">Hopprepshoppning</string>
+    <string name="workoutTypeRopeSkipping">Hopprep</string>
     <string name="workoutTypeInlineSkating">Inlinesåkning</string>
     <string name="workoutTypeTreadmill">Löpband</string>
     <string name="workoutTypeSkateboarding">Skateboardåkning</string>
     <string name="workoutMaxHeight">Högsta höjd</string>
     <string name="workoutMinHeight">Lägsta höjd</string>
-    <string name="prefShowOnLockScreenSummary">Visa information om träningspasset även om telefonen är låst.</string>
+    <string name="prefShowOnLockScreenSummary">Visa info om träningspasset även om enheten är låst.</string>
     <string name="pref_map_directory">Katalog för offline-kartor</string>
     <string name="workoutAutoStartAborted">Automatisk start avbruten</string>
     <string name="manageAutoStartModeSummary">Ändra läge för automatisk start av träningspass</string>
@@ -212,7 +212,7 @@
     <string name="autoStartCountdownMsgGps">Startar träningspasset så snart GPS-positionen är tillräckligt precis</string>
     <string name="downloading">Laddar ned…</string>
     <string name="alreadyDownloading">En fil håller redan på att laddas ned</string>
-    <string name="overwriteMapConfirmation">Vill du skriva över den existerande kartfilen %s\?</string>
+    <string name="overwriteMapConfirmation">Ska den existerande kartfilen \\\"%s\\\" skrivas över\?</string>
     <string name="downloadMapsTitle">Ladda ned kartor</string>
     <string name="heartRateNotAvailable">Puls är för närvarande inte tillgängligt.</string>
     <string name="workoutStopped">Träningspass stoppat</string>
@@ -239,7 +239,7 @@
     <string name="nfcStartTitle">Skanna för att starta</string>
     <string name="nfcStartSummary">Om det är aktiverat kommer du kunna starta och stoppa träningspass genom att skanna en NFC-tagg</string>
     <string name="dialog_nfc_disabled">För att kunna använda NFC-taggar för att starta och stoppa träningspass måste du först aktivera NFC i enhetens inställningar</string>
-    <string name="pref_announcements_pace_control_title">Varningar för tempokontroll</string>
+    <string name="pref_announcements_pace_control_title">Tempovarningar</string>
     <string name="autoStartCountdownMsg">Starta träningspasset om</string>
     <string name="customAutoStartDelay">Annan</string>
     <string name="noAutoStartDelay">Ingen</string>
@@ -283,7 +283,6 @@
     <string name="recordingStatePaused">Pausad</string>
     <string name="recordingStateStopped">Stoppad</string>
     <string name="actionImport">Importera</string>
-    <string name="importedWorkouts">Importerade %d träningspass</string>
     <string name="connectHeartRateDevice">Anslut pulsmätare</string>
     <string name="showIntervals">Visa intervaller</string>
     <string name="resumeWorkout">Återuppta träningspass</string>
@@ -297,16 +296,16 @@
     <string name="workoutResumed">Träningspass återupptaget</string>
     <string name="workoutPaused">Träningspass pausat</string>
     <string name="actionSave">Spara</string>
-    <string name="downloadMapConfirmation">Vill du ladda ned kartfilen %s\?</string>
+    <string name="downloadMapConfirmation">Ladda ned kartfilen \\\"%s\\\"\?</string>
     <string name="actionDownloadMap">Ladda ned karta</string>
     <string name="announcementSuppressDuringCall">Förhindra under telefonsamtal</string>
     <string name="invalidNumberFormat">Ogiltigt nummerformat.</string>
     <string name="ttsAboveTargetSpeed">För snabbt</string>
     <string name="ttsBelowTargetSpeed">För långsamt</string>
-    <string name="pref_auto_start_mode_wait_for_gps">Vänta på noggrann GPS-position</string>
+    <string name="pref_auto_start_mode_wait_for_gps">Vänta på noggrann position</string>
     <string name="selectColoring">Välj färgsättning</string>
     <string name="pref_auto_start_mode_on_move">Väntar på att du börjar röra dig</string>
-    <string name="cut">Klipp bort de första/sista 300 meterna</string>
+    <string name="cut">Klipp bort de första/sista 300 m</string>
     <string name="pref_announcement_mode">Meddelandeläge</string>
     <string name="exportDataSummary">Detta gör en säkerhetskopia av alla träningspass</string>
     <string name="trackingInfoDescription">Information om att spåraren är startad</string>
@@ -343,12 +342,12 @@
     <string name="avg">Snitt</string>
     <string name="workout_statistics">Träningsstatistik</string>
     <string name="workoutDiscarded">Träningspasset borttaget</string>
-    <string name="preferenceCurrentSpeedAverageTimeSummary">Ersätt beräkningen av nuvarande hastighet med en snittberäkning.</string>
-    <string name="preferenceCurrentSpeedAverageTimeTitle">Nuvarande hastighet från genomsnitt</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">Ersätt nuvarande hastighet med en snittberäkning</string>
+    <string name="preferenceCurrentSpeedAverageTimeTitle">Genomsnitts hastighet</string>
     <string name="preferenceUseAverageForCurrentSpeed">Använd snitthastigheten över en viss tid istället för den senaste hastighetsmätningen för beräkning av nuvarande hastighet.</string>
     <string name="importBackup">Importera säkerhetskopia</string>
     <string name="importBackupSummary">Återställ säkerhetskopierad data</string>
-    <string name="pref_auto_start_mode_unknown">Okänt läge (välj inte detta)</string>
+    <string name="pref_auto_start_mode_unknown">Okänt (använd inte detta)</string>
     <string name="unitMilesPlural">Engelska mil</string>
     <string name="preferenceCurrentSpeedTime">Tidsspann för beräkning av snitt</string>
     <string name="avgSpeedTotalShort">Snitthastighet (totalt)</string>
@@ -368,7 +367,6 @@
     <string name="workoutTypeEditNameError">Var god ange ett namn</string>
     <string name="workoutTypeEditIdErrorEmpty">Vänligen ange ett ID</string>
     <string name="importMultipleMessageSelectFolder">Var god välj en mapp som innehåller alla de GPX-filer du vill importera.</string>
-    <string name="recordingBackgroundPermissionNotGrantedMessage">FitoTrack samlar också in platsdata i bakgrunden för att kunna spela in träningspasset medan skärmen är avstängd. Var därför vänlig och ge FitoTrack tillgång till din plats hela tiden.</string>
     <string name="importWorkoutMultipleQuestion">Vill du importera en GPX-fil eller flera\?</string>
     <string name="actionImportMultiple">Importera flera</string>
     <string name="notimeout">Ingen tidsgräns</string>
@@ -376,7 +374,7 @@
     <string name="selectBluetoothDevice">Välj Bluetooth-enhet</string>
     <string name="intervalAutoStartDelayTraining">Fördröjning av automatisk start</string>
     <string name="prefShowOnLockScreenTitle">Synligt på låsskärmen</string>
-    <string name="resumeWorkoutConfirmation">Vill du verkligen återuppta detta träningspass\? Detta kommer även lägga till en paus motsvarande den tid som träningspasset var stoppat.</string>
+    <string name="resumeWorkoutConfirmation">Återuppta detta träningspass\? En paus från tidpunkten då träningspasset stoppades kommer att läggas till.</string>
     <string name="nothingSelected">Ingenting har valts</string>
     <string name="pref_announcements_pace_control_summary">Varna när du går under eller över en specificerad hastighet</string>
     <string name="workoutTypeEditMinDistance">Mätavstånd</string>
@@ -385,7 +383,7 @@
     <string name="workoutTypeEditMET">MET</string>
     <string name="trackVisibilityPref">Spårsynlighet</string>
     <string name="runningMigrations">Kör migreringar</string>
-    <string name="pref_render_theme_style_info">Ingen stilmeny finns tillgänglig för det valda renderingstemat.</string>
+    <string name="pref_render_theme_style_info">Ingen meny tillgänglig för det valda temat.</string>
     <string name="pref_render_theme_style">Renderingsstil</string>
     <string name="aboutUnlistedContributors">Tack till alla de olistade medarbetare som har hjälpt till att översätta och utöka FitoTrack!</string>
     <string name="aboutContributors">Medarbetare</string>
@@ -405,7 +403,7 @@
     <string name="recordingActivityPermissionMessage">FitoTrack behöver behörighet att mäta din fysiska aktivitet för att kunna spara träningspass inomhus.</string>
     <string name="recordingPermissionNotGrantedMessage">FitoTrack behöver tillgång till enhetens plats för att spåra din förflyttning under dina träningspass. FitoTrack samlar också in platsdata medan appen är i bakgrunden eller skärmen är avstängd, för att spela in dina träningspass. Platsdatan stannar alltid i din telefon så länge du inte ger ditt uttryckliga tillstånd att dela den.</string>
     <string name="manageIntervalsSummary">Redigera de intervallset du kommer att kunna använda under träningspass med hjälp av röståterkoppling.</string>
-    <string name="importBackupMessage">VARNING: Alla dina existerande data i appen kommer att raderas. Om du inte vill förlora dem, spara först en ny säkerhetskopia. Är du säker på att du vill återställa denna säkerhetskopia\?</string>
+    <string name="importBackupMessage">Säkerhetskopiera din nuvarande data nu om du vill behålla den. Ska tidigare säkerhetskopia återställas nu\?</string>
     <plurals name="workoutJump">
         <item quantity="one">Hopp</item>
         <item quantity="other">Hopp</item>
@@ -427,4 +425,83 @@
     <string name="intervalSet">Intervallset</string>
     <string name="intervalSets">Intervallset</string>
     <string name="setPreferencesMessage">Du kan ställa in ditt föredragna enhetssystem och din vikt i inställningarna.</string>
+    <plurals name="importedWorkouts">
+        <item quantity="one">Importerade ett träningspass</item>
+        <item quantity="other">Importerade %d träningspass</item>
+    </plurals>
+    <string name="hidden">Dold</string>
+    <string name="identifiable_visibility">Identifierbar</string>
+    <string name="private_visibility">Privat</string>
+    <string name="kcal_unit">kcal</string>
+    <string name="joule_unit">Joule</string>
+    <string name="always_mode">Alltid</string>
+    <string name="only_on_headphones_mode">Bara i hörlurar</string>
+    <string name="mapnik_default_osm_mapstyle">Mapnik
+\nOSM:s standardkartstil</string>
+    <string name="always_track_style">Alltid</string>
+    <string name="never_track_style">Aldrig</string>
+    <string name="system_theme">System</string>
+    <string name="light_theme">Ljust</string>
+    <string name="dark_theme">Mörkt</string>
+    <string name="system_default">Systemstandard</string>
+    <string name="sunday">Söndag</string>
+    <string name="monday">Måndag</string>
+    <string name="tuesday">Tisdag</string>
+    <string name="wednesday">Onsdag</string>
+    <string name="thursday">Torsdag</string>
+    <string name="friday">Fredag</string>
+    <string name="saturday">Lördag</string>
+    <string name="in_the_diagram_screen_track_style">På diagramskärmen</string>
+    <string name="height_map">Höjdkarta</string>
+    <string name="workoutAvgDurationLong">Genomsnittlig varaktighet</string>
+    <string name="workoutDurationSum">Sammanlagd varaktighet</string>
+    <string name="preferencesDebugTitle">Felsök</string>
+    <string name="workoutAvgDistance">Genomsnittlig distans</string>
+    <string name="workoutDistanceSum">Sammanlagd distans</string>
+    <string name="stats_overview_title">Översikt</string>
+    <string name="stats_history_title">Historik</string>
+    <string name="stats_explore_title">Utforska</string>
+    <string name="details">Detaljer</string>
+    <string name="histogram">Histogram</string>
+    <string name="monthYear">Månad / år</string>
+    <string name="zoomWithVolumeButtonsTitle">Zooma med volymknapparna</string>
+    <string name="workoutTypeSwimming">Simmning</string>
+    <string name="statistics">Statistik</string>
+    <string name="heartRateSensorBattery">Sensor batteri</string>
+    <string name="metric_unit_system">Meter</string>
+    <string name="offline_local_map_file_with_local_render_theme">Lokal
+\nLokal kart-fil med lokalt renderat tema</string>
+    <string name="exportTargetDirectory">Katalog</string>
+    <string name="autoBackupTitle">Automatisk säkerhetskopiering</string>
+    <string name="takeBackups2">Varanan dag</string>
+    <string name="takeBackups3">Var tredje dag</string>
+    <string name="calibrating">Kalibrerar</string>
+    <string name="debugShareLogsTitle">Dela loggar</string>
+    <string name="debugSensorsTitle">Felsök sensorer</string>
+    <plurals name="satelliteCount">
+        <item quantity="one">En satelit</item>
+        <item quantity="other">%d sateliter</item>
+    </plurals>
+    <string name="noSensorAvailable">Ingen sensor tillgänglig</string>
+    <string name="workoutAvgPauseDuration">Medelpauslängd</string>
+    <string name="workoutPauseDurationSum">Summerad paus tid</string>
+    <string name="workoutCount">Trängingspass</string>
+    <string name="takeBackups7">Varje vecka</string>
+    <string name="takeBackups1">Varja dag</string>
+    <string name="show_sum">Visa summa</string>
+    <string name="trackable_visibility">Spårbar</string>
+    <string name="imperial_with_meters_unit_system">Imperial med meter</string>
+    <string name="metric_with_m_s_unit_system">Meter med m/s</string>
+    <string name="imperial_unit_system">Imperial</string>
+    <string name="takeBackups14">Varanan vecka</string>
+    <string name="purple_rain">Lila regn</string>
+    <string name="pink_mist">Rosa dimma</string>
+    <string name="showWorkoutZoomControlsTitle">Zoomning och panorering</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Armhävning</item>
+        <item quantity="other">Armhävningar</item>
+    </plurals>
+    <string name="showWorkoutZoomControlsSummary">Aktivera zoomning och panoreringskontroller på kartan medans GPS-träningarna spelas in</string>
+    <string name="unitHeartRateSensorBattery">%</string>
+    <string name="workoutTypePullUps">Armhävning</string>
 </resources>

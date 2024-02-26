@@ -7,7 +7,7 @@
 /app/release
 
 # misc
-.*
+.*/
 !.gitignore
 
 # idea

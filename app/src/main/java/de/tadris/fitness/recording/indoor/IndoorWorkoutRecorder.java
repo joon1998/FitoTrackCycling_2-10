@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -20,7 +20,6 @@
 package de.tadris.fitness.recording.indoor;
 
 import android.content.Context;
-import android.util.Log;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -32,12 +31,15 @@ import de.tadris.fitness.data.BaseWorkout;
 import de.tadris.fitness.data.IndoorSample;
 import de.tadris.fitness.data.IndoorWorkout;
 import de.tadris.fitness.data.IndoorWorkoutData;
+import de.tadris.fitness.data.RecordingType;
 import de.tadris.fitness.data.WorkoutType;
+import de.tadris.fitness.data.preferences.UserMeasurements;
 import de.tadris.fitness.recording.BaseWorkoutRecorder;
 import de.tadris.fitness.recording.indoor.exercise.ExerciseRecognizer;
 import de.tadris.fitness.ui.record.RecordIndoorWorkoutActivity;
 import de.tadris.fitness.ui.record.RecordWorkoutActivity;
-import de.tadris.fitness.util.CalorieCalculator;
+import de.tadris.fitness.util.WorkoutLogger;
+import de.tadris.fitness.util.calorie.CalorieCalculator;
 
 public class IndoorWorkoutRecorder extends BaseWorkoutRecorder {
 
@@ -59,8 +61,8 @@ public class IndoorWorkoutRecorder extends BaseWorkoutRecorder {
     }
 
     @Override
-    public boolean hasRecordedSomething() {
-        return samples.size() > 2;
+    public int getSampleSize() {
+        return samples.size();
     }
 
     @Override
@@ -94,7 +96,7 @@ public class IndoorWorkoutRecorder extends BaseWorkoutRecorder {
 
         boolean acceptSamples = useAutoPause ? isPausedOrResumed() : isResumed();
         if (acceptSamples && event.getTimestamp() > workout.start) {
-            Log.d("Recorder", "repetition recognized with intensity " + event.getIntensity());
+            WorkoutLogger.log("Recorder", "repetition recognized with intensity " + event.getIntensity());
             if (currentSample != null && currentSample.repetitions < type.minDistance && event.getTimestamp() - currentSample.absoluteTime < PAUSE_TIME) {
                 addToExistingSample(event);
             } else {
@@ -183,7 +185,7 @@ public class IndoorWorkoutRecorder extends BaseWorkoutRecorder {
     @Override
     public int getCalories() {
         workout.duration = getDuration();
-        return CalorieCalculator.calculateCalories(context, workout);
+        return new CalorieCalculator(context).calculateCalories(UserMeasurements.from(context), workout);
     }
 
     public List<IndoorSample> getSamples() {
@@ -196,7 +198,7 @@ public class IndoorWorkoutRecorder extends BaseWorkoutRecorder {
     }
 
     @Override
-    public WorkoutType.RecordingType getRecordingType() {
-        return WorkoutType.RecordingType.INDOOR;
+    public RecordingType getRecordingType() {
+        return RecordingType.INDOOR;
     }
 }

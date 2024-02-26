@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -35,7 +35,7 @@ import androidx.preference.PreferenceManager;
 
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
-import de.tadris.fitness.data.UserPreferences;
+import de.tadris.fitness.data.preferences.UserPreferences;
 import de.tadris.fitness.util.NumberPickerUtils;
 import de.tadris.fitness.util.unit.DistanceUnitSystem;
 
@@ -94,7 +94,7 @@ public class InterfaceSettingsFragment extends FitoTrackSettingFragment {
         d.setTitle(getString(R.string.pref_weight));
         View v = getLayoutInflater().inflate(R.layout.dialog_picker, null);
         NumberPicker np = v.findViewById(R.id.picker);
-        np.setMaxValue((int) unitSystem.getWeightFromKilogram(150));
+        np.setMaxValue((int) unitSystem.getWeightFromKilogram(400));
         np.setMinValue((int) unitSystem.getWeightFromKilogram(20));
         np.setFormatter(value -> value + " " + unitSystem.getWeightUnit());
         final String preferenceVariable = "weight";
@@ -179,4 +179,8 @@ public class InterfaceSettingsFragment extends FitoTrackSettingFragment {
         }
     }
 
+    @Override
+    protected String getTitle() {
+        return getString(R.string.preferencesUserInterfaceTitle);
+    }
 }

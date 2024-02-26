@@ -1,0 +1,8 @@
+- Eşleştirilmemiş Bluetooth aygıtlarını tara
+- Egzersizleri kes
+- Takip etmeyi renklendir
+- Zaman içinde hızı hesaplama seçeneği
+- Çok yavaş/çok hızlı koşmanızı bildiren hız koruyucu
+- Aralıkları düzenle
+
+Değişikliklerin daha ayrıntılı bir listesi için lütfen Codeberg'deki proje deposuna bakın

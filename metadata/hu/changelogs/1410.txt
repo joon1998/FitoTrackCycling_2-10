@@ -1,0 +1,7 @@
+Ez a frissítés számos hibajavítást és kisebb továbbfejlesztéseket tartalmaz:
+- Kísérlet egy hiba javítására, amikor a FitoTrack nem rögzít semmit sem
+- Hibakeresési naplózás
+- A hangerőgombokon keresztüli térképnagyítás mostantól választható
+- GPX-formátum javítása
+
+A változtatások teljes listájáért nézze meg a projekt tárolóját a Codebergen

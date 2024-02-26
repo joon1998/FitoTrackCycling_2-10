@@ -1,0 +1,5 @@
+- actividad añadida Skateboarding
+- recuperación de entrenamientos perdidos
+- se han corregido varios problemas de estabilidad en la grabación
+
+por favor, consulte el repositorio del proyecto en Codeberg para ver más cambios

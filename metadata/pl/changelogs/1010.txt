@@ -1,0 +1,10 @@
+- Pokazywanie punktów zatrzymania (pauz) na pełnym ekranowej mapie
+
+- Dodano ikony dla jazdy konnej
+- Lepsza wydajność gdy przeglądane są dłuższe ćwiczenia
+- Import wielu ćwiczeń przeniesiony do ekranu głównego
+- Import wszystkich tras z pliku GPX
+
+- Poprawny import ćwiczeń z kopii zapasowych
+
+proszę zobaczyć repozytorium projektu na Codeberg dla dokładniejszej listy zmian

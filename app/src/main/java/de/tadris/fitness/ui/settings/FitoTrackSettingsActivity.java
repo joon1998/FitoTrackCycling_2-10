@@ -38,6 +38,8 @@ public class FitoTrackSettingsActivity extends FitoTrackActivity implements Pref
         setContentView(R.layout.activity_settings);
         setupActionBar();
 
+        setTitle(R.string.settings);
+
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.settings_container, new MainSettingsFragment())

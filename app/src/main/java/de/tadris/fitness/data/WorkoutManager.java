@@ -23,19 +23,6 @@ import java.util.List;
 
 public class WorkoutManager {
 
-    public static void roundSpeedValues(List<GpsSample> samples) {
-        for (int i = 0; i < samples.size(); i++) {
-            GpsSample sample = samples.get(i);
-            if (i == 0) {
-                sample.tmpRoundedSpeed = (sample.speed + samples.get(i + 1).speed) / 2;
-            } else if (i == samples.size() - 1) {
-                sample.tmpRoundedSpeed = (sample.speed + samples.get(i - 1).speed) / 2;
-            } else {
-                sample.tmpRoundedSpeed = (sample.speed + samples.get(i - 1).speed + samples.get(i + 1).speed) / 3;
-            }
-        }
-    }
-
     public static void calculateInclination(List<GpsSample> samples) {
         samples.get(0).tmpInclination = 0;
 
@@ -46,18 +33,6 @@ public class WorkoutManager {
             double elevationDifference = sample.elevation - lastSample.elevation;
             double distance = sample.toLatLong().sphericalDistance(lastSample.toLatLong());
             sample.tmpInclination = (float) (elevationDifference * 100 / distance);
-        }
-
-        // Some rounding
-        for (int i = 0; i < samples.size(); i++) {
-            GpsSample sample = samples.get(i);
-            if (i == 0) {
-                sample.tmpInclination = (sample.tmpInclination + samples.get(i + 1).tmpInclination) / 2;
-            } else if (i == samples.size() - 1) {
-                sample.tmpInclination = (sample.tmpInclination + samples.get(i - 1).tmpInclination) / 2;
-            } else {
-                sample.tmpInclination = (sample.tmpInclination + samples.get(i - 1).tmpInclination + samples.get(i + 1).tmpInclination) / 3;
-            }
         }
     }
 

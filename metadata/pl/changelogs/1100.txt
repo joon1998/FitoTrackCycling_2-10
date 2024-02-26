@@ -1,0 +1,10 @@
+- Tryb "Auto Start" otrzymał wiele trybów
+- Poprawa działania map offline
+
+- Poprawa stabilności działania
+- "Wszystko"- Filtr dla statystyk ćwiczeń
+- Dodawana od teraz zostaje etykieta "edytowane" do ćwiczeń, w których zmieniony został dystans, data lub czas
+
+- Poprawki różnych błędów
+
+proszę zobaczyć repozytorium projektu na Codeberg dla dokładniejszej listy zmian

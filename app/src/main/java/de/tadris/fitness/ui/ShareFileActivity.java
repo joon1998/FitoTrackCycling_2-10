@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -43,6 +43,7 @@ import de.tadris.fitness.R;
 public class ShareFileActivity extends FitoTrackActivity {
 
     public static String EXTRA_FILE_URI = "file_uri";
+    public static String EXTRA_FILE_MIME = "mime_type";
 
     private static final int REQUEST_CODE_TARGET_DIRECTORY = 1;
 
@@ -76,7 +77,7 @@ public class ShareFileActivity extends FitoTrackActivity {
     private void saveFile() {
         Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
-        intent.setType("application/*");
+        intent.setType(getType());
         intent.putExtra(Intent.EXTRA_TITLE, file.getLastPathSegment());
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -85,6 +86,14 @@ public class ShareFileActivity extends FitoTrackActivity {
         }
 
         startActivityForResult(intent, REQUEST_CODE_TARGET_DIRECTORY);
+    }
+
+    private String getType() {
+        if (getIntent().hasExtra(EXTRA_FILE_MIME)) {
+            return getIntent().getStringExtra(EXTRA_FILE_MIME);
+        } else {
+            return "application/*";
+        }
     }
 
     @Override

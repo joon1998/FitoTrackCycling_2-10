@@ -1,0 +1,10 @@
+- Editar entrenamientos: tipo, distancia, duración
+- Pantalla sobre la empresa
+- Se ha añadido el sistema de unidades de costumbre de EE.UU. con los pies
+- Ritmo como información mostrada y anuncio de voz
+
+- Eliminar los mapas de ThunderForest debido a la licencia
+- Corrección de errores / estabilidad y mejoras de UI/UX
+- Añadido el danés, actualizado el holandés
+
+Por favor, consulte el repositorio del proyecto en Codeberg para más cambios

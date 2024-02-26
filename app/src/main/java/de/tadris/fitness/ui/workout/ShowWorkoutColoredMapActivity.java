@@ -28,7 +28,7 @@ import java.util.Map;
 
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
-import de.tadris.fitness.data.UserPreferences;
+import de.tadris.fitness.data.preferences.UserPreferences;
 import de.tadris.fitness.ui.workout.diagram.ConverterManager;
 import de.tadris.fitness.ui.workout.diagram.SampleConverter;
 

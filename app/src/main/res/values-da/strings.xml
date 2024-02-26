@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
   ~
   ~ This file is part of FitoTrack
   ~
@@ -15,8 +16,7 @@
   ~
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  --><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">FitoTrack</string>
     <string name="stop">Stop</string>
     <string name="delete">Slet</string>
@@ -33,7 +33,7 @@
     <string name="finished">Færdig</string>
     <string name="loadingFile">Loader fil</string>
     <string name="chooseBackupFile">Vælg Backup-Fil</string>
-    <string name="importBackupMessage">ADVARSEL: Alle dine eksisterende data i denne app vil blive slettet. Hvis du ikke vil miste dem, så lav først en backup. Er du sikker på at du vil genoprette denne backup?</string>
+    <string name="importBackupMessage">Backup dine nuværende data nu hvis du vil beholde dem. Genskab tidligere backup nu\?</string>
     <string name="restore">Genopret</string>
     <string name="backup">Backup</string>
     <string name="setPreferencesTitle">Sæt Indstillinger</string>
@@ -70,7 +70,7 @@
     <string name="workoutAvgSpeedShort">Gns. Hastighed</string>
     <string name="workoutAvgSpeedLong">Gennemsnitlig Hastighed</string>
     <string name="workoutTopSpeed">Top Hastighed</string>
-    <string name="workoutBurnedEnergy">Brændt Energi</string>
+    <string name="workoutBurnedEnergy">Kalorier forbrændt</string>
     <string name="workoutTotalEnergy">Total Energi</string>
     <string name="workoutEnergyConsumption">Energi Forbrug</string>
     <string name="workoutEdited">Denne træning er blevet redigeret.</string>
@@ -126,7 +126,7 @@
     <string name="mapStyle">Kort Stil</string>
     <string name="waiting_gps">Venter på GPS</string>
     <string name="actionUploadToOSM">Upload til OSM</string>
-    <string name="cut">Klip de første/sidste 300 Meter</string>
+    <string name="cut">Klip de første/sidste 300 m</string>
     <string name="trackVisibilityPref">Track Synlighed</string>
     <string name="description">Beskrivelse</string>
     <string name="ttsNotAvailable">TextToSpeech er ikke tilgængelig</string>
@@ -229,36 +229,15 @@
     <string name="speedLastMinuteSpoken">Hastighed indenfor det sidste minut</string>
     <string name="cannotFindWorkout">Kan ikke finde træning</string>
     <string name="editWorkout">Rediger Træning</string>
-    <string-array name="pref_energy_units">
-        <item>kcal</item>
-        <item>Joule</item>
-    </string-array>
-    <string-array name="pref_announcement_mode">
-        <item>Altid</item>
-        <item>Kun i hovedtelefoner</item>
-    </string-array>
-    <string-array name="pref_theme_setting">
-        <item>System</item>
-        <item>Lys</item>
-        <item>Mørk</item>
-    </string-array>
-    <string-array name="pref_time_format">
-        <item>System Standard</item>
-        <item>12:08 PM</item>
-        <item>15:23</item>
-    </string-array>
-    <string-array name="pref_date_format">
-        <item>System Standard</item>
-        <item>2001-07-24</item>
-        <item>2001.07.24</item>
-        <item>2001/07/24</item>
-        <item>24-07-2001</item>
-        <item>24.07.2001</item>
-        <item>24/07/2001</item>
-        <item>07/24/2001</item>
-    </string-array>
+    <string name="kcal_unit">kcal</string>
+    <string name="joule_unit">Joule</string>
+    <string name="always_mode">Altid</string>
+    <string name="only_on_headphones_mode">Kun i hovedtelefoner</string>
+    <string name="system_theme">System</string>
+    <string name="light_theme">Lys</string>
+    <string name="dark_theme">Mørk</string>
+    <string name="system_default">System Standard</string>
     <string name="aboutVersion">Version</string>
-    <string name="importedWorkouts">Importeret %d træning</string>
     <string name="importingFiles">Import af filer</string>
     <string name="importMultipleMessageSelectFolder">Vælg en mappe, der indeholder alle de GPX filer, du gerne vil importere.</string>
     <string name="importMultipleGpxFiles">Importer flere GPX filer</string>
@@ -276,7 +255,7 @@
     <string name="editDisplayedInformation">Rediger viste oplysninger</string>
     <string name="aboutPrivacyPolicy">Fortrolighedspolitik</string>
     <string name="aboutHelpTranslating">Hjælp med at oversætte</string>
-    <string name="aboutUnlistedContributors">Tak til alle de unoterede bidragydere, der hjalp med at oversætte og udvide FitoTrack!</string>
+    <string name="aboutUnlistedContributors">Tak til alle ikke listede contributors der har hjulpet med at oversætte og udvide FitoTrack!</string>
     <string name="aboutSourceCode">Vis kildekode</string>
     <string name="aboutSendFeedback">Send feedback til udvikleren</string>
     <string name="aboutContributors">Bidragyder</string>
@@ -308,8 +287,8 @@
     <string name="resumeWorkout">Genoptag Træning</string>
     <string name="heartRateNotAvailable">Puls er i øjeblikket ikke tilgængelig.</string>
     <string name="announcementWorkoutActions">Workorkout handlinger (pause, genoptage, etc.)</string>
-    <string name="resumeWorkoutConfirmation">Vil du virkelig genoptage denne træning\? Dette vil også tilføje en pause fra det tidspunkt, hvor træningen blev stoppet.</string>
-    <string name="prefShowOnLockScreenSummary">Vis træningsoplysninger, selvom telefonen er låst.</string>
+    <string name="resumeWorkoutConfirmation">Genoptag denne træning\? En pause fra tidspunktet hvor træningen var stoppet vil blive tilføjet.</string>
+    <string name="prefShowOnLockScreenSummary">Vis træningsoplysninger selv hvis enheden er låst.</string>
     <string name="prefShowOnLockScreenTitle">Synlig på låseskærmen</string>
     <string name="notimeout">Ingen Timeout</string>
     <string name="workoutTypeEditMET">MET</string>
@@ -336,31 +315,31 @@
     <string name="auto">Auto</string>
     <string name="fileNotFound">Fil ikke fundet</string>
     <string name="invalidNumberFormat">Ugyldig nummer format.</string>
-    <string name="pref_announcements_pace_control_title">Tempo Kontrol Advarsler</string>
+    <string name="pref_announcements_pace_control_title">Tempo advarsler</string>
     <string name="pref_announcements_pace_control_summary">Advar når under eller over specificeret hastighed</string>
     <string name="noColoring">Ingen farve</string>
     <string name="selectColoring">Vælg farve</string>
-    <string name="pref_auto_start_mode_unknown">Ukendt metode (vælg venligst ikke)</string>
+    <string name="pref_auto_start_mode_unknown">Ukendt (brug ikke)</string>
     <string name="pref_auto_start_mode_on_move">Vent på at du bevæger dig</string>
-    <string name="pref_auto_start_mode_wait_for_gps">Vent på præcis GPS lokation</string>
+    <string name="pref_auto_start_mode_wait_for_gps">Vent på præcis lokation</string>
     <string name="pref_auto_start_mode_instant">Start med det samme</string>
     <string name="pref_auto_start_mode_title">Auto-Start Metode</string>
     <string name="intervalAutoStartModeTraining">Auto Start Træningsmetode</string>
     <string name="manageAutoStartModeSummary">Ændre metode for automatisk træningsstart</string>
-    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g id="mins" example="1 minute">%1$s</xliff:g> og <xliff:g id="secs" example="7 seconds">%2$s</xliff:g> til start </string>
-    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g id="mins" example="12 minutes">%1$s</xliff:g> til start </string>
-    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g id="secs" example="5 seconds">%1$s</xliff:g> til start </string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g example="1 minute" id="mins">%1$s</xliff:g> and <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> til start </string>
+    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g example="12 minutes" id="mins">%1$s</xliff:g> til start </string>
+    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g example="5 seconds" id="secs">%1$s</xliff:g> til start </string>
     <string name="ttsAboveTargetSpeed">For hurtig</string>
     <string name="ttsBelowTargetSpeed">For langsom</string>
     <string name="lowerPaceLimit">nedre tempo grænse</string>
     <string name="upperPaceLimit">Øvre tempo grænse</string>
     <plurals name="minutes">
-        <item quantity="one"><xliff:g id="mins" example="1">%1$d</xliff:g> minut</item>
-        <item quantity="other"><xliff:g id="mins" example="5">%1$d</xliff:g> minutter</item>
+        <item quantity="one"><xliff:g example="1" id="mins">%1$d</xliff:g> minut</item>
+        <item quantity="other"><xliff:g example="5" id="mins">%1$d</xliff:g> minutter</item>
     </plurals>
     <plurals name="seconds">
-        <item quantity="one"><xliff:g id="secs" example="1">%1$d</xliff:g> sekund</item>
-        <item quantity="other"><xliff:g id="secs" example="12">%1$d</xliff:g> sekunder</item>
+        <item quantity="one"><xliff:g example="1" id="secs">%1$d</xliff:g> sekund</item>
+        <item quantity="other"><xliff:g example="12" id="secs">%1$d</xliff:g> sekunder</item>
     </plurals>
     <string name="editStartEndHelp">Vælg en lokation på et kort eller diagram. Klik så på en af pilene for at vælge start og slut punkter. Når du er færdig, klik på gem ikonet for at gemme ændringerne.</string>
     <string name="launchError">Kunne ikke starte applikation</string>
@@ -398,21 +377,20 @@
     <string name="cancelDownloadConfirmation">Vil du gerne annullere den nuværende download\?</string>
     <string name="actionCancelDownload">Annuller download</string>
     <string name="alreadyDownloading">En fil er allerede ved at blive downloaded</string>
-    <string name="downloadMapConfirmation">Vil du downloade mappe filen %s\?</string>
+    <string name="downloadMapConfirmation">Download \\\"%s\\\" mappe filen\?</string>
     <string name="actionDownloadMap">Download kort</string>
-    <string name="overwriteMapConfirmation">Vil du overskrive den eksisterende mappe fil %s\?</string>
+    <string name="overwriteMapConfirmation">Overskriv den eksisterende \\\"%s\\\" kort fil\?</string>
     <string name="downloadMapsSpecifyDirectory">Venligst definer en mappe til offline kort først</string>
     <string name="downloadMapsTitle">Download Kort</string>
     <string name="runningMigrations">Kørende migrationer</string>
     <string name="importWorkoutMultipleQuestion">Vil du importere en eller flere GPX filer\?</string>
-    <string name="recordingBackgroundPermissionNotGrantedMessage">Fitotrack indsamler lokationsoplysninger i baggrunden for at spore din træning når skærmen er slukket. Derfor, venligst giv FitoTrack tilladelse til din lokation hele tiden.</string>
     <string name="editWorkoutStartEnd">Rediger Start/Slut</string>
     <string name="unitHeartBeatsPerMinute">spm</string>
-    <string name="preferenceFirstDayOfWeek">Start på ugen</string>
+    <string name="preferenceFirstDayOfWeek">Ugestart</string>
     <string name="preferenceUseAverageForCurrentSpeed">Brug gennemsnitshastighed over en bestemt tid i stedet for den sidste enkelt hastighedsoptegnelse for den nuværende hastighedsudregning.</string>
-    <string name="preferenceCurrentSpeedAverageTimeTitle">Nuværende Hastighed efter Gennemsnit</string>
-    <string name="preferenceCurrentSpeedAverageTimeSummary">Erstat den nuværende hastighedsudregning med en gennemsnitlig udregning.</string>
-    <string name="preferenceCurrentSpeedTime">Tidslængde for gennemsnitsudregninger</string>
+    <string name="preferenceCurrentSpeedAverageTimeTitle">Gennemsnits Hastighed</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">Erstat den nuværende hastighed med et gennemsnit</string>
+    <string name="preferenceCurrentSpeedTime">Gennemsnits Hastigheds Tidslængde</string>
     <string name="preferencesCategoryMap">Kort</string>
     <string name="edit_interval">Rediger Interval</string>
     <string name="prefTrackStyleUsageTitle">Brug track farver automatisk</string>
@@ -420,4 +398,132 @@
     <string name="workoutTypeAll">Alle</string>
     <string name="workoutMaxHeight">Maksimum højde</string>
     <string name="workoutMinHeight">Minimum højde</string>
+    <string name="workoutRepetitions">Repetitioner</string>
+    <string name="currentTimeStructure">%s %s</string>
+    <string name="heartRateSensorBattery">Batteri Sensor</string>
+    <string name="saturday">Lørdag</string>
+    <string name="massExportGpxSummary">Laver en ZIP fil med alle træninger som GPS dokumenter</string>
+    <string name="exportTargetDirectory">Mappe</string>
+    <string name="massExportGpxTitle">Ekspoter alle træninger som GPX</string>
+    <string name="workoutTypeSwimming">Svømning</string>
+    <string name="workoutTypeTreadmill">Løbebånd</string>
+    <plurals name="workoutStep">
+        <item quantity="one">Skridt</item>
+        <item quantity="other">Skridt</item>
+    </plurals>
+    <string name="workoutTypeRopeSkipping">Sjippetov</string>
+    <string name="workoutTypeTrampolineJumping">Trampolinhop</string>
+    <plurals name="workoutJump">
+        <item quantity="one">Hop</item>
+        <item quantity="other">Hop</item>
+    </plurals>
+    <string name="workoutCount">Antal træning</string>
+    <plurals name="importedWorkouts">
+        <item quantity="one">Importerede en træning</item>
+        <item quantity="other">Importerede %d træninger</item>
+    </plurals>
+    <string name="stats_explore_title">Udforsk</string>
+    <string name="stats_history_title">Historie</string>
+    <string name="stats_overview_title">Oversigt</string>
+    <string name="identifiable_visibility">Identificérbar</string>
+    <string name="trackable_visibility">Sporbar</string>
+    <string name="private_visibility">Privat</string>
+    <string name="mapnik_default_osm_mapstyle">Mapnik
+\nStandard OSM kortstil</string>
+    <string name="humanitarian_clean_map_but_sometimes_not_available">Humanitarian
+\nRent kort, men ikke altid tilgængelig</string>
+    <string name="offline_local_map_file_with_local_render_theme">Offline
+\nLokal kort fil med lokalt renderet tema</string>
+    <string name="always_track_style">Altid</string>
+    <string name="in_the_diagram_screen_track_style">På diagram skærmen</string>
+    <string name="never_track_style">Aldrig</string>
+    <string name="purple_rain">Lilla Regn</string>
+    <string name="pink_mist">Lyserød Tåge</string>
+    <string name="rainbow_warrior">Regnbue Kriger</string>
+    <string name="height_map">Højde Kort</string>
+    <string name="bright_night">Skarp Nat</string>
+    <string name="mondriaan">Mondriaan</string>
+    <string name="metric_unit_system">Metrisk</string>
+    <string name="metric_with_m_s_unit_system">Metrisk med m/s</string>
+    <string name="imperial_unit_system">Imperialsk</string>
+    <string name="imperial_with_meters_unit_system">Imperialsk med meter</string>
+    <string name="us_customary_unit_system">US Sædvanlig</string>
+    <string name="monday">Mandag</string>
+    <string name="tuesday">Tirsdag</string>
+    <string name="wednesday">Onsdag</string>
+    <string name="thursday">Torsdag</string>
+    <string name="friday">Fredag</string>
+    <string name="exportTargetHttpPost">HTTP POST request</string>
+    <string name="autoBackupTitle">Automatiske backups</string>
+    <string name="workoutGPXExportTitle">Træning GPX eksporter</string>
+    <string name="autoExportWorkoutsSummary">Eksporter nyoptagede træninger</string>
+    <string name="autoExportBackupExplanation">Ved det specificerede interval vil en backup blive ekspoteret her:</string>
+    <string name="autoExportWorkoutExplanation">Efter en ny træning er optaget, en GPX eksport vil blive gemt her:</string>
+    <string name="hintConfigureExportTargets">Tilføj mål som filer skal eksporteres til.</string>
+    <string name="debugSensorsTitle">Fejlfindings sensorer</string>
+    <string name="debugSensorsSummary">Indsaml sensor data som er skrevet ind i log fil</string>
+    <string name="debugPressureSensor">Fejlfind tryk sensor</string>
+    <string name="noSensorAvailable">Ingen sensorer tilgængelig</string>
+    <string name="show_sum">Vis sum</string>
+    <string name="workoutRecordingTypeGps">GPS Træning</string>
+    <string name="workoutRecordingTypeIndoor">Indensørs Træning</string>
+    <string name="workoutFrequency">Hyppighed</string>
+    <string name="workoutAvgFrequencyShort">Gen. Hyppighed</string>
+    <string name="workoutAvgFrequencyLong">Gennemsnits Hyppighed</string>
+    <string name="workoutAvgIntensityShort">Gen. Intensitet</string>
+    <string name="workoutMaxIntensity">Max Intensitet</string>
+    <string name="pref_step_length">Skridt Længde</string>
+    <string name="pref_map_directory">Offline Kort Mappe</string>
+    <string name="pref_render_theme_style">Render Stil</string>
+    <string name="workoutCurrentFrequency">Nuværende Hyppighed</string>
+    <string name="workoutMaxFrequency">Max Hyppighed</string>
+    <string name="workoutIntensity">Intensitet</string>
+    <string name="autoExportBackupSummary">Exporter backups automatisk</string>
+    <string name="takeBackups1">Hver dag</string>
+    <string name="takeBackups3">Hver tredje dag</string>
+    <string name="takeBackups2">Hver anden dag</string>
+    <string name="zoomWithVolumeButtonsSummary">Lydstyrke knapperne zoomer ind og ud</string>
+    <string name="zoomWithVolumeButtonsTitle">Zoom med lydstyrke knapperne</string>
+    <string name="deleteExportTargetConfirmation">Slet dette eksport mål\?</string>
+    <string name="takeBackups7">Hver uge</string>
+    <string name="takeBackups14">Hver anden uge</string>
+    <string name="selectExportTarget">Vælg eksport mål</string>
+    <string name="preferencesDebugTitle">Fejlfinding</string>
+    <string name="unitHeartRateSensorBattery">%</string>
+    <string name="unitHertzLong">Hertz</string>
+    <string name="recordingActivityPermissionMessage">FitoTrack kræver tilladelse til at tracke din fysiske aktivitet for at optage indendørs træning.</string>
+    <string name="preferenceCategoryRenderThemeCategories">Kategorier</string>
+    <string name="pref_render_theme_style_info">Ingen menu tilgængelig for det valgte tema.</string>
+    <string name="exportIntervalTitle">Backup interval</string>
+    <string name="autoExportBackupTitle">Automatiske app backups</string>
+    <string name="enterValidUrl">Indtast en gyldig HTTP URL</string>
+    <string name="debugShareLogsTitle">Del logs</string>
+    <string name="debugShareLogsSummary">Del logs med brugbar data til at finde fejl i træningsoptageren. Som regel indeholder de ikke lokationsdata.</string>
+    <plurals name="satelliteCount">
+        <item quantity="one">En satelit</item>
+        <item quantity="other">%d satelitter</item>
+    </plurals>
+    <plurals name="workoutPushUp">
+        <item quantity="one">Armbøjning</item>
+        <item quantity="other">Armbøjninger</item>
+    </plurals>
+    <string name="workoutAvgDurationLong">Gennemsnits Varighed</string>
+    <string name="workoutDurationSum">Duration sum</string>
+    <string name="workoutAvgPauseDuration">Gennemsnits Pause Varighed</string>
+    <string name="workoutPauseDurationSum">Pause Varigheds sum</string>
+    <string name="workoutSets">Set</string>
+    <string name="workoutTypePushUps">Armbøjninger</string>
+    <string name="statistics">Statestikker</string>
+    <string name="histogram">Histogram</string>
+    <string name="details">Detaljer</string>
+    <string name="monthYear">Måned / År</string>
+    <string name="showWorkoutZoomControlsTitle">Zoom og pan</string>
+    <string name="hidden">Skjult</string>
+    <string name="workoutAvgDistance">Gennemsnits Distance</string>
+    <string name="workoutDistanceSum">Distance sum</string>
+    <string name="showWorkoutZoomControlsSummary">Aktiver zoom og pan kontrol på kortet mens GPS træning bliver optaget</string>
+    <string name="sunday">Søndag</string>
+    <string name="configureHttpPostRequest">Konfigurer HTTP POST request</string>
+    <string name="httpUrl">URL</string>
+    <string name="calibrating">Kalibrerer</string>
 </resources>

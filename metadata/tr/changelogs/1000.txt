@@ -1,0 +1,7 @@
+- Özel egzersiz türleri
+- Egzersizleri resim olarak paylaş
+- Kullanıcı arayüzü/kararlılık iyileştirmeleri
+- "Sistem eylemleri" duyurusu artık devre dışı bırakılabilir
+- Çeviriler güncellendi
+
+Değişikliklerin daha ayrıntılı bir listesi için lütfen Codeberg'deki proje deposuna bakın

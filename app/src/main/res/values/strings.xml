@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
   ~
   ~ This file is part of FitoTrack
   ~
@@ -16,6 +18,7 @@
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
+
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">FitoTrack</string>
     <string name="stop">Stop</string>
@@ -33,7 +36,7 @@
     <string name="finished">Finished</string>
     <string name="loadingFile">Loading file</string>
     <string name="chooseBackupFile">Choose Backup-File</string>
-    <string name="importBackupMessage">WARNING: All your existing data in the app will be cleared. If you don\'t want to loose them, first take another backup. Are you sure, you want to restore this backup?</string>
+    <string name="importBackupMessage">Back up your current data now if you want to keep it. Restore prior backup now\?</string>
     <string name="restore">Restore</string>
     <string name="backup">Backup</string>
     <string name="setPreferencesTitle">Set Preferences</string>
@@ -56,14 +59,18 @@
     <string name="pref_announcements_config_title">Announcement Trigger</string>
     <string name="pref_announcements_config_summary">Choose the time and distance between voice announcements</string>
     <string name="pref_announcements_content">Content of the announcements</string>
-    <string name="workoutRecordingTypeGps">Gps Workouts</string>
+    <string name="workoutRecordingTypeGps">GPS Workouts</string>
     <string name="workoutRecordingTypeIndoor">Indoor Workouts</string>
     <string name="gpsLost">GPS signal lost</string>
     <string name="gpsFound">GPS signal found</string>
     <string name="workoutTime">Time</string>
     <string name="workoutDate">Date</string>
     <string name="workoutDuration">Duration</string>
+    <string name="workoutAvgDurationLong">Average Duration</string>
+    <string name="workoutDurationSum">Duration sum</string>
     <string name="workoutPauseDuration">Pause Duration</string>
+    <string name="workoutAvgPauseDuration">Average Pause Duration</string>
+    <string name="workoutPauseDurationSum">Pause Duration sum</string>
     <string name="workoutStartTime">Start Time</string>
     <string name="workoutEndTime">End Time</string>
     <string name="workoutDistance">Distance</string>
@@ -83,12 +90,13 @@
     <string name="workoutAvgSpeedShort">Avg. Speed</string>
     <string name="workoutAvgSpeedLong">Average Speed</string>
     <string name="workoutTopSpeed">Top Speed</string>
-    <string name="workoutBurnedEnergy">Burned Energy</string>
+    <string name="workoutBurnedEnergy">Calories burned</string>
     <string name="workoutTotalEnergy">Total Energy</string>
     <string name="workoutEnergyConsumption">Energy Consumption</string>
     <string name="workoutHeartRate">Heart Rate</string>
+    <string name="heartRateSensorBattery">Sensor Battery</string>
     <string name="workoutMaxHeartRate">Max Heart Rate</string>
-    <string name="workoutAvgHeartRate">Avg. Heart Rate</string>
+    <string name="workoutAvgHeartRate">Avg. heart rate</string>
     <string name="workoutEdited">This workout has been edited.</string>
     <string name="uploading">Uploading</string>
     <string name="enterVerificationCode">Enter Verification Code</string>
@@ -109,6 +117,7 @@
     <string name="workoutTypeSkateboarding">Skateboarding</string>
     <string name="workoutTypeInlineSkating">Inline Skating</string>
     <string name="workoutTypeRowing">Rowing</string>
+    <string name="workoutTypeSwimming">Swimming</string>
     <string name="workoutTypeOther">Other</string>
     <string name="workoutTypeTreadmill">Treadmill</string>
     <plurals name="workoutStep">
@@ -125,6 +134,11 @@
     <plurals name="workoutPushUp">
         <item quantity="one">Push up</item>
         <item quantity="other">Push ups</item>
+    </plurals>
+    <string name="workoutTypePullUps">Pull ups</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Pull up</item>
+        <item quantity="other">Pull ups</item>
     </plurals>
     <string name="unknown">Unknown</string>
     <string name="workoutTypeAdd">Add</string>
@@ -167,7 +181,7 @@
     <string name="prefTrackStyleUsageTitle">Use track coloring automatically</string>
     <string name="waiting_gps">Waiting for GPS</string>
     <string name="actionUploadToOSM">Upload to OSM</string>
-    <string name="cut">Cut the first/last 300 Meters</string>
+    <string name="cut">Cut the first/last 300 m</string>
     <string name="trackVisibilityPref">Track Visibility</string>
     <string name="description">Description</string>
     <string name="ttsNotAvailable">TextToSpeech is not available</string>
@@ -213,6 +227,7 @@
     <string name="preferencesUserInterfaceTitle">User Interface</string>
     <string name="preferencesUserInterfaceSummary">Personalize the app</string>
     <string name="preferencesRecordingTitle">Recording</string>
+    <string name="preferencesDebugTitle">Debug</string>
     <string name="preferencesRecordingSummary">Manage the workout recording</string>
     <string name="preferencesBackupTitle">Database</string>
     <string name="preferencesBackupSummary">Backup/Restore your workout data</string>
@@ -220,11 +235,11 @@
     <string name="preferencesCategoryMap">Map</string>
     <string name="preferenceDateFormat">Date Format</string>
     <string name="preferenceTimeFormat">Time Format</string>
-    <string name="preferenceCurrentSpeedTime">Time span for average calculation</string>
-    <string name="preferenceCurrentSpeedAverageTimeSummary">Replace the current speed calculation by an average calculation.</string>
-    <string name="preferenceCurrentSpeedAverageTimeTitle">Current Speed by Average</string>
+    <string name="preferenceCurrentSpeedTime">Averaged speed time-span</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">Replace current speed by an average</string>
+    <string name="preferenceCurrentSpeedAverageTimeTitle">Averaged speed</string>
     <string name="preferenceUseAverageForCurrentSpeed">Use the average speed over a certain time instead of the last single speed record for the current speed calculation.</string>
-    <string name="preferenceFirstDayOfWeek">Start of the week</string>
+    <string name="preferenceFirstDayOfWeek">Week start</string>
     <string name="workoutDiscarded">Workout discarded</string>
     <string name="timeSecondsSingular">Second</string>
     <string name="timeSecondsPlural">Seconds</string>
@@ -241,6 +256,7 @@
     <string name="unitKilometersPerHour">Kilometers per hour</string>
     <string name="unitMetersPerSecond">Meters per second</string>
     <string name="unitHeartBeatsPerMinute">bpm</string>
+    <string name="unitHeartRateSensorBattery">%</string>
     <string name="unitKcalLong">Calories</string>
     <string name="unitHertzLong">Hertz</string>
     <string name="unitKJoule">Kilojoule</string>
@@ -262,7 +278,7 @@
     <string name="max">Max</string>
     <string name="avg">Avg</string>
     <string name="sum">Sum</string>
-    <string name="workoutNumber">Number of workouts</string>
+    <string name="workoutCount">Workout count</string>
     <string name="statsFilter">Filter:</string>
     <string name="help">Help</string>
     <string name="calendarWeekYear">Calendar Week / Year</string>
@@ -291,7 +307,7 @@
     <string name="aboutContributors">Contributors</string>
     <string name="aboutSendFeedback">Send feedback to developer</string>
     <string name="aboutSourceCode">View source code</string>
-    <string name="aboutUnlistedContributors">Thanks to all the unlisted contributors that helped translating and extending FitoTrack!</string>
+    <string name="aboutUnlistedContributors">Thanks to all the unlisted contributors that helped to translate and extend FitoTrack!</string>
     <string name="aboutHelpTranslating">Help translating</string>
     <string name="aboutPrivacyPolicy">Privacy Policy</string>
     <string name="editDisplayedInformation">Edit displayed information</string>
@@ -301,7 +317,6 @@
     <string name="unitFootSingular">Foot</string>
     <string name="recordingPermissionNotGrantedTitle">Permissions not granted</string>
     <string name="recordingPermissionNotGrantedMessage">FitoTrack needs location permission to track your movement during your workout. FitoTrack also collects location data while the app is in the background or the screen is turned off to record your workouts. Location data always remains on your phone without your clear consent to share it.</string>
-    <string name="recordingBackgroundPermissionNotGrantedMessage">FitoTrack also collects location data in background to record the workout when the screen is turned off. Therefore, please allow FitoTrack to have access to your location all the time.</string>
     <string name="recordingActivityPermissionMessage">FitoTrack needs the permission to track your physical activity to record indoor workouts.</string>
     <string name="actionGrant">Grant</string>
     <string name="speechConfigNoSpeech">No Announcement</string>
@@ -315,7 +330,10 @@
     <string name="actionImport">Import</string>
     <string name="actionImportMultiple">Import multiple</string>
     <string name="importingFiles">Importing files</string>
-    <string name="importedWorkouts">Imported %d workouts</string>
+    <plurals name="importedWorkouts">
+        <item quantity="one">Imported one workout</item>
+        <item quantity="other">Imported %d workouts</item>
+    </plurals>
     <string name="selectBluetoothDevice">Select Bluetooth device</string>
     <string name="connectHeartRateDevice">Connect heart rate device</string>
     <string name="showIntervals">Show intervals</string>
@@ -333,8 +351,8 @@
     <string name="workoutStarted">Workout started</string>
     <string name="notimeout">No Timeout</string>
     <string name="prefShowOnLockScreenTitle">Visible on lock screen</string>
-    <string name="prefShowOnLockScreenSummary">Show workout information even if the phone is locked.</string>
-    <string name="resumeWorkoutConfirmation">Do you really want to resume this workout? This will also add a pause from the time the workout was stopped.</string>
+    <string name="prefShowOnLockScreenSummary">Show workout info even if the device is locked.</string>
+    <string name="resumeWorkoutConfirmation">Resume this workout\? A pause from the time the workout was stopped will be added.</string>
     <string name="hintManageWorkoutTypes">Click on the plus to add custom workout types.</string>
     <string name="workoutTypeEditId">ID</string>
     <string name="workoutTypeEditIdErrorCharacters">Allowed characters: a–z, A–Z, 0–9, _, -</string>
@@ -355,12 +373,12 @@
     <string name="pref_map_directory">Offline Map Directory</string>
     <string name="pref_render_theme_style">Render Style</string>
     <string name="preferenceCategoryRenderThemeCategories">Categories</string>
-    <string name="pref_render_theme_style_info">No render theme style menu available for selected render theme.</string>
+    <string name="pref_render_theme_style_info">No menu available for selected theme.</string>
     <string name="downloadMapsTitle">Download Maps</string>
     <string name="downloadMapsSpecifyDirectory">Please specify a directory for offline maps first</string>
-    <string name="overwriteMapConfirmation">Do you want to overwrite the existing map file %s?</string>
+    <string name="overwriteMapConfirmation">Overwrite the existing \\\"%s\\\" map file\?</string>
     <string name="actionDownloadMap">Download map</string>
-    <string name="downloadMapConfirmation">Do you want to download the map file %s?</string>
+    <string name="downloadMapConfirmation">Download the \\\"%s\\\" map file\?</string>
     <string name="alreadyDownloading">A file is already being downloaded</string>
     <string name="actionCancelDownload">Cancel download</string>
     <string name="cancelDownloadConfirmation">Do you want to cancel the current download?</string>
@@ -368,7 +386,6 @@
     <string name="downloadFailed">Download failed</string>
     <string name="downloadCanceled">Download canceled</string>
     <string name="chooseMapHint">Please choose a map file</string>
-    <string name="downloading">Downloading…</string>
     <string name="intervalAutoStartDelayTraining">Auto Start Workout Delay</string>
     <string name="manageAutoStartDelaySummary">Choose a default countdown for automatic workout start</string>
     <string name="pref_auto_start_delay_title">Auto Start Countdown</string>
@@ -377,7 +394,6 @@
     <string name="autoStartCountdownMsg">Starting workout in</string>
     <string name="autoStartCountdownMsgGps">Starting workout once GPS position is accurate enough</string>
     <string name="autoStartCountdownMsgMove">Starting workout once you start moving</string>
-    <string name="autoStartCountdownVal" translatable="false">%1$d%2$s</string>
     <string name="workoutAutoStarted">Workout started automatically</string>
     <string name="popup_auto_start_delay">With custom delay</string>
     <string name="popup_auto_start">With default delay</string>
@@ -399,6 +415,7 @@
     <string name="actionApply">Apply</string>
     <string name="launchError">Could not launch application</string>
     <string name="editStartEndHelp">Select a position on the map or the diagram. Then click on one of the arrows to select a new starting or ending point. When you\'re done, click on the save icon to apply the changes.</string>
+    <string name="statistics">Statistics</string>
     <!-- used for countdown voice announcements -->
     <plurals name="seconds">
         <item quantity="one"><xliff:g example="1" id="secs">%1$d</xliff:g> second</item>
@@ -434,83 +451,103 @@
     <string name="intervalAutoStartModeTraining">Auto Start Workout Mode</string>
     <string name="pref_auto_start_mode_title">Auto-Start Mode</string>
     <string name="pref_auto_start_mode_instant">Start immediately</string>
-    <string name="pref_auto_start_mode_wait_for_gps">Wait for accurate GPS position</string>
+    <string name="pref_auto_start_mode_wait_for_gps">Wait for accurate position</string>
     <string name="pref_auto_start_mode_on_move">Wait for you to start moving</string>
-    <string name="pref_auto_start_mode_unknown">Unknown mode (please do not select)</string>
+    <string name="pref_auto_start_mode_unknown">Unknown (do not use)</string>
     <string name="selectColoring">Select coloring</string>
     <string name="auto">Auto</string>
     <string name="noColoring">No coloring</string>
     <string name="pref_announcements_pace_control_summary">Warn when below or above a specified speed</string>
-    <string name="pref_announcements_pace_control_title">Pace Control Warnings</string>
+    <string name="pref_announcements_pace_control_title">Pace-warnings</string>
     <string name="invalidNumberFormat">Invalid number format.</string>
     <string name="fileNotFound">File not found</string>
-    <string name="approxSymbol" translatable="false">≈</string>
-    <string-array name="osm_track_visibility">
-        <item>Identifiable</item>
-        <item>Trackable</item>
-        <item>Private</item>
-    </string-array>
-    <string-array name="pref_energy_units">
-        <item>kcal</item>
-        <item>Joule</item>
-    </string-array>
-    <string-array name="pref_announcement_mode">
-        <item>Always</item>
-        <item>Only on headphones</item>
-    </string-array>
-    <string-array name="pref_map_layers">
-        <item>Mapnik\nDefault OSM Mapstyle</item>
-        <item>Humanitarian\nClean map but sometimes not available</item>
-        <item>Offline\nLocal map file with local render theme</item>
-    </string-array>
-    <string-array name="pref_track_style_usage">
-        <item>Always</item>
-        <item>In the diagram screen</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_track_style">
-        <item>Purple Rain</item>
-        <item>Pink Mist</item>
-        <item>Rainbow Warrior</item>
-        <item>Height Map</item>
-        <item>Bright Night</item>
-        <item>Mondriaan</item>
-    </string-array>
-    <string-array name="pref_theme_setting">
-        <item>System</item>
-        <item>Light</item>
-        <item>Dark</item>
-    </string-array>
-    <string-array name="pref_unit_systems">
-        <item>Metric</item>
-        <item>Metric with m/s</item>
-        <item>Imperial</item>
-        <item>Imperial with meters</item>
-        <item>US Customary</item>
-    </string-array>
-    <string-array name="pref_time_format">
-        <item>System Default</item>
-        <item>12:08 PM</item>
-        <item>15:23</item>
-    </string-array>
-    <string-array name="pref_date_format">
-        <item>System Default</item>
-        <item>2001-07-24</item>
-        <item>2001.07.24</item>
-        <item>2001/07/24</item>
-        <item>24-07-2001</item>
-        <item>24.07.2001</item>
-        <item>24/07/2001</item>
-        <item>07/24/2001</item>
-    </string-array>
-    <string-array name="pref_first_day_of_week">
-        <item>System Default</item>
-        <item>Sunday</item>
-        <item>Monday</item>
-        <item>Tuesday</item>
-        <item>Wednesday</item>
-        <item>Thursday</item>
-        <item>Friday</item>
-        <item>Saturday</item>
-    </string-array>
+    <string name="stats_explore_title">Explore</string>
+    <string name="stats_history_title">History</string>
+    <string name="stats_overview_title">Overview</string>
+    <string name="histogram">Histogram</string>
+    <string name="details">Details</string>
+    <string name="monthYear">Month / Year</string>
+    <string name="workoutAvgDistance">Average Distance</string>
+    <string name="workoutDistanceSum">Distance sum</string>
+    <string name="showWorkoutZoomControlsSummary">Enable zoom and pan controls in the map while recording GPS workouts</string>
+    <string name="showWorkoutZoomControlsTitle">Zooming and panning</string>
+    <string name="zoomWithVolumeButtonsSummary">Volume up and down controls zooming in and out</string>
+    <string name="zoomWithVolumeButtonsTitle">Zoom with volume buttons</string>
+    <string name="hidden">Hidden</string>
+    <!-- strings for string arrays -->
+    <string name="identifiable_visibility">Identifiable</string>
+    <string name="trackable_visibility">Trackable</string>
+    <string name="private_visibility">Private</string>
+    <string name="kcal_unit">kcal</string>
+    <string name="joule_unit">Joule</string>
+    <string name="always_mode">Always</string>
+    <string name="only_on_headphones_mode">Only on headphones</string>
+    <string name="mapnik_default_osm_mapstyle">Mapnik
+\nDefault OSM mapstyle</string>
+    <string name="humanitarian_clean_map_but_sometimes_not_available">Humanitarian
+\nClean map, but not always available</string>
+    <string name="offline_local_map_file_with_local_render_theme">Offline
+\nLocal map file with locally rendered theme</string>
+    <string name="always_track_style">Always</string>
+    <string name="in_the_diagram_screen_track_style">In the diagram screen</string>
+    <string name="never_track_style">Never</string>
+    <string name="purple_rain">Purple Rain</string>
+    <string name="pink_mist">Pink Mist</string>
+    <string name="rainbow_warrior">Rainbow Warrior</string>
+    <string name="height_map">Height Map</string>
+    <string name="bright_night">Bright Night</string>
+    <string name="mondriaan">Mondriaan</string>
+    <string name="system_theme">System</string>
+    <string name="light_theme">Light</string>
+    <string name="dark_theme">Dark</string>
+    <string name="metric_unit_system">Metric</string>
+    <string name="metric_with_m_s_unit_system">Metric with m/s</string>
+    <string name="imperial_unit_system">Imperial</string>
+    <string name="imperial_with_meters_unit_system">Imperial with meters</string>
+    <string name="us_customary_unit_system">US Customary</string>
+    <string name="system_default">System default</string>
+    <string name="sunday">Sunday</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="downloading">Downloading…</string>
+    <string name="exportTargetDirectory">Directory</string>
+    <string name="exportTargetHttpPost">HTTP POST request</string>
+    <string name="autoBackupTitle">Automatic backups</string>
+    <string name="workoutGPXExportTitle">Workout GPX exports</string>
+    <string name="hintConfigureExportTargets">Add targets files should be exported to.</string>
+    <string name="deleteExportTargetConfirmation">Delete this export target\?</string>
+    <string name="autoExportWorkoutsSummary">Export newly recorded workouts</string>
+    <string name="autoExportBackupTitle">Automatic app backups</string>
+    <string name="autoExportBackupSummary">Export backups automatically</string>
+    <string name="autoExportBackupExplanation">At the specified interval a backup will be exported here:</string>
+    <string name="autoExportWorkoutExplanation">After a new workout is recorded, a GPX-export will be saved here:</string>
+    <string name="exportIntervalTitle">Backup interval</string>
+    <string name="takeBackups1">Every day</string>
+    <string name="takeBackups2">Every second day</string>
+    <string name="takeBackups3">Every third day</string>
+    <string name="takeBackups7">Every week</string>
+    <string name="takeBackups14">Every second week</string>
+    <string name="selectExportTarget">Select export target</string>
+    <string name="configureHttpPostRequest">Configure HTTP POST request</string>
+    <string name="httpUrl">URL</string>
+    <string name="enterValidUrl">Enter a valid HTTP URL</string>
+    <string name="massExportGpxTitle">Export all workouts as GPX</string>
+    <string name="massExportGpxSummary">Creates a ZIP file containing all workouts as GPX documents</string>
+    <string name="debugShareLogsTitle">Share logs</string>
+    <string name="debugShareLogsSummary">Share logs that contain useful data to find bugs in the workout recorder. Usually they do not contain location data.</string>
+    <string name="debugSensorsTitle">Debug sensors</string>
+    <string name="debugSensorsSummary">Collect sensor data which is written into the log file</string>
+    <string name="debugPressureSensor">Debug pressure sensor</string>
+    <string name="calibrating">Calibrating</string>
+    <string name="noSensorAvailable">No sensor available</string>
+    <string name="show_sum">Show sum</string>
+    <plurals name="satelliteCount">
+        <item quantity="zero">No satellites</item>
+        <item quantity="one">One satellite</item>
+        <item quantity="other">%d satellites</item>
+    </plurals>
 </resources>

@@ -1,0 +1,4 @@
+- Cél: Android 13
+- Edzés leállításának megerősítése
+- Hibák és összeomlások javítása, @keesj jóvoltából
+- Frissített fordítások

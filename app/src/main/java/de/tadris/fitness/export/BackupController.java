@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -24,9 +24,12 @@ import android.content.Context;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
@@ -114,11 +117,21 @@ public class BackupController {
 
     private void writeContainerToOutputFile() throws IOException {
         XmlMapper mapper = new XmlMapper();
-        mapper.writeValue(output, dataContainer);
+        FileOutputStream out = new FileOutputStream(output);
+        ZipOutputStream zipOut = new ZipOutputStream(out);
+        zipOut.putNextEntry(new ZipEntry("data.xml"));
+        mapper.writeValue(zipOut, dataContainer);
+        zipOut.close();
+        out.close();
     }
 
     public interface ExportStatusListener {
+
+        ExportStatusListener DUMMY = (progress, action) -> {
+        };
+
         void onStatusChanged(int progress, String action);
+
     }
 
 }

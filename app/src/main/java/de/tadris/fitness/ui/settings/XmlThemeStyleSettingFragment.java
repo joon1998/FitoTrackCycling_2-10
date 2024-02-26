@@ -107,7 +107,7 @@ public class XmlThemeStyleSettingFragment extends FitoTrackSettingFragment imple
                     null);
             mapView.addLayer(workoutLayer);
             final BoundingBox bounds = workoutLayer.getBoundingBox().extendMeters(50);
-            handler.postDelayed((Runnable) () -> mapView.getModel().mapViewPosition.setMapPosition(new MapPosition(bounds.getCenterPoint(),
+            handler.postDelayed(() -> mapView.getModel().mapViewPosition.setMapPosition(new MapPosition(bounds.getCenterPoint(),
                     (LatLongUtils.zoomForBounds(mapView.getDimension(), bounds,
                             mapView.getModel().displayModel.getTileSize())))), 1000);
             mapView.repaint();
@@ -117,7 +117,7 @@ public class XmlThemeStyleSettingFragment extends FitoTrackSettingFragment imple
     private int getMapHeight() {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         requireActivity().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        return (int) (displayMetrics.heightPixels / 3);
+        return displayMetrics.heightPixels / 3;
     }
 
     private void setupOptions() {
@@ -184,7 +184,7 @@ public class XmlThemeStyleSettingFragment extends FitoTrackSettingFragment imple
     }
 
     private final Preference.OnPreferenceChangeListener onStylePrefChangedListener = (preference, value) -> {
-        PreferenceCategory preferenceOverlayCategory = (PreferenceCategory) this.getPreferenceScreen().findPreference(KEY_OVERLAY_CATEGORY);
+        PreferenceCategory preferenceOverlayCategory = this.getPreferenceScreen().findPreference(KEY_OVERLAY_CATEGORY);
         String selection = (String) value;
         preference.setSummary(styleOptions.getLayer(getLayerIdFromSelection(selection)).getTitle(language));
         addOrReplaceCategories(selection, preferenceOverlayCategory);
@@ -218,5 +218,10 @@ public class XmlThemeStyleSettingFragment extends FitoTrackSettingFragment imple
         this.styleOptions = styleMenu;
         Log.d(TAG, "New render theme menu available: " + styleMenu.getId());
         requireActivity().runOnUiThread(this::setupOptions);
+    }
+
+    @Override
+    protected String getTitle() {
+        return getString(R.string.pref_render_theme_style);
     }
 }

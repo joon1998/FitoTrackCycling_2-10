@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -30,13 +30,14 @@ allprojects {
 }
 
 android {
-    compileSdkVersion 30
+    namespace 'de.tadris.fitness'
+    compileSdkVersion 33
     defaultConfig {
         applicationId "de.tadris.fitness"
         minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1210
-        versionName "12.1"
+        targetSdkVersion 33
+        versionCode 1540
+        versionName "15.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -54,29 +55,37 @@ android {
         // Flag to enable support for the new language APIs
         coreLibraryDesugaringEnabled true
     }
-    lintOptions {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    lint {
         abortOnError false
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE.md'
+        exclude 'META-INF/NOTICE.md'
     }
 }
 
 dependencies {
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // Android
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    implementation "androidx.preference:preference-ktx:1.1.1"
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation "androidx.preference:preference-ktx:1.2.0"
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.documentfile:documentfile:1.0.1'
-    implementation "androidx.core:core-ktx:1.6.0"
+    implementation "androidx.core:core-ktx:1.9.0"
 
     // Maps
-    def mapsforge_version = "0.16.0"
+    def mapsforge_version = "0.17.0"
     implementation "org.mapsforge:mapsforge-core:$mapsforge_version"
     implementation "org.mapsforge:mapsforge-map:$mapsforge_version"
     implementation "org.mapsforge:mapsforge-map-reader:$mapsforge_version"
@@ -90,19 +99,21 @@ dependencies {
 
     // XML
     implementation 'stax:stax-api:1.0.1'
-    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.9.8'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.12.7'
     implementation 'net.sf.kxml:kxml2:2.3.0'
     implementation 'xmlpull:xmlpull:1.1.3.1'
 
     // File Utils
-    implementation 'commons-io:commons-io:2.6'
+
+    // Please don't update unless minSdkVersion is Oreo or newer (26+)
+    // Newer versions need Java 7 & 8 features and desugaring is not working well on this.
+    implementation 'commons-io:commons-io:2.5'
 
     // Upload to OSM
     implementation('de.westnordost:osmapi-traces:1.0')
 
     // Parsing date strings in GPX-files
-    implementation 'com.github.sisyphsu:dateparser:1.0.4'
-    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+    implementation 'com.github.sisyphsu:dateparser:1.0.11'
 
     // About Screen
     implementation 'com.github.medyo:android-about-page:1.3'
@@ -111,18 +122,25 @@ dependencies {
     implementation 'no.nordicsemi.android:ble:2.2.4'
     implementation 'no.nordicsemi.android:ble-common:2.2.4'
 
-    implementation 'org.greenrobot:eventbus:3.2.0'
+    implementation 'org.greenrobot:eventbus:3.3.1'
 
     // Android Room Database
-    def room_version = "2.3.0"
+    def room_version = "2.5.0"
     annotationProcessor "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-runtime:$room_version"
 
+    // Android Work Manager
+    def work_version = "2.8.0"
+    implementation "androidx.work:work-runtime:$work_version"
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+
     // support for the new language APIs
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.2.0'
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'com.edmodo:rangebar:1.0.0'
 
     configurations {
         all*.exclude group: 'xmlpull', module: 'xmlpull'

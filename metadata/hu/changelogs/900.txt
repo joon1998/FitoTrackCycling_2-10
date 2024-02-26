@@ -1,0 +1,11 @@
+- Szívritmusmérés hozzáadása
+- Szívritmus importálás és exportálás GPX-fájllal
+- Leállított edzések folytatása
+- Automatikus szünet letiltása, kézi szüneteltetési lehetőség használata
+- Új közlemény: edzés állapotváltozásai, például indítás, szüneteltetés, folytatás
+
+- Javított grafikonképernyő
+- Térkép méretezése a képernyőméret alapján
+- A „megjelenítés a zárolási képernyőn” választhatóvá tétele (alapértelmezetten letiltva)
+
+A további változtatásokért nézze meg a projekt tárolóját a Codebergen

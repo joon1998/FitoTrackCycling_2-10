@@ -1,0 +1,6 @@
+- Ajuste del tiempo de entrenamiento
+- Hora actual como información TTS
+- Los archivos exportados contienen la fecha de inicio y el comentario
+- Mucho mejor estabilidad de seguimiento
+
+Por favor, consulte el repositorio del proyecto en Codeberg para ver más cambios

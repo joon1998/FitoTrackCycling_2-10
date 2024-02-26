@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
-  ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+  ~ Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
   ~
   ~ This file is part of FitoTrack
   ~
@@ -18,7 +17,6 @@
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
-
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">FitoTrack</string>
     <string name="stop">Stop</string>
@@ -129,7 +127,7 @@
     <string name="mapStyle">Kaartstijl</string>
     <string name="waiting_gps">Wacht op GPS</string>
     <string name="actionUploadToOSM">Upload naar OSM</string>
-    <string name="cut">Knip de eerste/laatste 300 meter</string>
+    <string name="cut">Knip de eerste/laatste 300m</string>
     <string name="trackVisibilityPref">Zichtbaarheid opname</string>
     <string name="description">Beschrijving</string>
     <string name="ttsNotAvailable">Tekst-naar-spraak is niet beschikbaar</string>
@@ -230,34 +228,14 @@
     <string name="speedLastMinuteSpoken">Snelheid in de laatste minuut</string>
     <string name="cannotFindWorkout">Kan geen training vinden</string>
     <string name="editWorkout">Training aanpassen</string>
-    <string-array name="pref_energy_units">
-        <item>kcal</item>
-        <item>Joule</item>
-    </string-array>
-    <string-array name="pref_announcement_mode">
-        <item>Altijd</item>
-        <item>Alleen met koptelefoon</item>
-    </string-array>
-    <string-array name="pref_theme_setting">
-        <item>System</item>
-        <item>Licht</item>
-        <item>Donker</item>
-    </string-array>
-    <string-array name="pref_time_format">
-        <item>Systeemstandaard</item>
-        <item>12:08 PM</item>
-        <item>15:23</item>
-    </string-array>
-    <string-array name="pref_date_format">
-        <item>Systeemstandaard</item>
-        <item>2001-07-24</item>
-        <item>2001.07.24</item>
-        <item>2001/07/24</item>
-        <item>24-07-2001</item>
-        <item>24.07.2001</item>
-        <item>24/07/2001</item>
-        <item>07/24/2001</item>
-    </string-array>
+    <string name="kcal_unit">kcal</string>
+    <string name="joule_unit">Joule</string>
+    <string name="always_mode">Altijd</string>
+    <string name="only_on_headphones_mode">Alleen met koptelefoon</string>
+    <string name="system_theme">System</string>
+    <string name="light_theme">Licht</string>
+    <string name="dark_theme">Donker</string>
+    <string name="system_default">Systeemstandaard</string>
     <string name="aboutLinks">Links</string>
     <string name="aboutReportBug">Meld een bug</string>
     <string name="aboutOpenSourceLibraries">Open source bibliotheken</string>
@@ -284,7 +262,6 @@
     <string name="speechConfigNoSpeech">Geen aankondiging</string>
     <string name="aboutHelpTranslating">Helpen met vertalen</string>
     <string name="aboutUnlistedContributors">Met dank aan alle niet-beursgenoteerde medewerkers die hebben geholpen bij het vertalen en uitbreiden van FitoTrack!</string>
-    <string name="importedWorkouts">Geïmporteerde %d trainingen</string>
     <string name="importingFiles">Bestanden importeren</string>
     <string name="importMultipleMessageSelectFolder">Selecteer een map met alle GPX-bestanden die u wilt importeren.</string>
     <string name="importMultipleGpxFiles">Meerdere GPX-bestanden importeren</string>
@@ -309,8 +286,8 @@
     <string name="resumeWorkout">Weer Trainen</string>
     <string name="heartRateNotAvailable">Hartslag is momenteel niet beschikbaar.</string>
     <string name="announcementWorkoutActions">Training acties (pauzeren, hervatten, enz.)</string>
-    <string name="resumeWorkoutConfirmation">Wil je echt doorgaan met deze training\? Dit zal ook een pauze toevoegen vanaf het moment dat de training werd gestopt.</string>
-    <string name="prefShowOnLockScreenSummary">Toon training informatie, zelfs als de telefoon op slot zit.</string>
+    <string name="resumeWorkoutConfirmation">Deze training hervatten\? Er wordt een pauze toegevoegd vanaf het moment dat de training werd gestopt.</string>
+    <string name="prefShowOnLockScreenSummary">Trainingsinfo weergeven, zelfs als het apparaat is vergrendeld.</string>
     <string name="prefShowOnLockScreenTitle">Zichtbaar op vergrendelscherm</string>
     <string name="notimeout">Geen Time-Out</string>
     <string name="workoutTypeEditMET">MET</string>
@@ -333,7 +310,7 @@
     <string name="actionImportMultiple">Meerdere importeren</string>
     <string name="actionImport">Importeren</string>
     <string name="importWorkoutMultipleQuestion">Wil je één of GPX-bestand of meerdere importeren\?</string>
-    <string name="pref_auto_start_mode_unknown">Onbekende modus (niet selecteren)</string>
+    <string name="pref_auto_start_mode_unknown">Onbekend (niet gebruiken)</string>
     <string name="pref_auto_start_mode_on_move">Wacht tot je begint te bewegen</string>
     <string name="pref_auto_start_mode_wait_for_gps">Wacht op een nauwkeurige GPS-positie</string>
     <string name="pref_auto_start_mode_instant">Begin direct</string>
@@ -372,17 +349,16 @@
     <string name="cancelDownloadConfirmation">Wilt u de huidige download annuleren\?</string>
     <string name="actionCancelDownload">Annuleer het downloaden</string>
     <string name="alreadyDownloading">Er wordt al een bestand gedownload</string>
-    <string name="downloadMapConfirmation">Wil je de kaart %s downloaden\?</string>
+    <string name="downloadMapConfirmation">Wil je de kaart \\\"%s\\\" downloaden\?</string>
     <string name="actionDownloadMap">Kaart downloaden</string>
-    <string name="overwriteMapConfirmation">Wil je de bestaande kaart %s overschrijven\?</string>
+    <string name="overwriteMapConfirmation">Wil je de bestaande kaart \\\"%s\\\" overschrijven\?</string>
     <string name="downloadMapsSpecifyDirectory">Geef eerst een locatie op voor offline kaarten</string>
     <string name="downloadMapsTitle">Kaarten downloaden</string>
-    <string name="recordingBackgroundPermissionNotGrantedMessage">FitoTrack verzamelt ook locatiegegevens op de achtergrond om de training op te nemen wanneer het scherm is uitgeschakeld. Geef FitoTrack daarom altijd toegang tot uw locatie.</string>
     <string name="recordingPermissionNotGrantedMessage">FitoTrack heeft locatietoestemming nodig om uw bewegingen tijdens uw training te volgen. FitoTrack verzamelt ook locatiegegevens terwijl de app op de achtergrond is of het scherm is uitgeschakeld om uw trainingen op te nemen. Locatiegegevens blijven altijd op uw telefoon staan zonder uw duidelijke toestemming om deze te delen.</string>
     <string name="workoutTypeAll">Alle</string>
     <string name="edit_interval">Interval bewerken</string>
     <string name="invalidNumberFormat">Ongeldig getalformaat.</string>
-    <string name="pref_announcements_pace_control_title">Waarschuwingen voor tempocontrole</string>
+    <string name="pref_announcements_pace_control_title">Tempo waarschuwingen</string>
     <string name="pref_announcements_pace_control_summary">Waarschuw bij onder of boven een bepaalde snelheid</string>
     <string name="noColoring">Geen kleur</string>
     <string name="auto">Automatisch</string>
@@ -399,7 +375,7 @@
     <string name="runningMigrations">Migraties uitvoeren</string>
     <string name="editWorkoutStartEnd">Bewerken Start/Einde</string>
     <string name="unitHeartBeatsPerMinute">bpm</string>
-    <string name="preferenceFirstDayOfWeek">Begin van de week</string>
+    <string name="preferenceFirstDayOfWeek">Week start</string>
     <string name="preferenceUseAverageForCurrentSpeed">Gebruik de gemiddelde snelheid over een bepaalde tijd in plaats van het laatste enkele snelheidsrecord voor de huidige snelheidsberekening.</string>
     <string name="preferenceCurrentSpeedAverageTimeTitle">Huidige snelheid gemiddeld</string>
     <string name="preferenceCurrentSpeedAverageTimeSummary">Vervang de huidige snelheidsberekening door een gemiddelde berekening.</string>
@@ -452,4 +428,14 @@
     <string name="workoutFrequency">Frequentie</string>
     <string name="workoutSets">Sets</string>
     <string name="workoutRepetitions">Herhalingen</string>
+    <string name="workoutRecordingTypeGps">Gps Trainingen</string>
+    <string name="workoutRecordingTypeIndoor">Binnen Trainingen</string>
+    <string name="workoutAvgFrequencyLong">Gemiddelde Frequentie</string>
+    <string name="workoutCurrentFrequency">Huidige Frequentie</string>
+    <string name="unitHertzLong">Hertz</string>
+    <string name="currentTimeStructure">%s %s</string>
+    <plurals name="importedWorkouts">
+        <item quantity="one">1 training geïmporteerd</item>
+        <item quantity="other">%d Trainingen geïmporteerd</item>
+    </plurals>
 </resources>

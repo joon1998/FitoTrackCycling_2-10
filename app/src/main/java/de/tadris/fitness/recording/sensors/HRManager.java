@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -18,15 +18,19 @@
  */
 package de.tadris.fitness.recording.sensors;
 
+import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattService;
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.Build;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 
 import java.util.List;
 import java.util.UUID;
@@ -64,11 +68,19 @@ public class HRManager extends BleManager {
     }
 
     public boolean isConnectionPossible() {
-        return isBluetoothAddressAvailable() && bluetoothAdapter != null && bluetoothAdapter.isEnabled();
+        return isBluetoothAddressAvailable() && bluetoothAdapter != null && bluetoothAdapter.isEnabled() && hasPermission();
     }
 
     public boolean isBluetoothAddressAvailable() {
         return !getBluetoothAddress().isEmpty();
+    }
+
+    public boolean hasPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            return ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED;
+        } else {
+            return true;
+        }
     }
 
     public String getBluetoothAddress() {

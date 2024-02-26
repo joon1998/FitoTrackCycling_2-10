@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -41,7 +41,7 @@ public class WorkoutCutter extends GpsWorkoutSaver {
         if (endSample != null) {
             cutEnd(endSample);
         }
-        calculateDurations(); // Recalculate start, end, duration, pause duration
+        setStartAndEnd(); // Start/End might change by cutting
         calculateData(false); // Recalculate data
 
         updateWorkoutAndSamples();

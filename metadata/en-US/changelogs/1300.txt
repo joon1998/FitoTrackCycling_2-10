@@ -1,0 +1,10 @@
+- Track Indoor Workouts
+  - currently supported: Treadmill, Push ups, Rope Skipping and Trampoline Jumping
+- Support Zip render themes for offline map / customization
+
+- Accept File intents: you can now share and open GPX-files from other apps to import them
+- Sort workout types by last usage
+- Already start workouts while "waiting for GPS"
+- more improvements and bugfixes...
+
+please see the project repository on Codeberg for a more detailed list of changes

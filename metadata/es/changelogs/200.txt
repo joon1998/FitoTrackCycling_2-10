@@ -1,0 +1,4 @@
+- Pantalla para comparar el diagrama de altura/elevación y el mapa
+- Mostrar la superposición si no se ha encontrado la señal GPS
+- Establecer la capa de mapa preferida (#15)
+- Acelerar la importación de datos

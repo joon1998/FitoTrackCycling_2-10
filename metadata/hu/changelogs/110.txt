@@ -1,0 +1,8 @@
+Újdonság:
+- Magasságmérés GPS és nyomásérzékelőn keresztül
+- Magasságdiagram megjelenítése
+- Párbeszédablak megjelenítése, ha a GPS le van tiltva
+
+Javítás:
+- A beállításokban lévő Vissza gomb összeomlik a korábbi Android verziókban (#20)
+- A „Birodalmi méterrel” mértékegységrendszer javítása

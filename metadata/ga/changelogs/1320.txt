@@ -1,0 +1,2 @@
+- Deisigh tuairteáil ar leaganacha Android faoi bhun Oreo (< 8)
+- Aistriúcháin nuashonraithe

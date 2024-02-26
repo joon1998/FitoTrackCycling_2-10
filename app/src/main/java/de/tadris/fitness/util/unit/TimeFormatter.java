@@ -22,8 +22,6 @@ package de.tadris.fitness.util.unit;
 public class TimeFormatter {
 
     public static String formatDuration(long durationInS) {
-        String formatted = "";
-        // get Hours (unlikely, but hey)
         if (durationInS / 3600.0 >= 1)
             return String.format(
                     "%d:%02d:%02d",
@@ -35,5 +33,18 @@ public class TimeFormatter {
                 "%d:%02d",
                 (durationInS % 3600) / 60,
                 durationInS % 60);
+    }
+
+    public static String formatHoursMinutes(long durationInS) {
+        return String.format(
+                "%d:%02d",
+                durationInS / 3600,
+                (durationInS % 3600) / 60);
+    }
+
+    public static String formatMinutesOnly(long durationInS) {
+        return String.format(
+                "%d",
+                durationInS/ 60);
     }
 }

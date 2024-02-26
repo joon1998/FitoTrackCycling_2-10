@@ -1,0 +1,10 @@
+- Arranque automático con múltiples modos
+- Soporte de mapas sin conexión
+
+- Mejoras en la estabilidad
+- Filtro "Todos" para las estadísticas de los entrenamientos
+- Sólo se añade la bandera "editada" a los entrenamientos si se ha editado la distancia, la fecha o la duración
+
+- varias correcciones de errores
+
+por favor, consulte el repositorio del proyecto en Codeberg para una lista más detallada de los cambios

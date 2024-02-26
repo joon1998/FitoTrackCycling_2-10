@@ -1,0 +1,8 @@
+- Scan le haghaidh feistí Bluetooth neamh-phéireáilte
+- Gearr workouts
+- Dathú rian
+- Rogha chun luas a ríomh le himeacht ama
+- Luasaire a chuireann in iúl duit go bhfuil tú ag rith ró-mhall/róghasta
+- Cuir tréimhsí in eagar go raibh maith agat
+
+féach le do thoil ar stór an tionscadail ar Codeberg le haghaidh liosta níos mionsonraithe d'athruithe

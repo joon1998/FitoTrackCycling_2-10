@@ -1,0 +1,9 @@
+Erstes Release
+
+- Workouts aufnehmen
+- Workouts auflisten
+- Workout-Daten anzeigen (Karte, Geschwindigkeitsdiagramm, Energie) + Workouts löschen
+- Daten importieren/exportieren
+- Workouts als GPX exportieren
+- Einheiten ändern
+- Gewichte änder

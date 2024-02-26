@@ -1,0 +1,4 @@
+- Edzésstatisztikák: összesített értékek megjelenítése sávokként
+- Edzésstatisztikák: edzés összefoglalójának megnyitása egy önálló edzésre történő kattintáskor
+- Az utolsó percben mért átlagos sebesség hanginformációként
+- Javítva, hogy az automatikus szüneteltetés nem működik, amely több zajt is okoz a sebesség- és magasságdiagramban

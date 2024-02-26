@@ -1,0 +1,10 @@
+- Pausen auf Vollbildkarte anzeigen
+
+- Icons für Reiten und Skifahren hinzugefügt
+- Bessere Performance wenn lange Workouts angezeigt werden
+- Import für mehrere Workouts wurde auf den Hauptbildschirm verschoben
+- Alle Tracks aus einer GPX-Datei importieren
+
+- Workouts aus Backups korrekt importieren
+
+bitte sehen Sie sich das Repository auf Codeberg für eine detailliertere Änderungsliste an

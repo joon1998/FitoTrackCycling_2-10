@@ -1,0 +1,10 @@
+Újdonság:
+- Hangos közlemények: választhatóan frissítéseket ad a jelenlegi edzéséről
+
+Továbbfejlesztések:
+- Annak egyértelművé tétele, hogy az edzések megjegyzései szerkeszthetők
+- Érvénytelen OSM hitelesítések kezelése
+- Automatikus szüneteltetés letiltása, ha nincs GPS (rossz eredmények megakadályozása)
+
+Honosítás:
+- Spanyol fordítás

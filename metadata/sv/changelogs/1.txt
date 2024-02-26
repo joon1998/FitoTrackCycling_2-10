@@ -1,0 +1,9 @@
+Första utgåvan
+
+- Spela in träningspass
+- Lista träningspass
+- Visa data från träningspass (karta, hastighetsdiagram, energi) + Ta bort träningspass
+- Importera/Exportera data
+- Exportera träningspass som GPX
+- Ändra enheter
+- Ändra vikt

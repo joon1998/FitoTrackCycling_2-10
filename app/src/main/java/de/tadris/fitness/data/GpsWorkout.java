@@ -82,6 +82,4 @@ public class GpsWorkout extends BaseWorkout {
             return getDateString();
         }
     }
-
-
 }

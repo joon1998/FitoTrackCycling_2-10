@@ -1,0 +1,2 @@
+- Oreo'nun altındaki (< 8) Android sürümlerinde çökme düzeltildi
+- Çeviriler güncellendi

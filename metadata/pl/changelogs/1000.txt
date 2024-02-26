@@ -1,0 +1,7 @@
+- Specjalne typy ćwiczeń
+- Udostępnianie ćwiczeń jako zdjęcie
+- Usprawnienia stabilności/UI
+- Komunikaty "działania systemowe" mogą zostać teraz wyłączone 
+- Aktualizacja tłumaczeń
+
+proszę zobaczyć repozytorium projektu na Codeberg dla dokładniejszej listy zmian

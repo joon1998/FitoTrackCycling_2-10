@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -33,7 +33,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Database(version = 15, entities = {GpsWorkout.class, GpsSample.class, IndoorWorkout.class, IndoorSample.class, Interval.class, IntervalSet.class, WorkoutType.class}, exportSchema = false)
+@Database(version = 16, entities = {
+        GpsWorkout.class,
+        GpsSample.class,
+        IndoorWorkout.class,
+        IndoorSample.class,
+        Interval.class,
+        IntervalSet.class,
+        WorkoutType.class,
+        ExportTargetConfiguration.class,
+}, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static final String DATABASE_NAME = "fito-track";
@@ -45,6 +54,8 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract WorkoutTypeDao workoutTypeDao();
 
     public abstract IntervalDao intervalDao();
+
+    public abstract ExportTargetDao exportTargetDao();
 
     @Nullable
     public BaseWorkout getWorkoutByStart(long start) {
@@ -451,6 +462,24 @@ public abstract class AppDatabase extends RoomDatabase {
                             database.execSQL("ALTER table workout_type add COLUMN type TEXT default 'gps';");
 
                             database.execSQL("create index index_indoor_sample_workout_id on indoor_sample (workout_id)");
+
+                            database.setTransactionSuccessful();
+                        } finally {
+                            database.endTransaction();
+                        }
+                    }
+                }, new Migration(15, 16) {
+                    @Override
+                    public void migrate(@NonNull SupportSQLiteDatabase database) {
+                        try {
+                            database.beginTransaction();
+
+                            database.execSQL("CREATE TABLE export_target_config (\n" +
+                                    "    id integer NOT NULL primary key,\n" +
+                                    "    source text,\n" +
+                                    "    type text,\n" +
+                                    "    data text\n" +
+                                    ");");
 
                             database.setTransactionSuccessful();
                         } finally {

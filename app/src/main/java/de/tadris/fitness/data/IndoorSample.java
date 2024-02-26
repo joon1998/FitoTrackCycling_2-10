@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -19,14 +19,14 @@
 
 package de.tadris.fitness.data;
 
+import static androidx.room.ForeignKey.CASCADE;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import static androidx.room.ForeignKey.CASCADE;
 
 @Entity(tableName = "indoor_sample",
         foreignKeys = @ForeignKey(
@@ -40,12 +40,24 @@ public class IndoorSample extends BaseSample {
     @ColumnInfo(name = "workout_id", index = true)
     public long workoutId;
 
+    /**
+     * Count of repetitions collected withing this sample
+     */
     public int repetitions;
 
+    /**
+     * Absolute end timestamp of the sample
+     */
     public long absoluteEndTime;
 
+    /**
+     * Average intensity
+     */
     public double intensity;
 
+    /**
+     * Current frequency in Hz
+     */
     public double frequency;
 
     @JsonIgnore

@@ -1,0 +1,8 @@
+- Nem párosított Bluetooth eszközök keresése
+- Edzések vágása
+- Nyomvonal színezése
+- A sebesség időbeli kiszámításának lehetősége
+- Tempótartó, amely tájékoztatja a túl lassú vagy túl gyors futásról
+- Intervallumok szerkesztése, köszönet
+
+A változtatások részletesebb listájáért nézze meg a projekt tárolóját a Codebergen

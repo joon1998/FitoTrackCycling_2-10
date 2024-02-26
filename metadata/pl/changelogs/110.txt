@@ -1,0 +1,8 @@
+Nowość:
+- Pomiar wysokości za pomocą GPS i czujnika ciśnienia
+- Wykres wysokości
+- Okno dialogowe, jeśli GPS jest wyłączony
+
+Poprawki:
+- Przycisk wstecz w Ustawieniach zawiesza się na wcześniejszych wersjach Androida (#20)
+- Poprawiono system jednostek"Imperial z metrami"

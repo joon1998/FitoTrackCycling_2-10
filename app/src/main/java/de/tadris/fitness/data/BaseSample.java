@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -22,17 +22,33 @@ package de.tadris.fitness.data;
 import androidx.room.ColumnInfo;
 import androidx.room.PrimaryKey;
 
+/**
+ * Data point for workouts
+ */
 public abstract class BaseSample {
 
+    /**
+     * Unique id
+     */
     @PrimaryKey
     public long id;
 
+    /**
+     * Absolute time in ms UNIX time
+     */
     public long absoluteTime;
 
+    /**
+     * Time since workout start in ms
+     */
     public long relativeTime;
 
+    /**
+     * Heart rate in bpm
+     * -1 if no heart rate is available
+     */
     @ColumnInfo(name = "heart_rate")
-    public int heartRate = -1; // in bpm
+    public int heartRate = -1;
 
     /**
      * -1 -> No interval was triggered

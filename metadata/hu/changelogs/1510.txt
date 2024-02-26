@@ -1,0 +1,6 @@
+- Új statisztikák képernyő, diagramok átdolgozása és sebességhisztogram
+- GPX-fájlok tömeges exportálása
+- Úszás hozzáadása alapértelmezett típusként
+- És még több továbbfejlesztés :)
+
+A változtatások teljes listájáért nézze meg a projekt tárolóját a Codebergen

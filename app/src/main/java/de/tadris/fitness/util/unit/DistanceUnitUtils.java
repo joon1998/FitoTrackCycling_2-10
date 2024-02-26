@@ -152,6 +152,7 @@ public class DistanceUnitUtils extends UnitUtils {
     public String getPaceUnit() {
         return "min/" + distanceUnitSystem.getLongDistanceUnit();
     }
+    public String getSpeedUnit(){return distanceUnitSystem.getSpeedUnit();}
 
     public String getDistance(int distanceInMeters) {
         return getDistance(distanceInMeters, false);
@@ -170,8 +171,16 @@ public class DistanceUnitUtils extends UnitUtils {
             if (useLongUnitNames) {
                 return value + " " + getString(distanceUnitSystem.getShortDistanceUnitTitle(value != 1));
             } else {
-                return (int) distanceUnitSystem.getDistanceFromMeters(distanceInMeters) + " " + distanceUnitSystem.getShortDistanceUnit();
+                return value + " " + distanceUnitSystem.getShortDistanceUnit();
             }
+        }
+    }
+
+    public String getDistanceWithoutUnit(int distanceInMeters, boolean useLongUnit, int precision) {
+        if (useLongUnit) {
+            return round(distanceUnitSystem.getDistanceFromKilometers((double) distanceInMeters / 1000d), precision);
+        } else {
+            return round(distanceUnitSystem.getDistanceFromMeters(distanceInMeters),0);
         }
     }
 
@@ -197,7 +206,7 @@ public class DistanceUnitUtils extends UnitUtils {
      * @return speed in km/h
      */
     public String getSpeed(double speed, boolean useLongNames) {
-        String value = getSpeedWithoutUnit(speed);
+        String value = getSpeedString(speed);
         if (useLongNames) {
             return value + " " + getString(distanceUnitSystem.getSpeedUnitTitle());
         } else {
@@ -205,8 +214,12 @@ public class DistanceUnitUtils extends UnitUtils {
         }
     }
 
-    public String getSpeedWithoutUnit(double speed) {
-        return round(distanceUnitSystem.getSpeedFromMeterPerSecond(speed), 1);
+    public double getSpeedWithoutUnit(double speed) {
+        return distanceUnitSystem.getSpeedFromMeterPerSecond(speed);
+    }
+
+    public String getSpeedString(double speed) {
+        return round(getSpeedWithoutUnit(speed), 2);
     }
 
     private String getHourText(int hours) {

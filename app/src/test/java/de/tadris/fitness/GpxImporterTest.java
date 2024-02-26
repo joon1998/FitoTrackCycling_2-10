@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -27,6 +27,7 @@ import java.io.IOException;
 
 import de.tadris.fitness.data.GpsWorkoutData;
 import de.tadris.fitness.data.WorkoutType;
+import de.tadris.fitness.data.WorkoutTypeManager;
 import de.tadris.fitness.util.io.GpxImporter;
 import de.tadris.fitness.util.io.general.IWorkoutImporter;
 
@@ -44,13 +45,15 @@ public class GpxImporterTest {
         GpsWorkoutData workoutData = importResult.workouts.get(0);
 
         // Main test is that above method runs without error, additionally perform some checks:
-        Assert.assertEquals(workoutData.getWorkout().comment, "...");
-        Assert.assertEquals(workoutData.getWorkout().workoutTypeId, WorkoutType.WORKOUT_TYPE_ID_RUNNING);
-        Assert.assertEquals(workoutData.getSamples().size(), 10);
-        Assert.assertEquals(workoutData.getSamples().get(0).elevation, 148.5465381985937, 0.001);
-        Assert.assertEquals(workoutData.getSamples().get(6).speed, 3.25, 0.001);
-        Assert.assertEquals(workoutData.getSamples().get(7).lat, 42.25636801, 0.001);
-        Assert.assertEquals(workoutData.getSamples().get(9).lon, 30.23244414, 0.001);
+        Assert.assertEquals("Comment", workoutData.getWorkout().comment);
+        Assert.assertEquals(WorkoutTypeManager.WORKOUT_TYPE_ID_WALKING, workoutData.getWorkout().workoutTypeId);
+        Assert.assertEquals(9, workoutData.getSamples().size());
+        Assert.assertEquals(748.058296766, workoutData.getSamples().get(0).elevation, 0.001);
+        Assert.assertEquals(0.72999995946, workoutData.getSamples().get(6).speed, 0.001);
+        Assert.assertEquals(35.24767770, workoutData.getSamples().get(7).lat, 0.001);
+        Assert.assertEquals(24.16795774, workoutData.getSamples().get(8).lon, 0.001);
+        Assert.assertEquals(1, workoutData.getSamples().get(1).heartRate);
+        Assert.assertEquals(8, workoutData.getSamples().get(8).heartRate);
     }
 
     @Test
@@ -92,20 +95,114 @@ public class GpxImporterTest {
     // here are example "files" from different trackers, to check if special stuff like the workout type or spee can be imported correctly
 
     //region FitoTrack
-    private String fitotrackGpx ="<gpx creator=\"FitoTrack\" version=\"1.1\"><desc/><metadata><desc>...</desc><name>...</name><time>2020-03-31T16:55:26.080+02:00</time></metadata><name>...</name><trk><cmt>...</cmt><desc>...</desc><name>...</name><number>0</number><src>FitoTrack</src>"+
-            "<trkseg>"+
-            "<trkpt lat=\"42.25689651\" lon=\"30.23230041\"><ele>148.5465381985937</ele><extensions><speed>3.200000047683716</speed></extensions><fix>gps</fix><time>2020-03-31T17:55:19.000+02:00</time></trkpt>"+
-            "<trkpt lat=\"42.25685617\" lon=\"30.23242502\"><ele>148.31195393520085</ele><extensions><speed>3.2200000286102295</speed></extensions><fix>gps</fix><time>2020-03-31T17:55:22.000+02:00</time></trkpt>"+
-            "<trkpt lat=\"42.25678044\" lon=\"30.23249831\"><ele>148.18751633056917</ele><extensions><speed>3.2799999713897705</speed></extensions><fix>gps</fix><time>2020-03-31T17:55:25.000+02:00</time></trkpt>"+
-            "<trkpt lat=\"42.25668789\" lon=\"30.2325111\"><ele>148.08797671003344</ele><extensions><speed>3.319999933242798</speed></extensions><fix>gps</fix><time>2020-03-31T17:55:28.000+02:00</time></trkpt>"+
-            "<trkpt lat=\"42.25659685\" lon=\"30.23250966\"><ele>148.10125621617183</ele><extensions><speed>3.299999952316284</speed></extensions><fix>gps</fix><time>2020-03-31T17:55:31.000+02:00</time></trkpt>"+
-            "<trkpt lat=\"42.25651232\" lon=\"30.23244248\"><ele>148.15522001360486</ele><extensions><speed>3.2799999713897705</speed></extensions><fix>gps</fix><time>2020-03-31T17:55:34.000+02:00</time></trkpt>"+
-            "<trkpt lat=\"42.2564395\" lon=\"30.23236122\"><ele>148.14491815116068</ele><extensions><speed>3.25</speed></extensions><fix>gps</fix><time>2020-03-31T17:55:37.000+02:00</time></trkpt>"+
-            "<trkpt lat=\"42.25636801\" lon=\"30.23229645\"><ele>148.22296031773433</ele><extensions><speed>3.309999942779541</speed></extensions><fix>gps</fix><time>2020-03-31T17:55:40.000+02:00</time></trkpt>"+
-            "<trkpt lat=\"42.25629204\" lon=\"30.23234997\"><ele>148.20784539725443</ele><extensions><speed>3.309999942779541</speed></extensions><fix>gps</fix><time>2020-03-31T17:55:43.000+02:00</time></trkpt>"+
-            "<trkpt lat=\"42.25626391\" lon=\"30.23244414\"><ele>148.34956903006693</ele><extensions><speed>3.2799999713897705</speed></extensions><fix>gps</fix><time>2020-03-31T17:55:45.000+02:00</time></trkpt>"+
-            "</trkseg>"+
-            "<type>running</type></trk></gpx>";
+    private String fitotrackGpx = "<?xml version='1.0' encoding='UTF-8'?>\n" +
+            "<gpx creator=\"FitoTrack\" version=\"1.1\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\" xmlns:gpxtpx=\"http://www.garmin.com/xmlschemas/TrackPointExtension/v1\" xmlns=\"http://www.topografix.com/GPX/1/1\">\n" +
+            "  <metadata>\n" +
+            "    <desc>Comment</desc>\n" +
+            "    <name>Comment</name>\n" +
+            "    <time>2020-07-10T09:56:24Z</time>\n" +
+            "  </metadata>\n" +
+            "  <trk>\n" +
+            "    <cmt>Comment</cmt>\n" +
+            "    <desc>Comment</desc>\n" +
+            "    <name>Comment</name>\n" +
+            "    <number>0</number>\n" +
+            "    <src>FitoTrack</src>\n" +
+            "    <trkseg>\n" +
+            "      <trkpt lat=\"35.247988756746054\" lon=\"24.167601512745023\">\n" +
+            "        <ele>748.0582967666053</ele>\n" +
+            "        <extensions>\n" +
+            "          <speed>0.0</speed>\n" +
+            "          <gpxtpx:TrackPointExtension>\n" +
+            "            <gpxtpx:hr>0</gpxtpx:hr>\n" +
+            "          </gpxtpx:TrackPointExtension>\n" +
+            "        </extensions>\n" +
+            "        <time>2020-07-10T09:56:25Z</time>\n" +
+            "      </trkpt>\n" +
+            "      <trkpt lat=\"35.247907997108996\" lon=\"24.167666053399444\">\n" +
+            "        <ele>746.8538842154519</ele>\n" +
+            "        <extensions>\n" +
+            "          <speed>0.0</speed>\n" +
+            "          <gpxtpx:TrackPointExtension>\n" +
+            "            <gpxtpx:hr>1</gpxtpx:hr>\n" +
+            "          </gpxtpx:TrackPointExtension>\n" +
+            "        </extensions>\n" +
+            "        <time>2020-07-10T09:57:06Z</time>\n" +
+            "      </trkpt>\n" +
+            "      <trkpt lat=\"35.247862064279616\" lon=\"24.16768055409193\">\n" +
+            "        <ele>746.302997171181</ele>\n" +
+            "        <extensions>\n" +
+            "          <speed>0.4599999785423279</speed>\n" +
+            "          <gpxtpx:TrackPointExtension>\n" +
+            "            <gpxtpx:hr>2</gpxtpx:hr>\n" +
+            "          </gpxtpx:TrackPointExtension>\n" +
+            "        </extensions>\n" +
+            "        <time>2020-07-10T09:57:14Z</time>\n" +
+            "      </trkpt>\n" +
+            "      <trkpt lat=\"35.24781747255474\" lon=\"24.16771575808525\">\n" +
+            "        <ele>745.7384130980276</ele>\n" +
+            "        <extensions>\n" +
+            "          <speed>1.1899999380111694</speed>\n" +
+            "          <gpxtpx:TrackPointExtension>\n" +
+            "            <gpxtpx:hr>3</gpxtpx:hr>\n" +
+            "          </gpxtpx:TrackPointExtension>\n" +
+            "        </extensions>\n" +
+            "        <time>2020-07-10T09:57:18Z</time>\n" +
+            "      </trkpt>\n" +
+            "      <trkpt lat=\"35.24777309037745\" lon=\"24.167760433629155\">\n" +
+            "        <ele>745.1518883658424</ele>\n" +
+            "        <extensions>\n" +
+            "          <speed>0.7599999904632568</speed>\n" +
+            "          <gpxtpx:TrackPointExtension>\n" +
+            "            <gpxtpx:hr>4</gpxtpx:hr>\n" +
+            "          </gpxtpx:TrackPointExtension>\n" +
+            "        </extensions>\n" +
+            "        <time>2020-07-10T09:57:23Z</time>\n" +
+            "      </trkpt>\n" +
+            "      <trkpt lat=\"35.2477119024843\" lon=\"24.167830338701606\">\n" +
+            "        <ele>744.5100716152915</ele>\n" +
+            "        <extensions>\n" +
+            "          <speed>1.0299999713897705</speed>\n" +
+            "          <gpxtpx:TrackPointExtension>\n" +
+            "            <gpxtpx:hr>5</gpxtpx:hr>\n" +
+            "          </gpxtpx:TrackPointExtension>\n" +
+            "        </extensions>\n" +
+            "        <time>2020-07-10T09:57:28Z</time>\n" +
+            "      </trkpt>\n" +
+            "      <trkpt lat=\"35.24768235627562\" lon=\"24.16788716800511\">\n" +
+            "        <ele>743.941824249864</ele>\n" +
+            "        <extensions>\n" +
+            "          <speed>0.7299999594688416</speed>\n" +
+            "          <gpxtpx:TrackPointExtension>\n" +
+            "            <gpxtpx:hr>6</gpxtpx:hr>\n" +
+            "          </gpxtpx:TrackPointExtension>\n" +
+            "        </extensions>\n" +
+            "        <time>2020-07-10T09:57:35Z</time>\n" +
+            "      </trkpt>\n" +
+            "      <trkpt lat=\"35.24767770431936\" lon=\"24.1679463442415\">\n" +
+            "        <ele>742.4461097897636</ele>\n" +
+            "        <extensions>\n" +
+            "          <speed>0.7999999523162842</speed>\n" +
+            "          <gpxtpx:TrackPointExtension>\n" +
+            "            <gpxtpx:hr>7</gpxtpx:hr>\n" +
+            "          </gpxtpx:TrackPointExtension>\n" +
+            "        </extensions>\n" +
+            "        <time>2020-07-10T09:57:39Z</time>\n" +
+            "      </trkpt>\n" +
+            "      <trkpt lat=\"35.247624604962766\" lon=\"24.167957743629813\">\n" +
+            "        <ele>741.2391570135359</ele>\n" +
+            "        <extensions>\n" +
+            "          <speed>0.9899999499320984</speed>\n" +
+            "          <gpxtpx:TrackPointExtension>\n" +
+            "            <gpxtpx:hr>8</gpxtpx:hr>\n" +
+            "          </gpxtpx:TrackPointExtension>\n" +
+            "        </extensions>\n" +
+            "        <time>2020-07-10T09:57:44Z</time>\n" +
+            "      </trkpt>\n" +
+            "    </trkseg>\n" +
+            "    <type>walking</type>\n" +
+            "  </trk>\n" +
+            "</gpx>";
     //endregion
 
     //region OpenTracks

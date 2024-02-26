@@ -1,0 +1,2 @@
+- Összeomlás javítása az Oreo (<8) verziónál régebbi Androidokon
+- Frissített fordítások

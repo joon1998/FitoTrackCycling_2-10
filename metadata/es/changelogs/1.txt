@@ -1,0 +1,9 @@
+Primer lanzamiento
+
+- Registrar los entrenamientos
+- Listar entrenamientos
+- Mostrar datos de los entrenamientos (mapa, diagrama de velocidad, energía) + Borrar entrenamientos
+- Importar/exportar datos
+- Exportar entrenamientos como GPX
+- Cambiar las unidades
+- Cambiar el peso

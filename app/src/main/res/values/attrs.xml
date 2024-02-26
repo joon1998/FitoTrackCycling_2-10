@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TimeSpanSelection">
+        <attr name="isInstanceSelectable" format="boolean" />
+        <attr name="firstInstance" format="integer" />
+        <attr name="lastInstance" format="integer" />
+        <attr name="selectedInstance" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="TextToggle">
+        <attr name="currentText" format="string" />
+        <attr name="swapText" format="string" />
+    </declare-styleable>
+</resources>

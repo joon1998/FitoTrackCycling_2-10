@@ -1,0 +1,8 @@
+- Automatikus GPX-exportálás és alkalmazás biztonsági mentések
+- A térkép nagyítása és rögzítése
+- Egyéni mérőszámok a megosztás képernyőn
+- A Bluetooth érzékelő akkumulátorának megjelenítése, ha elérhető
+- Biztonsági mentések tömörítése
+- Hibajavítások
+
+A változtatások részletesebb listájáért nézze meg a projekt tárolóját a Codebergen

@@ -1,0 +1,6 @@
+- Staitisticí Workout
+- Iompórtáil comhaid GPX
+- Roinn an traenáil ina gcodanna/lapaí
+- Cumaisc cúltacaí isteach sa staid reatha
+
+féach le do thoil ar stór an tionscadail ar Codeberg le haghaidh tuilleadh athruithe

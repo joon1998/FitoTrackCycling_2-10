@@ -1,0 +1,12 @@
+Továbbfejlesztések:
+- Lehetőség a biztonsági mentés belső tárhelyre történő mentésére (#29)
+- Annak egyértelművé tétele, hogy az edzések megjegyzései szerkeszthetők (#34)
+- A tempó PP’MM” formátumban (#36)
+- Az emelkedési érték figyelembe vétele a kalória kiszámításakor (#39)
+
+Hibajavítások:
+- A birodalmi mértékegységek hibáinak javítása (#42)
+- Az edzéslista nem frissül megfelelően (#37)
+
+Nyelv:
+- Frissített spanyol fordítás (#43)

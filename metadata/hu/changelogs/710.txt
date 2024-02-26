@@ -1,0 +1,5 @@
+- Gördeszkázás tevékenység hozzáadva
+- Elveszett edzések visszaállítása
+- Különféle rögzítésstabilitási problémák javítása
+
+A további változtatásokért nézze meg a projekt tárolóját a Codebergen

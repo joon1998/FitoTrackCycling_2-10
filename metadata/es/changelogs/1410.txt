@@ -1,0 +1,7 @@
+Esta actualización incluye un montón de correcciones de errores y mejoras menores como:
+- Tratar de arreglar un error por el que FitoTrack no registraba nada
+- Registro de depuración
+- El zoom del mapa a través de los botones de volumen es ahora opcional
+- Corregir el formato GPX
+
+Por favor, consulte el repositorio del proyecto en Codeberg para una lista completa de los cambios

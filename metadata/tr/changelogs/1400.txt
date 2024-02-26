@@ -1,0 +1,8 @@
+- Otomatik GPX dışa aktarma ve uygulama yedeklemeleri
+- Haritayı yakınlaştırma ve kaydırma
+- Paylaşım ekranında özel metrikler
+- Varsa bluetooth sensör pilini göster
+- Yedekleri sıkıştır
+- Hata düzeltmeleri
+
+Daha ayrıntılı bir değişiklik listesi için lütfen Codeberg'deki proje deposuna bakın

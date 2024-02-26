@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="exporting">Xuất file</string>
+    <string name="errorGpxExportFailed">Không thể thêm GPX</string>
+    <string name="shareFile">Chia sẻ file</string>
+    <string name="delete">Xoá</string>
+    <string name="stop">Dừng</string>
+    <string name="error">Lỗi</string>
+    <string name="initialising">Đang Khởi Tạo</string>
+    <string name="app_name">FitoTrack</string>
+</resources>

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -21,6 +21,8 @@ package de.tadris.fitness.aggregation.information;
 
 import android.content.Context;
 
+import androidx.annotation.StringRes;
+
 import de.tadris.fitness.R;
 import de.tadris.fitness.aggregation.AggregationType;
 import de.tadris.fitness.data.BaseWorkout;
@@ -32,6 +34,7 @@ public class AverageHeartRate extends AbstractWorkoutInformation {
     }
 
     @Override
+    @StringRes
     public int getTitleRes() {
         return R.string.workoutAvgHeartRate;
     }
@@ -39,6 +42,11 @@ public class AverageHeartRate extends AbstractWorkoutInformation {
     @Override
     public String getUnit() {
         return "bpm";
+    }
+
+    @Override
+    public String getId() {
+        return "average-heartrate";
     }
 
     @Override

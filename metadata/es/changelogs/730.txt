@@ -1,0 +1,4 @@
+- Estadísticas de los entrenamientos: mostrar los valores sumados en forma de barras
+- Estadísticas del entrenamiento: abrir el resumen del entrenamiento al hacer clic en un solo entrenamiento
+- Velocidad media. Velocidad en el último minuto como información de voz
+- Arreglar la pausa automática que no funciona, causando también mucho ruido en el diagrama de velocidad y elevación

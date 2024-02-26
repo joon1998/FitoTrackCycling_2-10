@@ -1,0 +1,4 @@
+- Se ha corregido un fallo al importar archivos GPX en versiones antiguas de Java
+- Corregido el error de altura y calorías
+
+- Actualizado el francés

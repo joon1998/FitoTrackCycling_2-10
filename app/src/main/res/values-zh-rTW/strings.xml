@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+  ~ Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
   ~
   ~ This file is part of FitoTrack
   ~
@@ -41,7 +41,6 @@
     <string name="workoutTypeEditId">ID</string>
     <string name="hintManageWorkoutTypes">按一下「加號」圖示，以便新增專門設計的健身項目類型。</string>
     <string name="resumeWorkoutConfirmation">您確定想繼續這個健身項目？健身項目完結後會加上一段暫停的時間。</string>
-    <string name="recordingBackgroundPermissionNotGrantedMessage">FitoTrack 亦會於 App 在背景運行時，或螢幕關閉後收集位置資料，以便記錄您的健身項目。因此，請允許 FitoTrack 隨時取用您的位置。</string>
     <string name="recordingPermissionNotGrantedMessage">為了追蹤您進行健身項目時的行動，FitoTrack 需要收到位置許可。FitoTrack 亦會於 App 在背景運行時，或螢幕關閉後收集位置資料，以便記錄您的健身項目。除非您明確同意分享位置資料，否則這些資料只會儲存於您的電話。</string>
     <string name="editDisplayedInformationHint">只要您還未開始使用健身項目，您仍然可以按一下四個領域之一，以便編輯在螢幕上顯示的數值。</string>
     <string name="prefShowOnLockScreenTitle">可在鎖定螢幕上看到</string>
@@ -52,7 +51,6 @@
     <string name="min">最低</string>
     <string name="prefShowOnLockScreenSummary">即使電話被鎖定時，仍然顯示健身項目資料。</string>
     <string name="heartRateNotAvailable">目前不能顯示心率。</string>
-    <string name="importedWorkouts">已匯入了 %d 的健身項目</string>
     <string name="nothingSelected">未選擇任何內容</string>
     <string name="actionImportMultiple">匯入多項</string>
     <string name="importMultipleMessageSelectFolder">請選擇一份包含您所有想匯入的 GPX 文件的文件夾。</string>

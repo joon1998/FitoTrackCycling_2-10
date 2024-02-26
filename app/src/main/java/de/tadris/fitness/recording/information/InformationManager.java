@@ -24,24 +24,24 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.tadris.fitness.data.WorkoutType;
+import de.tadris.fitness.data.RecordingType;
 
 public class InformationManager {
 
     private final Context context;
     private final List<RecordingInformation> information = new ArrayList<>();
 
-    public InformationManager(WorkoutType.RecordingType mode, Context context) {
+    public InformationManager(RecordingType mode, Context context) {
         this.context = context;
         addInformation(mode);
     }
 
-    private void addInformation(WorkoutType.RecordingType mode) {
+    private void addInformation(RecordingType mode) {
         information.add(new SystemActions(context));
         information.add(new CurrentTime(context));
         information.add(new Duration(context));
         information.add(new PauseDuration(context));
-        if (mode == WorkoutType.RecordingType.GPS) {
+        if (mode == RecordingType.GPS) {
             information.add(new GPSStatus(context));
             information.add(new Distance(context));
             information.add(new CurrentSpeed(context));
@@ -51,13 +51,14 @@ public class InformationManager {
             information.add(new AveragePace(context));
             information.add(new Ascent(context));
         }
-        if (mode == WorkoutType.RecordingType.INDOOR) {
+        if (mode == RecordingType.INDOOR) {
             information.add(new Repetitions(context));
             information.add(new CurrentIntensity(context));
             information.add(new CurrentFrequency(context));
             information.add(new AverageFrequency(context));
         }
         information.add(new CurrentHeartRate(context));
+        information.add(new CurrentHRBatteryLevel(context));
         information.add(new BurnedEnergy(context));
     }
 

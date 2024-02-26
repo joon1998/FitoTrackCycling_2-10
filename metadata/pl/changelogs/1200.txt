@@ -1,0 +1,8 @@
+- Skanowanie w poszukiwaniu niepołączonych urządzeń Bluetooth
+- Przycinanie treningu
+- Kolorowanie trasy
+- Opcja obliczania prędkości w czasie
+- Pacekeeper, który informuje o tym, że biegniesz za wolno/zbyt szybko
+- Edycja interwałów
+
+proszę zobaczyć repozytorium projektu na Codeberg dla bardziej szczegółowej listy zmian

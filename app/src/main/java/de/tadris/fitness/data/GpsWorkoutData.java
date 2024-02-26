@@ -30,7 +30,11 @@ public class GpsWorkoutData {
 
     public static GpsWorkoutData fromWorkout(Context context, GpsWorkout workout) {
         AppDatabase database = Instance.getInstance(context).db;
-        return new GpsWorkoutData(workout, Arrays.asList(database.gpsWorkoutDao().getAllSamplesOfWorkout(workout.id)));
+        return fromWorkout(database.gpsWorkoutDao(), workout);
+    }
+
+    public static GpsWorkoutData fromWorkout(GpsWorkoutDao workoutDao, GpsWorkout workout) {
+        return new GpsWorkoutData(workout, Arrays.asList(workoutDao.getAllSamplesOfWorkout(workout.id)));
     }
 
     private GpsWorkout workout;

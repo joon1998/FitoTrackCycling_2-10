@@ -1,0 +1,7 @@
+Áiríonn an nuashonrú seo go leor ceartúcháin ar fhabht agus mionfheabhsuithe mar:
+- Déan iarracht fabht a shocrú nach ndéanfadh FitoTrack aon rud a thaifeadadh
+- Logáil dífhabhtaithe
+- Tá sé roghnach anois zúmáil léarscáileanna trí chnaipí toirte
+- Deisigh formáid GPX
+
+féach le do thoil ar stór an tionscadail ar Codeberg le haghaidh liosta iomlán athruithe

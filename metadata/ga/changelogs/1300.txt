@@ -1,0 +1,10 @@
+- Track Workouts Faoi Dhíon
+  - tacaithe faoi láthair: Treadmill, bhrú ups, Gan Bacadh Le Téad agus Léim Trampoline 
+- Tacaíocht rindreáil themp téamaí le haghaidh léarscáil / saincheaptha as líne 
+ 
+- Glac le hintinn Chomhaid: is féidir leat gpx-comhaid a roinnt agus a oscailt anois ó apps eile chun iad a iompórtáil 
+- Sórtáil cineálacha workout de réir úsáide seo caite 
+- Tús a chur cheana féin workouts agus "ag fanacht LE GPS" 
+- - níos mó feabhsúcháin agus ceartúcháin fabhtanna... 
+ 
+féach le do thoil stór an tionscadail Ar Codeberg le haghaidh liosta níos mionsonraithe d athruithe

@@ -21,6 +21,12 @@ package de.tadris.fitness.ui.workout.diagram;
 
 import android.content.Context;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Stream;
+
+import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
 import de.tadris.fitness.data.BaseSample;
 import de.tadris.fitness.data.BaseWorkout;
@@ -30,6 +36,8 @@ import de.tadris.fitness.data.WorkoutManager;
 
 public class InclinationConverter extends AbstractSampleConverter {
 
+    float min, max;
+
     public InclinationConverter(Context context) {
         super(context);
     }
@@ -37,6 +45,9 @@ public class InclinationConverter extends AbstractSampleConverter {
     @Override
     public void onCreate(BaseWorkoutData data) {
         WorkoutManager.calculateInclination(data.castToGpsData().getSamples());
+        List<GpsSample> samples = data.castToGpsData().getSamples();
+        this.min = samples.stream().min(inclinationComparator).get().tmpInclination;
+        this.max = samples.stream().max(inclinationComparator).get().tmpInclination;
     }
 
     @Override
@@ -61,11 +72,21 @@ public class InclinationConverter extends AbstractSampleConverter {
 
     @Override
     public float getMinValue(BaseWorkout workout) {
-        return -10;
+        return min;
     }
 
     @Override
     public float getMaxValue(BaseWorkout workout) {
-        return 10;
+        return max;
     }
+
+    public static Comparator<GpsSample> inclinationComparator = (first, second) -> {
+        if (first.tmpInclination > second.tmpInclination) {
+            return 1;
+        } else if (first.tmpInclination < second.tmpInclination) {
+            return -1;
+        } else {
+            return 0;
+        }
+    };
 }

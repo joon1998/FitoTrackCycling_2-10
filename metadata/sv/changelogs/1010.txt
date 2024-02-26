@@ -1,0 +1,10 @@
+- Visa hållpunkter (pauser) på kartan i fullskärm
+
+- Lade till ikoner för hästridning och skidåkning
+- Bättre prestanda när långa träningspass visas
+- Importera flertalet träningspass flyttades till huvudskärmen
+- Importera alla spår från en GPX-fil
+
+-Importera typer av träningspass från säkerhetskopior
+
+vänligen kolla i projektets filförråd på Codeberg för en mer detaljerad lista över ändringar

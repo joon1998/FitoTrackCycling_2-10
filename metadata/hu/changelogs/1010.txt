@@ -1,0 +1,10 @@
+- Megállítási pontok (szünetek) megjelenítése a teljes képernyős térképen
+
+- Ikonok hozzáadva a lovagláshoz és síeléshez
+- Jobb teljesítmény a hosszú edzések megtekintésekor
+- A több edzés importálása át lett helyezve a főképernyőre
+- Az összes nyomvonal importálása egy GPX-fájlból
+
+- Edzéstípusok megfelelő importálása a biztonsági mentésekből
+
+A változtatások részletesebb listájáért nézze meg a projekt tárolóját a Codebergen

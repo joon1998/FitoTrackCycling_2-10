@@ -33,6 +33,7 @@ import de.tadris.fitness.ui.workout.diagram.SampleConverter;
 public class SampleConverterPickerDialog {
 
     private static final int MAX_SELECTED = 2;
+    private static final int MIN_SELECTED = 1;
 
     private final Activity context;
     private final SampleConverterSelectListener listener;
@@ -59,14 +60,15 @@ public class SampleConverterPickerDialog {
                 if (isChecked) {
                     if (manager.selectedConverters.size() >= MAX_SELECTED) {
                         checkBox.setChecked(false);
-                        return;
-                    }
-                    manager.selectedConverters.add(converter);
-                    if (manager.selectedConverters.size() >= MAX_SELECTED && dialog != null) {
-                        dialog.dismiss();
+                    } else {
+                        manager.selectedConverters.add(converter);
                     }
                 } else {
-                    manager.selectedConverters.remove(converter);
+                    if (manager.selectedConverters.size() <= MIN_SELECTED) {
+                        checkBox.setChecked(true);
+                    } else {
+                        manager.selectedConverters.remove(converter);
+                    }
                 }
             });
             linearLayout.addView(checkBox);

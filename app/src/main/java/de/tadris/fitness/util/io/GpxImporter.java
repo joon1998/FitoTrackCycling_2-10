@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -78,9 +78,6 @@ public class GpxImporter implements IWorkoutImporter {
         }
         if (gpx.getMetadata() != null) {
             if (workout.comment == null) {
-                workout.comment = gpx.getName();
-            }
-            if (workout.comment == null) {
                 workout.comment = gpx.getMetadata().getName();
             }
             if (workout.comment == null) {
@@ -90,13 +87,20 @@ public class GpxImporter implements IWorkoutImporter {
 
         String startTime = firstPoint.getTime();
 
+        if (startTime == null || startTime.isEmpty()) {
+            throw new RuntimeException("The GPX file doesn't include timestamps.");
+        }
+
         workout.start = parseDate(startTime).getTime();
 
         int index = firstSegment.getTrkpt().size();
         String lastTime = firstSegment.getTrkpt().get(index - 1).getTime();
         workout.end = parseDate(lastTime).getTime();
         workout.duration = workout.end - workout.start;
-        workout.workoutTypeId = getTypeIdById(gpx.getTrk().get(0).getType());
+        String extractedWorkoutTypeId = getTypeIdById(gpx.getTrk().get(0).getType());
+        if (!extractedWorkoutTypeId.isEmpty()) {
+            workout.workoutTypeId = extractedWorkoutTypeId;
+        }
 
         List<GpsSample> samples = getSamplesFromTrack(workout.start, gpx.getTrk().get(0));
 
@@ -135,9 +139,14 @@ public class GpxImporter implements IWorkoutImporter {
     }
 
     private static Date parseDate(String str) {
-        // Need parseCalendar because parseDate seems to be corrupted.
-        // The hour is always one lesser then the original time.
-        return DateParserUtils.parseCalendar(str).getTime();
+        try {
+            // Need parseCalendar because parseDate seems to be corrupted.
+            // The hour is always one lesser then the original time.
+            return DateParserUtils.parseCalendar(str).getTime();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Cannot parse timestamps: " + e.getMessage(), e.getCause());
+        }
     }
 
     private static String getTypeIdById(String id) {

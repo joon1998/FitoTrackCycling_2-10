@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -22,9 +22,7 @@ package de.tadris.fitness.ui;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -38,6 +36,8 @@ import androidx.core.app.ActivityCompat;
 
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
+import de.tadris.fitness.util.PermissionUtils;
+import de.tadris.fitness.util.ThemeUtils;
 
 abstract public class FitoTrackActivity extends AppCompatActivity {
 
@@ -55,7 +55,7 @@ abstract public class FitoTrackActivity extends AppCompatActivity {
         return getThemeColor(android.R.attr.colorPrimaryDark);
     }
 
-    protected int getThemeTextColor() {
+    public int getThemeTextColor() {
         return getThemeColor(android.R.attr.textColorPrimary);
     }
 
@@ -64,9 +64,7 @@ abstract public class FitoTrackActivity extends AppCompatActivity {
     }
 
     protected int getThemeColor(@AttrRes int colorRes) {
-        final TypedValue value = new TypedValue();
-        getTheme().resolveAttribute(colorRes, value, true);
-        return value.data;
+        return ThemeUtils.resolveThemeColor(this, colorRes);
     }
 
     protected void showErrorDialog(Exception e, @StringRes int title, @StringRes int message) {
@@ -93,8 +91,7 @@ abstract public class FitoTrackActivity extends AppCompatActivity {
     }
 
     protected boolean hasStoragePermission() {
-        return ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+        return PermissionUtils.checkStoragePermissions(this, true);
     }
 
     protected void requestKeyboard(View v) {

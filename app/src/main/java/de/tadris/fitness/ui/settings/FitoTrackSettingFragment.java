@@ -19,6 +19,7 @@
 
 package de.tadris.fitness.ui.settings;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 
 import androidx.annotation.StringRes;
@@ -72,10 +73,29 @@ public abstract class FitoTrackSettingFragment extends PreferenceFragmentCompat 
 
         // Trigger the listener immediately with the preference's
         // current value.
+        triggerChangeListener(preference);
+    }
+
+    protected static void triggerChangeListener(Preference preference){
         sBindPreferenceSummaryToValueListener.onPreferenceChange(preference,
                 PreferenceManager
                         .getDefaultSharedPreferences(preference.getContext())
                         .getString(preference.getKey(), ""));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        setTitle(getTitle());
+    }
+
+    protected abstract String getTitle();
+
+    protected void setTitle(String s) {
+        Activity activity = getActivity();
+        if (activity != null) {
+            activity.setTitle(s);
+        }
     }
 
 }

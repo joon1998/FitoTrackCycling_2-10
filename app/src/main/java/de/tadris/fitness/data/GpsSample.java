@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -19,6 +19,8 @@
 
 package de.tadris.fitness.data;
 
+import static androidx.room.ForeignKey.CASCADE;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
@@ -28,8 +30,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import org.mapsforge.core.model.LatLong;
-
-import static androidx.room.ForeignKey.CASCADE;
 
 @Entity(tableName = "workout_sample",
         foreignKeys = @ForeignKey(
@@ -43,8 +43,14 @@ public class GpsSample extends BaseSample {
     @ColumnInfo(name = "workout_id", index = true)
     public long workoutId;
 
+    /**
+     * Latitude
+     */
     public double lat;
 
+    /**
+     * Longitude
+     */
     public double lon;
 
     /**
@@ -59,13 +65,15 @@ public class GpsSample extends BaseSample {
     @ColumnInfo(name = "elevation_msl")
     public double elevationMSL = 0;
 
+    /**
+     * Speed in m/s
+     */
     public double speed;
 
+    /**
+     * Pressure in hPa
+     */
     public float pressure;
-
-    @JsonIgnore
-    @Ignore
-    public double tmpRoundedSpeed;
 
     @JsonIgnore
     @Ignore
@@ -75,9 +83,36 @@ public class GpsSample extends BaseSample {
     @Ignore
     public float tmpInclination;
 
-    public LatLong toLatLong(){
+    public LatLong toLatLong() {
         return new LatLong(lat, lon);
     }
 
+    /**
+     * Adds values from other sample to this one
+     */
+    public void add(GpsSample sample) {
+        speed += sample.speed;
+        elevationMSL += sample.elevationMSL;
+        elevation += sample.elevation;
+        tmpInclination += sample.tmpInclination;
+        relativeTime += sample.relativeTime;
+        lat += sample.lat;
+        lon += sample.lon;
+        heartRate += sample.heartRate;
+    }
+
+    /**
+     * Divides value by a scalar
+     */
+    public void divide(int scalar) {
+        speed /= scalar;
+        elevationMSL /= scalar;
+        elevation /= scalar;
+        tmpInclination /= scalar;
+        relativeTime /= scalar;
+        lat /= scalar;
+        lon /= scalar;
+        heartRate /= scalar;
+    }
 
 }

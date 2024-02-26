@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -18,20 +18,22 @@
  */
 package de.tadris.fitness.recording.announcement
 
+import android.Manifest
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothHeadset
 import android.content.Context
+import android.content.pm.PackageManager
 import android.media.AudioManager
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
-import android.util.Log
+import androidx.core.app.ActivityCompat
 import de.tadris.fitness.recording.BaseWorkoutRecorder
-import de.tadris.fitness.recording.announcement.AnnouncementMode
 import de.tadris.fitness.recording.event.TTSReadyEvent
+import de.tadris.fitness.util.WorkoutLogger
 import org.greenrobot.eventbus.EventBus
 import java.util.*
 
-class TTSController(context: Context, val id: String = DEFAULT_TTS_CONTROLLER_ID) {
+class TTSController(private val context: Context, val id: String = DEFAULT_TTS_CONTROLLER_ID) {
 
     private val textToSpeech = TextToSpeech(context) { status: Int -> ttsReady(status) }
 
@@ -40,6 +42,8 @@ class TTSController(context: Context, val id: String = DEFAULT_TTS_CONTROLLER_ID
 
     private val currentMode = AnnouncementMode.getCurrentMode(context)
     private val audioManager = context.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+    private val audioFocusManager = AudioFocusManager(audioManager)
+    private val queuedUtterances = HashSet<String>();
 
     private fun ttsReady(status: Int) {
         isTtsAvailable =
@@ -50,11 +54,11 @@ class TTSController(context: Context, val id: String = DEFAULT_TTS_CONTROLLER_ID
         EventBus.getDefault().post(TTSReadyEvent(isTtsAvailable, id))
     }
 
-    fun speak(recorder: BaseWorkoutRecorder?, announcement: Announcement) {
+    fun speak(recorder: BaseWorkoutRecorder, announcement: Announcement) {
         if (!announcement.isAnnouncementEnabled) {
             return
         }
-        val text = announcement.getSpokenText(recorder!!)
+        val text = announcement.getSpokenText(recorder)
         if (text != null && text != "") {
             speak(text)
         }
@@ -66,21 +70,33 @@ class TTSController(context: Context, val id: String = DEFAULT_TTS_CONTROLLER_ID
             // Cannot speak
             return
         }
-        if (currentMode === AnnouncementMode.HEADPHONES && !isHeadsetOn) {
+        if (currentMode == AnnouncementMode.HEADPHONES && !isHeadsetOn) {
             // Not allowed to speak
             return
         }
-        Log.d("Recorder", "TTS speaks: $text")
-        textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null, "announcement" + ++speakId)
+        if (!audioFocusManager.requestFocus()) {
+            return
+        }
+        WorkoutLogger.log("Recorder", "TTS speaks: $text")
+
+        val utteranceId = "announcement" + ++speakId
+        textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null, utteranceId)
+        queuedUtterances.add(utteranceId)
     }
 
-    private val isHeadsetOn: Boolean
-        get() {
+    private val isHeadsetOn get() = audioManager.isWiredHeadsetOn || bluetoothHeadsetConnected
+
+    private val bluetoothHeadsetConnected
+        get(): Boolean {
             val mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
-            val bluetoothHeadsetConnected =
+            return if (ActivityCompat.checkSelfPermission(
+                    context,
+                    Manifest.permission.BLUETOOTH_CONNECT
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
                 (mBluetoothAdapter != null && mBluetoothAdapter.isEnabled
                         && mBluetoothAdapter.getProfileConnectionState(BluetoothHeadset.HEADSET) == BluetoothHeadset.STATE_CONNECTED)
-            return audioManager.isWiredHeadsetOn || bluetoothHeadsetConnected
+            } else false
         }
 
     /**
@@ -109,16 +125,14 @@ class TTSController(context: Context, val id: String = DEFAULT_TTS_CONTROLLER_ID
     }
 
     private inner class TextToSpeechListener : UtteranceProgressListener() {
-        override fun onStart(utteranceId: String) {
-            audioManager.requestAudioFocus(
-                null,
-                AudioManager.STREAM_SYSTEM,
-                AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK
-            )
-        }
+        override fun onStart(utteranceId: String) {}
 
         override fun onDone(utteranceId: String) {
-            audioManager.abandonAudioFocus(null)
+            queuedUtterances.remove(utteranceId);
+
+            if (queuedUtterances.isEmpty()) {
+                audioFocusManager.abandonFocus()
+            }
         }
 
         override fun onError(utteranceId: String) {}

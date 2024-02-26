@@ -1,0 +1,6 @@
+- Edzés időkorlátjának beállítása
+- A jelenlegi idő TTS információként
+- Az exportált fájlok tartalmazzák a kezdési időt és a megjegyzést
+- Sokkal jobb követési stabilitás
+
+A további változtatásokért nézze meg a projekt tárolóját a Codebergen

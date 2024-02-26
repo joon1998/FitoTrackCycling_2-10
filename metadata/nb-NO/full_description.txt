@@ -1,0 +1,5 @@
+Loggfør og vis treningsøktene dine. Når du springer, sykler eller går vil du bli vist viktig info, med detaljerte diagrammer og statistikk. Fri programvare og reklamefritt.
+
+* Loggfør treningsøkter. Velg typen sport du ønsker og begynn å springe, sykle, eller gå. Generell info er tilgjengelig rett nedenfor kartet på sporingsskjermen.
+* Vis treningsøktene dine. Dato, tid, varighet, avstand og tempo. Sjekk ruten på et kart. Finn ut hva ytelsen din er fra hastighetsdiagrammet.
+* Fri programvare. Ingen reklame eller sporing av deg, og kildekoden er gemenhetslig fri programvare, lisensiert GPLv3+.

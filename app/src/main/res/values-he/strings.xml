@@ -16,9 +16,7 @@
   ~
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-
-<resources>
+  --><resources>
     <string name="workoutRoute">מסלול</string>
     <string name="voiceAnnouncementsTitle">הודעות קוליות</string>
     <string name="announcementGPSStatus">מצב GPS</string>
@@ -45,7 +43,7 @@
     <string name="aboutLinks">קישורים</string>
     <string name="aboutContributors">מתנדבים</string>
     <string name="aboutSourceCode">צפייה בקוד המקור</string>
-    <string name="aboutUnlistedContributors">תודה לכל המתנדבים שאינם רשומים אשר עזרו לתרגם ולהרחיב את FitoTrack!</string>
+    <string name="aboutUnlistedContributors">תודה לכל המתנדבים שאינם רשומים שעזרו לתרגם ולהרחיב את FitoTrack!</string>
     <string name="aboutHelpTranslating">עזרה בתרגום</string>
     <string name="aboutPrivacyPolicy">מדיניות פרטיות</string>
     <string name="editDisplayedInformation">עריכת המידע שמוצג</string>
@@ -112,7 +110,7 @@
     <string name="app_name">FitoTrack</string>
     <string name="gpsLost">אות GPS אבד</string>
     <string name="errorWorkoutAddFuture">האימון לא יכול להיות בעתיד</string>
-    <string name="importBackupMessage">אזהרה: כל הנתונים הקיימים ביישום יימחקו. אם אין ברצונך לאבד אותם, יש לעשות גיבוי אחר תחילה. האם אכן, ברצונך לשחזר מהגיבוי הזה\?</string>
+    <string name="importBackupMessage">כדאי לגבות עכשיו את הנתונים הנוכחיים אם ברצונך להשאירם. לשחזר מהגיבוי הקודם כעת\?</string>
     <string name="errorGpxExportFailed">הייצוא כ־GPX כשל.</string>
     <string name="deleteWorkoutTypeConfirmation">האם אכן ברצונך למחוק את סוג האימון הזה\?</string>
     <string name="customWorkoutTypesTitle">סוגי אימון מותאמים</string>
@@ -144,7 +142,7 @@
     <string name="enable">הפעלה</string>
     <string name="workoutAvgHeartRate">דופק לב ממוצע</string>
     <string name="workoutTotalEnergy">אנרגיה בסך הכול</string>
-    <string name="gpsFound">אות GPS אבדה</string>
+    <string name="gpsFound">אות GPS נמצא</string>
     <string name="editWorkoutType">עריכת סוג האימון</string>
     <string name="workoutTypeEditIcon">סמל</string>
     <string name="workoutTypeEditName">שם</string>
@@ -222,10 +220,9 @@
     <string name="hintManageWorkoutTypes">יש ללחוץ על פלוס כדי להוסיף סוגי אימון מותאמים.</string>
     <string name="workoutTypeEditIdErrorUnique">כבר יש סוג אימון עם המזהה הזה</string>
     <string name="workoutTypeEditIdErrorCharacters">תווים מותרים: a–z‏, A–Z‏, 0–9, _, -</string>
-    <string name="prefShowOnLockScreenSummary">הצגת המידע על האימון גם כאשר הטלפון נעול.</string>
+    <string name="prefShowOnLockScreenSummary">הצגת המידע על האימון גם כשהמכשיר נעול.</string>
     <string name="prefShowOnLockScreenTitle">נראה במסך הנעילה</string>
     <string name="heartRateNotAvailable">דופק הלב אינו זמין כרגע.</string>
-    <string name="importedWorkouts">%d אימונים יובאו</string>
     <string name="importingFiles">כעת בייבוא הקבצים</string>
     <string name="importMultipleMessageSelectFolder">נא לבחור תיקיה שמכילה את כל קובצי GPX שברצונך לייבא.</string>
     <string name="importMultipleGpxFiles">ייבוא קובצי GPX מרובים</string>
@@ -277,4 +274,77 @@
     <string name="speedLastMinute">מהירות ממוצעת (בדקה האחרונה)</string>
     <string name="avgSpeedTotalShort">מהירות ממוצעת (בסך הכול)</string>
     <string name="avgSpeedInMotion">מהירות ממוצעת (בתזוזה)</string>
+    <string name="scanning">מתבצעת סריקה…</string>
+    <string name="workoutRecordingTypeIndoor">אימונים ביתיים</string>
+    <string name="workoutCurrentFrequency">תדירות נוכחית</string>
+    <string name="workoutAscent">בסדר עולה</string>
+    <string name="workoutDescent">בסדר יורד</string>
+    <string name="workoutMinHeight">גובה מינימלי</string>
+    <string name="workoutMaxHeight">גובה מרבי</string>
+    <plurals name="workoutStep">
+        <item quantity="one">צעד</item>
+        <item quantity="two">צעדים</item>
+        <item quantity="many">צעדים</item>
+        <item quantity="other">צעדים</item>
+    </plurals>
+    <string name="pref_step_length">אורך צעד</string>
+    <string name="trackStyle">סגנון כלי המעקב</string>
+    <string name="edit_interval">עריכת מרווח זמן</string>
+    <string name="editWorkoutStartEnd">עריכת התחלה/סיום</string>
+    <string name="recordingStateIdle">המתנה</string>
+    <string name="recordingStateRunning">ריצה</string>
+    <string name="resumeWorkoutConfirmation">להמשיך את האימון הזה\? תירשם באימון השהיה לזמן שבו האימון נעצר.</string>
+    <string name="workoutTypeEditMinDistance">מרחק דגימה</string>
+    <string name="pref_map_directory">תיקייה למפה הבלתי מקוונת</string>
+    <string name="pref_render_theme_style">סגנון</string>
+    <string name="preferenceCategoryRenderThemeCategories">קטגוריות</string>
+    <string name="downloadMapsTitle">מפות להורדה</string>
+    <string name="actionDownloadMap">הורדת המפה</string>
+    <string name="actionCancelDownload">ביטול ההורדה</string>
+    <string name="downloadFailed">ההורדה נכשלה</string>
+    <string name="downloadCanceled">ההורדה בוטלה</string>
+    <string name="downloading">מתבצעת הורדה…</string>
+    <string name="pref_auto_start_delay_title">ספירה אוטומטית לאחור</string>
+    <string name="noAutoStartDelay">ללא</string>
+    <string name="abort">ביטול</string>
+    <string name="actionApply">החלה</string>
+    <string name="ttsBelowTargetSpeed">לאט מדי</string>
+    <string name="ttsAboveTargetSpeed">מהר מדי</string>
+    <string name="pref_auto_start_mode_instant">התחלה מיידית</string>
+    <string name="pref_auto_start_mode_title">מצב התחלה אוטומטית</string>
+    <string name="workoutRecordingTypeGps">אימוני GPS</string>
+    <string name="workoutRepetitions">חזרות</string>
+    <string name="workoutSets">סטים</string>
+    <string name="workoutFrequency">תדירות</string>
+    <string name="workoutAvgFrequencyShort">תדירות ממוצעת</string>
+    <string name="workoutAvgFrequencyLong">תדירות ממוצעת</string>
+    <string name="workoutMaxFrequency">תדירות מרבית</string>
+    <string name="workoutTypeRopeSkipping">קפיצה על חבל</string>
+    <string name="workoutTypeTrampolineJumping">קפיצה על טרמפולינה</string>
+    <plurals name="workoutJump">
+        <item quantity="one">קפיצה</item>
+        <item quantity="two">קפיצות</item>
+        <item quantity="many">קפיצות</item>
+        <item quantity="other">קפיצות</item>
+    </plurals>
+    <string name="workoutTypePushUps">שכיבות סמיכה</string>
+    <plurals name="workoutPushUp">
+        <item quantity="one">שכיבת סמיכה</item>
+        <item quantity="two">שכיבות סמיכה</item>
+        <item quantity="many">שכיבות סמיכה</item>
+        <item quantity="other">שכיבות סמיכה</item>
+    </plurals>
+    <string name="workoutTypeAll">הכול</string>
+    <string name="actionImport">ייבוא</string>
+    <string name="preferencesCategoryMap">מפה</string>
+    <string name="preferenceCurrentSpeedAverageTimeTitle">המהירות הנוכחית לפי ממוצע</string>
+    <string name="preferenceFirstDayOfWeek">תחילת השבוע</string>
+    <string name="unitHertzLong">הרץ</string>
+    <string name="intervalAutoTimeoutTraining">סיום אימון אוטומטי</string>
+    <string name="selectBluetoothDevice">בחירת מכשיר Bluetooth</string>
+    <string name="connectHeartRateDevice">חיבור מכשיר מד דופק</string>
+    <string name="customAutoStartDelay">שונות</string>
+    <string name="autoStartCountdownMsg">האימון מתחיל בעוד</string>
+    <string name="popup_auto_start_immediately">התחלה מיידית</string>
+    <string name="workoutAvgDurationLong">משך זמן ממוצע</string>
 </resources>

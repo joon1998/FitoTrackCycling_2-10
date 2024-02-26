@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+  ~ Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
   ~
   ~ This file is part of FitoTrack
   ~
@@ -18,11 +18,11 @@
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
   --><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="restore">Przywróć</string>
-    <string name="importBackupMessage">OSTRZEŻENIE: Wszystkie Twoje istniejące dane w aplikacji zostaną wyczyszczone. Jeśli nie chcesz ich stracić, najpierw wykonaj kolejną kopię zapasową. Czy na pewno chcesz przywrócić tę kopię zapasową\?</string>
-    <string name="chooseBackupFile">Wybierz plik kopii</string>
+    <string name="importBackupMessage">Najpierw utwórz kopię zapasową swoich aktualnych danych, jeśli chcesz je zachować. Czy przywrócić poprzednią kopię zapasową\?</string>
+    <string name="chooseBackupFile">Wybierz plik kopii zapasowej</string>
     <string name="loadingFile">Ładowanie pliku</string>
     <string name="finished">Zakończone</string>
-    <string name="converting">Konwersja</string>
+    <string name="converting">Konwertowanie</string>
     <string name="locationData">Dane o lokalizacji</string>
     <string name="workouts">Treningi</string>
     <string name="initialising">Inicjalizacja</string>
@@ -38,15 +38,15 @@
     <string name="pref_voice_announcements_summary">Skonfiguruj komunikaty głosowe, które będą Cię informować podczas treningu</string>
     <string name="announcementWorkoutActions">Akcje treningu (wstrzymanie, wznowienie itd.)</string>
     <string name="announcementGPSStatus">Status GPS</string>
-    <string name="errorEnterValidDuration">Wprowadź poprawny czas trwania</string>
+    <string name="errorEnterValidDuration">Wprowadź prawidłowy czas trwania</string>
     <string name="errorWorkoutAddFuture">Trening nie mógł odbyć się w przyszłości</string>
-    <string name="errorEnterValidNumber">Wprowadź poprawną liczbę</string>
+    <string name="errorEnterValidNumber">Wprowadź prawidłową liczbę</string>
     <string name="and">i</string>
     <string name="timeSecondsShort">sek.</string>
     <string name="timeHourShort">godz.</string>
     <string name="timeHourPlural">Godziny</string>
     <string name="timeHourSingular">Godzina</string>
-    <string name="timeMinuteShort">min</string>
+    <string name="timeMinuteShort">min.</string>
     <string name="timeMinutePlural">Minuty</string>
     <string name="timeMinuteSingular">Minuta</string>
     <string name="setPreferencesMessage">Możesz ustawić swój preferowany system jednostek i wagę w ustawieniach.</string>
@@ -57,19 +57,18 @@
     <string name="selectBluetoothDevice">Wybierz urządzenie Bluetooth</string>
     <string name="importWorkoutMultipleQuestion">Czy chcesz zaimportować jeden plik GPX, czy wiele\?</string>
     <string name="importMultipleMessageSelectFolder">Wybierz folder zawierający wszystkie pliki GPX, które chcesz zaimportować.</string>
-    <string name="importMultipleGpxFiles">Importowanie wielu plików GPX</string>
+    <string name="importMultipleGpxFiles">Importuj wiele plików GPX</string>
     <string name="recordingStateStopped">Zatrzymany</string>
     <string name="recordingStatePaused">Wstrzymany</string>
     <string name="recordingStateRunning">Działający</string>
     <string name="recordingStateIdle">Bezczynny</string>
     <string name="speechConfigNoSpeech">Brak powiadom.</string>
     <string name="actionGrant">Przyznaj</string>
-    <string name="recordingBackgroundPermissionNotGrantedMessage">FitoTrack również zbiera dane o lokalizacji w tle, aby nagrywać trening, gdy ekran jest wyłączony. W związku z tym należy pozwolić, aby FitoTrack miał dostęp do Twojej lokalizacji przez cały czas.</string>
     <string name="recordingPermissionNotGrantedMessage">FitoTrack potrzebuje uprawnień do lokalizacji, aby śledzić Twój ruch podczas treningu. FitoTrack zbiera również dane o lokalizacji, gdy aplikacja działa w tle lub ekran jest wyłączony, aby nagrywać treningi. Dane o lokalizacji zawsze pozostają w telefonie bez Twojej wyraźnej zgody na ich udostępnienie.</string>
     <string name="recordingPermissionNotGrantedTitle">Nie przyznano uprawnień</string>
     <string name="unitFootSingular">Stopa</string>
     <string name="unitFootPlural">Stopy</string>
-    <string name="noWorkoutStarted">Brak rozpoczętego treningu</string>
+    <string name="noWorkoutStarted">Trening nie rozpoczął się</string>
     <string name="editDisplayedInformationHint">Dopóki trening nie rozpoczął się, możesz edytować wyświetlane wartości, naciskając jedno z czterech pól.</string>
     <string name="editDisplayedInformation">Edycja wyświetlanych informacji</string>
     <string name="aboutPrivacyPolicy">Polityka prywatności</string>
@@ -87,7 +86,7 @@
     <string name="aboutVersion">Wersja</string>
     <string name="aboutTitle">O aplikacji</string>
     <string name="editWorkout">Edytuj trening</string>
-    <string name="cannotFindWorkout">Nie można znaleźć treningu</string>
+    <string name="cannotFindWorkout">Nie udało się znaleźć treningu</string>
     <string name="speedLastMinuteSpoken">Prędkość w ciągu ostatniej minuty</string>
     <string name="speedLastMinute">Śr. prędkość (ostatnia minuta)</string>
     <string name="sections">Odcinki</string>
@@ -97,9 +96,9 @@
     <string name="merge">Połącz</string>
     <string name="replace">Zamień</string>
     <string name="replaceOrMergeMessage">Zamienić czy połączyć bazę danych z plikiem kopii zapasowej\?</string>
-    <string name="workoutStatsHelpText">Ten ekran pokazuje historyczne statystyki treningów. Aby z niego skorzystać, najpierw potrzebujesz określić typ treningu przez naciśnięcie go. Następnie ustaw informacje, o których chcesz wiedzieć, i przedział czasu.
+    <string name="workoutStatsHelpText">Ten ekran pokazuje historyczne statystyki treningów. Aby z niego skorzystać, musisz najpierw określić typ treningu przez jego naciśnięcie. Następnie ustaw informacje, o których chcesz wiedzieć, i przedział czasu.
 \n
-\nPrzykładowo, jeśli wybierzesz „Tydzień” jako przedział czasu, wszystkie treningi z każdego tygodnia zostaną połączone w jeden punkt danych, obliczając średnią albo sumę każdego tygodnia.</string>
+\nNp. jeśli wybierzesz „Tydzień” jako przedział czasu, wszystkie treningi z każdego tygodnia zostaną połączone w jeden punkt danych, obliczając średnią albo sumę z każdego tygodnia.</string>
     <string name="singleWorkout">Pojedynczy trening</string>
     <string name="dayInMonth">Dzień w miesiącu</string>
     <string name="calendarWeekYear">Tydzień / Rok kalendarzowy</string>
@@ -142,10 +141,10 @@
     <string name="timeSecondsSingular">Sekunda</string>
     <string name="workoutDiscarded">Trening odrzucony</string>
     <string name="preferenceFirstDayOfWeek">Początek tygodnia</string>
-    <string name="preferenceUseAverageForCurrentSpeed">Używaj średniej prędkości z określonego czas zamiast ostatniego zapisu prędkości do obliczania aktualnej prędkości.</string>
-    <string name="preferenceCurrentSpeedAverageTimeTitle">Aktualna prędkość wg średniej</string>
-    <string name="preferenceCurrentSpeedAverageTimeSummary">Zamień obliczanie aktualnej prędkości obliczaniem średniej</string>
-    <string name="preferenceCurrentSpeedTime">Przedział czasu dla obliczania średniej</string>
+    <string name="preferenceUseAverageForCurrentSpeed">Używaj średniej prędkości z określonego czasu zamiast ostatniego zapisu prędkości do obliczania aktualnej prędkości</string>
+    <string name="preferenceCurrentSpeedAverageTimeTitle">Uśredniona prędkość</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">Zastąp aktualną prędkość średnią</string>
+    <string name="preferenceCurrentSpeedTime">Uśredniona prędkość przedziału czasu</string>
     <string name="preferenceTimeFormat">Format czasu</string>
     <string name="preferenceDateFormat">Format daty</string>
     <string name="preferencesCategoryMap">Mapa</string>
@@ -170,7 +169,7 @@
     <string name="intervalSetSelected">Wybrano zestaw interwałów</string>
     <string name="selectIntervalSet">Wybierz zestaw interwałów</string>
     <string name="deleteIntervalSetMessage">Czy chcesz usunąć zestaw interwałów\?</string>
-    <string name="deleteIntervalSet">Usuwanie zestawu interwałów</string>
+    <string name="deleteIntervalSet">Usuń zestaw interwałów</string>
     <string name="enterName">Wprowadź nazwę</string>
     <string name="length_in_minutes">Czas trwania (minuty):</string>
     <string name="interval_name">Nazwa:</string>
@@ -198,10 +197,10 @@
     <string name="save">Zapisz</string>
     <string name="description">Opis</string>
     <string name="trackVisibilityPref">Widoczność trasy</string>
-    <string name="cut">Wytnij pierwsze/ostatnie 300 metrów</string>
-    <string name="actionUploadToOSM">Wgraj do OSM</string>
+    <string name="cut">Wytnij pierwsze/ostatnie 300 m</string>
+    <string name="actionUploadToOSM">Prześlij do OSM</string>
     <string name="waiting_gps">Oczekiwanie na GPS</string>
-    <string name="editWorkoutType">Edycja typu treningu</string>
+    <string name="editWorkoutType">Edytuj typ treningu</string>
     <string name="workoutTypeEditIcon">Ikona</string>
     <string name="prefTrackStyleUsageTitle">Używaj automatycznego kolorowania trasy</string>
     <string name="trackStyle">Styl trasy</string>
@@ -214,7 +213,7 @@
     <string name="pref_announcements_config_summary">Wybierz czas i odległość między powiadomieniami głosowymi</string>
     <string name="pref_unit_system">Preferowany system jednostek</string>
     <string name="settings">Ustawienia</string>
-    <string name="pref_weight_summary">Twoja waga jest potrzebna do obliczenia spalonych kalorii</string>
+    <string name="pref_weight_summary">Twoja waga jest potrzebna do obliczania spalonych kalorii</string>
     <string name="pref_weight">Twoja waga</string>
     <string name="exportAsGpxFile">Eksportuj jako plik GPX</string>
     <string name="trackingInfoDescription">Informacje o uruchomionym śledzeniu</string>
@@ -227,10 +226,10 @@
     <string name="workoutDescent">Droga w dół</string>
     <string name="workoutAscent">Droga w górę</string>
     <string name="deleteWorkoutMessage">Czy na pewno chcesz usunąć trening\?</string>
-    <string name="deleteWorkout">Usuwanie treningu</string>
+    <string name="deleteWorkout">Usuń trening</string>
     <string name="continue_">Kontynuuj</string>
     <string name="stopRecordingQuestionMessage">Czy na pewno chcesz zatrzymać nagrywanie\?</string>
-    <string name="stopRecordingQuestion">Zatrzymać nagrywanie\?</string>
+    <string name="stopRecordingQuestion">Czy zatrzymać nagrywanie\?</string>
     <string name="enterComment">Wprowadź komentarz</string>
     <string name="comment">Komentarz</string>
     <string name="enable">Włącz</string>
@@ -256,8 +255,8 @@
     <string name="workoutTypeOther">Inny</string>
     <string name="uploadFailedOsmNotAuthorized">Brak autoryzacji, spróbuj ponownie</string>
     <string name="uploadFailed">Przesyłanie nie powiodło się</string>
-    <string name="uploadSuccessful">Wysyłanie zakończone</string>
-    <string name="upload">Wgraj plik</string>
+    <string name="uploadSuccessful">Przesyłanie powiodło się</string>
+    <string name="upload">Prześlij</string>
     <string name="authenticationFailed">Uwierzytelnianie nie powiodło się.</string>
     <string name="enterVerificationCode">Wprowadź kod weryfikacyjny</string>
     <string name="uploading">Przesyłanie</string>
@@ -265,7 +264,7 @@
     <string name="workoutAvgHeartRate">Śr. tętno</string>
     <string name="workoutMaxHeartRate">Maks. tętno</string>
     <string name="workoutTotalEnergy">Całkowita energia</string>
-    <string name="workoutTopSpeed">Maksymalna prędkość</string>
+    <string name="workoutTopSpeed">Maks. prędkość</string>
     <string name="workoutHeartRate">Tętno</string>
     <string name="workoutEnergyConsumption">Zużycie energii</string>
     <string name="workoutBurnedEnergy">Spalone kalorie</string>
@@ -276,7 +275,7 @@
     <string name="workoutSpeed">Prędkość</string>
     <string name="workoutRoute">Trasa</string>
     <string name="workoutPace">Tempo</string>
-    <string name="workoutDistance">Dystans</string>
+    <string name="workoutDistance">Odległość</string>
     <string name="workoutEndTime">Czas zakończenia</string>
     <string name="workoutStartTime">Czas rozpoczęcia</string>
     <string name="workoutPauseDuration">Czas trwania wstrzymania</string>
@@ -287,13 +286,12 @@
     <string name="gpsLost">Utrata sygnału GPS</string>
     <string name="voiceAnnouncementsTitle">Powiadomienia głosowe</string>
     <string name="showIntervals">Pokaż interwały</string>
-    <string name="importedWorkouts">Zaimportowano %d trening(i/ów)</string>
     <string name="setPreferencesTitle">Ustawianie preferencji</string>
     <string name="actionImportMultiple">Importuj wiele</string>
     <string name="actionImport">Importuj</string>
     <string name="workoutTypeEditId">ID</string>
     <string name="hintManageWorkoutTypes">Naciśnij ikonę plusa, aby dodać niestandardowe typy treningów.</string>
-    <string name="resumeWorkoutConfirmation">Czy naprawdę chcesz wznowić ten trening\? Spowoduje to również dodanie wstrzymania od momentu zatrzymania treningu.</string>
+    <string name="resumeWorkoutConfirmation">Czy na pewno chcesz wznowić ten trening\? Spowoduje to również dodanie wstrzymania od momentu zatrzymania treningu.</string>
     <string name="prefShowOnLockScreenTitle">Widoczne na ekranie blokady</string>
     <string name="prefShowOnLockScreenSummary">Pokazuj informacje o treningu, nawet jeśli ekran jest zablokowany</string>
     <string name="notimeout">Bez limitu czasu</string>
@@ -309,15 +307,15 @@
     <string name="resumeWorkout">Wznów trening</string>
     <string name="inclination">Nachylenie</string>
     <string name="fileNotFound">Nie znaleziono pliku</string>
-    <string name="invalidNumberFormat">Niepoprawny format liczbowy.</string>
+    <string name="invalidNumberFormat">Nieprawidłowy format liczby</string>
     <string name="pref_announcements_pace_control_summary">Ostrzegaj, gdy jest poniżej lub powyżej określonej prędkości</string>
     <string name="pref_announcements_pace_control_title">Ostrzeżenia o kontroli tempa</string>
     <string name="noColoring">Bez kolorowania</string>
     <string name="auto">Automatyczne</string>
     <string name="selectColoring">Wybierz kolorowanie</string>
-    <string name="pref_auto_start_mode_unknown">Nieznany tryb (nie wybieraj)</string>
-    <string name="pref_auto_start_mode_on_move">Czekaj, aż zaczniesz się poruszać</string>
-    <string name="pref_auto_start_mode_wait_for_gps">Czekaj na dokładną pozycję GPS</string>
+    <string name="pref_auto_start_mode_unknown">Nieznany (nie używać)</string>
+    <string name="pref_auto_start_mode_on_move">Czekaj, aż zacznę się poruszać</string>
+    <string name="pref_auto_start_mode_wait_for_gps">Czekaj na dokładną pozycję</string>
     <string name="pref_auto_start_mode_instant">Rozpoczynaj natychmiast</string>
     <string name="pref_auto_start_mode_title">Tryb automatycznego rozpoczęcia</string>
     <string name="intervalAutoStartModeTraining">Tryb automatycznego rozpoczęcia treningu</string>
@@ -341,16 +339,16 @@
         <item quantity="many"><xliff:g example="12" id="secs">%1$d</xliff:g> sekund</item>
         <item quantity="other"><xliff:g example="12" id="secs">%1$d</xliff:g> sekund</item>
     </plurals>
-    <string name="launchError">Nie można uruchomić aplikacji</string>
-    <string name="editStartEndHelp">Wybierz pozycję na mapie albo diagramie. Następnie naciśnij jedną ze strzałek, aby wybrać nowy punkt początkowy albo końcowy. Gdy skończysz, kliknij ikonę zapisu w celu zastosowania zmian.</string>
+    <string name="launchError">Nie udało się uruchomić aplikacji</string>
+    <string name="editStartEndHelp">Wybierz pozycję na mapie albo diagramie. Następnie naciśnij jedną ze strzałek, aby wybrać nowy punkt początkowy albo końcowy. Gdy skończysz, naciśnij ikonę zapisu, aby zastosować zmiany.</string>
     <string name="actionApply">Zastosuj</string>
     <string name="moveEndOfWorkout">Wytnij koniec</string>
     <string name="moveStartOfWorkout">Wytnij początek</string>
     <string name="scanFailed">Skanowanie nie powiodło się</string>
     <string name="scanning">Skanowanie…</string>
     <string name="announcementCountdown">Akcje automatycznego rozpoczęcia (odliczanie, stan itd.)</string>
-    <string name="action_nfc_settings">Idź do ustawień NFC</string>
-    <string name="dialog_nfc_disabled">Aby używać tagów NFC do rozpoczęcia i zakończenia treningów, najpierw potrzebujesz włączyć NFC w ustawieniach urządzenia</string>
+    <string name="action_nfc_settings">Przejdź do ustawień NFC</string>
+    <string name="dialog_nfc_disabled">Aby używać tagów NFC do rozpoczynania i zatrzymywania treningów, musisz najpierw włączyć NFC w ustawieniach urządzenia.</string>
     <string name="dialog_nfc_disabled_title">NFC jest obecnie wyłączone</string>
     <string name="nfcStartSummary">Jeśli włączone, będziesz w stanie rozpoczynać i zatrzymywać treningi, skanując tag NFC</string>
     <string name="nfcStartTitle">Skanuj, aby rozpocząć</string>
@@ -365,25 +363,25 @@
     <string name="autoStartCountdownMsg">Rozpoczęcie treningu za</string>
     <string name="noAutoStartDelay">Brak</string>
     <string name="pref_auto_start_delay_title">Odliczanie do automatycznego rozpoczęcia</string>
-    <string name="manageAutoStartDelaySummary">Wybierz domyślne odliczanie dla automatycznego rozpoczęcia treningu</string>
+    <string name="manageAutoStartDelaySummary">Wybierz domyślne odliczanie do automatycznego rozpoczęcia treningu</string>
     <string name="intervalAutoStartDelayTraining">Opóźnienie automatycznego rozpoczęcia treningu</string>
-    <string name="workoutAutoStartAborted">Przerwano automatyczne uruchamianie</string>
+    <string name="workoutAutoStartAborted">Przerwano automatyczne rozpoczęcie</string>
     <string name="abort">Anuluj</string>
     <string name="downloading">Pobieranie…</string>
     <string name="chooseMapHint">Wybierz plik mapy</string>
-    <string name="downloadCanceled">Pobieranie anulowane</string>
+    <string name="downloadCanceled">Anulowano pobieranie</string>
     <string name="downloadFailed">Pobieranie nie powiodło się</string>
     <string name="downloadSuccess">Pobrano</string>
     <string name="cancelDownloadConfirmation">Czy chcesz anulować aktualne pobieranie\?</string>
-    <string name="actionCancelDownload">Anulowanie pobierania</string>
+    <string name="actionCancelDownload">Anuluj pobieranie</string>
     <string name="alreadyDownloading">Plik jest już pobierany</string>
-    <string name="downloadMapConfirmation">Czy chcesz pobrać plik mapy %s\?</string>
-    <string name="actionDownloadMap">Pobieranie mapy</string>
-    <string name="overwriteMapConfirmation">Czy chcesz nadpisać istniejący plik mapy %s\?</string>
+    <string name="downloadMapConfirmation">Czy pobrać plik mapy „%s”\?</string>
+    <string name="actionDownloadMap">Pobierz mapę</string>
+    <string name="overwriteMapConfirmation">Czy nadpisać istniejący plik mapy „%s”\?</string>
     <string name="downloadMapsSpecifyDirectory">Najpierw określ katalog dla map offline</string>
     <string name="downloadMapsTitle">Pobierz mapy</string>
     <string name="deleteWorkoutTypeConfirmation">Czy na pewno chcesz usunąć ten typ treningu\?</string>
-    <string name="deleteWorkoutType">Usuwanie typu treningu</string>
+    <string name="deleteWorkoutType">Usuń typ treningu</string>
     <string name="actionSave">Zapisz</string>
     <string name="runningMigrations">Migracja w toku</string>
     <string name="customWorkoutTypesTitle">Niestandardowe typy treningów</string>
@@ -395,7 +393,7 @@
     <string name="workoutTypeEditIdErrorUnique">Istnieje już typ treningu używający tego ID</string>
     <string name="workoutTypeEditIdErrorEmpty">Wprowadź ID</string>
     <string name="workoutTypeEditIdErrorCharacters">Dozwolone znaki: a–z, A–Z, 0–9, _, -</string>
-    <string name="pref_render_theme_style_info">Brak dostępnego menu stylu motywu renderowania dla wybranego motywu renderowania.</string>
+    <string name="pref_render_theme_style_info">Brak dostępnego menu dla wybranego motywu</string>
     <string name="pref_map_directory">Katalog map offline</string>
     <string name="recordingActivityPermissionMessage">FitoTrack potrzebuje uprawnienia do śledzenia Twojej aktywności fizycznej, aby nagrywać treningi w pomieszczeniach.</string>
     <string name="pref_step_length">Długość kroku</string>
@@ -437,4 +435,116 @@
     <string name="workoutAvgFrequencyLong">Średnia częstotliwość</string>
     <string name="workoutRecordingTypeIndoor">Treningi w pomieszczeniach</string>
     <string name="workoutRecordingTypeGps">Treningi z GPS-em</string>
+    <plurals name="importedWorkouts">
+        <item quantity="one">Zaimportowano jeden trening</item>
+        <item quantity="few">Zaimportowano %d treningi</item>
+        <item quantity="many">Zaimportowano %d treningów</item>
+        <item quantity="other">Zaimportowano %d treningów</item>
+    </plurals>
+    <string name="hidden">Ukryte</string>
+    <string name="trackable_visibility">Możliwość śledzenia</string>
+    <string name="private_visibility">Prywatna</string>
+    <string name="identifiable_visibility">Identyfikowalna</string>
+    <string name="humanitarian_clean_map_but_sometimes_not_available">Humanitarian
+\nCzysta mapa, ale nie zawsze dostępna</string>
+    <string name="always_mode">Zawsze</string>
+    <string name="kcal_unit">Kilokaloria (kcal)</string>
+    <string name="only_on_headphones_mode">Tylko na słuchawkach</string>
+    <string name="always_track_style">Zawsze</string>
+    <string name="joule_unit">Dżul (J)</string>
+    <string name="mapnik_default_osm_mapstyle">Mapnik
+\nDomyślny styl mapy OSM</string>
+    <string name="in_the_diagram_screen_track_style">Na ekranie diagramu</string>
+    <string name="never_track_style">Nigdy</string>
+    <string name="offline_local_map_file_with_local_render_theme">Offline
+\nLokalny plik mapy z lokalnie renderowanym motywem</string>
+    <string name="height_map">Mapa wysokości</string>
+    <string name="bright_night">Jasna noc</string>
+    <string name="purple_rain">Fioletowy deszcz</string>
+    <string name="pink_mist">Różowa mgiełka</string>
+    <string name="rainbow_warrior">Tęczowy wojownik</string>
+    <string name="dark_theme">Ciemny</string>
+    <string name="mondriaan">Mondrianowski</string>
+    <string name="system_theme">Systemowy</string>
+    <string name="light_theme">Jasny</string>
+    <string name="imperial_unit_system">Imperialny</string>
+    <string name="us_customary_unit_system">Zwyczajowy z USA</string>
+    <string name="friday">Piątek</string>
+    <string name="metric_with_m_s_unit_system">Metryczny z m/s</string>
+    <string name="imperial_with_meters_unit_system">Imperialny z metrami</string>
+    <string name="metric_unit_system">Metryczny</string>
+    <string name="sunday">Niedziela</string>
+    <string name="monday">Poniedziałek</string>
+    <string name="tuesday">Wtorek</string>
+    <string name="wednesday">Środa</string>
+    <string name="thursday">Czwartek</string>
+    <string name="system_default">Domyślny systemowy</string>
+    <string name="saturday">Sobota</string>
+    <string name="unitHeartRateSensorBattery">%</string>
+    <string name="showWorkoutZoomControlsSummary">Włączaj sterowanie powiększaniem i przesuwaniem na mapie podczas nagrywania treningów z GPS-em</string>
+    <string name="showWorkoutZoomControlsTitle">Powiększanie i przesuwanie</string>
+    <string name="autoBackupTitle">Automatyczne kopie zapasowe</string>
+    <string name="workoutGPXExportTitle">Eksportowanie treningów do GPX</string>
+    <string name="deleteExportTargetConfirmation">Czy na pewno chcesz usunąć to miejsce eksportu\?</string>
+    <string name="autoExportBackupTitle">Automatyczne kopie zapasowe aplikacji</string>
+    <string name="autoExportBackupExplanation">W określonym przedziale czasu kopia zapasowa zostanie wyeksportowana tutaj:</string>
+    <string name="exportIntervalTitle">Częstotliwość tworzenia kopii zapasowej</string>
+    <string name="takeBackups1">Codziennie</string>
+    <string name="takeBackups2">Co drugi dzień</string>
+    <string name="takeBackups3">Co trzeci dzień</string>
+    <string name="selectExportTarget">Wybierz miejsce eksportu</string>
+    <string name="configureHttpPostRequest">Skonfiguruj żądanie HTTP POST</string>
+    <string name="httpUrl">URL</string>
+    <string name="enterValidUrl">Wprowadź prawidłowy URL HTTP</string>
+    <string name="heartRateSensorBattery">Bateria czujnika</string>
+    <string name="exportTargetDirectory">Katalog</string>
+    <string name="exportTargetHttpPost">Żądanie HTTP POST</string>
+    <string name="autoExportWorkoutsSummary">Eksportuj nowo nagrane treningi</string>
+    <string name="hintConfigureExportTargets">Dodaj miejsca, do których mają zostać wyeksportowane pliki.</string>
+    <string name="autoExportBackupSummary">Automatycznie eksportuj kopie zapasowe</string>
+    <string name="takeBackups7">Co tydzień</string>
+    <string name="autoExportWorkoutExplanation">Po nagraniu nowego treningu plik GPX zostanie wyeksportowany tutaj:</string>
+    <string name="takeBackups14">Co drugi tydzień</string>
+    <string name="preferencesDebugTitle">Debugowanie</string>
+    <string name="debugSensorsTitle">Debuguj czujniki</string>
+    <string name="debugSensorsSummary">Zbierz dane z czujników, które są zapisywane w pliku z logami</string>
+    <string name="debugPressureSensor">Debuguj czujnik ciśnienia</string>
+    <string name="calibrating">Kalibrowanie</string>
+    <string name="noSensorAvailable">Brak dostępnego czujnika</string>
+    <plurals name="satelliteCount">
+        <item quantity="zero">Brak satelitów</item>
+        <item quantity="one">1 satelita</item>
+        <item quantity="few">%d satelity</item>
+        <item quantity="many">%d satelitów</item>
+        <item quantity="other">%d satelitów</item>
+    </plurals>
+    <string name="debugShareLogsTitle">Udostępnij logi</string>
+    <string name="debugShareLogsSummary">Udostępnij logi zawierające przydatne dane, aby znaleźć błędy w rejestratorze treningów. Zwykle nie zawierają danych o lokalizacji</string>
+    <string name="zoomWithVolumeButtonsSummary">Zwiększaj i zmniejszaj głośność, aby kontrolować powiększanie i pomniejszanie</string>
+    <string name="zoomWithVolumeButtonsTitle">Powiększanie za pomocą przycisków głośności</string>
+    <string name="histogram">Histogram</string>
+    <string name="monthYear">Miesiąc / Rok</string>
+    <string name="workoutAvgDistance">Średnia odległość</string>
+    <string name="workoutCount">Liczba treningów</string>
+    <string name="workoutAvgDurationLong">Średni czas trwania</string>
+    <string name="workoutDurationSum">Suma czasów trwania</string>
+    <string name="workoutAvgPauseDuration">Średni czas trwania wstrzymania</string>
+    <string name="stats_overview_title">Przegląd</string>
+    <string name="details">Szczegóły</string>
+    <string name="workoutDistanceSum">Suma odległości</string>
+    <string name="massExportGpxSummary">Tworzy plik ZIP zawierający wszystkie treningi jako pliki GPX</string>
+    <string name="massExportGpxTitle">Eksportuj wszystkie treningi jako GPX</string>
+    <string name="workoutPauseDurationSum">Suma czasów trwania wstrzymania</string>
+    <string name="statistics">Statystyki</string>
+    <string name="stats_history_title">Historia</string>
+    <string name="stats_explore_title">Eksploruj</string>
+    <string name="show_sum">Pokaż sumę</string>
+    <string name="workoutTypeSwimming">Pływanie</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Podciągnięcie</item>
+        <item quantity="few">Podciągnięcia</item>
+        <item quantity="many">Podciągnięć</item>
+        <item quantity="other">Podciągnięć</item>
+    </plurals>
+    <string name="workoutTypePullUps">Podciąganie</string>
 </resources>

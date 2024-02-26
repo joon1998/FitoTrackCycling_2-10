@@ -33,7 +33,6 @@ import de.tadris.fitness.R;
 import de.tadris.fitness.model.AutoStartWorkout;
 import de.tadris.fitness.recording.BaseWorkoutRecorder;
 import de.tadris.fitness.recording.announcement.TTSController;
-import de.tadris.fitness.util.TelephonyHelper;
 import de.tadris.fitness.util.event.EventBusMember;
 
 /**
@@ -57,8 +56,6 @@ public class AutoStartAnnouncements implements EventBusMember {
     private ArrayList<CountdownTimeAnnouncement> countdownTimeAnnouncementList = new ArrayList<>();
     private CountdownTimeAnnouncement lastSpoken;
 
-    boolean suppressOnCall;
-
     public AutoStartAnnouncements(Context context, AutoStartWorkout autoStartWorkout,
                                   Instance instance, BaseWorkoutRecorder recorder,
                                   TTSController ttsController) {
@@ -67,8 +64,6 @@ public class AutoStartAnnouncements implements EventBusMember {
         this.instance = instance;
         this.recorder = recorder;
         this.ttsController = ttsController;
-
-        suppressOnCall = instance.userPreferences.getSuppressAnnouncementsDuringCall();
 
         // initialize default set of announcements
         for (int i = 10; i > 0; i--) {
@@ -93,14 +88,6 @@ public class AutoStartAnnouncements implements EventBusMember {
         }
     }
 
-    /**
-     * Check if the user's on a call currently and announcements should be suppressed.
-     * @return whether announcements should be suppressed
-     */
-    private boolean checkCall() {
-        return suppressOnCall && TelephonyHelper.isOnCall(context);
-    }
-
     @Override
     public void setEventBus(EventBus eventBus) {
         this.eventBus = eventBus;
@@ -117,16 +104,13 @@ public class AutoStartAnnouncements implements EventBusMember {
      */
     @Subscribe
     public void onAutoStartCountdownChange(AutoStartWorkout.CountdownChangeEvent event) {
-        // only play announcements when the user's not on a call
-        if (!checkCall()) {
-            // announce current countdown time
-            for (CountdownTimeAnnouncement countdownTimeAnnouncement : countdownTimeAnnouncementList) {
-                if (event.countdownS == countdownTimeAnnouncement.getCountdownS() &&
-                        (lastSpoken == null || event.countdownS != lastSpoken.getCountdownS())) {   // prevent duplicate announcements
-                    ttsController.speak(recorder, countdownTimeAnnouncement);
-                    lastSpoken = countdownTimeAnnouncement;
-                    break;  // there can and should only be one announcement at a time
-                }
+        // announce current countdown time
+        for (CountdownTimeAnnouncement countdownTimeAnnouncement : countdownTimeAnnouncementList) {
+            if (event.countdownS == countdownTimeAnnouncement.getCountdownS() &&
+                    (lastSpoken == null || event.countdownS != lastSpoken.getCountdownS())) {   // prevent duplicate announcements
+                ttsController.speak(recorder, countdownTimeAnnouncement);
+                lastSpoken = countdownTimeAnnouncement;
+                break;  // there can and should only be one announcement at a time
             }
         }
     }
@@ -137,40 +121,37 @@ public class AutoStartAnnouncements implements EventBusMember {
      */
     @Subscribe
     public void onAutoStartStateChange(AutoStartWorkout.StateChangeEvent event) {
-        // only play announcements when the user's not on a call
-        if (!checkCall()) {
-            switch (event.newState) {
-                case WAITING_FOR_GPS:
-                    // tell the user we're waiting for more a accurate GPS position
-                    ttsController.speak(recorder, new CountdownAnnouncement(instance) {
-                        @Override
-                        public String getSpokenText(@NonNull BaseWorkoutRecorder recorder) {
-                            return context.getString(R.string.autoStartCountdownMsgGps);
-                        }
-                    });
-                    break;
-                case WAITING_FOR_MOVE:
-                    // tell the user we're waiting for more a accurate GPS position
-                    ttsController.speak(recorder, new CountdownAnnouncement(instance) {
-                        @Override
-                        public String getSpokenText(@NonNull BaseWorkoutRecorder recorder) {
-                            return context.getString(R.string.autoStartCountdownMsgMove);
-                        }
-                    });
-                    break;
-                case ABORTED_BY_USER:
-                    if (event.oldState == AutoStartWorkout.State.COUNTDOWN ||
-                            event.oldState == AutoStartWorkout.State.WAITING_FOR_GPS) {
-                        ttsController.speak(recorder, new CountdownAnnouncement(instance) {
-                            @Override
-                            public String getSpokenText(@NonNull BaseWorkoutRecorder recorder) {
-                                return context.getString(R.string.workoutAutoStartAborted);
-                            }
-                        });
+        switch (event.newState) {
+            case WAITING_FOR_GPS:
+                // tell the user we're waiting for more a accurate GPS position
+                ttsController.speak(recorder, new CountdownAnnouncement(instance) {
+                    @Override
+                    public String getSpokenText(@NonNull BaseWorkoutRecorder recorder) {
+                        return context.getString(R.string.autoStartCountdownMsgGps);
                     }
-                default:
-                    break;
-            }
+                });
+                break;
+            case WAITING_FOR_MOVE:
+                // tell the user we're waiting for more a accurate GPS position
+                ttsController.speak(recorder, new CountdownAnnouncement(instance) {
+                    @Override
+                    public String getSpokenText(@NonNull BaseWorkoutRecorder recorder) {
+                        return context.getString(R.string.autoStartCountdownMsgMove);
+                    }
+                });
+                break;
+            case ABORTED_BY_USER:
+                if (event.oldState == AutoStartWorkout.State.COUNTDOWN ||
+                        event.oldState == AutoStartWorkout.State.WAITING_FOR_GPS) {
+                    ttsController.speak(recorder, new CountdownAnnouncement(instance) {
+                        @Override
+                        public String getSpokenText(@NonNull BaseWorkoutRecorder recorder) {
+                            return context.getString(R.string.workoutAutoStartAborted);
+                        }
+                    });
+                }
+            default:
+                break;
         }
     }
 }

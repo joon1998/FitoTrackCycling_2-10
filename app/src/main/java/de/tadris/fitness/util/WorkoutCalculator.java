@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -58,6 +58,15 @@ public class WorkoutCalculator {
         }
 
         return result;
+    }
+
+    public static long calculatePauseDuration(BaseWorkoutData data) {
+        long pauseDuration = 0;
+        for (WorkoutCalculator.Pause pause : getPausesFromWorkout(data)) {
+            pauseDuration += pause.duration;
+        }
+
+        return pauseDuration;
     }
 
     public static List<Pause> getPausesFromWorkout(BaseWorkoutData data) {

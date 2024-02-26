@@ -1,0 +1,11 @@
+Nuevas características:
+- Botón de inicio de los entrenamientos
+- Anuncios de intervalos
+- InfoViews personalizadas en la pantalla de grabación
+- Soporta el patinaje en línea como actividad
+
+- Añadir una nueva opción a los ajustes para seleccionar el formato de fecha y hora
+- Icono que indica la actividad
+- Ajuste de las unidades de energía (kcal/J) y ortografía incorrecta de las unidades de distancia y tiempo
+
+Por favor, vea el repositorio del proyecto en Codeberg para más cambios

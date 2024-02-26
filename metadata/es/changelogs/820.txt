@@ -1,0 +1,7 @@
+- Importar múltiples entrenamientos
+
+- Corregir el diálogo de permisos que se muestra incorrectamente en Android <10
+- Actualizar el entrenamiento pulsado al volver a la lista de entrenamientos
+- Formatear correctamente el diálogo de activación de anuncios
+
+- Actualizar las traducciones

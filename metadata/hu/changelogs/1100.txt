@@ -1,0 +1,10 @@
+- Automatikus indítás többféle üzemmóddal
+- Kapcsolat nélküli térkép támogatása
+
+- Stabilitási fejlesztések
+- „Összes” szűrő az edzés statisztikáinál
+- Csak akkor lesz hozzáadva a „szerkesztett” jelző az edzésekhez, ha a távolság, a dátum vagy az időtartam szerkesztve lett
+
+- Különféle hibajavítások
+
+A változtatások részletesebb listájáért nézze meg a projekt tárolóját a Codebergen

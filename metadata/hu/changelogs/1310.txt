@@ -1,0 +1,3 @@
+- Összeomlás javítása az Oreo (<8) verziónál régebbi Androidokon
+- Összeomlás javítása az olyan edzések mentésekor, amelyek meg lettek szakítva
+- Elvesztett hangfókusz javítása

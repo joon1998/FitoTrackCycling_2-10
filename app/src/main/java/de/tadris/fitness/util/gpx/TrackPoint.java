@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -31,15 +31,19 @@ public class TrackPoint {
     @JacksonXmlProperty(isAttribute = true)
     private double lon;
 
+    /**
+     * Elevation over the WGS84 ellipsoid in meters
+     * according to http://www.topografix.com/GPX/1/1/gpx.xsd
+     * "all coordinates are relative to the WGS84 datum"
+     */
     private double ele;
 
     private String time;
 
-    private String fix;
-
     private TrackPointExtensions extensions;
 
-    public TrackPoint(){}
+    public TrackPoint() {
+    }
 
     public TrackPoint(double lat, double lon, double ele, String time, TrackPointExtensions extensions) {
         this.lat = lat;

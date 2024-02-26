@@ -1,0 +1,1 @@
+Cette mise à jour corrige un bogue qui se produit sur certains périphériques et empêche l'utilisation de FitoTrack à cause du GPS qui n'est pas disponible même si le périphérique a un bon signal GPS.

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -23,7 +23,6 @@ import android.net.Uri
 import androidx.documentfile.provider.DocumentFile
 import de.tadris.fitness.Instance
 import de.tadris.fitness.map.FitoTrackRenderThemeMenuCallback.RenderThemeMenuListener
-import de.tadris.fitness.map.tilesource.FitoTrackTileSource
 import de.tadris.fitness.map.tilesource.HumanitarianTileSource
 import de.tadris.fitness.map.tilesource.MapnikTileSource
 import org.mapsforge.map.android.graphics.AndroidGraphicFactory
@@ -40,6 +39,7 @@ import org.mapsforge.map.rendertheme.XmlRenderTheme
 import org.mapsforge.map.rendertheme.ZipRenderTheme
 import org.mapsforge.map.rendertheme.ZipXmlThemeResourceProvider
 import java.io.BufferedInputStream
+import java.io.File
 import java.io.FileInputStream
 import java.util.zip.ZipInputStream
 
@@ -80,7 +80,7 @@ class MapManager(private val activity: Activity) {
         } else {
             setupOnlineMap(chosenTileLayer)
         }
-        mapView.layerManager.redrawLayers()
+        sync { mapView.layerManager.redrawLayers() }
     }
 
     private fun initTileCache(persistent: Boolean) {
@@ -91,7 +91,7 @@ class MapManager(private val activity: Activity) {
     }
 
     private fun setupOnlineMap(chosenTileLayer: String) {
-        val tileSource: FitoTrackTileSource = when (chosenTileLayer) {
+        val tileSource = when (chosenTileLayer) {
             "osm.humanitarian" -> HumanitarianTileSource.INSTANCE
             "osm.mapnik" -> MapnikTileSource.INSTANCE
             else -> MapnikTileSource.INSTANCE
@@ -103,9 +103,12 @@ class MapManager(private val activity: Activity) {
             tileSource,
             AndroidGraphicFactory.INSTANCE
         )
-        mapView.layerManager.layers.add(0, downloadLayer)
-        mapView.setZoomLevelMin(tileSource.zoomLevelMin)
-        mapView.setZoomLevelMax(tileSource.zoomLevelMax)
+        sync {
+            mapView.layerManager.layers.add(0, downloadLayer)
+            mapView.setZoomLevelMin(tileSource.zoomLevelMin)
+            mapView.setZoomLevelMax(tileSource.zoomLevelMax)
+            downloadLayer.start()
+        }
     }
 
     private fun setupOfflineMap() {
@@ -147,7 +150,9 @@ class MapManager(private val activity: Activity) {
         )
         renderLayer.setXmlRenderTheme(theme)
 
-        mapView.layerManager.layers.add(0, renderLayer)
+        sync {
+            mapView.layerManager.layers.add(0, renderLayer)
+        }
     }
 
     private fun loadRenderThemeXml(file: DocumentFile): XmlRenderTheme {
@@ -202,12 +207,23 @@ class MapManager(private val activity: Activity) {
         this.styleMenuListener = styleMenuListener
     }
 
+    private fun sync(action: () -> Unit) {
+        activity.runOnUiThread(action)
+    }
+
     companion object {
         @JvmStatic
         fun initMapProvider(activity: Activity) {
             // This sets the device scale factor so the map is displayed accordingly
             AndroidGraphicFactory.createInstance(activity.application)
+            initSvgCache(activity)
             DisplayModel.setDefaultUserScaleFactor(0.85f)
+        }
+
+        private fun initSvgCache(activity: Activity) {
+            val svgCache = File(activity.cacheDir, "svg")
+            if (!svgCache.exists()) svgCache.mkdir()
+            AndroidGraphicFactory.INSTANCE.setSvgCacheDir(svgCache)
         }
     }
 }

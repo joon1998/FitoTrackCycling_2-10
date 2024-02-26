@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -26,6 +26,8 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.zip.ZipInputStream;
 
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
@@ -66,9 +68,23 @@ public class RestoreController {
     }
 
     private void loadDataFromFile() throws IOException {
+        InputStream stream = context.getContentResolver().openInputStream(input);
+        boolean isZIP = stream.read() == 0x50; // Zip Magic number
+        stream.close();
+        stream = context.getContentResolver().openInputStream(input);
+        InputStream decompressedInput;
+        if (isZIP) {
+            ZipInputStream zipIn = new ZipInputStream(stream);
+            zipIn.getNextEntry();
+            decompressedInput = zipIn;
+        } else {
+            decompressedInput = stream;
+        }
         XmlMapper xmlMapper = new XmlMapper();
         xmlMapper.configure(JsonParser.Feature.IGNORE_UNDEFINED, true);
-        dataContainer = xmlMapper.readValue(context.getContentResolver().openInputStream(input), FitoTrackDataContainer.class);
+        dataContainer = xmlMapper.readValue(decompressedInput, FitoTrackDataContainer.class);
+        decompressedInput.close();
+        stream.close();
     }
 
     private void checkVersion() throws UnsupportedVersionException {

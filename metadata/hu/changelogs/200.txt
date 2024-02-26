@@ -1,0 +1,4 @@
+- Képernyő a magasság vagy emelkedés diagram és a térkép összehasonlításához
+- Rátét megjelenítése, ha a GPS-jel még nem volt megtalálható
+- Előnyben részesített térképréteg beállítása (#15)
+- Adatimportálás felgyorsítása

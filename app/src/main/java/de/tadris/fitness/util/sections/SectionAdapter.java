@@ -28,6 +28,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import de.tadris.fitness.Instance;
 import de.tadris.fitness.R;
@@ -132,14 +133,14 @@ public class SectionAdapter extends ArrayAdapter<SectionListModel.Section> {
         }
 
         viewHolder.dist.setText(roundMeterToKilometer(section.dist) + distanceUnitUtils.getDistanceUnitSystem().getLongDistanceUnit());
-        viewHolder.time.setText(TimeFormatter.formatDuration((long) (section.time / 1000)));
+        viewHolder.time.setText(TimeFormatter.formatDuration((long) (section.getTime())));
         viewHolder.mDown.setText(distanceUnitUtils.getDistance((int) Math.round(section.descent)));
         viewHolder.mUp.setText(distanceUnitUtils.getDistance((int) Math.round(section.ascent)));
         if (paceToggle) {
-            viewHolder.pace.setText((distanceUnitUtils.getPace(section.getPace() / 60, false, false)));
+            viewHolder.pace.setText((distanceUnitUtils.getPace(section.getPace() / 60 * 1000, false, false)));
             viewHolder.paceUnit.setText(distanceUnitUtils.getPaceUnit());
         } else {
-            viewHolder.pace.setText(distanceUnitUtils.getSpeedWithoutUnit(1000.0 / section.getPace())); // must be in m/s
+            viewHolder.pace.setText(distanceUnitUtils.getSpeedString(1 / section.getPace())); // must be in m/s
             viewHolder.paceUnit.setText(distanceUnitUtils.getDistanceUnitSystem().getSpeedUnit());
         }
 

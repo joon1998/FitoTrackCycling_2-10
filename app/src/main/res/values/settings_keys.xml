@@ -62,6 +62,22 @@
         <item>5</item>
     </string-array>
 
+    <string-array name="pref_backup_interval_values">
+        <item>24</item>
+        <item>48</item>
+        <item>72</item>
+        <item>168</item>
+        <item>336</item>
+    </string-array>
+
+    <string-array name="pref_backup_interval_entries">
+        <item>@string/takeBackups1</item>
+        <item>@string/takeBackups2</item>
+        <item>@string/takeBackups3</item>
+        <item>@string/takeBackups7</item>
+        <item>@string/takeBackups14</item>
+    </string-array>
+
     <string-array name="pref_time_format_values">
         <item>system</item>
         <item>12</item>

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -19,7 +19,8 @@
 
 package de.tadris.fitness.recording.indoor.exercise
 
-import de.tadris.fitness.recording.indoor.FitoTrackSensorOption
+import de.tadris.fitness.data.WorkoutTypeManager
+import de.tadris.fitness.recording.component.FitoTrackSensorOption
 import org.greenrobot.eventbus.EventBus
 
 /**
@@ -43,10 +44,14 @@ abstract class ExerciseRecognizer {
 
         fun findByType(typeId: String): ExerciseRecognizer? {
             return when (typeId) {
-                "treadmill" -> StepRecognizer()
-                "rope_skipping" -> JumpRecognizer(maxJumpDuration = 1250)
-                "trampoline_jumping" -> JumpRecognizer(maxJumpDuration = 2500)
-                "push-ups" -> ProximityRecognizer()
+                WorkoutTypeManager.WORKOUT_TYPE_ID_TREADMILL -> StepRecognizer()
+                WorkoutTypeManager.WORKOUT_TYPE_ID_ROPE_SKIPPING -> JumpRecognizer(maxJumpDuration = 1250)
+                WorkoutTypeManager.WORKOUT_TYPE_ID_TRAMPOLINE_JUMPING -> JumpRecognizer(
+                    maxJumpDuration = 2500
+                )
+
+                WorkoutTypeManager.WORKOUT_TYPE_ID_PUSH_UPS -> ProximityRecognizer()
+                WorkoutTypeManager.WORKOUT_TYPE_ID_PULL_UPS -> PullupRecognizer()
                 else -> null
             }
         }

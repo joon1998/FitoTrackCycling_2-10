@@ -4,6 +4,7 @@ import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import de.tadris.fitness.R;
 import de.tadris.fitness.data.GpsSample;
@@ -197,8 +198,16 @@ public class SectionListModel {
         boolean worst = false;
 
         public double getPace() {
-            return time / dist;
+            return time / 1000 / dist;
         }
+
+        public double getDist(){
+            return dist;
+        }
+
+        public double getTime(){ return getTime(false);}
+
+        public double getTime(boolean millis){ return millis ? time: time / 1000;}
 
         public Section copy() {
             Section section = new Section();

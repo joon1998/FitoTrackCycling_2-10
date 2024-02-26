@@ -1,0 +1,6 @@
+FitoTrack to aplikacja mobilna do rejestrowania i przeglądania Twoich treningów. Niezależnie od tego, czy biegasz, jeździsz na rowerze, czy wędrujesz, FitoTrack pokaże Ci najważniejsze informacje wraz ze szczegółowymi wykresami i statystykami. Jest otwartoźródłowy i całkowicie wolny od reklam.
+
+Cechy:
+* Śledź treningi. Wybierz dyscyplinę sportu, którą chcesz śledzić, i po prostu zacznij biegać, jechać na rowerze czy wędrować. Możesz zobaczyć ogólne informacje tuż pod mapą na ekranie śledzenia.
+* Przeglądaj swoje treningi. Przejrzyj ogólne informacje, takie jak data, godzina, czas trwania, dystans, prędkość i tempo. Zobacz swoją trasę na mapie. Wypracuj swój poziom wydajności na podstawie wykresu prędkości.
+* Otwartoźródłowe. Nie ma reklam ani śledzenia, a kod źródłowy jest otwarty i na licencji GPLv3.

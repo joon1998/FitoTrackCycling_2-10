@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -19,13 +19,11 @@
 
 package de.tadris.fitness.data;
 
-import android.content.Context;
-
 import androidx.room.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import de.tadris.fitness.Instance;
+import de.tadris.fitness.data.preferences.UserMeasurements;
 
 @Entity(tableName = "indoor_workout")
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -34,14 +32,23 @@ public class IndoorWorkout extends BaseWorkout {
     public int repetitions;
 
     /**
-     * Average frequency in hertz
+     * Average repetition frequency in Hz
      */
     public double avgFrequency;
 
+    /**
+     * Max repetition frequency in Hz
+     */
     public double maxFrequency;
 
+    /**
+     * Maximum intensity
+     */
     public double maxIntensity;
 
+    /**
+     * Average intensity
+     */
     public double avgIntensity;
 
     public boolean hasIntensityValues() {
@@ -52,13 +59,12 @@ public class IndoorWorkout extends BaseWorkout {
         return workoutTypeId.equals("treadmill");
     }
 
-    public double estimateDistance(Context context) {
-        float stepLength = Instance.getInstance(context).userPreferences.getStepLength();
-        return repetitions * stepLength;
+    public double estimateDistance(UserMeasurements measurements) {
+        return repetitions * measurements.getStepLength();
     }
 
-    public double estimateSpeed(Context context) {
-        return estimateDistance(context) / (duration / 1000d);
+    public double estimateSpeed(UserMeasurements measurements) {
+        return estimateDistance(measurements) / (duration / 1000d);
     }
 
 }

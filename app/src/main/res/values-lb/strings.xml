@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="exporting">Exportéieren</string>
+    <string name="delete">Läschen</string>
+    <string name="stop">Stop</string>
+    <string name="error">Feeler</string>
+    <string name="app_name">FitoTrack</string>
+</resources>

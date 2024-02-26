@@ -1,0 +1,16 @@
+Új funkciók:
+- Edzések kézi hozzáadása (#53)
+- Sötét mód (#48)
+
+Továbbfejlesztések:
+- Magasságkorrekció
+- Bluetooth fejhallgatók felismerése (#51)
+- Rögzítés megjelenítése a zárolási képernyőn (#45)
+- OpenStreetMap megnevezés a rögzítés képernyőn (#52)
+
+Hibajavítások:
+- Hibás sebességértékek a GPS-jel egy időre történő elvesztése után (#47)
+
+Honosítás:
+- Holland fordítás frissítése albertheres és didierm közreműködésével (#57, #58)
+- Magyar fordítás frissítése Úr Balázs közreműködésével (#59)

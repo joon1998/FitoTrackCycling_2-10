@@ -1,0 +1,5 @@
+- Adatvédelmi irányelv hozzáadása
+- Android 10-en vagy régebbieken mentett GPX-exportálási fájlok javítása
+- A helymeghatározási engedély kérési módjának megváltoztatása, hogy megfeleljen a Google Play új szabályainak
+
+- Frissített fordítások

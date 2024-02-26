@@ -1,0 +1,8 @@
+Nuevo:
+- Sube los entrenamientos como rutas GPS a OpenStreetMap (#24)
+- Parada automática de los entrenamientos (#23)
+
+Mejoras:
+- Corregir el peso imperial (#26)
+- Mejor comportamiento del mapa en las pantallas de análisis
+- Mejor cálculo de calorías

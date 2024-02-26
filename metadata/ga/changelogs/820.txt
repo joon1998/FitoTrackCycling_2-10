@@ -1,0 +1,7 @@
+- Iompórtáil cleachtaí iomadúla
+
+- Dialóg ceada a dheisiú ag taispeáint go mícheart ar Android <10
+- Athnuaigh cleachtaidh chliceáil agus tú ag dul ar ais chuig an liosta aclaíochta
+- Formáid dialóg truicear fógartha i gceart
+
+- Nuashonraigh Aistriúcháin

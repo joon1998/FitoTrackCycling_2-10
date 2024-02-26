@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -28,6 +28,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import de.tadris.fitness.R;
 import de.tadris.fitness.data.WorkoutType;
+import de.tadris.fitness.data.WorkoutTypeManager;
 
 public class FitoTrackThemes {
 
@@ -49,19 +50,19 @@ public class FitoTrackThemes {
     @StyleRes
     public int getWorkoutTypeTheme(WorkoutType type) {
         switch (type.id) {
-            case "walking":
-            case "running":
-            case "treadmill":
+            case WorkoutTypeManager.WORKOUT_TYPE_ID_RUNNING:
+            case WorkoutTypeManager.WORKOUT_TYPE_ID_TREADMILL:
                 return R.style.Running;
-            case "hiking":
+            case WorkoutTypeManager.WORKOUT_TYPE_ID_HIKING:
                 return R.style.Hiking;
-            case "cycling":
+            case WorkoutTypeManager.WORKOUT_TYPE_ID_CYCLING:
                 return R.style.Bicycling;
-            case "skateboarding":
-            case "inline_skating":
+            case WorkoutTypeManager.WORKOUT_TYPE_ID_SKATEBOARDING:
+            case WorkoutTypeManager.WORKOUT_TYPE_ID_INLINE_SKATING:
                 return R.style.Skating;
-            case "rowing":
-                return R.style.Rowing;
+            case WorkoutTypeManager.WORKOUT_TYPE_ID_ROWING:
+            case WorkoutTypeManager.WORKOUT_TYPE_ID_SWIMMING:
+                return R.style.WaterSports;
             default:
                 return R.style.AppTheme;
         }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="delete">Обриши</string>
+    <string name="app_name">FitoTrack</string>
+    <string name="stop">Прекини</string>
+    <string name="error">Грешка</string>
+    <string name="errorGpxExportFailed">Извоз ГПХ није успео.</string>
+    <string name="errorExportFailed">Извоз података неуспешан.</string>
+    <string name="shareFile">Подели</string>
+    <string name="workouts">Вежбе</string>
+    <string name="locationData">Локације</string>
+    <string name="loadingFile">Учитавање</string>
+    <string name="chooseBackupFile">Изабери резерву</string>
+    <string name="exporting">Извоз</string>
+    <string name="errorImportFailed">Увоз података неуспешан.</string>
+    <string name="initialising">Иницијализација</string>
+    <string name="converting">Конверзија</string>
+    <string name="finished">Завршено</string>
+</resources>

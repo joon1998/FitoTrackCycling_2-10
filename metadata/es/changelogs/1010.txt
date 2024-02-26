@@ -1,0 +1,10 @@
+- Mostrar puntos de parada (pausas) en el mapa de pantalla completa
+
+- Se han añadido iconos para montar a caballo y esquiar
+- Mejor rendimiento al ver entrenamientos largos
+- Importar múltiples entrenamientos movidos a la pantalla principal
+- Importar todas las pistas desde un archivo GPX
+
+- Importe correctamente los tipos de entrenamiento desde copias de seguridad
+
+por favor vea el repositorio de proyectos en Codeberg para una lista más detallada de los cambios
