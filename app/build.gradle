@@ -142,6 +142,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'com.edmodo:rangebar:1.0.0'
 
+
+    // New Splash screen API
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+
     configurations {
         all*.exclude group: 'xmlpull', module: 'xmlpull'
     }
