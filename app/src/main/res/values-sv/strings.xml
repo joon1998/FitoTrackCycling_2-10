@@ -503,5 +503,10 @@
     </plurals>
     <string name="showWorkoutZoomControlsSummary">Aktivera zoomning och panoreringskontroller på kartan medans GPS-träningarna spelas in</string>
     <string name="unitHeartRateSensorBattery">%</string>
-    <string name="workoutTypePullUps">Armhävning</string>
+    <string name="workoutTypePullUps">Armhävningar</string>
+    <string name="rainbow_warrior">Regnbågskrigare</string>
+    <string name="zoomWithVolumeButtonsSummary">Volym upp och ner kontrollerar in och utzoomning</string>
+    <string name="humanitarian_clean_map_but_sometimes_not_available">Humanitärt
+\nTöm karta, men inte alltid tillgänglig</string>
+    <string name="bright_night">Ljus kväll</string>
 </resources>
