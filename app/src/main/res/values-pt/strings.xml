@@ -349,7 +349,7 @@
     <string name="downloadSuccess">Descarga concuída</string>
     <string name="downloadFailed">Descarga falhou</string>
     <string name="downloadCanceled">Descarga cancelada</string>
-    <string name="chooseMapHint">Por favor, escolha um arquivo de mapa</string>
+    <string name="chooseMapHint">Por favor, escolha um ficheiro de mapa</string>
     <string name="nfcStartSummary">Se ativado, você poderá iniciar e pausar exercícios escaneando uma etiqueta NFC</string>
     <string name="dialog_nfc_disabled_title">NFC está desativado atualmente</string>
     <string name="dialog_nfc_disabled">Para utilizar etiquetas NFC para iniciar e pausar exercícios, primeiro habilite NFC nas configurações do dispositivo</string>
@@ -361,19 +361,19 @@
     <string name="humanitarian_clean_map_but_sometimes_not_available">Humanitário
 \nMapa limpo, mas nem sempre disposnível</string>
     <string name="offline_local_map_file_with_local_render_theme">Offline
-\nArquivo de mapa com renderização de tema local</string>
+\nFicheiro de mapa com renderização de tema local</string>
     <string name="us_customary_unit_system">Padrão EUA</string>
     <string name="downloading">A descarregar…</string>
     <string name="system_default">Sistema padrão</string>
     <string name="friday">Sexta-feira</string>
     <string name="saturday">Sábado</string>
     <string name="workoutGPXExportTitle">Exportação de GPX de exercícios</string>
-    <string name="hintConfigureExportTargets">Os arquivos de adição de destinos devem ser exportados para.</string>
+    <string name="hintConfigureExportTargets">Os ficheiros de adição de destinos devem ser exportados para.</string>
     <string name="deleteExportTargetConfirmation">Excluir este destino de exportação\?</string>
     <string name="configureHttpPostRequest">Configurar solicitação HTTP POST</string>
     <string name="enterValidUrl">Insira um URL HTTP válido</string>
     <string name="massExportGpxTitle">Exportar todos os exercícios como GPX</string>
-    <string name="massExportGpxSummary">Criar um arquivo ZIP contendo todos os exercícios como arquivos GPX</string>
+    <string name="massExportGpxSummary">Criar um ficheiro ZIP que contem todos os exercícios como documentos de GPX</string>
     <string name="currentTimeStructure">%s e %s</string>
     <string name="manageAutoStartModeSummary">Mudar o modo de início automático do exercício</string>
     <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g example="1 minute" id="mins">%1$s</xliff:g> e <xliff:g example="7 seconds" id="secs">%2$s</xliff:g>para o início </string>
@@ -406,7 +406,7 @@
     <string name="pref_map_directory">Deretório de mapas offline</string>
     <string name="pref_render_theme_style">Estilo de renderização</string>
     <string name="preferenceCategoryRenderThemeCategories">Categorias</string>
-    <string name="overwriteMapConfirmation">Substituir o arquivo de mapa existente \\\"%s\\\"\?</string>
+    <string name="overwriteMapConfirmation">Substituir o ficheiro de mapa existente \\\"%s\\\"?</string>
     <string name="pref_auto_start_delay_title">Contagem regressiva de início automático</string>
     <string name="noAutoStartDelay">Nenhum</string>
     <string name="customAutoStartDelay">Outro</string>
@@ -470,7 +470,7 @@
     <string name="pref_announcements_pace_control_summary">Avisar quando estiver abaixo ou acima de uma velocidade especificada</string>
     <string name="invalidNumberFormat">Formato de número inválido.</string>
     <string name="showWorkoutZoomControlsTitle">Zoom e panorâmica</string>
-    <string name="fileNotFound">Arquivo não encontrado</string>
+    <string name="fileNotFound">Ficheiro não encontrado</string>
     <string name="always_track_style">Sempre</string>
     <string name="mondriaan">Mondriaan</string>
     <string name="sunday">Domingo</string>
@@ -530,6 +530,6 @@
     <string name="imperial_with_meters_unit_system">Imperial com metros</string>
     <string name="wednesday">Quarta-feira</string>
     <string name="autoExportBackupExplanation">No intervalo especificado, um backup será exportado aqui:</string>
-    <string name="debugSensorsSummary">Colete dados do sensor que são gravados no arquivo de log</string>
+    <string name="debugSensorsSummary">Colete dados do sensor gravados no ficheiro de log</string>
     <string name="noSensorAvailable">Nenhum sensor disponível</string>
 </resources>
