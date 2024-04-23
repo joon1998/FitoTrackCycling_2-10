@@ -386,8 +386,8 @@
     <string name="workoutTypePullUps">بارفیکس رفتن</string>
     <string name="waiting_gps">در انتظار GPS</string>
     <plurals name="workoutPullUp">
-        <item quantity="one">بالا کشیدن</item>
-        <item quantity="other">بالا کشیدن</item>
+        <item quantity="one">بارفیکس زدن</item>
+        <item quantity="other">بارفیکس زدن</item>
     </plurals>
     <string name="unknown">ناشناخته</string>
     <string name="workoutTypeAdd">اضافه کردن</string>
