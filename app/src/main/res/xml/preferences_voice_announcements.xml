@@ -61,6 +61,12 @@
 
         <CheckBoxPreference
             android:defaultValue="false"
+            android:dependency="announcement_duration"
+            android:key="announcement_duration_with_seconds"
+            android:title="@string/workoutDurationPrecisionToSeconds" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
             android:key="announcement_current_heart_rate"
             android:title="@string/workoutHeartRate" />
 

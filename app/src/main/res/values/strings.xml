@@ -66,6 +66,7 @@
     <string name="workoutTime">Time</string>
     <string name="workoutDate">Date</string>
     <string name="workoutDuration">Duration</string>
+    <string name="workoutDurationPrecisionToSeconds">Duration precision to seconds</string>
     <string name="workoutAvgDurationLong">Average Duration</string>
     <string name="workoutDurationSum">Duration sum</string>
     <string name="workoutPauseDuration">Pause Duration</string>
