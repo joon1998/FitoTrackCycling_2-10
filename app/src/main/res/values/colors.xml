@@ -20,6 +20,7 @@
 <resources>
     <color name="colorPrimary">#FB8C00</color>
     <color name="colorPrimaryDark">#EF6C00</color>
+    <color name="colorPrimaryDebug">#005DD7</color>
 
     <color name="colorPrimaryRunning">#43A047</color>
     <color name="colorPrimaryDarkRunning">#2E7D32</color>

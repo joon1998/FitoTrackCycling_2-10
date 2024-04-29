@@ -23,8 +23,9 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
+
+import androidx.core.splashscreen.SplashScreen;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,15 +48,14 @@ public class LauncherActivity extends Activity implements Migration.MigrationLis
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Handle the splash screen transition.
+        SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
+
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppThemeNoActionbar);
         setContentView(R.layout.activity_main);
-    }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        new Handler().postDelayed(this::init, 100);
+        init();
     }
 
     private void init() {
