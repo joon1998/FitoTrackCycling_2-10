@@ -1,0 +1,6 @@
+O FitoTrack é um aplicativo móvel para registrar e ver seus exercícios. Seja correndo, pedalando ou escalando, o FitoTrack vai lhe mostrar as informações mais importantes, com gráficos detalhados e estatísticas. Ele tem seu código aberto e é livre de anúncios.
+
+Funções:
+* Monitore exercícios. Escolha o tipo de esporte que você gostaria de monitorar e comece a correr, pedalar ou escalar, por exemplo. Você pode ver as informações gerais embaixo do mapa na tela de monitoramento.
+* Veja seus exercícios. Confira informações gerais, como data, hora, duração, distância, velocidade e passo. Cheque sua rota no mapa. Descubra sua performance no diagrama de velocidade.
+* Código-aberto. Não há anúncios nem rastreadores, e o código é aberto e licenciado sob a GPLv3.

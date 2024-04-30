@@ -1,0 +1,1 @@
+Esta versão conserta a conexão em dispositivos com bluetooth não pareado.

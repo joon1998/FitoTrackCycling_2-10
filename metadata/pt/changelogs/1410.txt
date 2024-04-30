@@ -1,0 +1,7 @@
+Esta atualização corrige várias falhas e traz melhorias como:
+- Tenta corrigir uma falha que impedia o FitoTrack de monitorar
+- Registro de falhas
+- Zoom do mapa pelos botões de volume agora opcional
+- Corrige o formato GPX
+
+Por favor, confira o repositório do projeto no Codeberg para a lista completa de mudanças

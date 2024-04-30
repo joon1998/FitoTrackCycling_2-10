@@ -1,0 +1,12 @@
+- Ícone do aplicativo com temas e atalhos no inicializador
+- Flexões adicionado
+- Dados na lista de exercícios fica oculto ao deslizar para baixo
+- Dois pontos decimais para a velocidade no resumo do exercício
+- Recálculo da duração e das pausas para dados mais precisos
+- Consertada falha ao exportar GPX em masa com arquivos de nome repetido
+- Lê corretamente os batimentos cardíacos dos arquivos GPX
+- Usa a preferência "Primeiro dia da semana" nas estatísticas
+- Ucraniano adicionado
+
+
+Por favor, confira o repositório do projeto no Codeberg para uma lista completa de mudanças

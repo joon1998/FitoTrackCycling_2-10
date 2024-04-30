@@ -1,0 +1,2 @@
+- Correção de falha em versões do Android inferior a Oreo (< 8)
+- Atualização de traduções

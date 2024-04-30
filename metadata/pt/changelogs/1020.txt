@@ -1,0 +1,3 @@
+Esta atualização conserta uma falha que ocorria em alguns dispositivos que impedia o FitoTrack de não encontrar o GPS, mesmo havendo um sinal bom.
+
+Se você ainda se deparar com esta falha, por favor abra um chamado no repositório do projeto ou me envie um email. Obrigado.

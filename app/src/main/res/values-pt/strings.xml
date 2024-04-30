@@ -532,4 +532,5 @@
     <string name="autoExportBackupExplanation">No intervalo especificado, um backup será exportado aqui:</string>
     <string name="debugSensorsSummary">Colete dados do sensor gravados no ficheiro de log</string>
     <string name="noSensorAvailable">Nenhum sensor disponível</string>
+    <string name="workoutTypePullUps">Flexões</string>
 </resources>
