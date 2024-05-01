@@ -539,4 +539,5 @@
         <item quantity="other">Dominadas</item>
     </plurals>
     <string name="workoutTypePullUps">Dominadas</string>
+    <string name="workoutDurationPrecisionToSeconds">Precisión de la duración en segundos</string>
 </resources>
