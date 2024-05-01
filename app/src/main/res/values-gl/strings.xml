@@ -530,4 +530,5 @@
         <item quantity="one">Dominada</item>
         <item quantity="other">Dominadas</item>
     </plurals>
+    <string name="workoutDurationPrecisionToSeconds">Precisión da duración en segundos</string>
 </resources>
