@@ -49,4 +49,20 @@
     <string name="locationData">بيانات الموقع</string>
     <string name="workoutPauseDuration">فترة التوقف</string>
     <string name="pref_announcements_content">محتوى الإخطارات</string>
+    <string name="workoutDurationPrecisionToSeconds">دقة المدة إلى ثوانٍ</string>
+    <string name="workoutAvgPauseDuration">متوسط مدة التوقف المؤقت</string>
+    <string name="workoutPauseDurationSum">مجموع مدة التوقف المؤقت</string>
+    <string name="workoutStartTime">وقت البدء</string>
+    <string name="workoutEndTime">وقت الانتهاء</string>
+    <string name="workoutDistance">المسافة</string>
+    <string name="workoutRepetitions">عدد التكرارات</string>
+    <string name="workoutSets">المجموعات</string>
+    <string name="workoutPace">الوتيرة</string>
+    <string name="workoutRoute">المسار</string>
+    <string name="workoutSpeed">السرعة</string>
+    <string name="workoutFrequency">التردد</string>
+    <string name="workoutAvgFrequencyShort">متوسط التردد</string>
+    <string name="workoutAvgFrequencyLong">متوسط التردد</string>
+    <string name="workoutCurrentFrequency">التردد الحالي</string>
+    <string name="workoutMaxFrequency">أقصى تردد</string>
 </resources>
