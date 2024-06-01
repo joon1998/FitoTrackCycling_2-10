@@ -89,7 +89,7 @@
     <string name="downloadFailed">دانلود نشد</string>
     <string name="chooseMapHint">لطفاً یک فایل نقشه انتخاب کنید</string>
     <string name="ttsAboveTargetSpeed">بیش از حد سریع</string>
-    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g example="5 seconds" id="secs">%1$s</xliff:g> تا شروع </string>
+    <string name="ttsLongSecondCountdownAnnouncement"> \u0020<xliff:g example="5 seconds" id="secs">%1$s</xliff:g> تا شروع \u0020</string>
     <string name="intervalAutoStartDelayTraining">تاخیردر شروع خودکار تمرین</string>
     <string name="popup_auto_start_immediately">شروع بیدرنگ</string>
     <string name="popup_auto_start_on_move">وقتی که حرکت کردم</string>
@@ -97,7 +97,7 @@
     <string name="manageAutoStartDelaySummary">شمارش معکوس پیش فرض برای شروع خودکار تمرین انتخاب کنید</string>
     <string name="pref_auto_start_delay_title">شمارش معکوس شروع خودکار</string>
     <string name="noAutoStartDelay">هیچ</string>
-    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g example="12 minutes" id="mins">%1$s</xliff:g> تا شروع </string>
+    <string name="ttsMinuteCountdownAnnouncement"> \u0020<xliff:g example="12 minutes" id="mins">%1$s</xliff:g> تا شروع \u0020</string>
     <string name="abort">لغو</string>
     <string name="pref_render_theme_style">نحوه ارائه</string>
     <string name="customAutoStartDelay">دیگر</string>
@@ -115,7 +115,7 @@
     <string name="invalidNumberFormat">قالب شماره نامعتبر است.</string>
     <string name="fileNotFound">فایل یافت نشد</string>
     <string name="stats_explore_title">کاوش</string>
-    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g example="1 minute" id="mins">%1$s</xliff:g> و <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> تا شروع </string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> \u0020<xliff:g example="1 minute" id="mins">%1$s</xliff:g> و <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> تا شروع \u0020</string>
     <string name="manageAutoStartModeSummary">حالت شروع خودکار تمرین را تغییر دهید</string>
     <string name="intervalAutoStartModeTraining">حالت شروع خودکار تمرین</string>
     <string name="pref_auto_start_mode_title">حالت شروع خودکار</string>
@@ -345,8 +345,8 @@
     <string name="workoutHeartRate">ضربان قلب</string>
     <string name="heartRateSensorBattery">باتری سنسور</string>
     <string name="workoutCurrentFrequency">تعداد تکرار فعلی</string>
-    <string name="workoutAvgSpeedShort">میانگین سرعت</string>
-    <string name="workoutAvgSpeedLong">میانگین سرعت</string>
+    <string name="workoutAvgSpeedShort">سرعت متوسط</string>
+    <string name="workoutAvgSpeedLong">سرعت متوسط</string>
     <string name="workoutTopSpeed">بالاترین سرعت</string>
     <string name="workoutBurnedEnergy">کالری های سوزانده‌شده</string>
     <string name="workoutMaxHeartRate">حداکثر ضربان قلب</string>
@@ -512,4 +512,5 @@
     <string name="unitFootPlural">پا</string>
     <string name="unitFootSingular">پا</string>
     <string name="autoExportBackupSummary">ذخیره خودکار پشتیبان‌ها</string>
+    <string name="workoutDurationPrecisionToSeconds">دقت مدت زمان به ثانیه</string>
 </resources>
