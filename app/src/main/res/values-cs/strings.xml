@@ -51,7 +51,7 @@
     <string name="unitFootSingular">Stopa</string>
     <string name="unitFootPlural">Stopy</string>
     <string name="noWorkoutStarted">Nebylo zahájeno žádné cvičení</string>
-    <string name="editDisplayedInformationHint">Dokud cvičení nezačalo, můžete upravit zobrazené hodnoty kliknutím na jedno ze čtyř polí.</string>
+    <string name="editDisplayedInformationHint">Dokud cvičení nezačalo, můžete upravit zobrazené hodnoty klepnutím na jedno ze čtyř polí.</string>
     <string name="editDisplayedInformation">Upravit zobrazené informace</string>
     <string name="aboutPrivacyPolicy">Zásady soukromí</string>
     <string name="aboutHelpTranslating">Pomozte s překladem</string>
@@ -62,7 +62,7 @@
     <string name="aboutAuthor">Autor</string>
     <string name="aboutLinks">Odkazy</string>
     <string name="aboutReportBug">Nahlásit chybu</string>
-    <string name="aboutOpenSourceLibraries">Open source knihovny</string>
+    <string name="aboutOpenSourceLibraries">Knihovny open source</string>
     <string name="aboutChangelog">Seznam změn</string>
     <string name="aboutVersion">Verze</string>
     <string name="aboutTitle">O aplikaci</string>
@@ -70,7 +70,7 @@
     <string name="cannotFindWorkout">Cvičení nelze najít</string>
     <string name="speedLastMinuteSpoken">Rychlost během poslední minuty</string>
     <string name="speedLastMinute">Prům. Rychlost (poslední minuta)</string>
-    <string name="sections">Sekce</string>
+    <string name="sections">Úseky</string>
     <string name="no_workouts_recorded">Nebyla zaznamenána žádná cvičení</string>
     <string name="announcementSuppressDuringCall">Potlačit během hovoru</string>
     <string name="workoutImported">Cvičení úspěšně importováno</string>
@@ -100,7 +100,7 @@
     <string name="currentTime">Aktuální čas</string>
     <string name="pref_auto_timeout_title">Interval automatického zastavení</string>
     <string name="intervalAutoTimeoutTraining">Automatický časovač cvičení</string>
-    <string name="manageAutoTimeoutSummary">Upravte interval automatického zastavení cvičení</string>
+    <string name="manageAutoTimeoutSummary">Upravit interval automatického zastavení cvičení</string>
     <string name="pref_energy_unit">Energetická jednotka</string>
     <string name="unitKJoule">Kilojoule</string>
     <string name="unitKcalLong">Kalorií</string>
@@ -132,7 +132,7 @@
     <string name="avgSpeedTotalShort">Prům. Rychlost (celkem)</string>
     <string name="avgSpeedInMotion">Prům. Rychlost (v pohybu)</string>
     <string name="enterDescription">Zadejte popis</string>
-    <string name="hintAddWorkout">Kliknutím na ikonu plus nahrajte nebo zadejte cvičení.</string>
+    <string name="hintAddWorkout">Klepněte na ikonu plus a nahrajte nebo zadejte cvičení.</string>
     <string name="currentSpeed">Aktuální rychlost</string>
     <string name="intervalSets">Sady intervalů</string>
     <string name="intervalSet">Sada intervalů</string>
@@ -150,7 +150,7 @@
     <string name="hintManageIntervalSets">Přidejte sadu intervalů pro vaše cvičení.</string>
     <string name="create">Vytvořit</string>
     <string name="createIntervalSet">Vytvořit novou sadu intervalů</string>
-    <string name="manageIntervalsSummary">Upravte intervaly, které budete moci používat během cvičení, pomocí hlasové zpětné vazby.</string>
+    <string name="manageIntervalsSummary">Upravit intervaly, které budete moci používat během cvičení, pomocí hlasové zpětné vazby.</string>
     <string name="manageIntervalSets">Správa intervalů</string>
     <string name="add_interval">Přidat interval</string>
     <string name="add">Přidat</string>
@@ -247,7 +247,7 @@
     <string name="noGpsTitle">GPS vypnuta</string>
     <string name="recordWorkout">Záznam cvičení</string>
     <string name="setDuration">Nastavit dobu trvání</string>
-    <string name="pref_voice_announcements_summary">Nakonfigurujte hlasové pokyny během cvičení</string>
+    <string name="pref_voice_announcements_summary">Nastavení hlasových pokynů, které vás informují během cvičení</string>
     <string name="voiceAnnouncementsTitle">Hlasová oznámení</string>
     <string name="announcementWorkoutActions">Akce cvičení (pauza, obnovení atd.)</string>
     <string name="announcementGPSStatus">Stav GPS</string>
@@ -288,7 +288,7 @@
     <string name="deleteWorkoutTypeConfirmation">Opravdu chcete odstranit tento typ tréninku\?</string>
     <string name="deleteWorkoutType">Smazat Typ Cvičení</string>
     <string name="actionSave">Uložit</string>
-    <string name="customWorkoutTypesTitle">Vlastní Typy Cvičení</string>
+    <string name="customWorkoutTypesTitle">Vlastní typy cvičení</string>
     <string name="preferenceCategoryVoiceFeedback">Hlasová zpětná vazba</string>
     <string name="workoutTypeEditMinDistance">Vzdálenost vzorku</string>
     <string name="workoutTypeEditNameError">Zadejte prosím jméno</string>
@@ -297,7 +297,7 @@
     <string name="workoutTypeEditIdErrorEmpty">Zadejte prosím ID</string>
     <string name="workoutTypeEditIdErrorCharacters">Povolené znaky: a–z, A–Z, 0–9, _, -</string>
     <string name="workoutTypeEditId">ID</string>
-    <string name="hintManageWorkoutTypes">Kliknutím na plus přidáte vlastní typy cvičení.</string>
+    <string name="hintManageWorkoutTypes">Klepnutím na plus přidáte vlastní typy cvičení.</string>
     <string name="workoutTypeAdd">Přidat</string>
     <string name="downloadFailed">Stahování selhalo</string>
     <string name="downloadSuccess">Stahováno dokončeno</string>
@@ -308,7 +308,7 @@
     <string name="pref_auto_start_mode_instant">Začít ihned</string>
     <string name="pref_auto_start_mode_title">Režim automatického spuštění</string>
     <string name="intervalAutoStartModeTraining">Režim automatického spuštění tréninku</string>
-    <string name="manageAutoStartModeSummary">Změna režimu automatického spuštění tréninku</string>
+    <string name="manageAutoStartModeSummary">Změnit režim automatického spuštění tréninku</string>
     <string name="ttsMinuteSecondCountdownAnnouncement"> \u0020<xliff:g example="1 minute" id="mins">%1$s</xliff:g> a <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> do startu \u0020</string>
     <string name="ttsMinuteCountdownAnnouncement"> \u0020<xliff:g example="12 minutes" id="mins">%1$s</xliff:g> do startu \u0020</string>
     <string name="ttsLongSecondCountdownAnnouncement"> \u0020<xliff:g example="5 seconds" id="secs">%1$s</xliff:g> do startu \u0020</string>
@@ -344,7 +344,7 @@
     <string name="customAutoStartDelay">Jiné</string>
     <string name="noAutoStartDelay">Žádný</string>
     <string name="pref_auto_start_delay_title">Automatické odpočítávání startu</string>
-    <string name="manageAutoStartDelaySummary">Zvolte výchozí odpočítávání pro automatické spuštění tréninku</string>
+    <string name="manageAutoStartDelaySummary">Zvolit výchozí odpočítávání pro automatické spuštění tréninku</string>
     <string name="intervalAutoStartDelayTraining">Zpoždění automatického spuštění tréninku</string>
     <string name="downloading">Stahování…</string>
     <string name="chooseMapHint">Vyberte prosím soubor s mapou</string>
@@ -400,7 +400,7 @@
     <string name="edit_interval">Upravit interval</string>
     <string name="workoutMinHeight">Min výška</string>
     <string name="trackStyle">Styl trasy</string>
-    <string name="preferencesDebugTitle">Ladit</string>
+    <string name="preferencesDebugTitle">Ladění</string>
     <string name="preferencesCategoryMap">Mapa</string>
     <string name="workoutTypeSwimming">Plavání</string>
     <string name="workoutCount">Počet cvičení</string>
@@ -480,7 +480,7 @@
     <string name="unitHeartRateSensorBattery">%</string>
     <string name="unitHertzLong">Hertz</string>
     <string name="moveStartOfWorkout">Uříznutí startu</string>
-    <string name="editStartEndHelp">Vyberte polohu na mapě nebo na diagramu. Poté kliknutím na jednu ze šipek vyberte nový počáteční nebo koncový bod. Až budete hotovi, kliknutím na ikonu uložit změny aplikujte.</string>
+    <string name="editStartEndHelp">Vyberte polohu na mapě nebo na diagramu. Poté klepnutím na jednu ze šipek vyberte nový počáteční nebo koncový bod. Až budete hotovi, klepnutím na ikonu uložení změny použijte.</string>
     <string name="purple_rain">Purpurový déšť</string>
     <string name="pink_mist">Růžová mlha</string>
     <string name="thursday">Čtvrtek</string>
