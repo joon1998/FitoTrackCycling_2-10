@@ -1,0 +1,4 @@
+- Dírigh ar Android 13
+- Deimhnigh stad workout
+- Deisigh bugs agus tuairteanna a bhuíochas le @keesj
+- Aistriúcháin nuashonraithe

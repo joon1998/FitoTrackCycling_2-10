@@ -1,0 +1,12 @@
+- Deilbhín aipe téamaí & aicearraí tosaitheoir
+- Cuireadh ups tarraingt
+- Tá na staitisticí sa liosta aclaíochta i bhfolach nuair a scrollaítear síos
+- Úsáid dhá ionad dheachúlacha le haghaidh luais san fhorbhreathnú ar an gcleachtadh
+- Fad ama agus sosanna a athríomh ar feadh tréimhsí comhsheasmhacha
+- Socraíodh gur theip ar oll-easpórtáil GPX ar ainmneacha comhaid dúblacha
+- Léigh na croírátaí ó chomhaid GPX i gceart
+- Úsáid rogha "an chéad lá den tseachtain" le haghaidh na staitisticí
+- Cuireadh Úcráinis
+
+
+féach le do thoil ar stór an tionscadail ar Codeberg le haghaidh liosta iomlán athruithe

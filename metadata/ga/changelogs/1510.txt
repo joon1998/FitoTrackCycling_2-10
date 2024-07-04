@@ -1,0 +1,6 @@
+- Scáileán staitisticí nua, ollchóiriú graif agus histeagram luais
+- Comhaid GPX mais onnmhairiú
+- Cuir snámha leis mar chineál réamhshocraithe
+- I bhfad níos mó feabhsuithe :)
+
+féach le do thoil ar stór an tionscadail ar Codeberg le haghaidh liosta iomlán athruithe
