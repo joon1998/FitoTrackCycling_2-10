@@ -1,0 +1,1 @@
+- Behe Fehler, bei welchen Workouts nach Aufnahme nicht angezeigt worden (#25)
