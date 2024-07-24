@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2024 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -57,7 +57,7 @@ import de.tadris.fitness.util.WorkoutLogger;
  * <p>
  * It starts RecorderServiceComponents depending on the workout type.
  */
-public class RecorderService extends Service {
+public abstract class RecorderService extends Service {
 
     protected Date serviceStartTime;
 

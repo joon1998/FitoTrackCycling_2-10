@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2024 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -31,7 +31,9 @@ import de.tadris.fitness.recording.BaseWorkoutRecorder
 import de.tadris.fitness.recording.event.TTSReadyEvent
 import de.tadris.fitness.util.WorkoutLogger
 import org.greenrobot.eventbus.EventBus
-import java.util.*
+import java.util.Locale
+import java.util.Timer
+import java.util.TimerTask
 
 class TTSController(private val context: Context, val id: String = DEFAULT_TTS_CONTROLLER_ID) {
 
@@ -95,7 +97,7 @@ class TTSController(private val context: Context, val id: String = DEFAULT_TTS_C
                 ) != PackageManager.PERMISSION_GRANTED
             ) {
                 (mBluetoothAdapter != null && mBluetoothAdapter.isEnabled
-                        && mBluetoothAdapter.getProfileConnectionState(BluetoothHeadset.HEADSET) == BluetoothHeadset.STATE_CONNECTED)
+                        && mBluetoothAdapter.getProfileConnectionState(BluetoothHeadset.HEADSET) == BluetoothAdapter.STATE_CONNECTED)
             } else false
         }
 

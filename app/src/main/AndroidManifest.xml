@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
+  ~ Copyright (c) 2024 Jannis Scheibe <jannis@tadris.de>
   ~
   ~ This file is part of FitoTrack
   ~
@@ -37,6 +37,8 @@
     <uses-permission android:name="android.permission.NFC" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_HEALTH" />
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
@@ -166,8 +168,13 @@
         </provider>
 
         <service
-            android:name=".recording.RecorderService"
+            android:name=".recording.GpsRecorderService"
             android:foregroundServiceType="location" />
+
+        <service
+            android:name=".recording.IndoorRecorderService"
+            android:foregroundServiceType="health" />
+
     </application>
 
 </manifest>

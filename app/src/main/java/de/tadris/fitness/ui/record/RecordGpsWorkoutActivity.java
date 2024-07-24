@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2024 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -61,6 +61,8 @@ import de.tadris.fitness.data.WorkoutType;
 import de.tadris.fitness.data.WorkoutTypeManager;
 import de.tadris.fitness.map.MapManager;
 import de.tadris.fitness.recording.BaseWorkoutRecorder;
+import de.tadris.fitness.recording.GpsRecorderService;
+import de.tadris.fitness.recording.RecorderService;
 import de.tadris.fitness.recording.component.GpsComponent;
 import de.tadris.fitness.recording.event.LocationChangeEvent;
 import de.tadris.fitness.recording.event.WorkoutGPSStateChanged;
@@ -268,6 +270,16 @@ public class RecordGpsWorkoutActivity extends RecordWorkoutActivity {
         mapView.addLayer(locationPoint);
     }
 
+    @Override
+    protected Class<? extends RecorderService> getServiceClass() {
+        return GpsRecorderService.class;
+    }
+
+    @Override
+    protected boolean hasServicePermission() {
+        return hasPermission();
+    }
+
     private void checkPermissions() {
         if (!hasPermission()) {
             showLocationPermissionConsent();
@@ -280,6 +292,7 @@ public class RecordGpsWorkoutActivity extends RecordWorkoutActivity {
                 .setMessage(R.string.recordingPermissionNotGrantedMessage)
                 .setPositiveButton(R.string.actionGrant, (dialog, which) -> requestLocationPermission())
                 .setNegativeButton(R.string.cancel, (dialog, which) -> activityFinish())
+                .setOnCancelListener(dialog -> activityFinish())
                 .show();
     }
 

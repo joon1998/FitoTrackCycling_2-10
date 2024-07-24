@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2024 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -524,12 +524,12 @@ public abstract class RecordWorkoutActivity extends FitoTrackActivity implements
                 .create().show();
     }
 
-    protected boolean isServiceRunning(Class aService) {
+    protected boolean isServiceRunning() {
         final ActivityManager activityManager = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
         final List<ActivityManager.RunningServiceInfo> services = activityManager.getRunningServices(Integer.MAX_VALUE);
 
         for (ActivityManager.RunningServiceInfo runningServiceInfo : services) {
-            if (runningServiceInfo.service.getClassName().equals(aService.getName())) {
+            if (runningServiceInfo.service.getClassName().equals(getServiceClass().getName())) {
                 return true;
             }
         }
@@ -542,30 +542,38 @@ public abstract class RecordWorkoutActivity extends FitoTrackActivity implements
     }
 
     protected void startService() {
-        if (!isServiceRunning(RecorderService.class)) {
-            WorkoutLogger.log(TAG, "Starting service");
-            Intent locationListener = new Intent(getApplicationContext(), RecorderService.class);
-            NotificationHelper.requestNotificationPermissionIfNecessary(this);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                startForegroundService(locationListener);
+        if (!isServiceRunning()) {
+            if (hasServicePermission()) {
+                WorkoutLogger.log(TAG, "Starting service");
+                Intent locationListener = new Intent(getApplicationContext(), getServiceClass());
+                NotificationHelper.requestNotificationPermissionIfNecessary(this);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    startForegroundService(locationListener);
+                } else {
+                    startService(locationListener);
+                }
+                onListenerStart();
             } else {
-                startService(locationListener);
+                Log.i(TAG, "Not starting service, no permission");
             }
-            onListenerStart();
         } else {
             Log.d(TAG, "Listener Already Running");
         }
     }
 
-    protected abstract void onListenerStart();
-
     protected void stopService() {
-        if (isServiceRunning(RecorderService.class)) {
+        if (isServiceRunning()) {
             WorkoutLogger.log(TAG, "Stopping service");
-            Intent locationListener = new Intent(getApplicationContext(), RecorderService.class);
+            Intent locationListener = new Intent(getApplicationContext(), getServiceClass());
             stopService(locationListener);
         }
     }
+
+    protected abstract Class<? extends RecorderService> getServiceClass();
+
+    protected abstract boolean hasServicePermission();
+
+    protected abstract void onListenerStart();
 
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
     public void onHeartRateConnectionChange(HeartRateConnectionChangeEvent e) {

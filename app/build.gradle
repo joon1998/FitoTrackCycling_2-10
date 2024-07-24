@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2024 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -31,11 +31,11 @@ allprojects {
 
 android {
     namespace 'de.tadris.fitness'
-    compileSdkVersion 33
+    compileSdk 34
     defaultConfig {
         applicationId "de.tadris.fitness"
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 1540
         versionName "15.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

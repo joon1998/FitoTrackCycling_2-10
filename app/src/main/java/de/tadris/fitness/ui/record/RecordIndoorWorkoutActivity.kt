@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
+ * Copyright (c) 2024 Jannis Scheibe <jannis@tadris.de>
  *
  * This file is part of FitoTrack
  *
@@ -37,8 +37,10 @@ import de.tadris.fitness.Instance
 import de.tadris.fitness.R
 import de.tadris.fitness.data.IndoorSample
 import de.tadris.fitness.data.WorkoutType
-import de.tadris.fitness.recording.BaseWorkoutRecorder
 import de.tadris.fitness.data.WorkoutTypeManager
+import de.tadris.fitness.recording.BaseWorkoutRecorder
+import de.tadris.fitness.recording.IndoorRecorderService
+import de.tadris.fitness.recording.RecorderService
 import de.tadris.fitness.recording.indoor.IndoorWorkoutRecorder
 import de.tadris.fitness.recording.indoor.exercise.ExerciseRecognizer
 import de.tadris.fitness.util.unit.UnitUtils
@@ -148,6 +150,14 @@ class RecordIndoorWorkoutActivity : RecordWorkoutActivity() {
         refreshRepetitions()
     }
 
+    override fun getServiceClass(): Class<out RecorderService?> {
+        return IndoorRecorderService::class.java
+    }
+
+    override fun hasServicePermission(): Boolean {
+        return hasPermission()
+    }
+
     private fun checkPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && !hasPermission()) {
             showActivityPermissionConsent()
@@ -161,6 +171,7 @@ class RecordIndoorWorkoutActivity : RecordWorkoutActivity() {
             .setMessage(R.string.recordingActivityPermissionMessage)
             .setPositiveButton(R.string.actionGrant) { _, _ -> requestActivityPermission() }
             .setNegativeButton(R.string.cancel) { _, _ -> activityFinish() }
+            .setOnCancelListener { activityFinish() }
             .show()
     }
 
