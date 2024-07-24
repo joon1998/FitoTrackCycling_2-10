@@ -551,4 +551,6 @@
         <item quantity="one">One satellite</item>
         <item quantity="other">%d satellites</item>
     </plurals>
+    <string name="askForComment">Ask for comment</string>
+    <string name="askForCommentSummary">Ask to enter a comment when stopping the record</string>
 </resources>
