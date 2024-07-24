@@ -1,0 +1,6 @@
+- Preference to disable the comment dialog when ending workouts
+- Optionally speak seconds in the duration announcement
+- Pace/Duration didn't show correctly in the Share screen
+- Use new slash screen API
+- Optimize for Android 14
+- Updated translations
