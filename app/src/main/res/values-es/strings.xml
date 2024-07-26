@@ -540,4 +540,6 @@
     </plurals>
     <string name="workoutTypePullUps">Dominadas</string>
     <string name="workoutDurationPrecisionToSeconds">Precisión de la duración en segundos</string>
+    <string name="askForCommentSummary">Pedir que se introduzca un comentario al detener el registro</string>
+    <string name="askForComment">Pedir un comentario</string>
 </resources>
