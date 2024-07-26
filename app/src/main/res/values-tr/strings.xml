@@ -531,4 +531,6 @@
     </plurals>
     <string name="workoutTypePullUps">Barfiks</string>
     <string name="workoutDurationPrecisionToSeconds">Süre hassasiyeti saniye olarak</string>
+    <string name="askForComment">Yorum iste</string>
+    <string name="askForCommentSummary">Kaydı durdururken bir yorum girilmesini iste</string>
 </resources>
