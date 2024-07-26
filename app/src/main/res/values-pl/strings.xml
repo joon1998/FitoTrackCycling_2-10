@@ -548,4 +548,6 @@
     </plurals>
     <string name="workoutTypePullUps">Podciąganie</string>
     <string name="workoutDurationPrecisionToSeconds">Dokładność czasu trwania do sekund</string>
+    <string name="askForComment">Pytaj o komentarz</string>
+    <string name="askForCommentSummary">Poproś o wpisanie komentarza podczas zatrzymywania nagrywania</string>
 </resources>
