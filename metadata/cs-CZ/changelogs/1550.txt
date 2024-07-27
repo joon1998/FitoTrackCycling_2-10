@@ -1,0 +1,6 @@
+- Možnost zakázání dialogu komentáře při ukončení cvičení
+- Volitelné vyslovování sekund v oznámení o délce
+- Tempo/trvání se nezobrazovalo správně na obrazovce Sdílení
+- Nové API slash screen
+- Optimalizace pro Android 14
+- Aktualizovány překlady
