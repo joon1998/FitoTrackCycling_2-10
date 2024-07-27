@@ -1,0 +1,6 @@
+- Ajustes para desactivar el diálogo de los comentarios al finalizar los entrenamientos
+- Opción de decidir la duración en segundos del anuncio
+- Ritmo/Duración no se mostraba correctamente en la pantalla Compartir
+- Utilizar la nueva API de pantalla de bienvenida 
+- Optimizar para Android 14
+- Traducciones actualizadas
