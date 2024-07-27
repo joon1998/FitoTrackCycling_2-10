@@ -539,4 +539,6 @@
     </plurals>
     <string name="workoutTypePullUps">Přítahy</string>
     <string name="workoutDurationPrecisionToSeconds">Přesnost doby trvání na sekundy</string>
+    <string name="askForCommentSummary">Zeptat se na zadání komentáře po zastavení nahrávání</string>
+    <string name="askForComment">Ptát se na komentář</string>
 </resources>
