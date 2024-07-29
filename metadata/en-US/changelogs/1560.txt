@@ -1,0 +1,2 @@
+- Fix crash when starting workouts
+- Update translations
