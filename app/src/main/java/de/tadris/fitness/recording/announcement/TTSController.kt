@@ -23,7 +23,9 @@ import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothHeadset
 import android.content.Context
 import android.content.pm.PackageManager
+import android.media.AudioDeviceInfo
 import android.media.AudioManager
+import android.os.Build
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import androidx.core.app.ActivityCompat
@@ -36,6 +38,12 @@ import java.util.Timer
 import java.util.TimerTask
 
 class TTSController(private val context: Context, val id: String = DEFAULT_TTS_CONTROLLER_ID) {
+
+    companion object {
+
+        const val DEFAULT_TTS_CONTROLLER_ID = "TTSController"
+
+    }
 
     private val textToSpeech = TextToSpeech(context) { status: Int -> ttsReady(status) }
 
@@ -86,8 +94,35 @@ class TTSController(private val context: Context, val id: String = DEFAULT_TTS_C
         queuedUtterances.add(utteranceId)
     }
 
-    private val isHeadsetOn get() = audioManager.isWiredHeadsetOn || bluetoothHeadsetConnected
 
+    private val isHeadsetOn: Boolean
+        get() {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                val acceptedDevices = listOf(
+                    AudioDeviceInfo.TYPE_WIRED_HEADSET,
+                    AudioDeviceInfo.TYPE_WIRED_HEADPHONES,
+                    AudioDeviceInfo.TYPE_LINE_ANALOG,
+                    AudioDeviceInfo.TYPE_LINE_DIGITAL,
+                    AudioDeviceInfo.TYPE_BLUETOOTH_SCO,
+                    AudioDeviceInfo.TYPE_BLUETOOTH_A2DP,
+                    AudioDeviceInfo.TYPE_AUX_LINE,
+                    AudioDeviceInfo.TYPE_BLE_HEADSET,
+                    AudioDeviceInfo.TYPE_BLE_SPEAKER,
+                    AudioDeviceInfo.TYPE_USB_HEADSET,
+                )
+
+                return audioManager
+                    .getDevices(AudioManager.GET_DEVICES_OUTPUTS)
+                    .find { println("Found " + it.type); it.type in acceptedDevices } != null
+            } else {
+                return audioManager.isWiredHeadsetOn || bluetoothHeadsetConnected
+            }
+        }
+
+    /**
+     * Should only be called until Android API 33 because for 34 getProfileConnectionState() needs
+     * the BLUETOOTH_CONNECT permission
+     */
     private val bluetoothHeadsetConnected
         get(): Boolean {
             val mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
@@ -138,9 +173,5 @@ class TTSController(private val context: Context, val id: String = DEFAULT_TTS_C
         }
 
         override fun onError(utteranceId: String) {}
-    }
-
-    companion object {
-        const val DEFAULT_TTS_CONTROLLER_ID = "TTSController"
     }
 }

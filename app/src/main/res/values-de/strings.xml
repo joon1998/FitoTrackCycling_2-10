@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright (c) 2023 Jannis Scheibe <jannis@tadris.de>
+  ~ Copyright (c) 2024 Jannis Scheibe <jannis@tadris.de>
   ~
   ~ This file is part of FitoTrack
   ~
@@ -542,4 +542,6 @@
         <item quantity="other">Klimmzüge</item>
     </plurals>
     <string name="workoutTypePullUps">Klimmzüge</string>
+    <string name="askForCommentSummary">Nach einem Kommentar fragen, wenn ein Workout beendet wird</string>
+    <string name="askForComment">Nach Kommentar fragen</string>
 </resources>
