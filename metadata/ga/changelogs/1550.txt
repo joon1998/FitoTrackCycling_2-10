@@ -1,0 +1,6 @@
+- Rogha an dialóg tuairimí a dhíchumasú nuair a chríochnaíonn na cleachtaí
+- Labhraigh soicind go roghnach san fhógra ré
+- Níor léiríodh Luas/Fad i gceart sa scáileán Comhroinn
+- Úsáid API Slais-scáileáin nua
+- Optamaigh do Android 14
+- Aistriúcháin nuashonraithe
