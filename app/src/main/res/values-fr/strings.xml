@@ -60,7 +60,7 @@
     <string name="workoutTime">Temps</string>
     <string name="workoutDate">Date</string>
     <string name="workoutDuration">Durée</string>
-    <string name="workoutPauseDuration">Durée de la pause</string>
+    <string name="workoutPauseDuration">Temps de pause</string>
     <string name="workoutStartTime">Heure de début</string>
     <string name="workoutEndTime">Heure de fin</string>
     <string name="workoutDistance">Distance</string>
