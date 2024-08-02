@@ -531,4 +531,6 @@
         <item quantity="other">Dominadas</item>
     </plurals>
     <string name="workoutDurationPrecisionToSeconds">Precisión da duración en segundos</string>
+    <string name="askForComment">Pedir comentario</string>
+    <string name="askForCommentSummary">Pedir que escribas un comentario ao finalizar a gravación</string>
 </resources>
