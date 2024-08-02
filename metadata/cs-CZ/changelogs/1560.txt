@@ -1,0 +1,2 @@
+- Opraven pád při spuštění cvičení
+- Aktualizovány překlady
