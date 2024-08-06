@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
   ~ Copyright (c) 2022 Jannis Scheibe <jannis@tadris.de>
   ~
@@ -17,9 +16,7 @@
   ~
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  --><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="downloading">下載中</string>
     <string name="noGpsMessage">請啟用 GPS 來追蹤健身項目</string>
     <string name="noGpsTitle">GPS (導航系統) 功能停用了</string>
@@ -300,9 +297,9 @@
     <string name="finished">完成</string>
     <string name="shareFile">分享文件</string>
     <string name="delete">刪除</string>
-    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g id="mins" example="1 minute">%1$s</xliff:g> 和 <xliff:g id="secs" example="7 seconds">%2$s</xliff:g> 直至開始 </string>
-    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g id="mins" example="12 minutes">%1$s</xliff:g> 直至開始 </string>
-    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g id="secs" example="5 seconds">%1$s</xliff:g> 直到開始 </string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> \u0020<xliff:g example="1 minute" id="mins">%1$s</xliff:g> 和 <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> 直至開始 \u0020</string>
+    <string name="ttsMinuteCountdownAnnouncement"> \u0020<xliff:g example="12 minutes" id="mins">%1$s</xliff:g> 直至開始 \u0020</string>
+    <string name="ttsLongSecondCountdownAnnouncement"> \u0020<xliff:g example="5 seconds" id="secs">%1$s</xliff:g> 直到開始 \u0020</string>
     <plurals name="minutes">
         <item quantity="other"><xliff:g id="mins" example="5">%1$d</xliff:g> 分</item>
     </plurals>
