@@ -1,0 +1,9 @@
+Primo rilascio
+
+Registra allenamenti
+Elenco allenamenti
+Mostra dati dell'allenamento (mappa, diagramma della velocità, energia) + Elimina allenamenti
+Importa/Esporta dati
+Esporta allenamenti come GPX
+Cambia unità di misura
+Cambia peso

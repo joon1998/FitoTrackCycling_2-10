@@ -1,0 +1,7 @@
+-Tipi di allenamento personalizzati
+-Condividi gli allenamenti come immagini
+-Miglioramenti dell'interfaccia utente/stabilità
+-Le "azioni di sistema" degli annunci possono ora essere disabilitate
+-Traduzioni aggiornate
+
+Per un elenco più dettagliato delle modifiche, consulta il repository del progetto su Codeberg.
