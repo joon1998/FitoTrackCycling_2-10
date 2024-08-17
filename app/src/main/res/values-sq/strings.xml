@@ -131,4 +131,25 @@
     <string name="noGpsTitle">GPS i çaktivizuar</string>
     <string name="noGpsMessage">Ju lutem ndizni GPS-in për të regjistruar ushtrimet tuaja.</string>
     <string name="workoutSpeed">Shpejtësi</string>
+    <string name="enable">Mundëso</string>
+    <string name="comment">Koment</string>
+    <string name="enterComment">Shto koment</string>
+    <string name="okay">Mirë</string>
+    <string name="stopRecordingQuestion">Të mbyll regjistrimin?</string>
+    <string name="continue_">Vazhdo</string>
+    <string name="deleteWorkout">Fshij ushtrimet</string>
+    <string name="trackerRunning">Ndjekja është në përdorim</string>
+    <string name="trackerWaitingMessage">Në pritje të fillimit të ushtrimeve</string>
+    <string name="trackingInfo">Info ndjekjeje</string>
+    <string name="trackingInfoDescription">Info mbi ndjekjen në vazhdim</string>
+    <string name="cancel">Fshij</string>
+    <string name="exportAsGpxFile">Eksporto si skedar GPX</string>
+    <string name="pref_weight">Pesha jua</string>
+    <string name="pref_step_length">Gjatësia e hapit</string>
+    <string name="settings">Cilësimet</string>
+    <string name="exportData">Eksporto të dhënat</string>
+    <string name="stopRecordingQuestionMessage">A dëshironi vërtet të mbyllni regjistrimin?</string>
+    <string name="deleteWorkoutMessage">A dëshironi vërtet të fshini këtë ushtrime?</string>
+    <string name="pref_weight_summary">Pesha juaj është e nevojshme për të llogaritur kaloritë e konsumuar</string>
+    <string name="pref_unit_system">Njësi e preferuar e masës</string>
 </resources>
