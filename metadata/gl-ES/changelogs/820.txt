@@ -1,0 +1,7 @@
+- Importar varios adestramentos
+
+- Arranxo do problema ao solicitar permisos incorrectamente en Android <10
+- Actualizar o adestramento no que premes ao volver atrás na lista de adestramentos
+- Mostrar correctamente o diálogo para iniciar adestramentos
+
+- Actualización das traducións

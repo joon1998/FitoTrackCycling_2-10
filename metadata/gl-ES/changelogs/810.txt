@@ -1,0 +1,8 @@
+- Engadir remo
+- Android 10 como obxectivo
+
+- Arranxo en Android antigos da Importación/Exportación GPX
+- Arranxo dos anuncios de voz do ritmo
+- Pequenas melloras na interface
+
+- Adición inicial do Ruso

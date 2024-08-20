@@ -1,0 +1,6 @@
+FitoTrack é unha app para móbiles que grava e permite visualizar os teus adestramentos. Sexa para correr, ir en bici ou camiñar, FitoTrack móstrache a información relevante, con gráficos detallados e estatísticas. É de código aberto e sen publicidade ningunha.
+
+Características:
+* Gravar os adestramentos. Elixe o tipo de deporte que queres rexistrar e simplemente comeza a correr, camiñar ou ir en bici (por exemplo). Podes ver a información xeral xusto debaixo do mapa na pantalla de gravación.
+* Visualizar adestramentos. Unha vista xeral do adestramento como data, hora, duración, distancia, velocidade e ritmo. Ver a ruta nun mapa. Ver o nivel relativo de rendemento nun diagrama de velocidade.
+* De Código Aberto. Non hai publicaidade nin rastrexo das usuarias, o código publícase baixo licenza GPLv3.

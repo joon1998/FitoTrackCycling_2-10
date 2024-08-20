@@ -1,0 +1,5 @@
+- Engadida Política de Privacidade
+- Arranxo do problema ao exportar ficheiros GPX en Android <10
+- Cambiar o xeito e que se pide o permiso de Localización para cumprir coas novas regras de Google Play
+
+- Actualízanse as traducións
