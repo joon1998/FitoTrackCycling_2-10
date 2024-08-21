@@ -369,7 +369,7 @@
     <string name="ttsBelowTargetSpeed">Demasiado lento</string>
     <string name="lowerPaceLimit">Límite inferior de ritmo</string>
     <string name="upperPaceLimit">Límite superior de ritmo</string>
-    <string name="editStartEndHelp">Elixe unha posición no mapa ou diagrama. Despois preme nunha das frechas para elexir un novo punto de inicio e fin. Cando remates preme na icona de gardar para aplicar os cambios.</string>
+    <string name="editStartEndHelp">Selecciona unha posición no mapa ou diagrama. Despois preme nunha das frechas para elixir un novo punto de inicio e fin. Cando remates preme na icona de gardar para aplicar os cambios.</string>
     <string name="launchError">Non se puido iniciar a aplicación</string>
     <string name="actionApply">Aplicar</string>
     <string name="moveEndOfWorkout">Cortar fin</string>
@@ -492,7 +492,7 @@
     <string name="configureHttpPostRequest">Configurar solicitude HTTP POST</string>
     <string name="autoExportWorkoutsSummary">Exportar adestramentos recentemente gravados</string>
     <string name="takeBackups7">Cada semana</string>
-    <string name="selectExportTarget">Elexir obxectivo da exportación</string>
+    <string name="selectExportTarget">Seleccionar a onde exportar</string>
     <string name="preferencesDebugTitle">Depurar</string>
     <string name="debugShareLogsSummary">Comparte o rexistro onde se atopan datos útiles para solucinar problemas ao gravar. Normalmente non contén datos de localización.</string>
     <string name="debugSensorsTitle">Depurar sensores</string>
