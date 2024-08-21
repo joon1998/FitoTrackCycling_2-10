@@ -1,0 +1,6 @@
+- Beállítás a megjegyzés párbeszédablak letiltásához az edzések befejezésekor
+- Választhatóan másodpercek bemondása az időtartam közleményében
+- A tempó/időtartam nem jelent meg helyesen a Megosztás képernyőn
+- Új indítási képernyő API használata
+- Optimalizálás az Android 14-hez
+- Frissített fordítások

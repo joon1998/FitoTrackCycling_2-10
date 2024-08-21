@@ -1,0 +1,2 @@
+- Összeomlás javítása az edzések indításakor
+- Fordítások frissítése

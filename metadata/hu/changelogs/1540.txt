@@ -1,0 +1,12 @@
+- Témázott alkalmazásikon és indítási ikonok
+- Húzódzkodások hozzáadva
+- Az edzéslistában lévő statisztikák rejtettek a lefelé görgetéskor
+- Két tizedesjegy használata a sebességhez az edzés áttekintésében
+- Időtartam és szünet idejeinek újraszámítása a következetes időtartamokért
+- Javítva, hogy a tömeges GPX-exportálás nem sikerült kettőzött fájlneveknél
+- Pulzusszámok helyes olvasása GPX-fájlokból
+- A „hét első napja” beállítás használata a statisztikákhoz
+- Ukrán fordítás hozzáadva
+
+
+A változtatások teljes listájáért nézze meg a projekt tárolóját a Codebergen
