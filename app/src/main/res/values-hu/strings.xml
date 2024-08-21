@@ -314,9 +314,9 @@
     <string name="pref_auto_start_mode_title">Automatikus indítás módja</string>
     <string name="intervalAutoStartModeTraining">Automatikusan indított edzés módja</string>
     <string name="manageAutoStartModeSummary">Az automatikus edzésindítás módjának megváltoztatása</string>
-    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g example="1 perc" id="mins">%1$s</xliff:g> és <xliff:g example="7 másodperc" id="secs">%2$s</xliff:g> a kezdésig </string>
-    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g example="12 perc" id="mins">%1$s</xliff:g> a kezdésig </string>
-    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g example="5 másodperc" id="secs">%1$s</xliff:g> a kezdésig </string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> \u0020<xliff:g example="1 minute" id="mins">%1$s</xliff:g> és <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> a kezdésig \u0020</string>
+    <string name="ttsMinuteCountdownAnnouncement"> \u0020<xliff:g example="12 minutes" id="mins">%1$s</xliff:g> a kezdésig \u0020</string>
+    <string name="ttsLongSecondCountdownAnnouncement"> \u0020<xliff:g example="5 seconds" id="secs">%1$s</xliff:g> a kezdésig \u0020</string>
     <plurals name="minutes">
         <item quantity="one"><xliff:g example="1" id="mins">%1$d</xliff:g> perc</item>
         <item quantity="other"><xliff:g example="5" id="mins">%1$d</xliff:g> perc</item>
@@ -531,4 +531,7 @@
         <item quantity="one">Húzódzkodás</item>
         <item quantity="other">Húzódzkodások</item>
     </plurals>
+    <string name="workoutDurationPrecisionToSeconds">Időtartam pontossága másodpercekre</string>
+    <string name="askForCommentSummary">Megjegyzés megadásának kérése a rögzítés leállításakor</string>
+    <string name="askForComment">Megjegyzés kérése</string>
 </resources>
