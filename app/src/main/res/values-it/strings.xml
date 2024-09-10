@@ -320,7 +320,7 @@
     <string name="preferenceFirstDayOfWeek">Inizio della settimana</string>
     <string name="preferenceUseAverageForCurrentSpeed">Utilizzare la velocità media in un determinato periodo di tempo invece dell\'ultimo record di velocità singolo per il calcolo della velocità corrente.</string>
     <string name="preferenceCurrentSpeedAverageTimeTitle">Velocità attuale per media</string>
-    <string name="preferenceCurrentSpeedAverageTimeSummary">Sostituisci il calcolo della velocità corrente con un calcolo medio.</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">Sostituisci velocità attuale con la velocità media.</string>
     <string name="preferenceCurrentSpeedTime">Intervallo di tempo per il calcolo della media</string>
     <string name="preferencesCategoryMap">Mappa</string>
     <string name="edit_interval">Modifica intervallo</string>
@@ -329,17 +329,20 @@
     <string name="pref_step_length">Lunghezza del passo</string>
     <plurals name="workoutPushUp">
         <item quantity="one">Sollevamento</item>
+        <item quantity="many">Sollevamenti</item>
         <item quantity="other">Sollevamenti</item>
     </plurals>
     <string name="workoutTypePushUps">Sollevamento</string>
     <plurals name="workoutJump">
         <item quantity="one">Salto</item>
+        <item quantity="many">Salti</item>
         <item quantity="other">Salti</item>
     </plurals>
     <string name="workoutTypeTrampolineJumping">Salto sul trampolino</string>
     <string name="workoutTypeRopeSkipping">Salto con la corda</string>
     <plurals name="workoutStep">
         <item quantity="one">Passo</item>
+        <item quantity="many">Passi</item>
         <item quantity="other">Passi</item>
     </plurals>
     <string name="workoutMaxHeight">Altezza massima</string>
@@ -355,14 +358,14 @@
     <string name="workoutRepetitions">Ripetizioni</string>
     <string name="workoutRecordingTypeIndoor">Allenamenti al chiuso</string>
     <string name="workoutRecordingTypeGps">Allenamenti GPS</string>
-    <string name="pref_announcements_pace_control_title">Avvertenze sul controllo del ritmo</string>
+    <string name="pref_announcements_pace_control_title">Avvisi sul controllo del ritmo</string>
     <string name="pref_announcements_pace_control_summary">Avverti quando si è al di sotto o al di sopra di una determinata velocità</string>
     <string name="noColoring">Nessuna colorazione</string>
     <string name="auto">Automatico</string>
     <string name="selectColoring">Seleziona la colorazione</string>
     <string name="pref_auto_start_mode_unknown">Modalità sconosciuta (non selezionare)</string>
     <string name="pref_auto_start_mode_on_move">Attendi che inizi a muoverti</string>
-    <string name="pref_auto_start_mode_wait_for_gps">Attendi una posizione GPS precisa</string>
+    <string name="pref_auto_start_mode_wait_for_gps">Attendi una posizione precisa</string>
     <string name="pref_auto_start_mode_instant">Inizia immediatamente</string>
     <string name="pref_auto_start_mode_title">Modalità di avvio automatico</string>
     <string name="intervalAutoStartModeTraining">Modalità di avvio automatico dell\'allenamento</string>
@@ -373,10 +376,12 @@
     <string name="upperPaceLimit">Limite massimo del ritmo</string>
     <plurals name="minutes">
         <item quantity="one"><xliff:g example="1" id="mins">%1$d</xliff:g> minuto</item>
+        <item quantity="many"><xliff:g example="5" id="mins">%1$d</xliff:g> minuti</item>
         <item quantity="other"><xliff:g example="5" id="mins">%1$d</xliff:g> minuti</item>
     </plurals>
     <plurals name="seconds">
         <item quantity="one"><xliff:g example="1" id="secs">%1$d</xliff:g> secondo</item>
+        <item quantity="many"><xliff:g example="12" id="secs">%1$d</xliff:g> secondi</item>
         <item quantity="other"><xliff:g example="12" id="secs">%1$d</xliff:g> secondi</item>
     </plurals>
     <string name="editStartEndHelp">Seleziona una posizione sulla mappa o sul diagramma. Poi clicca su una delle frecce per selezionare un nuovo punto iniziale o finale. Quando hai finito, clicca sull\'icona di salvataggio per applicare le modifiche.</string>
@@ -423,7 +428,7 @@
     <string name="overwriteMapConfirmation">Vuoi sovrascrivere il file della mappa esistente %s\?</string>
     <string name="downloadMapsSpecifyDirectory">Si prega di specificare prima una directory per le mappe fuori linea</string>
     <string name="downloadMapsTitle">Scarica mappe</string>
-    <string name="pref_render_theme_style_info">Nessun menù di stile del tema di rendering disponibile per il rendering selezionato.</string>
+    <string name="pref_render_theme_style_info">Nessun menù di stile del tema disponibile per il rendering selezionato.</string>
     <string name="preferenceCategoryRenderThemeCategories">Categorie</string>
     <string name="pref_render_theme_style">Stile di rendering</string>
     <string name="pref_map_directory">Cartella mappe fuori linea</string>
@@ -431,12 +436,110 @@
     <string name="workoutSets">Serie</string>
     <plurals name="importedWorkouts">
         <item quantity="one">Un allenamento importato</item>
+        <item quantity="many">%d allenamenti importati</item>
         <item quantity="other">%d allenamenti importati</item>
     </plurals>
     <string name="moveEndOfWorkout">Ignora fine</string>
     <string name="moveStartOfWorkout">Ignora l\'inizio</string>
-    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g example="12 minutes" id="mins">%1$s</xliff:g> fino all\'inizio </string>
-    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g example="1 minute" id="mins">%1$s</xliff:g> e <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> fino all\'inizio </string>
-    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g example="5 seconds" id="secs">%1$s</xliff:g> fino all\'inizio </string>
+    <string name="ttsMinuteCountdownAnnouncement"> \u0020<xliff:g example="12 minutes" id="mins">%1$s</xliff:g> fino all\'inizio \u0020</string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> \u0020<xliff:g example="1 minute" id="mins">%1$s</xliff:g> e <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> fino all\'inizio \u0020</string>
+    <string name="ttsLongSecondCountdownAnnouncement"> \u0020<xliff:g example="5 seconds" id="secs">%1$s</xliff:g> fino all\'inizio \u0020</string>
     <string name="workoutAvgDurationLong">Durata media</string>
+    <string name="workoutPauseDurationSum">Durata totale delle pause</string>
+    <string name="workoutDurationPrecisionToSeconds">Precisione della durata al secondo</string>
+    <string name="workoutTypePullUps">Sollevamenti</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Sollevamento</item>
+        <item quantity="many">Sollevamenti</item>
+        <item quantity="other">Sollevamenti</item>
+    </plurals>
+    <string name="unitHeartRateSensorBattery">%</string>
+    <string name="workoutCount">Numero di allenamenti</string>
+    <string name="stats_explore_title">Esplora</string>
+    <string name="stats_overview_title">Panoramica</string>
+    <string name="details">Dettagli</string>
+    <string name="monthYear">Mese / Anno</string>
+    <string name="workoutAvgDistance">Distanza Media</string>
+    <string name="workoutDistanceSum">Distanza totale</string>
+    <string name="showWorkoutZoomControlsSummary">Abilita lo zoom e panoramica nella mappa durante la registrazione degli allenamenti</string>
+    <string name="showWorkoutZoomControlsTitle">Zoom e panoramica</string>
+    <string name="zoomWithVolumeButtonsSummary">I tasti del volume controllano lo zoom</string>
+    <string name="hidden">Nascosto</string>
+    <string name="identifiable_visibility">Identificabile</string>
+    <string name="trackable_visibility">Tracciabile</string>
+    <string name="metric_unit_system">Metrica</string>
+    <string name="private_visibility">Privato</string>
+    <string name="workoutGPXExportTitle">Esportazione degli allenamenti GPX</string>
+    <string name="takeBackups3">Ogni tre giorni</string>
+    <string name="selectExportTarget">Scegli il target di esportazione</string>
+    <string name="massExportGpxTitle">Esporta tutti gli allenamenti come GPX</string>
+    <string name="massExportGpxSummary">Crea un file ZIP contenente tutti gli allenamenti come file GPX</string>
+    <string name="workoutTypeSwimming">Nuoto</string>
+    <string name="stats_history_title">Dati storici</string>
+    <string name="in_the_diagram_screen_track_style">Nella schermata del diagramma</string>
+    <string name="always_track_style">Sempre</string>
+    <string name="heartRateSensorBattery">Batteria del sensore</string>
+    <string name="mapnik_default_osm_mapstyle">Mapnik
+\nStile mappa predefinito di OSM</string>
+    <string name="autoExportWorkoutExplanation">Dopo aver registrato un nuovo allenamento, una esportazione GPX sarà salvata qui:</string>
+    <string name="zoomWithVolumeButtonsTitle">Zoom senza tasti del volume</string>
+    <string name="bright_night">Notte luminosa</string>
+    <string name="imperial_unit_system">Imperiale</string>
+    <string name="metric_with_m_s_unit_system">Metrica con m/s</string>
+    <string name="wednesday">Mercoledì</string>
+    <string name="takeBackups1">Tutti i giorni</string>
+    <string name="takeBackups2">Ogni due giorni</string>
+    <string name="configureHttpPostRequest">Configura la richiesta HTTP POST</string>
+    <plurals name="satelliteCount">
+        <item quantity="one">Un satellite</item>
+        <item quantity="many">%d satelliti</item>
+        <item quantity="other">%d satelliti</item>
+    </plurals>
+    <string name="preferencesDebugTitle">Debug</string>
+    <string name="httpUrl">URL</string>
+    <string name="enterValidUrl">Inserisci un URL HTTP valido</string>
+    <string name="debugShareLogsTitle">Condividi i log</string>
+    <string name="debugShareLogsSummary">Condividi i log che contengono informazioni utili per trovare bug durante la registrazione degli allenamenti. Di solito non contengono informazioni di posizione.</string>
+    <string name="debugSensorsTitle">Debug dei sensori</string>
+    <string name="hintConfigureExportTargets">Aggiungi i file dove esportare.</string>
+    <string name="autoExportBackupSummary">Esporta automaticamente i backup</string>
+    <string name="workoutDurationSum">Durata totale</string>
+    <string name="workoutAvgPauseDuration">Durata media delle pause</string>
+    <string name="histogram">Istogramma</string>
+    <string name="show_sum">Mostra il totale</string>
+    <string name="statistics">Statistiche</string>
+    <string name="never_track_style">Mai</string>
+    <string name="purple_rain">Purple Rain</string>
+    <string name="pink_mist">Nebbia rosa</string>
+    <string name="humanitarian_clean_map_but_sometimes_not_available">Humanitarian
+\nMappa semplice, ma non sempre disponibile</string>
+    <string name="rainbow_warrior">Guerriero arcobaleno</string>
+    <string name="height_map">Mappa dell\'altezza</string>
+    <string name="mondriaan">Mondriaan</string>
+    <string name="offline_local_map_file_with_local_render_theme">Offline
+\nMappa da file locale con rendering locale</string>
+    <string name="us_customary_unit_system">Sistema USA</string>
+    <string name="imperial_with_meters_unit_system">Imperiale con metri</string>
+    <string name="monday">Lunedì</string>
+    <string name="tuesday">Martedì</string>
+    <string name="thursday">Giovedì</string>
+    <string name="sunday">Domenica</string>
+    <string name="friday">Venerdì</string>
+    <string name="saturday">Sabato</string>
+    <string name="exportTargetDirectory">Cartella</string>
+    <string name="exportTargetHttpPost">Richiesta HTTP POST</string>
+    <string name="autoBackupTitle">Backup automatici</string>
+    <string name="deleteExportTargetConfirmation">Eliminare questo target di esportazione?</string>
+    <string name="autoExportWorkoutsSummary">Esporta i nuovi allenamenti registrati</string>
+    <string name="autoExportBackupTitle">Backup automatici dell\'app</string>
+    <string name="autoExportBackupExplanation">Un backup verrà esportato automaticamente qui con il periodo specificato:</string>
+    <string name="exportIntervalTitle">Periodo di backup</string>
+    <string name="takeBackups7">Ogni settimana</string>
+    <string name="takeBackups14">Ogni due settimane</string>
+    <string name="debugSensorsSummary">Raccogli i dati del sensore che sono scritti nel file di log</string>
+    <string name="debugPressureSensor">Debug del sensore di pressione</string>
+    <string name="calibrating">Calibrazione</string>
+    <string name="noSensorAvailable">Nessun sensore disponibile</string>
+    <string name="askForComment">Chiedi un commento</string>
+    <string name="askForCommentSummary">Chiedi di inserire un commento quando la registrazione termina</string>
 </resources>
