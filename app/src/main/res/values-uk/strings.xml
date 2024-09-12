@@ -528,4 +528,7 @@
         <item quantity="many">Підтягувань</item>
         <item quantity="other">Підтягувань</item>
     </plurals>
+    <string name="workoutDurationPrecisionToSeconds">Тривалість з точністю до секунд</string>
+    <string name="askForComment">Запитувати коментар</string>
+    <string name="askForCommentSummary">Запитувати введення коментаря при завершенні запису</string>
 </resources>
