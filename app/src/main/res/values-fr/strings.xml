@@ -33,7 +33,7 @@
     <string name="finished">Terminé</string>
     <string name="loadingFile">Chargement du fichier</string>
     <string name="chooseBackupFile">Choisir le fichier de sauvegarde</string>
-    <string name="importBackupMessage">Sauvegardez vos données actuelles si vous souhaitez les conserver. Restaurer la sauvegarde précédente maintenant\?</string>
+    <string name="importBackupMessage">Sauvegardez vos données actuelles si vous souhaitez les conserver. Restaurer la sauvegarde précédente maintenant ?</string>
     <string name="restore">Restaurer</string>
     <string name="backup">Sauvegarder</string>
     <string name="setPreferencesTitle">Définir les préférences</string>
@@ -237,7 +237,7 @@
     <string name="metric_with_m_s_unit_system">Métrique en m/s</string>
     <string name="imperial_unit_system">Impériale</string>
     <string name="imperial_with_meters_unit_system">Impériale en mètres</string>
-    <string name="us_customary_unit_system">US Customary</string>
+    <string name="us_customary_unit_system">Impérial (États-Unis)</string>
     <string name="system_default">Valeur par défaut</string>
     <string name="identifiable_visibility">Identifiable</string>
     <string name="trackable_visibility">Traçable</string>
@@ -344,24 +344,26 @@
     <string name="selectColoring">Sélectionner la coloration</string>
     <string name="pref_auto_start_mode_unknown">Inconnu (ne pas utiliser)</string>
     <string name="pref_auto_start_mode_on_move">En attendant que vous commenciez à vous déplacer</string>
-    <string name="pref_auto_start_mode_wait_for_gps">En attente d\'une position GPS précise</string>
+    <string name="pref_auto_start_mode_wait_for_gps">En attente d\'une position précise</string>
     <string name="pref_auto_start_mode_instant">Démarrer immédiatement</string>
     <string name="pref_auto_start_mode_title">Mode de démarrage automatique</string>
     <string name="intervalAutoStartModeTraining">Mode d\'entraînement avec démarrage automatique</string>
     <string name="manageAutoStartModeSummary">Modifier le mode de démarrage automatique de l\'entraînement</string>
-    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g example="1 minute" id="mins">%1$s</xliff:g> and <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> jusqu\'au début </string>
-    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g example="12 minutes" id="mins">%1$s</xliff:g> jusqu\'au début </string>
-    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g example="5 seconds" id="secs">%1$s</xliff:g> jusqu\'au début </string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> \u0020<xliff:g example="1 minute" id="mins">%1$s</xliff:g> and <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> jusqu\'au début \u0020</string>
+    <string name="ttsMinuteCountdownAnnouncement"> \u0020<xliff:g example="12 minutes" id="mins">%1$s</xliff:g> jusqu\'au début \u0020</string>
+    <string name="ttsLongSecondCountdownAnnouncement"> \u0020<xliff:g example="5 seconds" id="secs">%1$s</xliff:g> jusqu\'au début \u0020</string>
     <string name="ttsAboveTargetSpeed">Trop rapide</string>
     <string name="ttsBelowTargetSpeed">Trop lent</string>
     <string name="lowerPaceLimit">Limite inférieure du rythme</string>
     <string name="upperPaceLimit">Limite supérieure du rythme</string>
     <plurals name="minutes">
         <item quantity="one"><xliff:g example="1" id="mins">%1$d</xliff:g> minute</item>
+        <item quantity="many"><xliff:g example="5" id="mins">%1$d</xliff:g> minutes</item>
         <item quantity="other"><xliff:g example="5" id="mins">%1$d</xliff:g> minutes</item>
     </plurals>
     <plurals name="seconds">
         <item quantity="one"><xliff:g example="1" id="secs">%1$d</xliff:g> seconde</item>
+        <item quantity="many"><xliff:g example="12" id="secs">%1$d</xliff:g> secondes</item>
         <item quantity="other"><xliff:g example="12" id="secs">%1$d</xliff:g> secondes</item>
     </plurals>
     <string name="editStartEndHelp">Sélectionnez une position sur la carte ou le diagramme. Cliquez ensuite sur l\'une des flèches pour sélectionner un nouveau point de départ ou d\'arrivée. Lorsque vous avez terminé, cliquez sur l\'icône d\'enregistrement pour appliquer les modifications.</string>
@@ -398,7 +400,7 @@
     <string name="preferenceUseAverageForCurrentSpeed">Utilisez la vitesse moyenne sur une certaine période au lieu du dernier enregistrement de vitesse unique pour le calcul de la vitesse actuelle.</string>
     <string name="preferenceCurrentSpeedAverageTimeTitle">Vitesse actuelle par moyenne</string>
     <string name="preferenceCurrentSpeedAverageTimeSummary">Remplacer la vitesse actuelle par une moyenne</string>
-    <string name="preferenceCurrentSpeedTime">Durée du calcul de la moyenne</string>
+    <string name="preferenceCurrentSpeedTime">Durée pour le calcul de la moyenne</string>
     <string name="preferencesCategoryMap">Carte</string>
     <string name="prefTrackStyleUsageTitle">Utiliser automatiquement la coloration des parcours</string>
     <string name="trackStyle">Type d\'enregistrement</string>
@@ -425,16 +427,19 @@
     <string name="pref_step_length">Longueur de foulée</string>
     <plurals name="workoutPushUp">
         <item quantity="one">Pompe</item>
+        <item quantity="many">Pompes</item>
         <item quantity="other">Pompes</item>
     </plurals>
     <string name="workoutTypePushUps">Pompes</string>
     <plurals name="workoutJump">
         <item quantity="one">Saut</item>
+        <item quantity="many">Sauts</item>
         <item quantity="other">Sauts</item>
     </plurals>
     <string name="workoutTypeRopeSkipping">Saut à la corde</string>
     <plurals name="workoutStep">
         <item quantity="one">Pas</item>
+        <item quantity="many">Pas</item>
         <item quantity="other">Pas</item>
     </plurals>
     <string name="workoutTypeTreadmill">Tapis de course</string>
@@ -445,6 +450,7 @@
     <string name="workoutAvgFrequencyShort">Fréquence moy.</string>
     <plurals name="importedWorkouts">
         <item quantity="one">Un entraînement importé</item>
+        <item quantity="many">%d entraînements importés</item>
         <item quantity="other">%d entraînements importés</item>
     </plurals>
     <string name="humanitarian_clean_map_but_sometimes_not_available">Humanitarian
@@ -524,4 +530,17 @@
     <string name="massExportGpxSummary">Crée un fichier ZIP contenant tous les entraînements au format GPX</string>
     <string name="statistics">Statistiques</string>
     <string name="workoutTypePullUps">Tractions</string>
+    <string name="workoutDurationPrecisionToSeconds">Précision de la durée en secondes</string>
+    <string name="purple_rain">Pluie violette</string>
+    <string name="pink_mist">Brume Rose</string>
+    <string name="rainbow_warrior">Guerrier Arc-en-ciel</string>
+    <string name="mondriaan">Mondrian</string>
+    <string name="hintConfigureExportTargets">Ajouter les destinations pour les fichiers exportés.</string>
+    <string name="show_sum">Voir la somme</string>
+    <string name="workoutDistanceSum">Somme des distances</string>
+    <string name="debugSensorsTitle">Debug des capteurs</string>
+    <string name="bright_night">Nuit Claire</string>
+    <string name="debugPressureSensor">Debug du capteur de pression</string>
+    <string name="askForComment">Demander un commentaire</string>
+    <string name="askForCommentSummary">Demander un commentaire en arrêtant l’enregistrement</string>
 </resources>
