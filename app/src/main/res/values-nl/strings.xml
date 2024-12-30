@@ -16,8 +16,7 @@
   ~
   ~     You should have received a copy of the GNU General Public License
   ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  --><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">FitoTrack</string>
     <string name="stop">Stop</string>
     <string name="delete">Verwijderen</string>
@@ -438,4 +437,96 @@
         <item quantity="one">1 training geïmporteerd</item>
         <item quantity="other">%d Trainingen geïmporteerd</item>
     </plurals>
+    <string name="workoutDurationPrecisionToSeconds">Duratie precisie naar seconden</string>
+    <string name="workoutAvgPauseDuration">Gemiddelde pauze duratie</string>
+    <string name="heartRateSensorBattery">Sensor batterij</string>
+    <plurals name="workoutPullUp">
+        <item quantity="one">Pullup</item>
+        <item quantity="other">Pullups</item>
+    </plurals>
+    <string name="preferencesDebugTitle">Debug</string>
+    <string name="unitHeartRateSensorBattery">%</string>
+    <string name="workoutCount">Training aantal</string>
+    <string name="statistics">Statistieken</string>
+    <string name="stats_history_title">Geschiedenis</string>
+    <string name="stats_overview_title">Overzicht</string>
+    <string name="histogram">Histogram</string>
+    <string name="workoutAvgDistance">Gemiddelde afstand</string>
+    <string name="showWorkoutZoomControlsSummary">Schakel zoom en pan gereedschappen in op de kaart tijdens GPS training opname</string>
+    <string name="zoomWithVolumeButtonsSummary">Volume omhoog en omlaag gereedschappen in- en uitzoomen</string>
+    <string name="trackable_visibility">Volgbaar</string>
+    <string name="private_visibility">Privé</string>
+    <string name="humanitarian_clean_map_but_sometimes_not_available">Humanitarian\nNette kaart, maar niet altijd beschikbaar</string>
+    <string name="offline_local_map_file_with_local_render_theme">Offline\nLokaal kaart bestand met lokaal gerenderd thema</string>
+    <string name="in_the_diagram_screen_track_style">In het diagram venster</string>
+    <string name="never_track_style">Nooit</string>
+    <string name="metric_with_m_s_unit_system">Metrisch met m/s</string>
+    <string name="deleteExportTargetConfirmation">Verwijder dit export doel?</string>
+    <string name="autoExportBackupExplanation">Op het opgegeven interval wordt een export hier gemaakt:</string>
+    <string name="autoExportWorkoutExplanation">Nadat een nieuwe training is opgenomen, wordt een GPX-export hier opgeslagen:</string>
+    <string name="takeBackups3">Elke derde dag</string>
+    <string name="selectExportTarget">Selecteer export doel</string>
+    <string name="httpUrl">URL</string>
+    <string name="enterValidUrl">Voer een geldige HTTP URL in</string>
+    <plurals name="satelliteCount">
+        <item quantity="one">Één satelliet</item>
+        <item quantity="other">%d satellieten</item>
+    </plurals>
+    <string name="workoutTypeSwimming">Zwemmen</string>
+    <string name="hidden">Verborgen</string>
+    <string name="zoomWithVolumeButtonsTitle">Zoom met volume knoppen</string>
+    <string name="identifiable_visibility">Identificeerbaar</string>
+    <string name="autoExportBackupSummary">Exporteer backups automatisch</string>
+    <string name="takeBackups1">Elke dag</string>
+    <string name="always_track_style">Altijd</string>
+    <string name="metric_unit_system">Metrisch</string>
+    <string name="sunday">Zondag</string>
+    <string name="workoutDistanceSum">Afstand totaal</string>
+    <string name="autoExportBackupTitle">Automatische app backups</string>
+    <string name="noSensorAvailable">Geen sensor beschikbaar</string>
+    <string name="mapnik_default_osm_mapstyle">Mapnik\nStandaard OSM mapstijl</string>
+    <string name="bright_night">Heldere nacht</string>
+    <string name="thursday">Donderdag</string>
+    <string name="friday">Vrijdag</string>
+    <string name="debugShareLogsSummary">Deel logs welke nuttige data bevatten om bugs te vinden in de training opname. Meestal bevatten ze geen locatie data.</string>
+    <string name="debugSensorsTitle">Debug sensoren</string>
+    <string name="debugShareLogsTitle">Deel logs</string>
+    <string name="autoBackupTitle">Automatische backups</string>
+    <string name="takeBackups2">Om de dag</string>
+    <string name="monday">Maandag</string>
+    <string name="saturday">Zaterdag</string>
+    <string name="exportTargetDirectory">Directory</string>
+    <string name="exportTargetHttpPost">HTTP POST verzoek</string>
+    <string name="takeBackups7">Elke week</string>
+    <string name="takeBackups14">Om de week</string>
+    <string name="debugSensorsSummary">Verzamel sensor data welke in het log bestand geschreven wordt</string>
+    <string name="debugPressureSensor">Debug druk sensor</string>
+    <string name="calibrating">Calibreren</string>
+    <string name="workoutAvgDurationLong">Gemiddelde duratie</string>
+    <string name="workoutDurationSum">Duratie totaal</string>
+    <string name="workoutPauseDurationSum">Pauze duratie totaal</string>
+    <string name="showWorkoutZoomControlsTitle">Zoomen en pannen</string>
+    <string name="show_sum">Toon totaal</string>
+    <string name="workoutTypePullUps">Pullups</string>
+    <string name="stats_explore_title">Verkennen</string>
+    <string name="rainbow_warrior">Regenboog krijger</string>
+    <string name="height_map">Hoogte kaart</string>
+    <string name="mondriaan">Mondriaan</string>
+    <string name="imperial_unit_system">Imperialistisch</string>
+    <string name="imperial_with_meters_unit_system">Imperialistisch met meters</string>
+    <string name="us_customary_unit_system">US Customary</string>
+    <string name="tuesday">Dinsdag</string>
+    <string name="wednesday">Woensdag</string>
+    <string name="workoutGPXExportTitle">Training GPX exports</string>
+    <string name="purple_rain">Paarse regen</string>
+    <string name="pink_mist">Roze mist</string>
+    <string name="autoExportWorkoutsSummary">Exporteer nieuwe opgenomen trainingen</string>
+    <string name="exportIntervalTitle">Backup interval</string>
+    <string name="configureHttpPostRequest">Configureer HTTP POST verzoek</string>
+    <string name="askForCommentSummary">Vraag om commentaar als de opname stopt</string>
+    <string name="details">Details</string>
+    <string name="monthYear">Maand / jaar</string>
+    <string name="massExportGpxTitle">Exporteer alle trainingen als GPX</string>
+    <string name="massExportGpxSummary">Maak een ZIP bestand dat alle trainingen bevat als GPX documenten</string>
+    <string name="askForComment">Vraag om commentaar</string>
 </resources>
