@@ -1,0 +1,7 @@
+- Custom training types
+- Deel trainingen als afbeelding
+- UI/stabiliteitsverbeteringen
+- Aankondiging "systeem acties" kunnen worden uitgezet
+- Bijgewerkte vertalingen
+
+Bekijk de project repository op Codeberg voor een gedetailleerd overzicht van de wijzigingen

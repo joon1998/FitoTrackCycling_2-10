@@ -1,0 +1,8 @@
+Nieuw:
+- Hoogte meting via GPS en druksensor
+- Toon hoogte grafiek
+- Toon melding wanneer GPS is uitgeschakeld
+
+Verholpen bugs:
+- Terug knop in instellingen resulteert in crash bij oudere Android versies (#20)
+- Eenheid systeem "Imperiaal met meters"
