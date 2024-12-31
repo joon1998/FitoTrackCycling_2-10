@@ -33,7 +33,7 @@
     <string name="finished">Gereed</string>
     <string name="loadingFile">Bestand laden</string>
     <string name="chooseBackupFile">Kies back-up bestand</string>
-    <string name="importBackupMessage">WAARSCHUWING: Al je huidige gegevens in de app worden verwijderd. Als je deze niet wilt verliezen, maak dan vooraf een back-up. Weet je zeker dat je de back-up wilt herstellen?</string>
+    <string name="importBackupMessage">Als je de huidige gegevens niet wilt verliezen, maak dan eerst een back-up. Weet je zeker dat je de meest recente back-up wilt herstellen?</string>
     <string name="restore">Herstellen</string>
     <string name="backup">Back-up</string>
     <string name="setPreferencesTitle">Voorkeuren opgeven</string>
@@ -70,7 +70,7 @@
     <string name="workoutAvgSpeedShort">Gem. Snelheid</string>
     <string name="workoutAvgSpeedLong">Gemiddelde Snelheid</string>
     <string name="workoutTopSpeed">Topsnelheid</string>
-    <string name="workoutBurnedEnergy">Energieverbranding</string>
+    <string name="workoutBurnedEnergy">Verbruikte calorieën</string>
     <string name="workoutTotalEnergy">Totale Energie</string>
     <string name="workoutEnergyConsumption">Energieverbruik</string>
     <string name="workoutEdited">Deze training is gewijzigd.</string>
@@ -260,7 +260,7 @@
     <string name="recordingStateIdle">Niet actief</string>
     <string name="speechConfigNoSpeech">Geen aankondiging</string>
     <string name="aboutHelpTranslating">Helpen met vertalen</string>
-    <string name="aboutUnlistedContributors">Met dank aan alle niet-beursgenoteerde medewerkers die hebben geholpen bij het vertalen en uitbreiden van FitoTrack!</string>
+    <string name="aboutUnlistedContributors">Met dank aan alle niet genoemde bijdragers die hebben geholpen bij het vertalen en uitbreiden van FitoTrack!</string>
     <string name="importingFiles">Bestanden importeren</string>
     <string name="importMultipleMessageSelectFolder">Selecteer een map met alle GPX-bestanden die u wilt importeren.</string>
     <string name="importMultipleGpxFiles">Meerdere GPX-bestanden importeren</string>
@@ -271,7 +271,7 @@
     <string name="showIntervals">Toon de intervallen</string>
     <string name="connectHeartRateDevice">Sluit het hartslagapparaat aan</string>
     <string name="selectBluetoothDevice">Selecteer Bluetoothapparaat</string>
-    <string name="workoutAvgHeartRate">Avg. Hartslag</string>
+    <string name="workoutAvgHeartRate">Gem. Hartslag</string>
     <string name="workoutMaxHeartRate">Maximale hartslag</string>
     <string name="workoutHeartRate">Hartslag</string>
     <string name="workoutStarted">Training gestart</string>
@@ -311,7 +311,7 @@
     <string name="importWorkoutMultipleQuestion">Wil je één of GPX-bestand of meerdere importeren\?</string>
     <string name="pref_auto_start_mode_unknown">Onbekend (niet gebruiken)</string>
     <string name="pref_auto_start_mode_on_move">Wacht tot je begint te bewegen</string>
-    <string name="pref_auto_start_mode_wait_for_gps">Wacht op een nauwkeurige GPS-positie</string>
+    <string name="pref_auto_start_mode_wait_for_gps">Wacht op nauwkeurige positie</string>
     <string name="pref_auto_start_mode_instant">Begin direct</string>
     <string name="pref_auto_start_mode_title">Automatische startmodus</string>
     <string name="intervalAutoStartModeTraining">Trainingsmodus automatisch starten</string>
@@ -376,9 +376,9 @@
     <string name="unitHeartBeatsPerMinute">bpm</string>
     <string name="preferenceFirstDayOfWeek">Week start</string>
     <string name="preferenceUseAverageForCurrentSpeed">Gebruik de gemiddelde snelheid over een bepaalde tijd in plaats van het laatste enkele snelheidsrecord voor de huidige snelheidsberekening.</string>
-    <string name="preferenceCurrentSpeedAverageTimeTitle">Huidige snelheid gemiddeld</string>
-    <string name="preferenceCurrentSpeedAverageTimeSummary">Vervang de huidige snelheidsberekening door een gemiddelde berekening.</string>
-    <string name="preferenceCurrentSpeedTime">Tijdspan voor gemiddelde berekening</string>
+    <string name="preferenceCurrentSpeedAverageTimeTitle">Gemiddelde snelheid</string>
+    <string name="preferenceCurrentSpeedAverageTimeSummary">Vervang de huidige snelheid door een gemiddelde</string>
+    <string name="preferenceCurrentSpeedTime">Tijdspanne voor gemiddelde snelheid</string>
     <string name="preferencesCategoryMap">Kaart</string>
     <string name="prefTrackStyleUsageTitle">Gebruik trackkleuring automatisch</string>
     <string name="trackStyle">Track stijl</string>
@@ -397,7 +397,7 @@
 \n<xliff:g example="7 seconden" id="secs">%2$s</xliff:g> tot begin </string>
     <string name="ttsMinuteCountdownAnnouncement"> <xliff:g example="12 minuten" id="mins">%1$s</xliff:g> tot begin </string>
     <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g example="5 seconden" id="secs">%1$s</xliff:g> tot begin </string>
-    <string name="pref_render_theme_style_info">Geen thema-stijl beschikbaar voor geselecteerd thema.</string>
+    <string name="pref_render_theme_style_info">Geen menu beschikbaar voor geselecteerd thema.</string>
     <string name="preferenceCategoryRenderThemeCategories">Categorieën</string>
     <string name="pref_render_theme_style">Stijl</string>
     <string name="pref_map_directory">Offline kaartmap</string>
@@ -427,7 +427,7 @@
     <string name="workoutFrequency">Frequentie</string>
     <string name="workoutSets">Sets</string>
     <string name="workoutRepetitions">Herhalingen</string>
-    <string name="workoutRecordingTypeGps">Gps Trainingen</string>
+    <string name="workoutRecordingTypeGps">GPS Trainingen</string>
     <string name="workoutRecordingTypeIndoor">Binnen Trainingen</string>
     <string name="workoutAvgFrequencyLong">Gemiddelde Frequentie</string>
     <string name="workoutCurrentFrequency">Huidige Frequentie</string>
@@ -529,4 +529,5 @@
     <string name="massExportGpxTitle">Exporteer alle trainingen als GPX</string>
     <string name="massExportGpxSummary">Maak een ZIP bestand dat alle trainingen bevat als GPX documenten</string>
     <string name="askForComment">Vraag om commentaar</string>
+    <string name="hintConfigureExportTargets">Geef locatie waar bestanden naar geëxporteerd worden.</string>
 </resources>
