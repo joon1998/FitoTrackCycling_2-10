@@ -97,7 +97,7 @@
     <string name="setDuration">Aseta kesto</string>
     <string name="enable">Ota käyttöön</string>
     <string name="enterComment">Kirjoita kommentti</string>
-    <string name="okay">OK</string>
+    <string name="okay">Hyvä on</string>
     <string name="stopRecordingQuestion">Pysäytetäänkö nauhoitus\?</string>
     <string name="deleteWorkout">Poista treeni</string>
     <string name="deleteWorkoutMessage">Haluatko varmasti poistaa treenin\?</string>
@@ -440,13 +440,13 @@
         <item quantity="other">Leuanvetoa</item>
     </plurals>
     <string name="workoutAvgDistance">Keskimääräinen etäisyys</string>
-    <string name="ttsMinuteSecondCountdownAnnouncement"> <xliff:g example="1 minute" id="mins">%1$s</xliff:g> ja <xliff:g example="7 seconds" id="secs">%2$s</xliff:g> alkuun </string>
+    <string name="ttsMinuteSecondCountdownAnnouncement"> \u0020<xliff:g example="1 minutti" id="min">%1$s</xliff:g> ja <xliff:g example="7 sekuntia" id="sec">%2$s</xliff:g> käynnistykseen asti \u0020</string>
     <string name="stats_explore_title">Selaa</string>
     <string name="monthYear">Kuukausi / vuosi</string>
-    <string name="ttsMinuteCountdownAnnouncement"> <xliff:g example="12 minutes" id="mins">%1$s</xliff:g> alkuun </string>
+    <string name="ttsMinuteCountdownAnnouncement"> \u0020<xliff:g example="12 minuuttia" id="min">%1$s</xliff:g> käynnistykseen asti \u0020</string>
     <string name="zoomWithVolumeButtonsTitle">Zoomaa äänenvoimakkuuspainikkeilla</string>
     <string name="workoutTypePullUps">Leuanveto</string>
-    <string name="ttsLongSecondCountdownAnnouncement"> <xliff:g example="5 seconds" id="secs">%1$s</xliff:g> alkuun </string>
+    <string name="ttsLongSecondCountdownAnnouncement"> \u0020<xliff:g example="5 sekuntia" id="sek">%1$s</xliff:g> käynnistykseen asti \u0020</string>
     <string name="workoutAvgPauseDuration">Keskimääräinen tauon kesto</string>
     <string name="calendarWeekYear">Kalenteriviikko / vuosi</string>
 </resources>
