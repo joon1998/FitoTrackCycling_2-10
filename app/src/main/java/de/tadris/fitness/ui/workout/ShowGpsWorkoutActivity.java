@@ -26,6 +26,7 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -52,6 +53,7 @@ import de.tadris.fitness.osm.OsmTraceUploader;
 import de.tadris.fitness.ui.ShareFileActivity;
 import de.tadris.fitness.ui.dialog.ProgressDialogController;
 import de.tadris.fitness.ui.record.RecordGpsWorkoutActivity;
+import de.tadris.fitness.ui.workout.diagram.DistanceConverter;
 import de.tadris.fitness.ui.workout.diagram.HeartRateConverter;
 import de.tadris.fitness.ui.workout.diagram.HeightConverter;
 import de.tadris.fitness.ui.workout.diagram.SampleConverter;
@@ -147,10 +149,14 @@ public class ShowGpsWorkoutActivity extends GpsWorkoutActivity implements Dialog
 
             addDiagram(new HeightConverter(this), ShowWorkoutMapDiagramActivity.DIAGRAM_TYPE_HEIGHT);
 
+            // Add a distance chart with customizable interval
+            addTitle(getString(R.string.workoutDistance));
+            addDistanceChart();
+
             addTitle(getString(R.string.sections));
             addSectionList();
-        }
 
+        }
     }
 
     private void addSpeedHistogram(){
@@ -197,6 +203,12 @@ public class ShowGpsWorkoutActivity extends GpsWorkoutActivity implements Dialog
         SectionListModel listModel = new SectionListModel(workout, samples);
         SectionListPresenter listPresenter = new SectionListPresenter(listView, listModel);
         root.addView(listView);
+    }
+
+    private void addDistanceChart() {
+        DistanceConverter converter = new DistanceConverter(this, workout, samples, getThemeTextColor(), getMapHeight());
+        View chartView = converter.createView();
+        root.addView(chartView);
     }
 
     void addDiagram(SampleConverter converter, String mapDiagramActivityExtra) {
