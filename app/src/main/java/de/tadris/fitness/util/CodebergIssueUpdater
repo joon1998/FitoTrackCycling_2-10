@@ -1,0 +1,58 @@
+package de.tadris.fitness.util;
+
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+
+public class CodebergIssueUpdater {
+    private static final String CODEBERG_API_URL = "https://codeberg.org/chalou/FitoTrackCycling_2-10";
+    private static final String REPO_OWNER = "FitoTrackCycling_2-10"; // Group or username
+    private static final String REPO_NAME = "Joon"; // Repository name
+    private static final int ISSUE_NUMBER = 42; // Issue number to update
+    private static final String TOKEN = "your-access-token"; // Codeberg personal access token
+
+    public static void updateIssue(String commitHash, String description) {
+        try {
+            // Construct API endpoint URL
+            String urlString = String.format("%s/repos/%s/%s/issues/%d", CODEBERG_API_URL, REPO_OWNER, REPO_NAME, ISSUE_NUMBER);
+            URL url = new URL(urlString);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+            // Set HTTP request properties (PATCH request)
+            conn.setRequestMethod("PATCH");
+            conn.setRequestProperty("Authorization", "token " + TOKEN);
+            conn.setRequestProperty("Content-Type", "application/json");
+            conn.setDoOutput(true);
+
+            // Create JSON payload
+            String jsonPayload = String.format(
+                "{ \"body\": \"Updated with new implementation for moving average calculation.\\n\\nCommit: [%s](https://codeberg.org/%s/%s/commit/%s)\\n%s\" }",
+                commitHash, REPO_OWNER, REPO_NAME, commitHash, description
+            );
+
+            // Send JSON data
+            try (OutputStream os = conn.getOutputStream()) {
+                byte[] input = jsonPayload.getBytes(StandardCharsets.UTF_8);
+                os.write(input, 0, input.length);
+            }
+
+            // Check response code
+            int responseCode = conn.getResponseCode();
+            if (responseCode == 200) {
+                System.out.println("Issue updated successfully!");
+            } else {
+                System.out.println("Failed to update issue. Response Code: " + responseCode);
+            }
+
+            conn.disconnect();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Main method for testing
+    public static void main(String[] args) {
+        updateIssue("f479fb4bf1", "Implemented moving average for speed calculation.");
+    }
+}
