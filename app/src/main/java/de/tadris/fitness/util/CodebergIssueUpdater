@@ -6,6 +6,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 public class CodebergIssueUpdater {
+    
     private static final String CODEBERG_API_URL = "https://codeberg.org/chalou/FitoTrackCycling_2-10";
     private static final String REPO_OWNER = "FitoTrackCycling_2-10"; // Group or username
     private static final String REPO_NAME = "Joon"; // Repository name
