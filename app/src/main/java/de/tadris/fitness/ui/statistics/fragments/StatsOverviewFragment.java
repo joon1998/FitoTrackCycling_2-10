@@ -37,6 +37,9 @@ import de.tadris.fitness.ui.FitoTrackActivity;
 import de.tadris.fitness.ui.statistics.TimeSpanSelection;
 import de.tadris.fitness.util.charts.ChartStyles;
 import de.tadris.fitness.util.exceptions.NoDataException;
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+
+import java.util.List;
 
 public class StatsOverviewFragment extends StatsFragment {
     StatsProvider statsProvider;
@@ -46,6 +49,7 @@ public class StatsOverviewFragment extends StatsFragment {
     HorizontalBarChart distanceChart;
     HorizontalBarChart numberOfActivitiesChart;
     HorizontalBarChart durationChart;
+    HorizontalBarChart caloriesChart;
 
     public StatsOverviewFragment(FitoTrackActivity ctx) {
         super(R.layout.fragment_stats_overview, ctx);
@@ -76,7 +80,9 @@ public class StatsOverviewFragment extends StatsFragment {
         ChartStyles.setXAxisLabel(durationChart, getContext().getString(R.string.timeHourShort), activity);
         ChartStyles.defaultBarChart(durationChart);
         animateChart(durationChart);
-
+        caloriesChart = view.findViewById(R.id.stats_calories_moving_avg_chart);
+        ChartStyles.defaultBarChart(caloriesChart);
+        animateChart(caloriesChart);
         updateCharts();
     }
 
@@ -118,5 +124,17 @@ public class StatsOverviewFragment extends StatsFragment {
             ChartStyles.barChartNoData(numberOfActivitiesChart, (FitoTrackActivity)getContext());
         }
         numberOfActivitiesChart.invalidate();
+        try {
+            List<IBarDataSet> caloriesDataSets = statsProvider.movingAverageCalories(span);
+            if (caloriesDataSets.isEmpty()) {
+                throw new NoDataException();
+            }
+            BarData caloriesMAData = new BarData(caloriesDataSets);
+            ChartStyles.horizontalBarChartIconLabel(caloriesChart, caloriesMAData, context);
+            ChartStyles.setXAxisLabel(caloriesChart, "kcal", activity);
+        } catch (Exception e) {
+            ChartStyles.barChartNoData(caloriesChart, (FitoTrackActivity) getContext());
+        }
+        caloriesChart.invalidate();
     }
 }

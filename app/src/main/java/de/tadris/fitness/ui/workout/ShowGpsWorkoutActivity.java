@@ -53,6 +53,7 @@ import de.tadris.fitness.osm.OsmTraceUploader;
 import de.tadris.fitness.ui.ShareFileActivity;
 import de.tadris.fitness.ui.dialog.ProgressDialogController;
 import de.tadris.fitness.ui.record.RecordGpsWorkoutActivity;
+import de.tadris.fitness.ui.workout.diagram.CalorieConverter;
 import de.tadris.fitness.ui.workout.diagram.DistanceConverter;
 import de.tadris.fitness.ui.workout.diagram.HeartRateConverter;
 import de.tadris.fitness.ui.workout.diagram.HeightConverter;
@@ -74,6 +75,8 @@ import oauth.signpost.OAuthConsumer;
 public class ShowGpsWorkoutActivity extends GpsWorkoutActivity implements DialogUtils.WorkoutDeleter {
 
     TextView commentView;
+    private CalorieConverter calorieConverter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,7 +137,16 @@ public class ShowGpsWorkoutActivity extends GpsWorkoutActivity implements Dialog
             addDiagram(new HeartRateConverter(this), ShowWorkoutMapDiagramActivity.DIAGRAM_TYPE_HEART_RATE);
         }
 
+
         addTitle(getString(R.string.workoutBurnedEnergy));
+        addKeyValue(getString(R.string.workoutTotalEnergy), energyUnitUtils.getEnergy(workout.calorie),
+                getString(R.string.workoutEnergyConsumption), energyUnitUtils.getRelativeEnergy((double) workout.calorie / ((double) workout.duration / 1000 / 60)));
+
+
+        if (hasSamples()) {
+            addTitle(getString(R.string.calorie_trend));
+            addCalorieChart();
+        }
         addKeyValue(getString(R.string.workoutTotalEnergy), energyUnitUtils.getEnergy(workout.calorie),
                 getString(R.string.workoutEnergyConsumption), energyUnitUtils.getRelativeEnergy((double) workout.calorie / ((double) workout.duration / 1000 / 60)));
 
@@ -266,6 +278,17 @@ public class ShowGpsWorkoutActivity extends GpsWorkoutActivity implements Dialog
 
     private String getDate() {
         return Instance.getInstance(this).userDateTimeUtils.formatDate(new Date(workout.start));
+    }
+    private void addCalorieChart() {
+        calorieConverter = new CalorieConverter(
+                this,
+                workout,
+                samples,
+                getThemeTextColor(),
+                getMapHeight() / 2  // 차트 높이 설정
+        );
+        View chartView = calorieConverter.createView();
+        root.addView(chartView);
     }
 
 

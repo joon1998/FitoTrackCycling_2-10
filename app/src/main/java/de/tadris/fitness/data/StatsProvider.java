@@ -23,6 +23,7 @@ import static java.lang.Math.max;
 import static java.lang.Math.min;
 
 import android.content.Context;
+import android.graphics.Color;
 
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -33,6 +34,7 @@ import com.github.mikephil.charting.data.CandleDataSet;
 import com.github.mikephil.charting.data.CandleEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,6 +54,7 @@ import de.tadris.fitness.util.charts.DataSetStyles;
 import de.tadris.fitness.util.charts.formatter.DayTimeFormatter;
 import de.tadris.fitness.util.charts.formatter.TimeFormatter;
 import de.tadris.fitness.util.exceptions.NoDataException;
+import de.tadris.fitness.util.WorkoutProperty;
 
 public class StatsProvider {
     Context ctx;
@@ -60,6 +63,37 @@ public class StatsProvider {
     public StatsProvider(Context ctx) {
         this.ctx = ctx;
         dataProvider = new StatsDataProvider(ctx);
+    }
+
+    public List<IBarDataSet> movingAverageCalories(StatsDataTypes.TimeSpan span) {
+
+        List<StatsDataTypes.DataPoint> dataPoints = dataProvider.getData(WorkoutProperty.CALORIE, WorkoutTypeManager.getInstance().getAllTypes(ctx), span);
+        if (dataPoints.isEmpty()) {
+            return Collections.emptyList();
+        }
+
+
+        int movingAverageWindow = 5;
+        List<IBarDataSet> barDataSets = new ArrayList<>();
+        ArrayList<BarEntry> barEntries = new ArrayList<>();
+
+
+        for (int i = movingAverageWindow - 1; i < dataPoints.size(); i++) {
+            double sum = 0;
+            for (int j = i - movingAverageWindow + 1; j <= i; j++) {
+                sum += dataPoints.get(j).value;
+            }
+            double average = sum / movingAverageWindow;
+            BarEntry entry = new BarEntry(i, (float) average);
+            barEntries.add(entry);
+        }
+
+
+        BarDataSet dataSet = new BarDataSet(barEntries, "Moving Average Calories");
+        dataSet.setColor(Color.BLUE);
+        barDataSets.add(dataSet);
+
+        return barDataSets;
     }
 
     public enum Reduction {

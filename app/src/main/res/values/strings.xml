@@ -554,4 +554,21 @@
     <string name="askForComment">Ask for comment</string>
     <string name="askForCommentSummary">Ask to enter a comment when stopping the record</string>
     <string name="movingAverage">Moving average</string>
+    <string name="caloriesMovingAvg">Calories Moving Average</string>
+    <string name="caloriesShort">kcal</string>
+    <!-- Time units -->
+    <string name="time_minute_short">min</string>
+
+    <!-- Chart related -->
+    <string name="calories">Calories</string>
+
+
+    <!-- Error messages -->
+    <string name="invalid_interval">Invalid time interval</string>
+
+    <string name="calorie_trend">Calorie Trend</string>
+    <string name="moving_average">Moving Avg</string>
+
+
+
 </resources>
